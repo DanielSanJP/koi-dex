@@ -21,6 +21,12 @@ final report write themselves. Add an entry whenever work happens.
   revisions as scope tightened.
 - Researched variety facts with sources (name meanings, families, patterns,
   origins) and wrote them into the site content.
+- Researched breeding and care facts against veterinary, ZNA and koi-farm
+  sources: spawning and culling reality, 15 documented historical crosses,
+  water chemistry, feeding by temperature, seasonal care, disease and
+  quarantine. Every page links its sources; disputed histories (Kumonryu's
+  parentage, Sanke's founding fish) are flagged as uncertain rather than
+  simplified, and the Hanako 226-year claim is presented as folklore.
 - Built all six routes: home, dex grid with search + family filters, 22
   detail pages with canvas composite renders, breeding and care article
   layouts, plants placeholder. `npm run build` green; pushed to GitHub

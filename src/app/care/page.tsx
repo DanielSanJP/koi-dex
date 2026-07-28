@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { CARE_SECTIONS, QUICK_FACTS, SEASONS } from "@/content/care";
+import {
+  CARE_SECTIONS,
+  CARE_SOURCES,
+  QUICK_FACTS,
+  SEASONS,
+} from "@/content/care";
 
 export const metadata: Metadata = {
   title: "Care guide",
@@ -72,6 +77,26 @@ export default function CarePage() {
           </div>
         </section>
       )}
+
+      <section className="mt-10 border-t border-black/10 pt-6 pb-8">
+        <h2 className="text-xs font-bold tracking-wide text-black/40 uppercase">
+          Sources
+        </h2>
+        <ul className="mt-2 flex flex-col gap-1">
+          {CARE_SOURCES.map((s) => (
+            <li key={s}>
+              <a
+                href={s}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm break-all text-black/40 underline hover:text-black/70"
+              >
+                {s}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }

@@ -32,4 +32,5 @@ export type BreedingCross = {
   parents: [string, string];
   produces: string;
   note: string;
+  source: string;
 };

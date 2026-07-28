@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
+  BREEDING_SOURCES,
   DOCUMENTED_CROSSES,
   FUNDAMENTALS,
   SPAWN_NOTES,
@@ -68,8 +69,16 @@ export default function BreedingPage() {
                 <VarietyName name={c.parents[1]} />
                 <span className="text-black/40">→</span>
                 <VarietyName name={c.produces} />
-                <span className="basis-full text-sm text-black/50 sm:basis-auto sm:pl-2">
-                  {c.note}
+                <span className="basis-full text-sm text-black/50">
+                  {c.note}{" "}
+                  <a
+                    href={c.source}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-black/40 underline hover:text-black/70"
+                  >
+                    Source
+                  </a>
                 </span>
               </div>
             ))}
@@ -89,6 +98,26 @@ export default function BreedingPage() {
           </ul>
         </section>
       )}
+
+      <section className="mt-10 border-t border-black/10 pt-6 pb-8">
+        <h2 className="text-xs font-bold tracking-wide text-black/40 uppercase">
+          Sources
+        </h2>
+        <ul className="mt-2 flex flex-col gap-1">
+          {BREEDING_SOURCES.map((s) => (
+            <li key={s}>
+              <a
+                href={s}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm break-all text-black/40 underline hover:text-black/70"
+              >
+                {s}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }
