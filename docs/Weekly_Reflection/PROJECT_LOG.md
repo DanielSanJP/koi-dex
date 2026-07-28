@@ -32,4 +32,17 @@ final report write themselves. Add an entry whenever work happens.
   layouts, plants placeholder. `npm run build` green; pushed to GitHub
   (private repo DanielSanJP/koi-dex).
 
+- Reviewed the first build and found the breeding guide too plain and the
+  care/breeding content stranded on their own pages. Replanned both
+  (docs/REDESIGN.md + docs/wireframes-redesign.html) and rebuilt: breeding
+  is now a family tree, a pairing explorer, sprite cross cards, a culling
+  funnel and a timeline; the koi detail page became the hub, carrying that
+  variety's care notes and its breeding in both directions.
+- Switched every koi image on the site to the real sprite composite
+  (body plus tinted fin sheets) and deleted the flat preview images.
+- Two more research passes: per-variety care notes, and origin years plus
+  the ancestor varieties (Magoi, Kigoi, Soragoi, Nezu Ogon, German mirror
+  carp, Ki Bekko) that the lineage needed. Added an honest section naming
+  the real varieties the site has no artwork for.
+
 <!-- Add new dated entries above this line as work happens. -->
