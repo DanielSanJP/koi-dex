@@ -4,7 +4,7 @@ import { VARIETY_INFO, FAMILIES } from "@/content/varieties";
 import { getAllKoi } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Koi-dex",
+  title: "All varieties",
   description: "All the real koi varieties in one browsable encyclopedia.",
 };
 

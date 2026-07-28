@@ -107,6 +107,22 @@ export default async function KoiDetailPage({
           {info?.pattern && <p className="text-black/70">{info.pattern}</p>}
           {info?.origin && <p className="text-black/70">{info.origin}</p>}
           {info?.notes && <p className="text-black/70">{info.notes}</p>}
+          {info && info.sources.length > 0 && (
+            <p className="mt-2 text-xs text-black/40">
+              Sources:{" "}
+              {info.sources.map((s, i) => (
+                <a
+                  key={s}
+                  href={s}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-black/70"
+                >
+                  [{i + 1}]{" "}
+                </a>
+              ))}
+            </p>
+          )}
         </div>
       </div>
 

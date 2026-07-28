@@ -24,6 +24,7 @@ export type VarietyInfo = {
   pattern: string;
   origin: string;
   notes?: string;
+  sources: string[];
 };
 
 /** A documented real-world breeding relationship. */
