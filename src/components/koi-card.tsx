@@ -1,6 +1,6 @@
 import Link from "next/link";
+import KoiComposite from "@/components/koi-composite";
 import { formatDexNumber } from "@/lib/data";
-import { r2PublicUrl } from "@/lib/r2";
 import type { Koi } from "@/lib/types";
 
 export default function KoiCard({ koi }: { koi: Koi }) {
@@ -12,12 +12,10 @@ export default function KoiCard({ koi }: { koi: Koi }) {
       <span className="self-start text-xs font-bold text-black/40">
         {formatDexNumber(koi.number)}
       </span>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={r2PublicUrl(koi.preview ?? koi.body)!}
-        alt={`${koi.name} koi`}
-        className="h-24 w-auto max-w-full object-contain transition-transform group-hover:scale-105"
-        loading="lazy"
+      <KoiComposite
+        koi={koi}
+        className="w-full transition-transform group-hover:scale-105"
+        bufferWidth={344}
       />
       <span className="font-pally font-bold">{koi.name}</span>
     </Link>

@@ -6,14 +6,14 @@ export type KoiFins = {
   side: string | null;
 };
 
-/** One row of data/koi.json — the only data the app contributes. */
+/** One row of data/koi.json — the only data the app contributes.
+    Koi are always drawn from the body sprite + tinted fin sheets; the app's
+    flat preview images are not used. */
 export type Koi = {
   slug: string;
   name: string;
   number: number;
   body: string;
-  preview: string | null;
-  blurhash: string | null;
   fins: KoiFins;
 };
 

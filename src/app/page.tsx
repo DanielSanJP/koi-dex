@@ -2,7 +2,6 @@ import Link from "next/link";
 import Button from "@/components/button";
 import KoiComposite from "@/components/koi-composite";
 import { getAllKoi, getKoi } from "@/lib/data";
-import { r2PublicUrl } from "@/lib/r2";
 
 const SECTIONS = [
   {
@@ -65,15 +64,13 @@ export default function Home() {
               className="group flex flex-col items-center gap-3 rounded-2xl border border-black/10 bg-white p-6 shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-transform hover:-translate-y-0.5"
             >
               {art ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={r2PublicUrl(art.preview ?? art.body)!}
-                  alt=""
-                  className="h-20 w-auto object-contain transition-transform group-hover:scale-105"
-                  loading="lazy"
+                <KoiComposite
+                  koi={art}
+                  className="w-full transition-transform group-hover:scale-105"
+                  bufferWidth={344}
                 />
               ) : (
-                <div className="flex h-20 w-full items-center justify-center rounded-xl bg-[#8ed874]/20 text-sm font-bold text-[#49ad6d]">
+                <div className="flex aspect-[688/464] w-full items-center justify-center rounded-xl bg-[#8ed874]/20 text-sm font-bold text-[#49ad6d]">
                   Coming soon
                 </div>
               )}

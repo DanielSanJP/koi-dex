@@ -33,13 +33,13 @@ These are dex 1–25 of the app's catalogue minus the three app-originals (Valen
   "name": "Chagoi",
   "number": 1,
   "body": "koi/bodies/chagoi.webp",
-  "preview": "koi/previews/chagoi.webp",
-  "blurhash": "...",
   "fins": { "dominant": "#9b4d09", "tail": null, "dorsal": null, "back": null, "side": null }
 }
 ```
 
-Assets (`public/assets/`, ~2.8 MB total): `koi/bodies/` (22 body sprites, 688×464), `koi/previews/` (22 card previews), `fins/white/` (the four shared white fin sheets). Paths resolve as `/assets/<path>` via `src/lib/r2.ts`. Re-export is manual (query prod, mirror the CDN); the project holds no Supabase credentials.
+Assets (`public/assets/`, 26 files, ~490 KB total): `koi/bodies/` (22 body sprites, 688×464) and `fins/white/` (the four shared white fin sheets). Paths resolve as `/assets/<path>` via `src/lib/r2.ts`. Re-export is manual (query prod, mirror the CDN); the project holds no Supabase credentials.
+
+Koi are **always drawn from the sprite composite** — the app's flat preview images are deliberately not used anywhere, so every koi on the site is the real layered fish.
 
 ## How a koi is drawn (verified against the Flutter renderer)
 
@@ -48,7 +48,8 @@ The app's canonical routine (`koi/lib/widgets/koi_composite_painter.dart`) draws
 - **Assets:** body `koi/bodies/<slug>.webp` (688×464, static). Fins come from four **shared white-base sprite sheets** used by *every* koi: `fins/white/{back_fin,tail,dorsal,side_fin}.webp` (3440×1856 = 5×4 grid of 688×464 frames).
 - **Layer order (bottom → top):** back fin → tail → **body** → dorsal → side fin.
 - **Tint:** each fin layer is multiplied by a hex colour (Flutter `BlendMode.modulate`; on the web: canvas `globalCompositeOperation = "multiply"` on the white frame, alpha preserved). Per-fin resolution: `fins.<part> ?? fins.dominant ?? untinted`; treat `#000000` as null. The body is never tinted.
-- **Animation:** no procedural motion — the sway is 20 hand-drawn frames. Cards cycle all 20 over 2 s (~10 fps); static previews use frame 0; a cheap 6-frame loop uses frames 0/3/6/9/12/15.
+- **Animation:** no procedural motion — the sway is 20 hand-drawn frames in the sheet. The site draws frame 0 everywhere; cycling all 20 over 2 s (~10 fps) is available if wanted later.
+- **Sharing decodes:** the fin sheets are 3440×1856 and shared by every koi, so `koi-composite.tsx` caches loaded images at module level. A grid of 22 cards decodes each sheet once.
 
 Reference implementations copied from koi-web's admin into `src/components/admin/` (`koi-first-frame-image.tsx` is the working canvas reference). Tints resolve through `src/lib/koi-fin-urls.ts` (`koiTintFromFins`).
 
@@ -80,8 +81,6 @@ create table koi (
   name text not null,
   number int unique not null,
   body_path text not null,
-  preview_path text,
-  blurhash text,
   dominant_hex text,
   tail_hex text,
   dorsal_hex text,

@@ -4,8 +4,6 @@
     "name": "Chagoi",
     "number": 1,
     "body": "koi/bodies/chagoi.webp",
-    "preview": "koi/previews/chagoi.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#9b4d09",
       "tail": null,
@@ -19,8 +17,6 @@
     "name": "Bekko",
     "number": 2,
     "body": "koi/bodies/bekko.webp",
-    "preview": "koi/previews/bekko.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#fdfdfd",
       "tail": null,
@@ -34,8 +30,6 @@
     "name": "Benigoi",
     "number": 3,
     "body": "koi/bodies/benigoi.webp",
-    "preview": "koi/previews/benigoi.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#fe3201",
       "tail": null,
@@ -49,8 +43,6 @@
     "name": "Karasugoi",
     "number": 4,
     "body": "koi/bodies/karasugoi.webp",
-    "preview": "koi/previews/karasugoi.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#292a2c",
       "tail": null,
@@ -64,8 +56,6 @@
     "name": "Hi Utsuri",
     "number": 5,
     "body": "koi/bodies/hi_utsuri.webp",
-    "preview": "koi/previews/hi_utsuri.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#292a2c",
       "tail": null,
@@ -79,8 +69,6 @@
     "name": "Ki Utsuri",
     "number": 6,
     "body": "koi/bodies/ki_utsuri.webp",
-    "preview": "koi/previews/ki_utsuri.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#292a2c",
       "tail": null,
@@ -94,8 +82,6 @@
     "name": "Hariwake",
     "number": 7,
     "body": "koi/bodies/hariwake.webp",
-    "preview": "koi/previews/hariwake.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#fdfdfd",
       "tail": null,
@@ -109,8 +95,6 @@
     "name": "Shiro Utsuri",
     "number": 8,
     "body": "koi/bodies/shiro_utsuri.webp",
-    "preview": "koi/previews/shiro_utsuri.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#292a2c",
       "tail": null,
@@ -124,8 +108,6 @@
     "name": "Ochiba",
     "number": 9,
     "body": "koi/bodies/ochiba.webp",
-    "preview": "koi/previews/ochiba.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#e7e3da",
       "tail": null,
@@ -139,8 +121,6 @@
     "name": "Kumonryu",
     "number": 10,
     "body": "koi/bodies/kumonryu.webp",
-    "preview": "koi/previews/kumonryu.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#fdfdfd",
       "tail": null,
@@ -154,8 +134,6 @@
     "name": "Beni Kumonryu",
     "number": 11,
     "body": "koi/bodies/beni_kumonryu.webp",
-    "preview": "koi/previews/beni_kumonryu.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#fdfdfd",
       "tail": null,
@@ -169,8 +147,6 @@
     "name": "Kujaku",
     "number": 12,
     "body": "koi/bodies/kujaku.webp",
-    "preview": "koi/previews/kujaku.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#dee1e1",
       "tail": null,
@@ -184,8 +160,6 @@
     "name": "Asagi",
     "number": 13,
     "body": "koi/bodies/asagi_koi.webp",
-    "preview": "koi/previews/asagi_koi.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#fa6e5d",
       "tail": null,
@@ -199,8 +173,6 @@
     "name": "Shusui",
     "number": 14,
     "body": "koi/bodies/shusui.webp",
-    "preview": "koi/previews/shusui.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#fa6e5d",
       "tail": null,
@@ -214,8 +186,6 @@
     "name": "Koromo",
     "number": 15,
     "body": "koi/bodies/koromo.webp",
-    "preview": "koi/previews/koromo.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#fdfdfd",
       "tail": null,
@@ -229,8 +199,6 @@
     "name": "Platinum",
     "number": 16,
     "body": "koi/bodies/platinum.webp",
-    "preview": "koi/previews/platinum.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#dee1e1",
       "tail": null,
@@ -244,8 +212,6 @@
     "name": "Kin Ki Utsuri",
     "number": 17,
     "body": "koi/bodies/kin_ki_utsuri.webp",
-    "preview": "koi/previews/kin_ki_utsuri.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#e0b950",
       "tail": null,
@@ -259,8 +225,6 @@
     "name": "Tancho",
     "number": 18,
     "body": "koi/bodies/tancho.webp",
-    "preview": "koi/previews/tancho.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#fdfdfd",
       "tail": null,
@@ -274,8 +238,6 @@
     "name": "Showa",
     "number": 19,
     "body": "koi/bodies/showa.webp",
-    "preview": "koi/previews/showa.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#292a2c",
       "tail": null,
@@ -289,8 +251,6 @@
     "name": "Sanke",
     "number": 20,
     "body": "koi/bodies/sanke.webp",
-    "preview": "koi/previews/sanke.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#fdfdfd",
       "tail": null,
@@ -304,8 +264,6 @@
     "name": "Kohaku",
     "number": 21,
     "body": "koi/bodies/kohaku.webp",
-    "preview": "koi/previews/kohaku.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#fdfdfd",
       "tail": null,
@@ -319,8 +277,6 @@
     "name": "Gold Ogon",
     "number": 22,
     "body": "koi/bodies/gold_ogon.webp",
-    "preview": "koi/previews/gold_ogon.webp",
-    "blurhash": null,
     "fins": {
       "dominant": "#e0b950",
       "tail": null,
