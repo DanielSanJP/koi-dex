@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import LenisProvider from "@/components/lenis-provider";
+import SiteNav from "@/components/site-nav";
+import SiteFooter from "@/components/site-footer";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 
@@ -27,9 +29,12 @@ const pally = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Koi-dex",
+  title: {
+    default: "Koi-dex",
+    template: "%s · Koi-dex",
+  },
   description:
-    "A koi encyclopedia: varieties, breeding, care, and pond plants.",
+    "A koi encyclopedia: the real varieties, how to care for them, how breeding works, and pond plants.",
 };
 
 export default function RootLayout({
@@ -39,8 +44,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${pally.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
-        <LenisProvider>{children}</LenisProvider>
+      <body className="min-h-full">
+        <LenisProvider>
+          <div className="flex min-h-screen flex-col">
+            <SiteNav />
+            <main className="flex-1">{children}</main>
+            <SiteFooter />
+          </div>
+        </LenisProvider>
       </body>
     </html>
   );
