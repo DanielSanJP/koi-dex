@@ -1,0 +1,992 @@
+[
+  {
+    "slug": "amazon_sword",
+    "display_name": "Amazon Sword",
+    "file_url": "decorations/amazon_sword-v3.webp",
+    "preview_url": "decorations/amazon_sword-v3.webp",
+    "glow_url": null,
+    "glow_color_hex": null,
+    "glow_night_only": false,
+    "glow_bloom_sigma": null,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": null,
+    "blurhash": null,
+    "rarity": 2,
+    "price": 150,
+    "is_premium": false,
+    "in_shop": true,
+    "unlock_condition": null,
+    "sort_order": 0,
+    "family_slug": "amazon_sword",
+    "collection_slug": null,
+    "render_layers": null,
+    "layer_tints": null,
+    "preview_crop": null,
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "anubias",
+    "display_name": "Anubias",
+    "file_url": "decorations/anubias.webp",
+    "preview_url": "decorations/anubias.webp",
+    "glow_url": null,
+    "glow_color_hex": null,
+    "glow_night_only": false,
+    "glow_bloom_sigma": null,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": null,
+    "blurhash": null,
+    "rarity": 1,
+    "price": 150,
+    "is_premium": false,
+    "in_shop": true,
+    "unlock_condition": null,
+    "sort_order": 0,
+    "family_slug": "anubias",
+    "collection_slug": null,
+    "render_layers": null,
+    "layer_tints": null,
+    "preview_crop": null,
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "blue_floating_lantern",
+    "display_name": "Blue Floating Lantern",
+    "file_url": "decorations/floating_lantern-base.webp",
+    "preview_url": null,
+    "glow_url": "decorations/floating_lantern-glow.webp",
+    "glow_color_hex": "#16BBE8",
+    "glow_night_only": false,
+    "glow_bloom_sigma": 24,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": "screen",
+    "blurhash": null,
+    "rarity": 4,
+    "price": 0,
+    "is_premium": false,
+    "in_shop": false,
+    "unlock_condition": null,
+    "sort_order": 0,
+    "family_slug": "floating_lantern",
+    "collection_slug": "glowing_nights",
+    "render_layers": [
+      {
+        "url": "decorations/floating_lantern-base.webp",
+        "tint_hex": "#16BBE8"
+      },
+      {
+        "url": "decorations/floating_lantern-outline.webp"
+      }
+    ],
+    "layer_tints": {
+      "0": "#16BBE8"
+    },
+    "preview_crop": {
+      "h": 0.5753125,
+      "w": 0.546875,
+      "x": 0.2255859375,
+      "y": 0.2084375
+    },
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "eelgrass",
+    "display_name": "Eelgrass",
+    "file_url": "decorations/eelgrass.webp",
+    "preview_url": "decorations/eelgrass.webp",
+    "glow_url": null,
+    "glow_color_hex": null,
+    "glow_night_only": false,
+    "glow_bloom_sigma": null,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": null,
+    "blurhash": null,
+    "rarity": 1,
+    "price": 100,
+    "is_premium": false,
+    "in_shop": true,
+    "unlock_condition": null,
+    "sort_order": 0,
+    "family_slug": "eelgrass",
+    "collection_slug": null,
+    "render_layers": null,
+    "layer_tints": null,
+    "preview_crop": null,
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "fallen_log",
+    "display_name": "Fallen Log",
+    "file_url": "decorations/fallen_log.webp",
+    "preview_url": "decorations/fallen_log.webp",
+    "glow_url": null,
+    "glow_color_hex": null,
+    "glow_night_only": false,
+    "glow_bloom_sigma": null,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": null,
+    "blurhash": null,
+    "rarity": 2,
+    "price": 150,
+    "is_premium": false,
+    "in_shop": true,
+    "unlock_condition": null,
+    "sort_order": 0,
+    "family_slug": "fallen_log",
+    "collection_slug": null,
+    "render_layers": null,
+    "layer_tints": null,
+    "preview_crop": null,
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "floating_lantern",
+    "display_name": "Floating Lantern",
+    "file_url": "decorations/floating_lantern-base.webp",
+    "preview_url": null,
+    "glow_url": "decorations/floating_lantern-glow.webp",
+    "glow_color_hex": "#FF9375",
+    "glow_night_only": false,
+    "glow_bloom_sigma": 24,
+    "glow_pulse_amplitude": 0.1,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": "screen",
+    "blurhash": null,
+    "rarity": 4,
+    "price": 0,
+    "is_premium": false,
+    "in_shop": false,
+    "unlock_condition": null,
+    "sort_order": 0,
+    "family_slug": "floating_lantern",
+    "collection_slug": "glowing_nights",
+    "render_layers": [
+      {
+        "url": "decorations/floating_lantern-base.webp",
+        "tint_hex": "#FF9375"
+      },
+      {
+        "url": "decorations/floating_lantern-outline.webp"
+      }
+    ],
+    "layer_tints": {
+      "0": "#FF9375"
+    },
+    "preview_crop": {
+      "h": 0.5753125,
+      "w": 0.546875,
+      "x": 0.2255859375,
+      "y": 0.2084375
+    },
+    "preview_rotation": null,
+    "file_width": 1024,
+    "file_height": 1024
+  },
+  {
+    "slug": "frog_sculpture",
+    "display_name": "Frog Sculpture",
+    "file_url": "decorations/frog_sculpture.webp",
+    "preview_url": "decorations/frog_sculpture.webp",
+    "glow_url": null,
+    "glow_color_hex": null,
+    "glow_night_only": false,
+    "glow_bloom_sigma": null,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": null,
+    "blurhash": null,
+    "rarity": 1,
+    "price": 0,
+    "is_premium": false,
+    "in_shop": false,
+    "unlock_condition": "referral",
+    "sort_order": 0,
+    "family_slug": "frog_sculpture",
+    "collection_slug": null,
+    "render_layers": null,
+    "layer_tints": null,
+    "preview_crop": null,
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "green_floating_lantern",
+    "display_name": "Green Floating Lantern",
+    "file_url": "decorations/floating_lantern-base.webp",
+    "preview_url": null,
+    "glow_url": "decorations/floating_lantern-glow.webp",
+    "glow_color_hex": "#5FC76B",
+    "glow_night_only": false,
+    "glow_bloom_sigma": 24,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": "screen",
+    "blurhash": null,
+    "rarity": 4,
+    "price": 0,
+    "is_premium": false,
+    "in_shop": false,
+    "unlock_condition": null,
+    "sort_order": 0,
+    "family_slug": "floating_lantern",
+    "collection_slug": "glowing_nights",
+    "render_layers": [
+      {
+        "url": "decorations/floating_lantern-base.webp",
+        "tint_hex": "#5FC76B"
+      },
+      {
+        "url": "decorations/floating_lantern-outline.webp"
+      }
+    ],
+    "layer_tints": {
+      "0": "#5FC76B"
+    },
+    "preview_crop": {
+      "h": 0.5753125,
+      "w": 0.546875,
+      "x": 0.2255859375,
+      "y": 0.2084375
+    },
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "lily_pad",
+    "display_name": "Lily Pad",
+    "file_url": "decorations/lily_pad-v6.webp",
+    "preview_url": "decorations/lily_pad-v5.webp",
+    "glow_url": null,
+    "glow_color_hex": null,
+    "glow_night_only": false,
+    "glow_bloom_sigma": null,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": null,
+    "blurhash": null,
+    "rarity": 1,
+    "price": 100,
+    "is_premium": false,
+    "in_shop": true,
+    "unlock_condition": null,
+    "sort_order": 0,
+    "family_slug": "lily_pad",
+    "collection_slug": null,
+    "render_layers": null,
+    "layer_tints": null,
+    "preview_crop": null,
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "mossy_rock",
+    "display_name": "Mossy Rock",
+    "file_url": "decorations/mossy_rock.webp",
+    "preview_url": "decorations/mossy_rock.webp",
+    "glow_url": null,
+    "glow_color_hex": null,
+    "glow_night_only": false,
+    "glow_bloom_sigma": null,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": null,
+    "blurhash": null,
+    "rarity": 1,
+    "price": 100,
+    "is_premium": false,
+    "in_shop": true,
+    "unlock_condition": null,
+    "sort_order": 0,
+    "family_slug": "mossy_rock",
+    "collection_slug": null,
+    "render_layers": null,
+    "layer_tints": null,
+    "preview_crop": null,
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "purple_floating_lantern",
+    "display_name": "Purple Floating Lantern",
+    "file_url": "decorations/floating_lantern-base.webp",
+    "preview_url": null,
+    "glow_url": "decorations/floating_lantern-glow.webp",
+    "glow_color_hex": "#A66BFF",
+    "glow_night_only": false,
+    "glow_bloom_sigma": 24,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": "screen",
+    "blurhash": null,
+    "rarity": 4,
+    "price": 0,
+    "is_premium": false,
+    "in_shop": false,
+    "unlock_condition": null,
+    "sort_order": 0,
+    "family_slug": "floating_lantern",
+    "collection_slug": "glowing_nights",
+    "render_layers": [
+      {
+        "url": "decorations/floating_lantern-base.webp",
+        "tint_hex": "#A66BFF"
+      },
+      {
+        "url": "decorations/floating_lantern-outline.webp"
+      }
+    ],
+    "layer_tints": {
+      "0": "#A66BFF"
+    },
+    "preview_crop": {
+      "h": 0.5753125,
+      "w": 0.546875,
+      "x": 0.2255859375,
+      "y": 0.2084375
+    },
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "red_floating_lantern",
+    "display_name": "Red Floating Lantern",
+    "file_url": "decorations/floating_lantern-base.webp",
+    "preview_url": null,
+    "glow_url": "decorations/floating_lantern-glow.webp",
+    "glow_color_hex": "#E8503F",
+    "glow_night_only": false,
+    "glow_bloom_sigma": 24,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": "screen",
+    "blurhash": null,
+    "rarity": 4,
+    "price": 0,
+    "is_premium": false,
+    "in_shop": false,
+    "unlock_condition": null,
+    "sort_order": 0,
+    "family_slug": "floating_lantern",
+    "collection_slug": "glowing_nights",
+    "render_layers": [
+      {
+        "url": "decorations/floating_lantern-base.webp",
+        "tint_hex": "#E8503F"
+      },
+      {
+        "url": "decorations/floating_lantern-outline.webp"
+      }
+    ],
+    "layer_tints": {
+      "0": "#E8503F"
+    },
+    "preview_crop": {
+      "h": 0.5753125,
+      "w": 0.546875,
+      "x": 0.2255859375,
+      "y": 0.2084375
+    },
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "river_rock",
+    "display_name": "River Rock",
+    "file_url": "decorations/river_rock.webp",
+    "preview_url": "decorations/river_rock.webp",
+    "glow_url": null,
+    "glow_color_hex": null,
+    "glow_night_only": false,
+    "glow_bloom_sigma": null,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": null,
+    "blurhash": null,
+    "rarity": 1,
+    "price": 100,
+    "is_premium": false,
+    "in_shop": true,
+    "unlock_condition": null,
+    "sort_order": 0,
+    "family_slug": "river_rock",
+    "collection_slug": null,
+    "render_layers": null,
+    "layer_tints": null,
+    "preview_crop": null,
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "water_lantern",
+    "display_name": "Water Lantern",
+    "file_url": "decorations/water_lantern-945ae883.webp",
+    "preview_url": "decorations/water_lantern-preview-2ab88c89.webp",
+    "glow_url": "decorations/water_lantern-glow-cde4c645.webp",
+    "glow_color_hex": "#FFA238",
+    "glow_night_only": true,
+    "glow_bloom_sigma": 24,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": "screen",
+    "blurhash": null,
+    "rarity": 3,
+    "price": 100,
+    "is_premium": false,
+    "in_shop": false,
+    "unlock_condition": null,
+    "sort_order": 0,
+    "family_slug": "water_lantern",
+    "collection_slug": "glowing_nights",
+    "render_layers": null,
+    "layer_tints": null,
+    "preview_crop": null,
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "water_lettuce",
+    "display_name": "Water Lettuce",
+    "file_url": "decorations/water_lettuce.webp",
+    "preview_url": "decorations/water_lettuce.webp",
+    "glow_url": null,
+    "glow_color_hex": null,
+    "glow_night_only": false,
+    "glow_bloom_sigma": null,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": null,
+    "blurhash": null,
+    "rarity": 1,
+    "price": 100,
+    "is_premium": false,
+    "in_shop": true,
+    "unlock_condition": null,
+    "sort_order": 0,
+    "family_slug": "water_lettuce",
+    "collection_slug": null,
+    "render_layers": null,
+    "layer_tints": null,
+    "preview_crop": null,
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "yellow_floating_lantern",
+    "display_name": "Yellow Floating Lantern",
+    "file_url": "decorations/floating_lantern-base.webp",
+    "preview_url": null,
+    "glow_url": "decorations/floating_lantern-glow.webp",
+    "glow_color_hex": "#F5D04A",
+    "glow_night_only": false,
+    "glow_bloom_sigma": 24,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": "screen",
+    "blurhash": null,
+    "rarity": 4,
+    "price": 0,
+    "is_premium": false,
+    "in_shop": false,
+    "unlock_condition": null,
+    "sort_order": 0,
+    "family_slug": "floating_lantern",
+    "collection_slug": "glowing_nights",
+    "render_layers": [
+      {
+        "url": "decorations/floating_lantern-base.webp",
+        "tint_hex": "#F5D04A"
+      },
+      {
+        "url": "decorations/floating_lantern-outline.webp"
+      }
+    ],
+    "layer_tints": {
+      "0": "#F5D04A"
+    },
+    "preview_crop": {
+      "h": 0.5753125,
+      "w": 0.546875,
+      "x": 0.2255859375,
+      "y": 0.2084375
+    },
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "koi_sculpture",
+    "display_name": "Koi Sculpture",
+    "file_url": "decorations/koi_sculpture.webp",
+    "preview_url": "decorations/koi_sculpture.webp",
+    "glow_url": null,
+    "glow_color_hex": null,
+    "glow_night_only": false,
+    "glow_bloom_sigma": null,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": null,
+    "blurhash": null,
+    "rarity": 3,
+    "price": 150,
+    "is_premium": false,
+    "in_shop": true,
+    "unlock_condition": null,
+    "sort_order": 1,
+    "family_slug": "koi_sculpture",
+    "collection_slug": null,
+    "render_layers": null,
+    "layer_tints": null,
+    "preview_crop": null,
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "orange_glowing_mushroom",
+    "display_name": "Orange Glowing Mushroom",
+    "file_url": "decorations/glowing_mushroom-base-0be35d84.webp",
+    "preview_url": null,
+    "glow_url": "decorations/glowing_mushroom-glow-b73a7956.webp",
+    "glow_color_hex": "#F0974A",
+    "glow_night_only": false,
+    "glow_bloom_sigma": 24,
+    "glow_pulse_amplitude": 0.1,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": "screen",
+    "blurhash": null,
+    "rarity": 3,
+    "price": 0,
+    "is_premium": false,
+    "in_shop": false,
+    "unlock_condition": null,
+    "sort_order": 1,
+    "family_slug": "glowing_mushroom",
+    "collection_slug": "glowing_nights",
+    "render_layers": [
+      {
+        "url": "decorations/glowing_mushroom-base-0be35d84.webp",
+        "tint_hex": "#F0974A"
+      },
+      {
+        "url": "decorations/glowing_mushroom-pattern-a25505d9.webp"
+      },
+      {
+        "url": "decorations/glowing_mushroom-outline-cfc08f6d.webp"
+      }
+    ],
+    "layer_tints": {
+      "0": "#F0974A"
+    },
+    "preview_crop": {
+      "h": 0.452148,
+      "w": 0.444336,
+      "x": 0.279297,
+      "y": 0.274414
+    },
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "toro_lantern",
+    "display_name": "Toro Lantern",
+    "file_url": "decorations/toro_lantern.webp",
+    "preview_url": "decorations/toro_lantern.webp",
+    "glow_url": null,
+    "glow_color_hex": null,
+    "glow_night_only": false,
+    "glow_bloom_sigma": null,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": null,
+    "blurhash": null,
+    "rarity": 3,
+    "price": 200,
+    "is_premium": false,
+    "in_shop": true,
+    "unlock_condition": null,
+    "sort_order": 2,
+    "family_slug": "toro_lantern",
+    "collection_slug": null,
+    "render_layers": null,
+    "layer_tints": null,
+    "preview_crop": null,
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "torii",
+    "display_name": "Torii Gate",
+    "file_url": "decorations/torii.webp",
+    "preview_url": "decorations/torii.webp",
+    "glow_url": null,
+    "glow_color_hex": null,
+    "glow_night_only": false,
+    "glow_bloom_sigma": null,
+    "glow_pulse_amplitude": null,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": null,
+    "blurhash": null,
+    "rarity": 4,
+    "price": 250,
+    "is_premium": false,
+    "in_shop": true,
+    "unlock_condition": null,
+    "sort_order": 3,
+    "family_slug": "torii",
+    "collection_slug": null,
+    "render_layers": null,
+    "layer_tints": null,
+    "preview_crop": null,
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "yellow_glowing_mushroom",
+    "display_name": "Yellow Glowing Mushroom",
+    "file_url": "decorations/glowing_mushroom-base-0be35d84.webp",
+    "preview_url": null,
+    "glow_url": "decorations/glowing_mushroom-glow-b73a7956.webp",
+    "glow_color_hex": "#B89C38",
+    "glow_night_only": false,
+    "glow_bloom_sigma": 24,
+    "glow_pulse_amplitude": 0.1,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": "screen",
+    "blurhash": null,
+    "rarity": 3,
+    "price": 0,
+    "is_premium": false,
+    "in_shop": false,
+    "unlock_condition": null,
+    "sort_order": 4,
+    "family_slug": "glowing_mushroom",
+    "collection_slug": "glowing_nights",
+    "render_layers": [
+      {
+        "url": "decorations/glowing_mushroom-base-0be35d84.webp",
+        "tint_hex": "#F5D04A"
+      },
+      {
+        "url": "decorations/glowing_mushroom-pattern-a25505d9.webp"
+      },
+      {
+        "url": "decorations/glowing_mushroom-outline-cfc08f6d.webp"
+      }
+    ],
+    "layer_tints": {
+      "0": "#F5D04A"
+    },
+    "preview_crop": {
+      "h": 0.452148,
+      "w": 0.444336,
+      "x": 0.279297,
+      "y": 0.274414
+    },
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "pink_glowing_mushroom",
+    "display_name": "Pink Glowing Mushroom",
+    "file_url": "decorations/glowing_mushroom-base-0be35d84.webp",
+    "preview_url": null,
+    "glow_url": "decorations/glowing_mushroom-glow-b73a7956.webp",
+    "glow_color_hex": "#F38BAA",
+    "glow_night_only": false,
+    "glow_bloom_sigma": 24,
+    "glow_pulse_amplitude": 0.1,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": "screen",
+    "blurhash": null,
+    "rarity": 3,
+    "price": 0,
+    "is_premium": false,
+    "in_shop": false,
+    "unlock_condition": null,
+    "sort_order": 6,
+    "family_slug": "glowing_mushroom",
+    "collection_slug": "glowing_nights",
+    "render_layers": [
+      {
+        "url": "decorations/glowing_mushroom-base-0be35d84.webp",
+        "tint_hex": "#F38BAA"
+      },
+      {
+        "url": "decorations/glowing_mushroom-pattern-a25505d9.webp"
+      },
+      {
+        "url": "decorations/glowing_mushroom-outline-cfc08f6d.webp"
+      }
+    ],
+    "layer_tints": {
+      "0": "#F38BAA"
+    },
+    "preview_crop": {
+      "h": 0.452148,
+      "w": 0.444336,
+      "x": 0.279297,
+      "y": 0.274414
+    },
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "cyan_glowing_mushroom",
+    "display_name": "Cyan Glowing Mushroom",
+    "file_url": "decorations/glowing_mushroom-base-0be35d84.webp",
+    "preview_url": null,
+    "glow_url": "decorations/glowing_mushroom-glow-b73a7956.webp",
+    "glow_color_hex": "#16BBE8",
+    "glow_night_only": false,
+    "glow_bloom_sigma": 24,
+    "glow_pulse_amplitude": 0.1,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": "screen",
+    "blurhash": null,
+    "rarity": 3,
+    "price": 0,
+    "is_premium": false,
+    "in_shop": false,
+    "unlock_condition": null,
+    "sort_order": 9,
+    "family_slug": "glowing_mushroom",
+    "collection_slug": "glowing_nights",
+    "render_layers": [
+      {
+        "url": "decorations/glowing_mushroom-base-0be35d84.webp",
+        "tint_hex": "#16BBE8"
+      },
+      {
+        "url": "decorations/glowing_mushroom-pattern-a25505d9.webp"
+      },
+      {
+        "url": "decorations/glowing_mushroom-outline-cfc08f6d.webp"
+      }
+    ],
+    "layer_tints": {
+      "0": "#16BBE8"
+    },
+    "preview_crop": {
+      "h": 0.452148,
+      "w": 0.444336,
+      "x": 0.279297,
+      "y": 0.274414
+    },
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "purple_glowing_mushroom",
+    "display_name": "Purple Glowing Mushroom",
+    "file_url": "decorations/glowing_mushroom-base-0be35d84.webp",
+    "preview_url": null,
+    "glow_url": "decorations/glowing_mushroom-glow-b73a7956.webp",
+    "glow_color_hex": "#8932B8",
+    "glow_night_only": false,
+    "glow_bloom_sigma": 24,
+    "glow_pulse_amplitude": 0.1,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": "screen",
+    "blurhash": null,
+    "rarity": 3,
+    "price": 0,
+    "is_premium": false,
+    "in_shop": false,
+    "unlock_condition": null,
+    "sort_order": 10,
+    "family_slug": "glowing_mushroom",
+    "collection_slug": "glowing_nights",
+    "render_layers": [
+      {
+        "url": "decorations/glowing_mushroom-base-0be35d84.webp",
+        "tint_hex": "#8932B8"
+      },
+      {
+        "url": "decorations/glowing_mushroom-pattern-a25505d9.webp"
+      },
+      {
+        "url": "decorations/glowing_mushroom-outline-cfc08f6d.webp"
+      }
+    ],
+    "layer_tints": {
+      "0": "#8932B8"
+    },
+    "preview_crop": {
+      "h": 0.452148,
+      "w": 0.444336,
+      "x": 0.279297,
+      "y": 0.274414
+    },
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "blue_glowing_mushroom",
+    "display_name": "Blue Glowing Mushroom",
+    "file_url": "decorations/glowing_mushroom-base-0be35d84.webp",
+    "preview_url": null,
+    "glow_url": "decorations/glowing_mushroom-glow-b73a7956.webp",
+    "glow_color_hex": "#3C66D8",
+    "glow_night_only": false,
+    "glow_bloom_sigma": 24,
+    "glow_pulse_amplitude": 0.1,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": "screen",
+    "blurhash": null,
+    "rarity": 3,
+    "price": 0,
+    "is_premium": false,
+    "in_shop": false,
+    "unlock_condition": null,
+    "sort_order": 11,
+    "family_slug": "glowing_mushroom",
+    "collection_slug": "glowing_nights",
+    "render_layers": [
+      {
+        "url": "decorations/glowing_mushroom-base-0be35d84.webp",
+        "tint_hex": "#3C66D8"
+      },
+      {
+        "url": "decorations/glowing_mushroom-pattern-a25505d9.webp"
+      },
+      {
+        "url": "decorations/glowing_mushroom-outline-cfc08f6d.webp"
+      }
+    ],
+    "layer_tints": {
+      "0": "#3C66D8"
+    },
+    "preview_crop": {
+      "h": 0.452148,
+      "w": 0.444336,
+      "x": 0.279297,
+      "y": 0.274414
+    },
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "green_glowing_mushroom",
+    "display_name": "Green Glowing Mushroom",
+    "file_url": "decorations/glowing_mushroom-base-0be35d84.webp",
+    "preview_url": null,
+    "glow_url": "decorations/glowing_mushroom-glow-b73a7956.webp",
+    "glow_color_hex": "#5FC76B",
+    "glow_night_only": false,
+    "glow_bloom_sigma": 24,
+    "glow_pulse_amplitude": 0.1,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": "screen",
+    "blurhash": null,
+    "rarity": 3,
+    "price": 0,
+    "is_premium": false,
+    "in_shop": false,
+    "unlock_condition": null,
+    "sort_order": 13,
+    "family_slug": "glowing_mushroom",
+    "collection_slug": "glowing_nights",
+    "render_layers": [
+      {
+        "url": "decorations/glowing_mushroom-base-0be35d84.webp",
+        "tint_hex": "#5FC76B"
+      },
+      {
+        "url": "decorations/glowing_mushroom-pattern-a25505d9.webp"
+      },
+      {
+        "url": "decorations/glowing_mushroom-outline-cfc08f6d.webp"
+      }
+    ],
+    "layer_tints": {
+      "0": "#5FC76B"
+    },
+    "preview_crop": {
+      "h": 0.452148,
+      "w": 0.444336,
+      "x": 0.279297,
+      "y": 0.274414
+    },
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  },
+  {
+    "slug": "red_glowing_mushroom",
+    "display_name": "Red Glowing Mushroom",
+    "file_url": "decorations/glowing_mushroom-base-0be35d84.webp",
+    "preview_url": null,
+    "glow_url": "decorations/glowing_mushroom-glow-b73a7956.webp",
+    "glow_color_hex": "#E8503F",
+    "glow_night_only": false,
+    "glow_bloom_sigma": 24,
+    "glow_pulse_amplitude": 0.1,
+    "glow_pulse_period_seconds": null,
+    "glow_blend_mode": "screen",
+    "blurhash": null,
+    "rarity": 3,
+    "price": 0,
+    "is_premium": false,
+    "in_shop": false,
+    "unlock_condition": null,
+    "sort_order": 14,
+    "family_slug": "glowing_mushroom",
+    "collection_slug": "glowing_nights",
+    "render_layers": [
+      {
+        "url": "decorations/glowing_mushroom-base-0be35d84.webp",
+        "tint_hex": "#E8503F"
+      },
+      {
+        "url": "decorations/glowing_mushroom-pattern-a25505d9.webp"
+      },
+      {
+        "url": "decorations/glowing_mushroom-outline-cfc08f6d.webp"
+      }
+    ],
+    "layer_tints": {
+      "0": "#E8503F"
+    },
+    "preview_crop": {
+      "h": 0.452148,
+      "w": 0.444336,
+      "x": 0.279297,
+      "y": 0.274414
+    },
+    "preview_rotation": null,
+    "file_width": null,
+    "file_height": null
+  }
+]

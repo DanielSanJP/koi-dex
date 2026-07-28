@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "asagi",
+    "display_name": "Asagi",
+    "tail_url": "fins/asagi/tail.webp",
+    "dorsal_url": "fins/asagi/dorsal.webp",
+    "back_fin_url": "fins/asagi/back_fin.webp",
+    "side_fin_url": "fins/asagi/side_fin.webp"
+  },
+  {
+    "slug": "black",
+    "display_name": "Black",
+    "tail_url": "fins/black/tail.webp",
+    "dorsal_url": "fins/black/dorsal.webp",
+    "back_fin_url": "fins/black/back_fin.webp",
+    "side_fin_url": "fins/black/side_fin.webp"
+  },
+  {
+    "slug": "brown",
+    "display_name": "Brown",
+    "tail_url": "fins/brown/tail.webp",
+    "dorsal_url": "fins/brown/dorsal.webp",
+    "back_fin_url": "fins/brown/back_fin.webp",
+    "side_fin_url": "fins/brown/side_fin.webp"
+  },
+  {
+    "slug": "gold",
+    "display_name": "Gold",
+    "tail_url": "fins/gold/tail.webp",
+    "dorsal_url": "fins/gold/dorsal.webp",
+    "back_fin_url": "fins/gold/back_fin.webp",
+    "side_fin_url": "fins/gold/side_fin.webp"
+  },
+  {
+    "slug": "ochiba",
+    "display_name": "Ochiba",
+    "tail_url": "fins/ochiba/tail.webp",
+    "dorsal_url": "fins/ochiba/dorsal.webp",
+    "back_fin_url": "fins/ochiba/back_fin.webp",
+    "side_fin_url": "fins/ochiba/side_fin.webp"
+  },
+  {
+    "slug": "orange",
+    "display_name": "Orange",
+    "tail_url": "fins/orange/tail.webp",
+    "dorsal_url": "fins/orange/dorsal.webp",
+    "back_fin_url": "fins/orange/back_fin.webp",
+    "side_fin_url": "fins/orange/side_fin.webp"
+  },
+  {
+    "slug": "platinum",
+    "display_name": "Platinum",
+    "tail_url": "fins/platinum/tail.webp",
+    "dorsal_url": "fins/platinum/dorsal.webp",
+    "back_fin_url": "fins/platinum/back_fin.webp",
+    "side_fin_url": "fins/platinum/side_fin.webp"
+  },
+  {
+    "slug": "white",
+    "display_name": "White",
+    "tail_url": "fins/white/tail.webp",
+    "dorsal_url": "fins/white/dorsal.webp",
+    "back_fin_url": "fins/white/back_fin.webp",
+    "side_fin_url": "fins/white/side_fin.webp"
+  }
+]

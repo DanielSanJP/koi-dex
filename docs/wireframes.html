@@ -1,0 +1,437 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Koi-dex Wireframes</title>
+<style>
+  :root {
+    --paper: #FAFAF8;
+    --panel: #FFFFFF;
+    --ink: #26323A;
+    --ink-soft: #5C6B74;
+    --stroke: #9AA7AE;
+    --wire-fill: #EEF1EF;
+    --wire-fill-2: #E2E7E5;
+    --accent: #E2694A;
+    --water: #5E8FA3;
+    --frame-bg: #FFFFFF;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #171D21;
+      --panel: #1F272C;
+      --ink: #E4E8E6;
+      --ink-soft: #97A4AB;
+      --stroke: #4E5B63;
+      --wire-fill: #262F35;
+      --wire-fill-2: #2E383F;
+      --accent: #E87A5C;
+      --water: #7AA7BA;
+      --frame-bg: #1C2429;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #171D21; --panel: #1F272C; --ink: #E4E8E6; --ink-soft: #97A4AB;
+    --stroke: #4E5B63; --wire-fill: #262F35; --wire-fill-2: #2E383F;
+    --accent: #E87A5C; --water: #7AA7BA; --frame-bg: #1C2429;
+  }
+  :root[data-theme="light"] {
+    --paper: #FAFAF8; --panel: #FFFFFF; --ink: #26323A; --ink-soft: #5C6B74;
+    --stroke: #9AA7AE; --wire-fill: #EEF1EF; --wire-fill-2: #E2E7E5;
+    --accent: #E2694A; --water: #5E8FA3; --frame-bg: #FFFFFF;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.55;
+    padding: 3rem 1.25rem 6rem;
+  }
+  main { max-width: 1060px; margin: 0 auto; }
+
+  .kicker {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--water); margin-bottom: .75rem;
+  }
+  h1 { font-size: 2.1rem; font-weight: 600; letter-spacing: -.01em; text-wrap: balance; margin-bottom: .5rem; }
+  .lede { color: var(--ink-soft); max-width: 62ch; margin-bottom: 1rem; }
+  .toc {
+    display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin: 1.5rem 0 0;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: .78rem;
+  }
+  .toc a { color: var(--water); text-decoration: none; border-bottom: 1px dotted var(--stroke); }
+  .toc a:hover, .toc a:focus-visible { color: var(--accent); border-bottom-color: var(--accent); }
+
+  section.screen { margin-top: 4.5rem; }
+  .screen-head { display: flex; align-items: baseline; gap: .9rem; flex-wrap: wrap; }
+  .route {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: .78rem;
+    background: var(--wire-fill); border: 1px solid var(--stroke);
+    padding: .15rem .55rem; border-radius: 3px; color: var(--ink-soft);
+  }
+  h2 { font-size: 1.35rem; font-weight: 600; }
+  .purpose { color: var(--ink-soft); max-width: 66ch; margin: .5rem 0 1.5rem; }
+
+  .frames { display: flex; gap: 1.75rem; align-items: flex-start; flex-wrap: wrap; }
+
+  .frame {
+    background: var(--frame-bg);
+    border: 1.5px solid var(--stroke);
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 1 1 620px;
+    max-width: 100%;
+  }
+  .frame.mobile { flex: 0 0 250px; }
+  .chrome {
+    display: flex; gap: 5px; padding: .5rem .7rem;
+    border-bottom: 1.5px solid var(--stroke); background: var(--wire-fill);
+  }
+  .chrome i { width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--stroke); }
+  .frame .body { padding: .9rem; display: flex; flex-direction: column; gap: .8rem; position: relative; }
+  .frame.mobile .body { padding: .7rem; gap: .6rem; }
+
+  /* wireframe primitives */
+  .blk { background: var(--wire-fill); border: 1px solid var(--stroke); border-radius: 4px; position: relative; }
+  .row { display: flex; gap: .6rem; align-items: stretch; }
+  .col { display: flex; flex-direction: column; gap: .6rem; }
+  .img {
+    background:
+      linear-gradient(to top right, transparent calc(50% - .75px), var(--stroke) calc(50% - .75px), var(--stroke) calc(50% + .75px), transparent calc(50% + .75px)),
+      linear-gradient(to bottom right, transparent calc(50% - .75px), var(--stroke) calc(50% - .75px), var(--stroke) calc(50% + .75px), transparent calc(50% + .75px)),
+      var(--wire-fill);
+    border: 1px solid var(--stroke); border-radius: 4px;
+  }
+  .txt { display: flex; flex-direction: column; gap: 6px; }
+  .txt i { display: block; height: 7px; border-radius: 3px; background: var(--wire-fill-2); }
+  .txt i:last-child { width: 62%; }
+  .label {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: .62rem; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--ink-soft); align-self: center; text-align: center; padding: .2rem .3rem;
+  }
+  .pill { border: 1px solid var(--stroke); border-radius: 99px; background: var(--wire-fill); padding: .12rem .6rem; font-size: .62rem; font-family: ui-monospace, "SF Mono", Menlo, monospace; color: var(--ink-soft); white-space: nowrap; }
+  .btn {
+    border: 1.5px solid var(--ink-soft); border-radius: 4px; background: var(--wire-fill-2);
+    padding: .3rem .8rem; font-size: .66rem; font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    letter-spacing: .05em; text-transform: uppercase; color: var(--ink); white-space: nowrap; align-self: flex-start;
+  }
+  .navbar { display: flex; align-items: center; gap: .7rem; padding: .45rem .6rem; }
+  .navbar .logo { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: .7rem; font-weight: 700; letter-spacing: .1em; }
+  .navbar .links { display: flex; gap: .5rem; margin-left: auto; }
+
+  /* annotation dots */
+  .dot {
+    position: absolute; top: -9px; right: -9px; z-index: 2;
+    width: 20px; height: 20px; border-radius: 50%;
+    background: var(--accent); color: #fff;
+    font: 700 .68rem/20px ui-monospace, "SF Mono", Menlo, monospace;
+    text-align: center; box-shadow: 0 0 0 2.5px var(--frame-bg);
+  }
+  .legend { margin-top: 1.1rem; display: grid; gap: .45rem; max-width: 72ch; }
+  .legend li { display: flex; gap: .6rem; list-style: none; color: var(--ink-soft); font-size: .86rem; }
+  .legend b {
+    flex: 0 0 20px; height: 20px; border-radius: 50%;
+    background: var(--accent); color: #fff;
+    font: 700 .68rem/20px ui-monospace, "SF Mono", Menlo, monospace; text-align: center;
+  }
+  .legend strong { color: var(--ink); font-weight: 600; }
+
+  .swatches { display: flex; gap: .35rem; }
+  .swatches i { width: 18px; height: 18px; border-radius: 4px; border: 1px solid var(--stroke); background: var(--wire-fill-2); }
+  .stars { font-size: .6rem; letter-spacing: .15em; color: var(--ink-soft); align-self: center; }
+
+  footer.pagefoot { margin-top: 5rem; color: var(--ink-soft); font-size: .82rem; border-top: 1px solid var(--stroke); padding-top: 1.25rem; max-width: 72ch; }
+</style>
+
+<main>
+  <p class="kicker">Koi-dex · school project · lo-fi wireframes</p>
+  <h1>Koi-dex wireframe deck</h1>
+  <p class="lede">Six screens for the Next.js encyclopedia site. Grey boxes are placeholders; crossed boxes are images (sprites exported from the Koi app). Orange dots are annotations, explained under each screen. Visual design comes later from the Koi brand moodboard — these only fix layout and content priority.</p>
+  <nav class="toc">
+    <a href="#home">01 Home</a>
+    <a href="#dex">02 Koi-dex index</a>
+    <a href="#detail">03 Koi detail</a>
+    <a href="#breeding">04 Breeding guide</a>
+    <a href="#care">05 Care guide</a>
+    <a href="#plants">06 Pond plants</a>
+  </nav>
+
+  <!-- ============ 01 HOME ============ -->
+  <section class="screen" id="home">
+    <div class="screen-head"><h2>01 · Home</h2><span class="route">/</span></div>
+    <p class="purpose">Orientation page. One featured koi as the hook, then four clear doors into the site's sections. A stat strip proves the depth of the catalogue at a glance.</p>
+    <div class="frames">
+      <div class="frame">
+        <div class="chrome"><i></i><i></i><i></i></div>
+        <div class="body">
+          <div class="blk navbar"><span class="logo">KOI-DEX</span><span class="links"><span class="pill">Koi</span><span class="pill">Breeding</span><span class="pill">Care</span><span class="pill">Plants</span></span><span class="dot">1</span></div>
+          <div class="row">
+            <div class="col" style="flex:1.2; justify-content:center; gap:.8rem;">
+              <div class="txt"><i style="height:14px;width:85%"></i><i style="height:14px;width:60%"></i></div>
+              <div class="txt"><i></i><i></i><i></i></div>
+              <span class="btn">Browse the koi-dex →</span>
+            </div>
+            <div class="img" style="flex:1; min-height:150px;"><span class="dot">2</span><span class="label" style="position:absolute;inset:auto 0 6px 0;">featured koi sprite</span></div>
+          </div>
+          <div class="blk row" style="justify-content:space-around; padding:.5rem;">
+            <span class="label">24 koi</span><span class="label">9 fin sets</span><span class="label">4 tiers</span><span class="label">pond plants</span>
+          </div>
+          <div class="row">
+            <div class="blk col" style="flex:1; padding:.5rem;"><div class="img" style="height:44px;"></div><span class="label">Koi-dex</span><span class="dot">3</span></div>
+            <div class="blk col" style="flex:1; padding:.5rem;"><div class="img" style="height:44px;"></div><span class="label">Breeding</span></div>
+            <div class="blk col" style="flex:1; padding:.5rem;"><div class="img" style="height:44px;"></div><span class="label">Care</span></div>
+            <div class="blk col" style="flex:1; padding:.5rem;"><div class="img" style="height:44px;"></div><span class="label">Plants</span></div>
+          </div>
+          <div class="blk" style="height:26px;"><span class="label" style="position:absolute;inset:0;display:grid;place-items:center;">footer · about · credits</span></div>
+        </div>
+      </div>
+      <div class="frame mobile">
+        <div class="chrome"><i></i><i></i><i></i></div>
+        <div class="body">
+          <div class="blk navbar"><span class="logo">KOI-DEX</span><span class="links"><span class="pill">☰</span></span></div>
+          <div class="img" style="height:110px;"></div>
+          <div class="txt"><i style="height:12px;width:90%"></i><i style="height:12px;width:55%"></i></div>
+          <span class="btn">Browse the koi-dex →</span>
+          <div class="col">
+            <div class="blk row" style="padding:.4rem; align-items:center;"><div class="img" style="width:36px;height:36px;"></div><span class="label">Koi-dex</span></div>
+            <div class="blk row" style="padding:.4rem; align-items:center;"><div class="img" style="width:36px;height:36px;"></div><span class="label">Breeding</span></div>
+            <div class="blk row" style="padding:.4rem; align-items:center;"><div class="img" style="width:36px;height:36px;"></div><span class="label">Care</span></div>
+            <div class="blk row" style="padding:.4rem; align-items:center;"><div class="img" style="width:36px;height:36px;"></div><span class="label">Plants</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="legend">
+      <li><b>1</b><span><strong>Persistent nav</strong> on every page: logo home-link plus the four sections. Collapses to a menu button on mobile.</span></li>
+      <li><b>2</b><span><strong>Featured koi</strong> — picked at build time (e.g. rotate by date), rendered from the exported body sprite with its fins composited on top.</span></li>
+      <li><b>3</b><span><strong>Section cards</strong> reuse real sprite art (a koi preview, an egg, a plant) so the home page is never stock imagery.</span></li>
+    </ul>
+  </section>
+
+  <!-- ============ 02 DEX INDEX ============ -->
+  <section class="screen" id="dex">
+    <div class="screen-head"><h2>02 · Koi-dex index</h2><span class="route">/koi</span></div>
+    <p class="purpose">The core page: a browsable, filterable grid of all 24 koi varieties. Every card carries a dex number, preview art, name, and rarity, mirroring the app's encyclopedia data.</p>
+    <div class="frames">
+      <div class="frame">
+        <div class="chrome"><i></i><i></i><i></i></div>
+        <div class="body">
+          <div class="blk navbar"><span class="logo">KOI-DEX</span><span class="links"><span class="pill">Koi</span><span class="pill">Breeding</span><span class="pill">Care</span><span class="pill">Plants</span></span></div>
+          <div class="row" style="align-items:center;">
+            <div class="blk" style="flex:1; height:28px;"><span class="label" style="position:absolute;inset:0;display:grid;place-items:center;justify-items:start;padding-left:.5rem;">🔍 search varieties…</span></div>
+            <span class="pill">rarity ▾</span><span class="pill">tier ▾</span><span class="pill">sort: dex # ▾</span>
+            <span class="dot">1</span>
+          </div>
+          <div class="row">
+            <div class="blk col" style="flex:1; padding:.45rem;"><span class="label" style="align-self:flex-start;">#001</span><div class="img" style="height:64px;"></div><span class="label">Chagoi</span><span class="stars">★ ☆ ☆ ☆</span><span class="dot">2</span></div>
+            <div class="blk col" style="flex:1; padding:.45rem;"><span class="label" style="align-self:flex-start;">#002</span><div class="img" style="height:64px;"></div><span class="label">Bekko</span><span class="stars">★ ☆ ☆ ☆</span></div>
+            <div class="blk col" style="flex:1; padding:.45rem;"><span class="label" style="align-self:flex-start;">#003</span><div class="img" style="height:64px;"></div><span class="label">Benigoi</span><span class="stars">★ ☆ ☆ ☆</span></div>
+            <div class="blk col" style="flex:1; padding:.45rem;"><span class="label" style="align-self:flex-start;">#004</span><div class="img" style="height:64px;"></div><span class="label">Karasugoi</span><span class="stars">★ ★ ☆ ☆</span></div>
+          </div>
+          <div class="row">
+            <div class="blk col" style="flex:1; padding:.45rem;"><span class="label" style="align-self:flex-start;">#005</span><div class="img" style="height:64px;"></div><span class="label">Hi Utsuri</span><span class="stars">★ ★ ☆ ☆</span><span class="dot">3</span></div>
+            <div class="blk col" style="flex:1; padding:.45rem;"><span class="label" style="align-self:flex-start;">#006</span><div class="img" style="height:64px;"></div><span class="label">Ki Utsuri</span><span class="stars">★ ★ ☆ ☆</span></div>
+            <div class="blk col" style="flex:1; padding:.45rem;"><span class="label" style="align-self:flex-start;">#007</span><div class="img" style="height:64px;"></div><span class="label">Hariwake</span><span class="stars">★ ★ ☆ ☆</span></div>
+            <div class="blk col" style="flex:1; padding:.45rem;"><span class="label" style="align-self:flex-start;">#008</span><div class="img" style="height:64px;"></div><span class="label">Hotaru</span><span class="stars">★ ★ ★ ★</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="frame mobile">
+        <div class="chrome"><i></i><i></i><i></i></div>
+        <div class="body">
+          <div class="blk navbar"><span class="logo">KOI-DEX</span><span class="links"><span class="pill">☰</span></span></div>
+          <div class="blk" style="height:26px;"><span class="label" style="position:absolute;inset:0;display:grid;place-items:center;justify-items:start;padding-left:.5rem;">🔍 search…</span></div>
+          <div class="row"><span class="pill">rarity ▾</span><span class="pill">tier ▾</span></div>
+          <div class="row">
+            <div class="blk col" style="flex:1; padding:.4rem;"><span class="label" style="align-self:flex-start;">#001</span><div class="img" style="height:52px;"></div><span class="label">Chagoi</span></div>
+            <div class="blk col" style="flex:1; padding:.4rem;"><span class="label" style="align-self:flex-start;">#002</span><div class="img" style="height:52px;"></div><span class="label">Bekko</span></div>
+          </div>
+          <div class="row">
+            <div class="blk col" style="flex:1; padding:.4rem;"><span class="label" style="align-self:flex-start;">#003</span><div class="img" style="height:52px;"></div><span class="label">Benigoi</span></div>
+            <div class="blk col" style="flex:1; padding:.4rem;"><span class="label" style="align-self:flex-start;">#004</span><div class="img" style="height:52px;"></div><span class="label">Karasugoi</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="legend">
+      <li><b>1</b><span><strong>Filter toolbar</strong> — client-side search plus rarity and tier filters over the local JSON. URL-synced (<code>/koi?rarity=2</code>) so filtered views are shareable.</span></li>
+      <li><b>2</b><span><strong>Dex card</strong> — dex number, <code>preview_url</code> art with the stored blurhash as loading placeholder, display name, rarity pips.</span></li>
+      <li><b>3</b><span><strong>Grid</strong> — 4 columns desktop, 2 on mobile; ~24 cards means no pagination needed.</span></li>
+    </ul>
+  </section>
+
+  <!-- ============ 03 KOI DETAIL ============ -->
+  <section class="screen" id="detail">
+    <div class="screen-head"><h2>03 · Koi detail</h2><span class="route">/koi/[slug]</span></div>
+    <p class="purpose">One page per variety. Left: a large composited render (body sprite plus its four fin sprites). Right: identity, colours, and the app's encyclopedia description, followed by the fin-set breakdown — the body→fin mapping this project's database exists to serve.</p>
+    <div class="frames">
+      <div class="frame">
+        <div class="chrome"><i></i><i></i><i></i></div>
+        <div class="body">
+          <div class="blk navbar"><span class="logo">KOI-DEX</span><span class="links"><span class="pill">← #004</span><span class="pill">#006 →</span></span><span class="dot">1</span></div>
+          <div class="row">
+            <div class="col" style="flex:1.1;">
+              <div class="img" style="height:170px;"><span class="dot">2</span><span class="label" style="position:absolute;inset:auto 0 6px 0;">composite: body + 4 fin layers</span></div>
+              <div class="row"><span class="pill">body only</span><span class="pill">with fins</span><span class="pill">glow ✦</span></div>
+            </div>
+            <div class="col" style="flex:1;">
+              <div class="txt"><i style="height:16px;width:65%"></i></div>
+              <div class="row"><span class="pill">#005</span><span class="stars">★ ★ ☆ ☆</span><span class="pill">tier: classic</span></div>
+              <div class="swatches"><i></i><i></i><i></i><i></i><i></i><span class="label">body · dorsal · tail · back · side</span><span class="dot">3</span></div>
+              <div class="txt"><i></i><i></i><i></i><i></i></div>
+              <div class="txt"><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="blk col" style="flex:1; padding:.45rem;"><div class="img" style="height:36px;"></div><span class="label">tail fin</span><span class="dot">4</span></div>
+            <div class="blk col" style="flex:1; padding:.45rem;"><div class="img" style="height:36px;"></div><span class="label">dorsal fin</span></div>
+            <div class="blk col" style="flex:1; padding:.45rem;"><div class="img" style="height:36px;"></div><span class="label">back fin</span></div>
+            <div class="blk col" style="flex:1; padding:.45rem;"><div class="img" style="height:36px;"></div><span class="label">side fin</span></div>
+          </div>
+          <div class="blk row" style="padding:.45rem; align-items:center;"><span class="label">related koi:</span><div class="img" style="width:44px;height:32px;"></div><div class="img" style="width:44px;height:32px;"></div><div class="img" style="width:44px;height:32px;"></div><span class="dot">5</span></div>
+        </div>
+      </div>
+      <div class="frame mobile">
+        <div class="chrome"><i></i><i></i><i></i></div>
+        <div class="body">
+          <div class="blk navbar"><span class="pill">← back</span><span class="links"><span class="pill">#004</span><span class="pill">#006</span></span></div>
+          <div class="img" style="height:130px;"></div>
+          <div class="txt"><i style="height:14px;width:60%"></i></div>
+          <div class="row"><span class="pill">#005</span><span class="stars">★ ★ ☆ ☆</span></div>
+          <div class="swatches"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="txt"><i></i><i></i><i></i></div>
+          <div class="row">
+            <div class="blk col" style="flex:1; padding:.35rem;"><div class="img" style="height:28px;"></div><span class="label">tail</span></div>
+            <div class="blk col" style="flex:1; padding:.35rem;"><div class="img" style="height:28px;"></div><span class="label">dorsal</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="legend">
+      <li><b>1</b><span><strong>Prev / next dex navigation</strong> in the header, ordered by dex number — encourages flipping through the whole dex.</span></li>
+      <li><b>2</b><span><strong>Composite viewer</strong> — body sprite with the four fin sprites layered via absolutely-positioned images; toggles isolate the body or add the glow layer where one exists.</span></li>
+      <li><b>3</b><span><strong>Colour swatches</strong> straight from the encyclopedia config (body, dorsal, tail, back, side fin hexes) — doubles as the variety's palette.</span></li>
+      <li><b>4</b><span><strong>Fin-set breakdown</strong> — the per-slot mapping (tail / dorsal / back / side → fin set). This relation is the seed schema for the Neon phase.</span></li>
+      <li><b>5</b><span><strong>Related koi</strong> — same tier or rarity, keeps visitors inside the dex.</span></li>
+    </ul>
+  </section>
+
+  <!-- ============ 04 BREEDING ============ -->
+  <section class="screen" id="breeding">
+    <div class="screen-head"><h2>04 · Breeding guide</h2><span class="route">/breeding</span></div>
+    <p class="purpose">Long-form article on real-world koi variety lineage (Kohaku → Sanke → Showa, Utsuri family, Ogon metallics…), illustrated with the app's sprites. A sticky table of contents keeps the long read navigable.</p>
+    <div class="frames">
+      <div class="frame">
+        <div class="chrome"><i></i><i></i><i></i></div>
+        <div class="body">
+          <div class="blk navbar"><span class="logo">KOI-DEX</span><span class="links"><span class="pill">Koi</span><span class="pill">Breeding</span><span class="pill">Care</span><span class="pill">Plants</span></span></div>
+          <div class="row">
+            <div class="blk col" style="flex:0 0 130px; padding:.5rem; align-self:flex-start;">
+              <span class="label" style="align-self:flex-start;">On this page</span>
+              <div class="txt"><i></i><i></i><i></i><i></i><i></i></div>
+              <span class="dot">1</span>
+            </div>
+            <div class="col" style="flex:1;">
+              <div class="txt"><i style="height:15px;width:70%"></i></div>
+              <div class="txt"><i></i><i></i><i></i></div>
+              <div class="row">
+                <div class="img" style="flex:1;height:64px;"></div>
+                <div class="img" style="flex:1;height:64px;"></div>
+                <span class="dot">2</span>
+              </div>
+              <div class="txt"><i></i><i></i></div>
+              <div class="blk" style="height:76px;"><span class="label" style="position:absolute;inset:0;display:grid;place-items:center;">lineage table: parent × parent → offspring traits</span><span class="dot">3</span></div>
+              <div class="blk" style="height:46px; border-style:dashed;"><span class="label" style="position:absolute;inset:0;display:grid;place-items:center;">phase 2 · interactive pairing tool (Neon)</span><span class="dot">4</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="legend">
+      <li><b>1</b><span><strong>Sticky TOC</strong> generated from MDX headings; collapses into a dropdown on mobile.</span></li>
+      <li><b>2</b><span><strong>Inline figures</strong> pair two variety sprites when the text discusses their relationship (e.g. Benigoi beside Chagoi).</span></li>
+      <li><b>3</b><span><strong>Lineage table</strong> — static content in phase 1, sourced from the authored guide.</span></li>
+      <li><b>4</b><span><strong>Pairing tool placeholder</strong> — phase 2: pick two koi, see shared traits and plausible offspring varieties, backed by the Neon body↔fin/traits schema. Ships as a visible "coming soon" slot so phase 1 still feels complete.</span></li>
+    </ul>
+  </section>
+
+  <!-- ============ 05 CARE ============ -->
+  <section class="screen" id="care">
+    <div class="screen-head"><h2>05 · Care guide</h2><span class="route">/care</span></div>
+    <p class="purpose">Practical husbandry reference: water quality, feeding, seasonal care, common health issues. Skimmable — a quick-facts card up top answers the common questions before the prose does.</p>
+    <div class="frames">
+      <div class="frame">
+        <div class="chrome"><i></i><i></i><i></i></div>
+        <div class="body">
+          <div class="blk navbar"><span class="logo">KOI-DEX</span><span class="links"><span class="pill">Koi</span><span class="pill">Breeding</span><span class="pill">Care</span><span class="pill">Plants</span></span></div>
+          <div class="row">
+            <div class="col" style="flex:1;">
+              <div class="txt"><i style="height:15px;width:55%"></i></div>
+              <div class="txt"><i></i><i></i><i></i></div>
+              <div class="txt"><i style="height:11px;width:40%"></i></div>
+              <div class="txt"><i></i><i></i></div>
+              <div class="txt"><i style="height:11px;width:45%"></i></div>
+              <div class="txt"><i></i><i></i><i></i></div>
+            </div>
+            <div class="blk col" style="flex:0 0 190px; padding:.5rem; align-self:flex-start;">
+              <span class="label" style="align-self:flex-start;">Quick facts</span>
+              <div class="row"><span class="pill">temp 15–25 °C</span></div>
+              <div class="row"><span class="pill">pH 7.0–8.5</span></div>
+              <div class="row"><span class="pill">1000 L+ per koi</span></div>
+              <div class="row"><span class="pill">lifespan 25–35 y</span></div>
+              <span class="dot">1</span>
+            </div>
+          </div>
+          <div class="blk" style="height:60px;"><span class="label" style="position:absolute;inset:0;display:grid;place-items:center;">seasonal care accordion: spring / summer / autumn / winter</span><span class="dot">2</span></div>
+        </div>
+      </div>
+    </div>
+    <ul class="legend">
+      <li><b>1</b><span><strong>Quick-facts card</strong> — the four numbers everyone searches for, sticky beside the article on desktop, on top on mobile.</span></li>
+      <li><b>2</b><span><strong>Seasonal accordion</strong> — one panel per season; only one open at a time to keep the page short.</span></li>
+    </ul>
+  </section>
+
+  <!-- ============ 06 PLANTS ============ -->
+  <section class="screen" id="plants">
+    <div class="screen-head"><h2>06 · Pond plants encyclopedia</h2><span class="route">/plants · /plants/[slug]</span></div>
+    <p class="purpose">Same dex pattern as the koi, applied to the app's plant decorations (Anubias, Water Lettuce, Lily Pad, Eelgrass, Amazon Sword…): a card grid, then a detail page pairing the sprite with real-world care info.</p>
+    <div class="frames">
+      <div class="frame">
+        <div class="chrome"><i></i><i></i><i></i></div>
+        <div class="body">
+          <div class="blk navbar"><span class="logo">KOI-DEX</span><span class="links"><span class="pill">Koi</span><span class="pill">Breeding</span><span class="pill">Care</span><span class="pill">Plants</span></span></div>
+          <div class="row">
+            <span class="pill">all</span><span class="pill">floating</span><span class="pill">submerged</span><span class="pill">marginal</span>
+            <span class="dot">1</span>
+          </div>
+          <div class="row">
+            <div class="blk col" style="flex:1; padding:.45rem;"><div class="img" style="height:54px;"></div><span class="label">Anubias</span><span class="pill" style="align-self:center;">submerged</span></div>
+            <div class="blk col" style="flex:1; padding:.45rem;"><div class="img" style="height:54px;"></div><span class="label">Water Lettuce</span><span class="pill" style="align-self:center;">floating</span></div>
+            <div class="blk col" style="flex:1; padding:.45rem;"><div class="img" style="height:54px;"></div><span class="label">Lily Pad</span><span class="pill" style="align-self:center;">floating</span></div>
+            <div class="blk col" style="flex:1; padding:.45rem;"><div class="img" style="height:54px;"></div><span class="label">Eelgrass</span><span class="pill" style="align-self:center;">submerged</span></div>
+          </div>
+          <div class="row" style="border-top:1px dashed var(--stroke); padding-top:.8rem;">
+            <div class="img" style="flex:0 0 150px; height:110px;"><span class="dot">2</span></div>
+            <div class="col" style="flex:1;">
+              <div class="txt"><i style="height:14px;width:45%"></i></div>
+              <div class="row"><span class="pill">care: easy</span><span class="pill">light: low</span><span class="pill">koi-safe ✓</span><span class="dot">3</span></div>
+              <div class="txt"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="legend">
+      <li><b>1</b><span><strong>Type filter</strong> — floating / submerged / marginal, authored per plant in the guide front-matter (the app data doesn't carry this).</span></li>
+      <li><b>2</b><span><strong>Detail view</strong> (own route, shown inline here) — the app's plant sprite as the illustration.</span></li>
+      <li><b>3</b><span><strong>Care chips</strong> — difficulty, light needs, koi-safety; real-world info written per plant, stored alongside the exported data.</span></li>
+    </ul>
+  </section>
+
+  <footer class="pagefoot">
+    <p>Wireframes only — spacing, type, and colour on the real site come from the Koi brand moodboard. Data references (dex numbers, fin slots, colour swatches, blurhash) map 1:1 to the JSON exported from the Koi app's content database.</p>
+  </footer>
+</main>
