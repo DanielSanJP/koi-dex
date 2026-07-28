@@ -143,7 +143,7 @@
 <main>
   <p class="kicker">Koi-dex · wireframes v2 · Koi brand</p>
   <h1>Koi-dex wireframe deck</h1>
-  <p class="lede">Six screens using the real Koi design language from koi-web: Pally type, the sky-blue band with its 3px divider, white cards with the soft card shadow, and the chunky offset-shadow button. Crossed boxes are sprites from the vendored snapshot. Orange dots are annotations.</p>
+  <p class="lede">Six screens using the real Koi design language from koi-web: Pally type, the sky-blue band with its 3px divider, white cards with the soft card shadow, and the chunky offset-shadow button. The site covers real koi only — the 22 genuine varieties, their care, breeding outcomes, and pond plants — with no game concepts (no rarity, tiers, or glow). Crossed boxes are sprites; orange dots are annotations.</p>
   <nav class="toc">
     <a href="#home">01 Home</a>
     <a href="#dex">02 Koi-dex</a>
@@ -195,14 +195,14 @@
     </div>
     <ul class="legend">
       <li><b>1</b><span><strong>Featured koi</strong> — rendered with the real recipe (body sprite + white fin sheets tinted by its dominant hex), picked per build.</span></li>
-      <li><b>2</b><span><strong>Section cards</strong> reuse snapshot art (a koi preview, an egg, a plant sprite) so nothing is stock imagery.</span></li>
+      <li><b>2</b><span><strong>Section cards</strong> reuse koi preview art from the snapshot so nothing is stock imagery.</span></li>
     </ul>
   </section>
 
   <!-- 02 DEX -->
   <section class="screen" id="dex">
     <div class="screen-head"><h2>02 · Koi-dex index</h2><span class="route">/koi</span></div>
-    <p class="purpose">The core page: all 24 varieties as cards. Search plus two filters, nothing more — 24 cards need no pagination.</p>
+    <p class="purpose">The core page: all 22 real varieties as cards. Search plus variety-family chips, nothing more — 22 cards need no pagination.</p>
     <div class="frames">
       <div class="frame">
         <div class="body" style="padding:0;">
@@ -210,20 +210,20 @@
           <div class="col" style="padding:.9rem; gap:.7rem;">
             <div class="row" style="align-items:center;">
               <div class="card" style="flex:1; height:30px;"><span style="position:absolute; inset:0; display:flex; align-items:center; padding-left:.6rem; font-size:.66rem; color:var(--ink-50);">Search varieties…</span></div>
-              <span class="chip on">all</span><span class="chip">rarity ▾</span><span class="chip">tier ▾</span>
+              <span class="chip on">all</span><span class="chip">gosanke</span><span class="chip">utsuri</span><span class="chip">ogon</span>
               <span class="dot" style="position:static; flex:0 0 20px;">1</span>
             </div>
             <div class="row">
-              <div class="card tile" style="flex:1;"><span class="meta">#001</span><div class="ph" style="height:56px; width:100%;"></div><span class="name">Chagoi</span><span class="meta">★</span><span class="dot">2</span></div>
-              <div class="card tile" style="flex:1;"><span class="meta">#002</span><div class="ph" style="height:56px; width:100%;"></div><span class="name">Bekko</span><span class="meta">★</span></div>
-              <div class="card tile" style="flex:1;"><span class="meta">#003</span><div class="ph" style="height:56px; width:100%;"></div><span class="name">Benigoi</span><span class="meta">★</span></div>
-              <div class="card tile" style="flex:1;"><span class="meta">#004</span><div class="ph" style="height:56px; width:100%;"></div><span class="name">Karasugoi</span><span class="meta">★★</span></div>
+              <div class="card tile" style="flex:1;"><span class="meta">#001</span><div class="ph" style="height:56px; width:100%;"></div><span class="name">Chagoi</span><span class="dot">2</span></div>
+              <div class="card tile" style="flex:1;"><span class="meta">#002</span><div class="ph" style="height:56px; width:100%;"></div><span class="name">Bekko</span></div>
+              <div class="card tile" style="flex:1;"><span class="meta">#003</span><div class="ph" style="height:56px; width:100%;"></div><span class="name">Benigoi</span></div>
+              <div class="card tile" style="flex:1;"><span class="meta">#004</span><div class="ph" style="height:56px; width:100%;"></div><span class="name">Karasugoi</span></div>
             </div>
             <div class="row">
-              <div class="card tile" style="flex:1;"><span class="meta">#005</span><div class="ph" style="height:56px; width:100%;"></div><span class="name">Hi Utsuri</span><span class="meta">★★</span></div>
-              <div class="card tile" style="flex:1;"><span class="meta">#006</span><div class="ph" style="height:56px; width:100%;"></div><span class="name">Ki Utsuri</span><span class="meta">★★</span></div>
-              <div class="card tile" style="flex:1;"><span class="meta">#007</span><div class="ph" style="height:56px; width:100%;"></div><span class="name">Hariwake</span><span class="meta">★★</span></div>
-              <div class="card tile" style="flex:1;"><span class="meta">#026</span><div class="ph" style="height:56px; width:100%;"></div><span class="name">Hotaru</span><span class="meta">★★★★</span></div>
+              <div class="card tile" style="flex:1;"><span class="meta">#005</span><div class="ph" style="height:56px; width:100%;"></div><span class="name">Hi Utsuri</span></div>
+              <div class="card tile" style="flex:1;"><span class="meta">#006</span><div class="ph" style="height:56px; width:100%;"></div><span class="name">Ki Utsuri</span></div>
+              <div class="card tile" style="flex:1;"><span class="meta">#007</span><div class="ph" style="height:56px; width:100%;"></div><span class="name">Hariwake</span></div>
+              <div class="card tile" style="flex:1;"><span class="meta">#008</span><div class="ph" style="height:56px; width:100%;"></div><span class="name">Shiro Utsuri</span></div>
             </div>
           </div>
         </div>
@@ -233,7 +233,7 @@
           <div class="band"><span class="logo">KOI-DEX</span><span class="links"><span>☰</span></span></div>
           <div class="col" style="padding:.7rem; gap:.6rem;">
             <div class="card" style="height:28px;"><span style="position:absolute; inset:0; display:flex; align-items:center; padding-left:.6rem; font-size:.64rem; color:var(--ink-50);">Search…</span></div>
-            <div class="row"><span class="chip on">all</span><span class="chip">rarity ▾</span><span class="chip">tier ▾</span></div>
+            <div class="row"><span class="chip on">all</span><span class="chip">gosanke</span><span class="chip">utsuri</span></div>
             <div class="row"><div class="card tile" style="flex:1;"><span class="meta">#001</span><div class="ph" style="height:46px; width:100%;"></div><span class="name">Chagoi</span></div><div class="card tile" style="flex:1;"><span class="meta">#002</span><div class="ph" style="height:46px; width:100%;"></div><span class="name">Bekko</span></div></div>
             <div class="row"><div class="card tile" style="flex:1;"><span class="meta">#003</span><div class="ph" style="height:46px; width:100%;"></div><span class="name">Benigoi</span></div><div class="card tile" style="flex:1;"><span class="meta">#004</span><div class="ph" style="height:46px; width:100%;"></div><span class="name">Karasugoi</span></div></div>
           </div>
@@ -241,15 +241,15 @@
       </div>
     </div>
     <ul class="legend">
-      <li><b>1</b><span><strong>Filter toolbar</strong> — client-side over <code>koi.json</code>, URL-synced so filtered views are shareable. 4 columns desktop, 2 mobile.</span></li>
-      <li><b>2</b><span><strong>Dex card</strong> — dex number, <code>preview_url</code> art with the stored blurhash while loading, name, rarity.</span></li>
+      <li><b>1</b><span><strong>Filter toolbar</strong> — client-side over <code>koi.json</code>, URL-synced so filtered views are shareable. The chips are real variety families (Gosanke, Utsurimono, Ogon…), not game tiers. 4 columns desktop, 2 mobile.</span></li>
+      <li><b>2</b><span><strong>Dex card</strong> — number, preview art with the stored blurhash while loading, name. Nothing else.</span></li>
     </ul>
   </section>
 
   <!-- 03 DETAIL -->
   <section class="screen" id="detail">
     <div class="screen-head"><h2>03 · Koi detail</h2><span class="route">/koi/[slug]</span></div>
-    <p class="purpose">One page per variety: the composite viewer beside identity and colours, then the description and real-world variety notes. Simpler than v1 — the fin-set breakdown is gone because fins aren't separate content: every koi shares the white fin sheets, tinted by its own hex.</p>
+    <p class="purpose">One page per variety: the composite viewer beside identity and colours, then real-world variety notes — origin, pattern, and what this variety produces in breeding. Every koi shares the white fin sheets, tinted by its own hex.</p>
     <div class="frames">
       <div class="frame">
         <div class="body" style="padding:0;">
@@ -258,17 +258,17 @@
             <div class="row">
               <div class="col" style="flex:1.1;">
                 <div class="card" style="min-height:150px; box-shadow:0 4px 12px rgba(0,0,0,.06);"><div class="ph" style="position:absolute; inset:12px;"></div><span class="dot">2</span><span class="caption">body + tinted white fins · frame 0, cycles on hover</span></div>
-                <div class="row"><span class="chip on">koi</span><span class="chip">body only</span><span class="chip">glow ✦</span></div>
+                <div class="row"><span class="chip on">koi</span><span class="chip">body only</span></div>
               </div>
               <div class="col" style="flex:1;">
                 <div style="font-weight:700; font-size:1rem;">Hi Utsuri</div>
-                <div class="row" style="align-items:center;"><span class="chip">#005</span><span class="meta">★★</span><span class="chip on">classic</span></div>
+                <div class="row" style="align-items:center;"><span class="chip">#005</span><span class="chip on">Utsurimono</span></div>
                 <div class="sw"><i style="background:#292a2c;"></i><i style="background:#292a2c; opacity:.75;"></i><i style="background:#292a2c; opacity:.75;"></i><i style="background:#292a2c; opacity:.75;"></i><i style="background:#292a2c; opacity:.75;"></i><span class="meta">dominant + per-fin tints</span><span class="dot">3</span></div>
                 <div class="txt"><i></i><i></i><i></i><i></i></div>
                 <div class="txt"><i></i><i></i></div>
               </div>
             </div>
-            <div class="card" style="padding:.5rem .7rem; display:flex; gap:.6rem; align-items:center;"><span class="meta" style="text-align:left;">related koi</span><div class="ph" style="width:44px; height:30px;"></div><div class="ph" style="width:44px; height:30px;"></div><div class="ph" style="width:44px; height:30px;"></div></div>
+            <div class="card" style="padding:.5rem .7rem; display:flex; gap:.6rem; align-items:center;"><span class="meta" style="text-align:left;">breeding</span><div class="ph" style="width:44px; height:30px;"></div><span class="meta">×</span><div class="ph" style="width:44px; height:30px;"></div><span class="meta">→</span><div class="ph" style="width:44px; height:30px;"></div><span class="meta" style="flex:1; text-align:left;">pairings this variety comes from, and what it produces</span><span class="dot">4</span></div>
           </div>
         </div>
       </div>
@@ -278,7 +278,7 @@
           <div class="col" style="padding:.7rem; gap:.6rem;">
             <div class="card" style="height:110px;"><div class="ph" style="position:absolute; inset:10px;"></div></div>
             <div style="font-weight:700; font-size:.9rem;">Hi Utsuri</div>
-            <div class="row" style="align-items:center;"><span class="chip">#005</span><span class="meta">★★</span><span class="chip on">classic</span></div>
+            <div class="row" style="align-items:center;"><span class="chip">#005</span><span class="chip on">Utsurimono</span></div>
             <div class="sw"><i style="background:#292a2c;"></i><i style="background:#292a2c; opacity:.75;"></i><i style="background:#292a2c; opacity:.75;"></i></div>
             <div class="txt"><i></i><i></i><i></i></div>
           </div>
@@ -288,7 +288,8 @@
     <ul class="legend">
       <li><b>1</b><span><strong>Prev / next</strong> in the band, ordered by dex number — flip through the whole dex.</span></li>
       <li><b>2</b><span><strong>Composite viewer</strong> — the app's real recipe on a canvas: back fin → tail → body → dorsal → side fin, fins from the shared white 5×4 sheets (688×464 frames) multiplied by the variety's hex. Static frame 0; hover/tap cycles the 20 frames over 2&nbsp;s.</span></li>
-      <li><b>3</b><span><strong>Tint swatches</strong> — <code>dominant_color_hex</code> plus the four per-fin hexes (which fall back to dominant). This replaces v1's fin-set section.</span></li>
+      <li><b>3</b><span><strong>Tint swatches</strong> — the dominant hex plus the four per-fin hexes (which fall back to dominant). Doubles as the variety's palette.</span></li>
+      <li><b>4</b><span><strong>Breeding strip</strong> — which pairings produce this variety and what it throws when crossed, linking to the other varieties. Feeds from the breeding guide's outcomes data.</span></li>
     </ul>
   </section>
 
@@ -362,7 +363,7 @@
   <!-- 06 PLANTS -->
   <section class="screen" id="plants">
     <div class="screen-head"><h2>06 · Pond plants</h2><span class="route">/plants · /plants/[slug]</span></div>
-    <p class="purpose">The dex pattern again, for the snapshot's plant decorations (Anubias, Water Lettuce, Lily Pad, Eelgrass, Amazon Sword): grid, then a detail pairing the sprite with real-world care info.</p>
+    <p class="purpose">The dex pattern again, for real pond plants. Plant data is completely separate from the app: it lives in koi-dex's own plants table, populated by hand once the site's database exists. Grid, then a detail pairing each plant with its care info.</p>
     <div class="frames">
       <div class="frame">
         <div class="body" style="padding:0;">
@@ -388,12 +389,12 @@
       </div>
     </div>
     <ul class="legend">
-      <li><b>1</b><span><strong>Type filter</strong> — floating / submerged / marginal, authored per plant (the app data doesn't carry this).</span></li>
-      <li><b>2</b><span><strong>Care chips</strong> — difficulty, light, koi-safety; written per plant, stored alongside the snapshot.</span></li>
+      <li><b>1</b><span><strong>Type filter</strong> — floating / submerged / marginal, a column on koi-dex's own plants table.</span></li>
+      <li><b>2</b><span><strong>Care chips</strong> — difficulty, light, koi-safety; authored per plant in the same table.</span></li>
     </ul>
   </section>
 
   <footer class="pagefoot">
-    <p>Wireframes v2, set in the real brand: Pally, #f7f6f9 ground, #313131 ink, the #93d9f0 band with a 3px #c1c1c1 divider, chunky #66dd93/#49ad6d buttons, cards with the koi-web shadow. Data references map 1:1 to the JSON snapshot in the koi-dex repo; the koi composite recipe matches the app's renderer (white fin sheets × dominant hex, multiply).</p>
+    <p>Wireframes v3, set in the real brand: Pally, #f7f6f9 ground, #313131 ink, the #93d9f0 band with a 3px #c1c1c1 divider, chunky #66dd93/#49ad6d buttons, cards with the koi-web shadow. Scope: the 22 real koi varieties only — no rarity, tiers, or glow. The app contributes exactly two things: koi sprites and fin tint hexes (<code>data/koi.json</code>); the composite recipe matches the app's renderer (white fin sheets × tint, multiply). Plants and all guide content are authored separately.</p>
   </footer>
 </main>

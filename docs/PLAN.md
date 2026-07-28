@@ -4,145 +4,139 @@
 
 ## What it is
 
-A Next.js encyclopedia website of Koi app content, built as a school project, deliberately decoupled from the live Koi backend:
+A reference website about **real koi**, built with Next.js as a school project, illustrated with the Koi app's sprites:
 
-1. **Koi-dex** (`/koi`, `/koi/[slug]`): all koi varieties with dex numbers, rarity, tier, colours, composite renders
-2. **Breeding guide** (`/breeding`): real-world variety lineage, illustrated with app sprites
+1. **Koi-dex** (`/koi`, `/koi/[slug]`): the 22 real koi varieties, each with a composite render, colours, origin/pattern notes, and what the variety produces in breeding
+2. **Breeding guide** (`/breeding`): variety lineage and which pairings produce which outcomes
 3. **Care guide** (`/care`): water, feeding, seasons, health
-4. **Pond plants encyclopedia** (`/plants`, `/plants/[slug]`): the app's plant decorations paired with real-world care info
+4. **Pond plants** (`/plants`, `/plants/[slug]`): real pond plants with care info
 
-Constraints that shaped the design: no live Supabase usage from the school project (cost + isolation from prod), data starts as local JSON committed to the repo, Neon Postgres comes later only for interactive features.
+Scope rules (fixed 2026-07-28):
 
-## Source data (verified against prod Supabase, 2026-07-28)
+- **Real koi only, no game concepts.** No glow, no rarity, no tiers, no prices, no unlock conditions. Hotaru (fantasy glowing koi), Clown, Kinship, and the Valentine pair (app-original colourways) are excluded.
+- **The app contributes exactly two things: koi sprites and fin tint colours.** Everything else on the site (variety notes, breeding outcomes, care content, plants) is authored for koi-dex.
+- **Plants are completely separate from the app.** They get their own table in the koi-dex database, populated by hand when the DB phase starts. No plant data ships from the app snapshot.
 
-All counts are published rows:
+## The 22 varieties
 
-| Table | Rows | Used for |
-|---|---|---|
-| `content_items` category `koi` | 24 | dex entries (slug, name, body sprite `file_url`, `preview_url`, `glow_url`, blurhash, rarity, price) |
-| `encyclopedia_configs` | 27 (one per koi incl. drafts) | `dex_number`, `tier`, `description`, and the **fin tint hexes** (dominant + per-fin) |
-| `content_items` category `decoration` | 27 | pond plants live here (anubias, water_lettuce, lily_pad, eelgrass, amazon_sword, + rocks/lanterns/etc.) |
-| `content_items` category `accessory` | 160 | optional gallery/extras |
-| `content_items` category `scenery` | 7 | optional |
-| `content_families` | 66 | shared layered sprites for colour variants (`render_layers` + `layer_tints`) |
-| `fin_sets` / `koi_fin_configs` | — | **vestigial, excluded from the snapshot** (see rendering section) |
+In dex order (renumbered 1–22 for the site; the app's catalogue numbers had gaps): Chagoi, Bekko, Benigoi, Karasugoi, Hi Utsuri, Ki Utsuri, Hariwake, Shiro Utsuri, Ochiba, Kumonryu, Beni Kumonryu, Kujaku, Asagi, Shusui, Koromo, Platinum, Kin Ki Utsuri, Tancho, Showa, Sanke, Kohaku, Gold Ogon.
 
-Assets: Cloudflare R2 public bucket `https://pub-e6a57e9a5ca145b5b37fc4ea1415fe78.r2.dev`. All `*_url` columns are bucket-relative paths (e.g. `koi/bodies/chagoi.webp`).
+These are dex 1–25 of the app's catalogue minus the three app-originals (Valentine Pink 15, Valentine White 16, Kinship 24). Only Asagi and Shusui carry a per-fin tint override (dorsal `#56749a`); every other variety uses just its dominant hex.
+
+## Data: one file
+
+`data/koi.json` — 22 entries, snapshot from the app's prod DB (2026-07-28):
+
+```json
+{
+  "slug": "chagoi",
+  "name": "Chagoi",
+  "number": 1,
+  "body": "koi/bodies/chagoi.webp",
+  "preview": "koi/previews/chagoi.webp",
+  "blurhash": "...",
+  "fins": { "dominant": "#9b4d09", "tail": null, "dorsal": null, "back": null, "side": null }
+}
+```
+
+Assets (`public/assets/`, ~2.8 MB total): `koi/bodies/` (22 body sprites, 688×464), `koi/previews/` (22 card previews), `fins/white/` (the four shared white fin sheets). Paths resolve as `/assets/<path>` via `src/lib/r2.ts`. Re-export is manual (query prod, mirror the CDN); the project holds no Supabase credentials.
 
 ## How a koi is drawn (verified against the Flutter renderer)
 
 The app's canonical routine (`koi/lib/widgets/koi_composite_painter.dart`) draws every koi as **one untinted body image + four tinted fin layers**, all into the *same* destination rect — fin placement is baked into the artwork, there are no offsets.
 
-- **Assets:** body `koi/bodies/<slug>.webp` (688×464, static). Fins come from four **shared white-base sprite sheets** used by *every* koi: `fins/white/{back_fin,tail,dorsal,side_fin}.webp` (3440×1856 = 5×4 grid of 688×464 frames). All are in `public/assets/`.
-- **Layer order (bottom → top):** back fin → tail → **body** → dorsal → side fin (glow and accessories are optional extra passes).
-- **Tint:** each fin layer is multiplied by a hex colour (Flutter `BlendMode.modulate`; on the web: canvas `globalCompositeOperation = "multiply"` on the white frame, alpha preserved). Per-fin resolution: `<part>_fin_color_hex ?? dominant_color_hex ?? untinted`; `#000000` is treated as null. The body is never tinted (`body_color_hex` is null on every koi).
-- **Animation:** no procedural motion — the sway is 20 hand-drawn frames. Cards cycle all 20 over 2 s (~10 fps); static previews use frame 0; the app's home widget uses the cheap 6-frame slice 0/3/6/9/12/15.
-- **Growth (optional):** the app scales a koi `0.4 + habitDays/70 * 0.6`; the site can just render adults (scale 1).
-- **`fin_sets` / `koi_fin_configs` are dead:** the colour-named sets (brown, orange, black…) are pre-colored legacy art the runtime never reads — the app always loads the white set and tints. The snapshot therefore drops `fin_sets.json`, drops the `fins` block from `koi.json`, and prunes the legacy coloured fin art (only `fins/white/` is kept).
+- **Assets:** body `koi/bodies/<slug>.webp` (688×464, static). Fins come from four **shared white-base sprite sheets** used by *every* koi: `fins/white/{back_fin,tail,dorsal,side_fin}.webp` (3440×1856 = 5×4 grid of 688×464 frames).
+- **Layer order (bottom → top):** back fin → tail → **body** → dorsal → side fin.
+- **Tint:** each fin layer is multiplied by a hex colour (Flutter `BlendMode.modulate`; on the web: canvas `globalCompositeOperation = "multiply"` on the white frame, alpha preserved). Per-fin resolution: `fins.<part> ?? fins.dominant ?? untinted`; treat `#000000` as null. The body is never tinted.
+- **Animation:** no procedural motion — the sway is 20 hand-drawn frames. Cards cycle all 20 over 2 s (~10 fps); static previews use frame 0; a cheap 6-frame loop uses frames 0/3/6/9/12/15.
 
-Reference implementations already copied into this repo from koi-web's admin (`src/components/admin/`): `koi-first-frame-image.tsx`, `koi-preview-canvas.tsx`, `layered-preview-image.tsx`, `content-thumbnail.tsx`.
-
-## Export pipeline (one-time snapshot)
-
-Executed once at project start via Supabase MCP + curl, committed to the repo:
-
-- `data/koi.json`: published koi joined with their encyclopedia config (nested `encyclopedia` object holding dex number, tier, description, tint hexes). UUIDs dropped, joins by slug.
-- `data/decorations.json`, `data/accessories.json`, `data/scenery.json`, `data/content_families.json`: per-table exports, published only, ops columns (hashes, sizes, timestamps) omitted.
-- `public/assets/<relative path>`: every referenced sprite (412 files at export; legacy coloured fins pruned afterwards), preserving the bucket's relative paths — any `file_url` resolves as `/assets/<file_url>` via `src/lib/r2.ts`.
-
-Re-export: repeat the same queries (published filter, slug joins) and re-mirror the URLs. Deliberately manual; the school project holds no Supabase credentials.
-
-Known snapshot quirks: `hotaru` has no `preview_url` (render its card from the body sprite) and sits at dex 26 with a null tier; dex 15/16 are unpublished and correctly absent; `accessories/previews/hat/headphones.webp` is PNG bytes under a .webp name (browsers content-sniff, it renders fine).
+Reference implementations copied from koi-web's admin into `src/components/admin/` (`koi-first-frame-image.tsx` is the working canvas reference). Tints resolve through `src/lib/koi-fin-urls.ts` (`koiTintFromFins`).
 
 ## Brand & components (carried over from koi-web)
 
-Everything visual is copied from koi-web rather than re-invented:
-
-- **Font:** Pally (local OTFs in `public/fonts/`, weights 400/500/700) via `next/font/local`, bound to `--font-pally`. It's the only typeface.
-- **Tokens** (`src/app/globals.css`, ported wholesale): `#f7f6f9` background, `#313131` ink, `#93d9f0` sky-blue nav/footer band with 3px `#c1c1c1` dividers, greens `#66dd93`/`#49ad6d`, orange accent `#f8a634`, radius scale off `0.625rem`, card shadow `0 4px 12px rgba(0,0,0,.06)`, alpha-on-neutral convention (`border-black/10`, `text-black/50`…). Light-only, flat colour, no gradients. Three koi-web bugs fixed in the port: `--foreground` is now the ink, `--sidebar-accent` uses `color-mix`, `--font-sans` maps to Pally instead of itself.
-- **Components copied verbatim** into `src/components/`: the signature chunky `button.tsx` (hard offset shadow, sinks 4px on press; its Link import adapted to `next/link`), `fade-in.tsx` (IntersectionObserver scroll reveal), `lenis-provider.tsx`, the `ui/` shadcn (Base UI) primitives, and the admin koi-render components. `src/lib/utils.ts` and `src/hooks/use-mobile.ts` came along; `src/lib/r2.ts` was adapted to serve `/assets` locally and `src/lib/koi-fin-urls.ts` to resolve tints from the snapshot instead of Supabase.
-- **Lenis** (`lenis@1.3.25`): mounted in the root layout wrapping the app shell, `{ autoRaf: true, anchors: true, duration: 0.8, lerp: 0.15 }`, `lenis/dist/lenis.css` imported in the layout; nested scroll areas get `data-lenis-prevent` + `overscroll-contain`. Written React-Compiler-clean (instance local to the effect, no refs).
+- **Font:** Pally (local OTFs in `public/fonts/`, 400/500/700) via `next/font/local`, the only typeface.
+- **Tokens** (`src/app/globals.css`, ported wholesale): `#f7f6f9` background, `#313131` ink, `#93d9f0` sky-blue nav/footer band with 3px `#c1c1c1` dividers, greens `#66dd93`/`#49ad6d`, orange accent `#f8a634`, radius scale off `0.625rem`, card shadow `0 4px 12px rgba(0,0,0,.06)`, alpha-on-neutral convention. Light-only, flat colour, no gradients. Three koi-web bugs fixed in the port: `--foreground` is the ink, `--sidebar-accent` uses `color-mix`, `--font-sans` maps to Pally.
+- **Components copied verbatim** into `src/components/`: the chunky button (hard offset shadow, sinks on press; Link adapted to `next/link`), fade-in, lenis-provider, the `ui/` shadcn (Base UI) primitives, and the admin koi render components. `src/lib/r2.ts` adapted to serve `/assets` locally.
+- **Lenis** (`lenis@1.3.25`): root layout, `{ autoRaf: true, anchors: true, duration: 0.8, lerp: 0.15 }`, `lenis/dist/lenis.css` imported in the layout; nested scroll areas get `data-lenis-prevent`.
 - Deps mirrored from koi-web: `shadcn`, `@base-ui/react`, `tw-animate-css`, `class-variance-authority`, `clsx`, `tailwind-merge`, `lucide-react`.
-
-Still to adapt when pages are built: a simplified navbar/footer (koi-web's are next-intl-bound, so they weren't copied; rebuild with the band styling and plain English strings).
+- Still to build: simplified navbar/footer with the band styling (koi-web's are next-intl-bound and weren't copied).
 
 ## Phase 1: fully static site
 
-- Next.js 16 App Router + TypeScript + Tailwind v4, `src/` layout. Verified building.
-- Data layer `src/lib/data.ts` (to build): reads and zod-validates `data/*.json`, exposes typed accessors (`getAllKoi()`, `getKoi(slug)`, `getPlants()`…). Pages use `generateStaticParams`; everything renders at build time. This interface is the seam where Neon slots in later without touching pages.
-- Koi rendering: a canvas component implementing the recipe above (the copied `koi-first-frame-image.tsx` is the working reference).
-- Plants: `decorations.json` filtered to plant slugs; real-world info (type, care difficulty, light, koi-safety, description) is authored content in `content/` or a hand-written `data/plant_info.json`.
-- Guides: MDX in `content/` (breeding.mdx, care.mdx); TOC generated from headings.
+- Next.js 16 App Router + TypeScript + Tailwind v4, `src/` layout. Builds green.
+- Data layer `src/lib/data.ts` (to build): reads and validates `data/koi.json`, exposes `getAllKoi()` / `getKoi(slug)`. Pages use `generateStaticParams`; everything renders at build time.
+- Koi rendering: a canvas component implementing the recipe above.
+- Authored content in `content/`: per-variety notes (origin, pattern, breeding remarks) as MDX or a hand-written JSON keyed by slug; `breeding.mdx` and `care.mdx` guides; variety-family groupings (Gosanke, Utsurimono, Ogon…) for the dex filter.
+- Plants section: waits for its own data (see phase 2) or launches with a small hand-written list; nothing derives from the app.
 - Deploy: Vercel hobby tier, zero cost, static output.
 
-## Phase 2: Neon Postgres (optional, when needed)
+## Phase 2: Neon Postgres
 
-Trigger: interactive features (breeding pairing tool, favourites) or coursework requiring a real database. Until then JSON is simpler and free. Note the original "map bodies to fins" need dissolved once the renderer was understood — the mapping is just the tint hexes already on each koi row — so the schema is two tables:
+Trigger: the plants table (populated by hand, as decided), the breeding-outcomes data, or interactive features (pairing tool). Drizzle ORM; `scripts/seed.ts` seeds the koi table from the committed JSON. Sketch:
 
 ```sql
 create table koi (
   slug text primary key,
-  display_name text not null,
-  dex_number int unique,
-  tier text,
-  rarity smallint,
-  description text,
-  file_url text not null,
-  preview_url text,
-  glow_url text,
+  name text not null,
+  number int unique not null,
+  body_path text not null,
+  preview_path text,
   blurhash text,
-  dominant_color_hex text,
-  body_color_hex text,
-  dorsal_fin_color_hex text,
-  tail_fin_color_hex text,
-  back_fin_color_hex text,
-  side_fin_color_hex text
+  dominant_hex text,
+  tail_hex text,
+  dorsal_hex text,
+  back_hex text,
+  side_hex text,
+  origin text,
+  pattern_notes text
 );
 
-create table plants (
+create table plants (            -- populated by hand, entirely koi-dex's own
   slug text primary key,
-  display_name text,
-  file_url text,
+  name text not null,
   plant_type text check (plant_type in ('floating','submerged','marginal')),
   care_difficulty text,
   light text,
   koi_safe boolean,
-  description text
+  description text,
+  image_path text
+);
+
+create table breeding_outcomes ( -- "which types breed what outcome"
+  parent_a text not null references koi(slug),
+  parent_b text not null references koi(slug),
+  offspring text not null references koi(slug),
+  notes text,
+  primary key (parent_a, parent_b, offspring)
 );
 ```
 
-- Neon free tier: serverless Postgres, autosuspends when idle, comfortably fits this data.
-- ORM: Drizzle. Seed script `scripts/seed.ts` reads the committed JSON and inserts; the JSON snapshot stays the source of truth, Neon is derived and can be dropped/recreated freely.
-- Assets stay static in `public/assets/` in both phases; the DB stores paths only.
+Neon free tier fits this trivially; assets stay static in `public/assets/` in both phases.
 
 ## Wireframes
 
-Six screens (home, dex index, koi detail, breeding, care, plants), set in the real brand (Pally embedded, actual palette, band + chunky button furniture):
+Six screens, set in the real brand (Pally embedded, actual palette, band + chunky button), v3 with the game concepts removed (no rarity, tiers, or glow; variety-family filter chips; a breeding strip on the detail page):
 
 - Artifact (shareable): https://claude.ai/code/artifact/18f4ca89-b3c3-43b8-9e2c-9e8d245bd7b7
 - Repo copy: `docs/wireframes.html` (open in any browser)
 
-Layout decisions they fix: persistent 4-section band nav; dex cards carry number + preview + rarity; koi detail is composite-viewer left / identity + tint swatches right (no fin-set section — fins aren't separate content); guides are TOC + prose with a quick-facts sidebar on care; plants reuse the dex card pattern with a type filter; the breeding page reserves a visible "phase 2" slot for the Neon-backed pairing tool.
-
 ## GitHub
 
-Repo `koi-dex`, created **private** because it vendors the app's paid/premium sprite content. If school submission needs a public repo, either invite the assessor as a collaborator or trim the vendored premium assets first.
+Repo `koi-dex`, **private** (it vendors the app's sprite art). If school submission needs a public repo, invite the assessor as a collaborator.
 
 ## Milestones
 
-- **M0 (done at kickoff):** scaffold, data snapshot + assets vendored, brand + components carried over from koi-web (builds green), wireframes, plan, GitHub repo
-- **M1:** data layer + koi-dex index + koi detail (canvas composite, tint swatches)
-- **M2:** plants section (grid + detail + authored care info)
-- **M3:** care + breeding guides in MDX
+- **M0 (done at kickoff):** scaffold, koi snapshot + assets, brand + components from koi-web (builds green), wireframes, plan, GitHub repo
+- **M1:** data layer + koi-dex index + koi detail (canvas composite, tint swatches, breeding strip)
+- **M2:** care + breeding guides (authored MDX, outcomes table)
+- **M3:** plants section once its data exists
 - **M4:** navbar/footer + responsive pass + deploy to Vercel
 - **M5 (optional):** Neon + Drizzle + seed, breeding pairing tool
 
-## Decisions taken at kickoff (flag if wrong)
+## Decisions log
 
-- Name: `koi-dex`, as suggested. Lives inside `Koi_Calm_App/` with its own git repo and its own `docs/` (user preference).
-- Private GitHub repo (reason above).
-- Snapshot-in-repo instead of a live export script with credentials.
-- Exported all published categories (accessories/scenery too) since total weight is ~17 MB; unused data costs nothing.
-- Fin sets dropped from data (vestigial in the app; fins render from the shared white sheets + hex tint). Legacy coloured fin art pruned from assets.
+- Name `koi-dex`; lives inside `Koi_Calm_App/` with its own git repo and its own `docs/` (user preference). Private repo.
+- Real koi only; game concepts (glow/rarity/tier/price) excluded (2026-07-28). The app's OG dex 1–25 minus the three app-originals = 22 varieties, renumbered 1–22.
+- DB data from the app = koi + fin colours only; plants completely separate, populated by hand in koi-dex's own table at the DB phase (2026-07-28).
+- Fins render from the shared white sheets + hex tint (fin_sets are vestigial in the app and excluded).
 - Brand and components copied from koi-web verbatim where possible, adapted only where koi-web infra (i18n, Supabase, R2 uploads) doesn't exist here.
-- Plants sourced from the decoration category; their real-world attributes are authored, not from the app DB.
