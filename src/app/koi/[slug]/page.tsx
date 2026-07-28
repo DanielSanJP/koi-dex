@@ -165,10 +165,34 @@ export default async function KoiDetailPage({
           <h2 className="font-pally text-lg font-bold">
             Caring for a {koi.name}
           </h2>
-          <p className="text-sm text-black/50">
-            Koi husbandry is the same for every variety: clean water, room to
-            grow, and feeding by temperature.
-          </p>
+          {info?.care && info.care.length > 0 ? (
+            <ul className="flex list-disc flex-col gap-2 pl-5 text-sm text-black/70">
+              {info.care.map((c, i) => (
+                <li key={i}>{c}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm text-black/50">
+              Nothing about this variety needs different care from koi in
+              general: clean water, room to grow, and feeding by temperature.
+            </p>
+          )}
+          {info?.careSources && info.careSources.length > 0 && (
+            <p className="text-xs text-black/40">
+              Sources:{" "}
+              {info.careSources.map((s, i) => (
+                <a
+                  key={s}
+                  href={s}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-black/70"
+                >
+                  [{i + 1}]{" "}
+                </a>
+              ))}
+            </p>
+          )}
           <Link
             href="/care"
             className="self-start rounded-full border border-black/10 bg-white px-3 py-1 text-sm font-bold text-[#49ad6d] transition-colors hover:border-[#49ad6d]"

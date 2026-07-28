@@ -59,6 +59,22 @@ export const CARE_SECTIONS: CareSection[] = [
     ],
   },
   {
+    title: "Colour, diet and the white ground",
+    paragraphs: [
+      "Colour-enhancing foods built on spirulina, krill or astaxanthin do strengthen red, but there is a documented cost on any koi carrying white. A koi has no colour cells in its white to put carotenoid pigment into, so the white blows out with pink, yellow or beige, usually showing on the head and cheeks first. It fades again once the food is stopped or reduced.",
+      "That trade-off is why Kohaku, Sanke, Showa, Shiro Utsuri, Bekko, Koromo, Tancho and the platinum-based metallics are usually fed a plain staple. Solid red or brown varieties with no white have nothing to lose and are commonly fed for colour. If you show fish, the standard advice is to keep colour-fed Kohaku in a separate pond from Bekko and Shiro Utsuri; for an ordinary garden pond, there is no need to separate anything.",
+      "Keepers also report that hard, alkaline water favours darker black while soft water lifts red, and that hard water brings out small black freckles on white grounds. This is long-standing hobby consensus rather than proven science, and worth treating as such.",
+    ],
+  },
+  {
+    title: "Sun, shade and light-coloured koi",
+    paragraphs: [
+      "Sunlight is needed rather than merely tolerated: colour foods cannot do their work without it. The problem is excess. Too much sun in very warm water gives fish a brassy cast, and an unshaded shallow pond causes outright sunburn.",
+      "White, yellow, platinum and metallic koi are most at risk, because their skin lacks the protective pigment darker fish have. Sunburn shows as pink or red patches on the back and head, can progress to lesions, and strips the slime coat, which opens the way to parasites and bacteria. Depth is the main defence, since light drops off markedly past a metre, along with floating plants or a shelter. Aim for shade over roughly half to two thirds of the surface, so the pond still gets light.",
+      "Scaleless koi, meaning Shusui, Kumonryu, Beni Kumonryu and any doitsu fish, need the same care for the same reason: no scales means more exposure to sun, parasites and injury, and a lost scale is a large open wound. Handle them with a soft net. Their constitution is not weak, though; those lines are often described as robust because they were outcrossed rather than narrowly inbred.",
+    ],
+  },
+  {
     title: "How long they live, how big they get",
     paragraphs: [
       "Most koi reach 50 to 60 cm within three to five years, growing fastest in the first year and slowing markedly after that. Jumbo koi exceed 75 cm and can approach 90 cm in ideal conditions. Final size depends on genetics, pond volume, water quality and feeding, not on age alone.",
@@ -111,4 +127,7 @@ export const CARE_SOURCES: string[] = [
   "https://www.woah.org/fileadmin/Home/eng/Health_standards/aahm/current/2.3.06_KHV.pdf",
   "https://pondinformer.com/how-many-koi-in-a-pond/",
   "https://www.kloubeckoi.com/blog/from-fingerling-to-giant-understanding-koi-fish-growth",
+  "https://dainichi.com/koi-color-food/",
+  "https://pondinformer.com/koi-sunburn-treatment/",
+  "https://pondinformer.com/doitsu-koi-guide/",
 ];

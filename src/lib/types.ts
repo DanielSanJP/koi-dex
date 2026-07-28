@@ -25,6 +25,10 @@ export type VarietyInfo = {
   origin: string;
   notes?: string;
   sources: string[];
+  /** What is genuinely different about keeping THIS variety. Empty when
+      nothing distinctive is documented — padding would be worse. */
+  care?: string[];
+  careSources?: string[];
 };
 
 /** A documented real-world breeding relationship. */

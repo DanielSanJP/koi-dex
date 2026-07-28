@@ -41,6 +41,15 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
       "https://www.pondtrademag.com/friendly-chagoi-bring-charm-to-the-koi-pond/",
       "https://hanoverkoifarms.com/about-koi/guide-koi-breeds-chagoi/",
     ],
+    care: [
+      "Among the fastest-growing and largest koi, commonly reaching 70 to 90 cm and dominating jumbo classes. Sources suggest around 19,000 litres as a floor, and 30,000 to 38,000 for a fish to reach its full size.",
+      "A very strong feeding response drives that growth but also loads the filter, so filtration and feeding discipline matter more here than with a slower variety.",
+      "The friendliest koi in the pond: quick to hand-feed, and its calm tends to settle nervous fish and bring shy ones up to feed. Hardy and forgiving of beginner mistakes.",
+    ],
+    careSources: [
+      "https://www.kloubeckoi.com/blogchagoi-koi-friendly-large-koi-variety-gentle-giants-of-the-pond/",
+      "https://hanoverkoifarms.com/about-koi/guide-koi-breeds-chagoi/",
+    ],
   },
   bekko: {
     nameMeaning: '"tortoise shell", after its spotted two-tone look',
@@ -54,6 +63,14 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
     sources: [
       "https://pondinformer.com/bekko-koi-guide/",
       "https://www.kloubeckoi.com/blogshiro-bekko-vs-shiro-utsuri-5-key-differences-between-these-koi-varieties/",
+    ],
+    care: [
+      "A Shiro Bekko has a white ground, so heavy colour-enhancing food tints the white yellow. If you intend to show, keep colour-fed Kohaku in a separate pond from Bekko and Shiro Utsuri; in an ordinary garden pond, mixing is fine.",
+      "Aka and Ki Bekko carry no white, so that restriction does not apply to them.",
+    ],
+    careSources: [
+      "https://www.kodamakoigarden.com/faqs/important-keep-bekko-separately-kohaku/",
+      "https://dainichi.com/koi-color-food/",
     ],
   },
   benigoi: {
@@ -69,6 +86,15 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
       "https://www.pondexperts.ca/fish-ponds/japanese-koi-terminology/",
       "https://nextdaykoi.com/koi-fish-facts/kawarimono-different-class/",
     ],
+    care: [
+      "A strong-bodied, fast-growing variety often compared to Chagoi, and can pass 75 cm in a properly sized pond, so plan the volume for the adult fish.",
+      "Eager to hand-feed and considered resilient, which makes it a reasonable variety for a beginner.",
+      "With no white ground, the usual trade-off around colour-enhancing food does not apply: carotenoid-rich feed is the normal approach for solid red koi.",
+    ],
+    careSources: [
+      "https://fitzfishponds.com/shop-all-fish/benigoi/",
+      "https://dainichi.com/koi-color-food/",
+    ],
   },
   karasugoi: {
     nameMeaning: '"crow carp"; karasu is the crow, for its crow-black colour',
@@ -83,6 +109,7 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
       "https://www.champkoi.com/pages/koi-variety/karasugoi",
       "https://www.pondexperts.ca/fish-ponds/japanese-koi-terminology/",
     ],
+    care: [],
   },
   hi_utsuri: {
     nameMeaning: '"red reflection"; hi is fire-red, utsuri from utsurimono, the reflecting ones',
@@ -97,6 +124,14 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
       "https://www.completekoi.com/blogs/news/utsurimono-koi-varieties-everything-you-need-to-know",
       "https://koisale.com/pages/koi-varieties/utsuri.html",
     ],
+    care: [
+      "Too much colour-enhancing food causes off-colour spotting in the red rather than simply deepening it.",
+      "The black fills in slowly. A young Hi Utsuri often shows dull, shadowy grey and a flat orange that only deepens toward lacquer black and true red over several years, so judging a young fish on its current colour is misleading.",
+    ],
+    careSources: [
+      "https://pondinformer.com/utsurimono-koi-guide/",
+      "https://www.kloubeckoi.com/utsuri-koi/",
+    ],
   },
   ki_utsuri: {
     nameMeaning: '"yellow reflection"; ki is yellow',
@@ -110,6 +145,14 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
     sources: [
       "https://www.aquariumdomain.com/SpeciesProfiles/Koi/KiUtsuriKoi.shtml",
       "https://www.completekoi.com/blogs/news/utsurimono-koi-varieties-everything-you-need-to-know",
+    ],
+    care: [
+      "Yellow is the one ground that heavy carotenoid feeding tends to spoil rather than improve: keepers report the yellow pushed toward orange, or orange speckling appearing in it, with the true colour returning within a couple of months once colour food stops. This is widely reported keeper experience rather than a formal study.",
+      "As with the other Utsuri, the black takes years to fill in, so a young fish's grey, shadowy markings are normal.",
+    ],
+    careSources: [
+      "https://dainichi.com/koi-color-food/",
+      "https://pondinformer.com/utsurimono-koi-guide/",
     ],
   },
   hariwake: {
@@ -126,6 +169,14 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
       "https://nextdaykoi.com/koi-fish-facts/hikarimoyo-koi-fish/",
       "https://www.aquascapeinc.com/water-gardening/pond-fish/common-doesnt-mean-boring-hariwake-koi",
     ],
+    care: [
+      "Lustre is what the metallic class is judged on: it should run evenly from nose to tail and through the fins. That sheen also keeps the fish visible in water that is less than perfectly clear.",
+      "The platinum-white ground is one of those documented to blow out with pink, yellow or beige tones under heavy colour-enhancing food, so heavy pigment feeds are usually avoided.",
+    ],
+    careSources: [
+      "https://www.pondtrademag.com/language-koi-the-shiny-hikari-muji-varieties-2/",
+      "https://dainichi.com/koi-color-food/",
+    ],
   },
   shiro_utsuri: {
     nameMeaning: '"white reflection"; shiro is white',
@@ -139,6 +190,15 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
     sources: [
       "https://www.kodamakoifarm.com/variety/shiro-utsuri/",
       "https://koiofindonesia.com/2021/10/10/black-and-white-shiro-utsuri-part-1/",
+    ],
+    care: [
+      "The clearest case against colour-enhancing food. A black-and-white koi has no chromatophores in the white to deposit carotenoid into, so the white blows out with pink, yellow or beige, usually showing first on the face and cheeks, until the pigment fades again.",
+      "If you show, keep colour-fed Kohaku in a separate pond from Shiro Utsuri and Bekko. For a garden pond, mixing varieties is fine.",
+      "Faint black on a yearling can become bold glossy sumi by two years, so weak black on a young fish is not a fault to correct.",
+    ],
+    careSources: [
+      "https://dainichi.com/koi-color-food/",
+      "https://www.kodamakoigarden.com/faqs/important-keep-bekko-separately-kohaku/",
     ],
   },
   ochiba: {
@@ -155,6 +215,14 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
       "https://nextdaykoi.com/koi-fish/koi/kawarimono/ochiba-shigure/",
       "https://www.kloubeckoi.com/blog/Ochiba-Koi-The-Fallen-Leaf-Variety",
     ],
+    care: [
+      "Bred from Chagoi and Soragoi, so it inherits both the docile, hand-feeding temperament and the growth rate: roughly 15 cm at one year, 38 cm at two, and about 66 cm by five.",
+      "Give it at least a metre of depth and around 19,000 litres to grow out properly.",
+    ],
+    careSources: [
+      "https://www.kloubeckoi.com/blog/Ochiba-Koi-The-Fallen-Leaf-Variety",
+      "https://hanoverkoifarms.com/about-koi/guide-koi-breeds-ochibashigure-ochiba/",
+    ],
   },
   kumonryu: {
     nameMeaning:
@@ -170,6 +238,14 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
       "https://jnpa.info/en/nishikigoi/varieties/type/kumonryu/",
       "https://nextdaykoi.com/koi-fish/koi/kawarimono/kumonryu/",
     ],
+    care: [
+      "It genuinely changes pattern with water temperature: mostly black through the cold months, white returning in spring and summer, and blue-grey where an area is mid-change. This is normal for the variety, not illness, and it means the fish will not look the same all year.",
+      "Being scaleless, it is more prone to sunburn, parasites and skin injury than a scaled koi, so it wants a shaded area of pond and gentle handling with a soft net.",
+    ],
+    careSources: [
+      "https://www.kloubeckoi.com/blog/kumonryu-koi-dragon-scale-pattern-mesmerizes-collectors-worldwide/",
+      "https://pondinformer.com/doitsu-koi-guide/",
+    ],
   },
   beni_kumonryu: {
     nameMeaning: '"red nine-crested dragon"; beni (red) added to Kumonryu',
@@ -183,6 +259,15 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
     sources: [
       "https://www.kodamakoifarm.com/variety/beni-kumonryu/",
       "https://www.kloubeckoi.com/beni-kumonryu-koi-for-sale",
+    ],
+    care: [
+      "Shifts with temperature like Kumonryu but across three colours: close to entirely black in cold water, with white and red re-emerging as the pond warms. Expect it to look different season to season.",
+      "Scaleless, so the usual precautions apply: more sensitive to sunburn, parasites and skin damage, wants shade and careful handling.",
+      "Because its appearance tracks temperature, a deeper pond with a stable temperature gives a more consistent pattern.",
+    ],
+    careSources: [
+      "https://www.kloubeckoi.com/beni-kumonryu-koi-for-sale",
+      "https://pondinformer.com/doitsu-koi-guide/",
     ],
   },
   kujaku: {
@@ -199,6 +284,14 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
       "https://jnpa.info/en/nishikigoi/varieties/type/kujaku/",
       "https://www.champkoi.com/pages/koi-variety/kujaku",
     ],
+    care: [
+      "Metallic on a platinum base, and even lustre over the whole body is the defining quality. The sheen makes it easy to pick out in water that is not crystal clear.",
+      "That platinum ground puts it in the group where heavy colour-enhancing food risks casting yellow or beige into the white, even though the same food would strengthen the pattern. A genuine trade-off rather than a rule.",
+    ],
+    careSources: [
+      "https://www.kloubeckoi.com/blog/kujaku-koi-a-guide-to-this-stunning-koi-variety/",
+      "https://dainichi.com/koi-color-food/",
+    ],
   },
   asagi_koi: {
     nameMeaning: '"light indigo blue", for its pale blue-grey colour',
@@ -212,6 +305,15 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
     sources: [
       "https://koisale.com/koi-history/",
       "https://mpks.org/koi-history-by-ray-jordan/",
+    ],
+    care: [
+      "Descends closely from wild Magoi, and is described as having a tough constitution and robust immune system, part of why it was used as foundation stock.",
+      "The red spreads upward from the belly with age, so a young fish with red only low on the flanks will normally show much more as an adult. That is why low red is judged favourably in young Asagi.",
+      "Harder water with higher carbonate hardness is commonly reported to give darker, inkier blue scales while very soft water lifts the red. Treat this as hobby consensus rather than settled science.",
+    ],
+    careSources: [
+      "https://pondinformer.com/asagi-koi-guide/",
+      "https://www.koi-bito.com/forum/forum/koi-hobbyists/main-forum/8470-sumi-development-vs-general-hardness-myth",
     ],
   },
   shusui: {
@@ -227,6 +329,15 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
       "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/shusui/",
       "https://pondinformer.com/shusui-koi-guide/",
     ],
+    care: [
+      "The scaleless form of Asagi, and explicitly more prone to parasites and sunburn than scaled koi. It wants a shaded area of pond and soft-net handling: a single lost scale on a doitsu fish is a large open wound.",
+      "The red rises up the body with age and, unlike Asagi, it is desirable for it to reach above the lateral line, so a young Shusui with modest red is expected to develop.",
+      "Hard water with high alkalinity is reported to bring out random black flecking on the blue skin, which is generally not wanted here.",
+    ],
+    careSources: [
+      "https://pondinformer.com/shusui-koi-guide/",
+      "https://pondinformer.com/doitsu-koi-guide/",
+    ],
   },
   koromo: {
     nameMeaning: '"robed"; the dark scale edging seems to robe the red pattern',
@@ -240,6 +351,14 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
     sources: [
       "https://koisale.com/pages/koi-varieties/goromo.html",
       "https://krazykoimeds.com/pages/koromo",
+    ],
+    care: [
+      "The robing is slow to arrive: faint on a young fish, taking years to come out fully, and it keeps darkening with age. When buying, pick a young fish with light reticulation, because heavy edging early tends to go too dark later.",
+      "It sits on a Kohaku-style white ground, so the same caution about colour-enhancing food applies.",
+    ],
+    careSources: [
+      "https://pondinformer.com/goromo-koi-guide/",
+      "http://www.nkc.org.uk/koromo.html",
     ],
   },
   platinum: {
@@ -256,6 +375,17 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
       "https://koisale.com/pages/koi-varieties/platinum-ogon.html",
       "https://www.kodamakoifarm.com/variety/platinum/",
     ],
+    care: [
+      "Hardy, disease-resistant and repeatedly recommended for beginners. It tames quickly, and the metallic sheen keeps it visible even in cloudy water, which helps a new keeper actually see their fish.",
+      "Colour-enhancing food should be avoided: there is nowhere useful for the pigment to go, so the white simply takes on a pink, yellow or beige cast.",
+      "As a solid white fish it lacks protective melanin and sits in the group most at risk from strong sun, so real depth and roughly half to two thirds shade are worth having.",
+      "Hearty appetite and can reach 60 to 90 cm, so size the pond for the adult fish.",
+    ],
+    careSources: [
+      "https://www.kodamakoifarm.com/variety/ogon/",
+      "https://dainichi.com/koi-color-food/",
+      "https://pondinformer.com/koi-sunburn-treatment/",
+    ],
   },
   kin_ki_utsuri: {
     nameMeaning: '"gold yellow reflection"; kin (metallic gold) added to Ki Utsuri',
@@ -269,6 +399,14 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
     sources: [
       "https://www.aquariumdomain.com/SpeciesProfiles/Koi/KinKiUtsuriKoi.shtml",
       "https://www.kodamakoifarm.com/koi-varieties/",
+    ],
+    care: [
+      "In the metallic Utsuri group, lustre and dark pigment tend to cancel each other out, so a strongly metallic fish usually shows softer, greyer black. One with both brilliant shine and firm sumi is genuinely rare: an expectation to set rather than a fault to fix.",
+      "Its yellow ground is the colour most likely to be spoiled rather than improved by heavy carotenoid feeding, with keepers reporting a shift toward orange that recovers once colour food is withdrawn.",
+    ],
+    careSources: [
+      "https://koigarden.com/koi-varieties-hikari-utsuri/",
+      "https://dainichi.com/koi-color-food/",
     ],
   },
   tancho: {
@@ -285,6 +423,14 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
       "https://pondinformer.com/tancho-koi-guide/",
       "https://nextdaykoi.com/koi-fish-facts/tancho-kohaku-koi/",
     ],
+    care: [
+      "Almost entirely white ground with a single red crown, so colour-enhancing food is a poor trade: it does very little for one spot while tinting the whole body yellow.",
+      "Fading or partial loss of the crown is worth treating as a health signal rather than cosmetics, since it is described as a sign of stress or declining condition.",
+    ],
+    careSources: [
+      "https://pondinformer.com/tancho-koi-guide/",
+      "https://www.kloubeckoi.com/blog/beginners-guide-to-tancho-koi-care/",
+    ],
   },
   showa: {
     nameMeaning:
@@ -299,6 +445,15 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
     sources: [
       "https://pondinformer.com/showa-koi-guide/",
       "https://en.wikipedia.org/wiki/Showa_(fish)",
+    ],
+    care: [
+      "The black is a long-term project. The fish starts life largely black-skinned, and juveniles show dull grey or shadowy markings that only harden into glossy sumi over several years, often not before age three. Worrying about a young Showa's black is premature.",
+      "It carries a white ground, so a diet high in spirulina and carotene will tint the white yellow. Colour enhancers matter mainly for show fish.",
+      "Cooler water is commonly reported to give darker red and warmer water a more orange cast, though the sources reporting it note it lacks firm scientific backing.",
+    ],
+    careSources: [
+      "https://pondinformer.com/showa-koi-guide/",
+      "https://dainichi.com/koi-color-food/",
     ],
   },
   sanke: {
@@ -315,6 +470,15 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
       "https://mpks.org/koi-history-by-ray-jordan/",
       "https://www.pondexperts.ca/fish-ponds/koi-varieties-guide/taisho-sanke-koi/",
     ],
+    care: [
+      "The black arrives late: a young Sanke can look almost like a Kohaku, with sumi taking several years to come through. Patience is part of keeping the variety.",
+      "Over-feeding colour enhancers does three unwanted things at once: yellows the white, spots the red, and can leave the black looking blue.",
+      "Like other white-ground koi it visibly reports your water quality, which makes it a useful early warning that parameters have drifted.",
+    ],
+    careSources: [
+      "https://pondinformer.com/sanke-koi-guide/",
+      "https://dainichi.com/koi-color-food/",
+    ],
   },
   kohaku: {
     nameMeaning:
@@ -330,6 +494,17 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
       "https://koisale.com/koi-history/",
       "https://www.kodamakoifarm.com/gosanke-koi-fish/",
     ],
+    care: [
+      "The centre of the colour-food trade-off: spirulina and krill-based enhancers strengthen the red, but too much yellows the white and spots the red. Heavy pigment foods should be used sparingly, or not at all, on any koi with significant white.",
+      "If you keep show-quality white-ground koi, house colour-fed Kohaku separately from Bekko and Shiro Utsuri. For a mixed garden pond there is no need to separate anything.",
+      "Water that is very hard or high in pH is commonly reported to bring out small black freckles on the white, while softer water lifts the red. Long-standing hobby consensus rather than proven science.",
+      "A Kohaku shows water problems visibly and early, which makes it a useful indicator fish.",
+    ],
+    careSources: [
+      "https://pondinformer.com/kohaku-koi-guide/",
+      "https://dainichi.com/koi-color-food/",
+      "https://www.hikari.info/koi/k_15.html",
+    ],
   },
   gold_ogon: {
     nameMeaning:
@@ -344,6 +519,16 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
     sources: [
       "https://www.kloubeckoi.com/yamabuki-koi-for-sale/",
       "https://nextdaykoi.com/koi-fish-facts/ogon-koi-fish/",
+    ],
+    care: [
+      "Among the hardiest and most disease-resistant koi and widely recommended as a first fish. It tames quickly and hand-feeds readily.",
+      "Hearty appetite, grows fast, and can reach 60 to 90 cm, so size the pond for the adult fish.",
+      "The metallic sheen keeps it visible even in water of less-than-ideal clarity, a practical advantage in a planted or algae-tinted pond.",
+      "Keepers of solid-yellow koi commonly report heavy carotenoid food pushing the yellow toward orange rather than improving it, so a plain staple diet is the usual choice.",
+    ],
+    careSources: [
+      "https://www.kloubeckoi.com/ogon-koi-for-sale/",
+      "https://www.kodamakoifarm.com/variety/ogon/",
     ],
   },
 };
