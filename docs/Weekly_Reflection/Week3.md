@@ -8,41 +8,41 @@ Date:
 
 1. What did I accomplish this week?
 
-I built the site from the wireframes. It runs, and every page from last week's design now exists.
+I built the site from my wireframes. It runs now, and all the pages I designed last week exist.
 
-- Set up the Next.js project with TypeScript and Tailwind, and applied the brand from the moodboard: the Pally typeface loaded from font files, the colour palette as reusable design tokens, the sky-blue navigation bar and footer with their 3px divider, and the chunky green button style. I also added smooth scrolling to match the feel of my other site.
+- Set up the Next.js project with TypeScript and Tailwind, and put the design in: the Pally font, the colours saved so I can reuse them everywhere, the light blue bar at the top and bottom, and the green buttons. I also added smooth scrolling like my other site has.
 
-- Exported the koi data. I pulled the 22 real varieties out of the app's database into a single JSON file holding each koi's name, number, body sprite and fin colours, and copied the sprite images into the project so the site has no live backend to depend on. That is 26 image files, about 490 KB in total.
+- Got the koi data out of the app. I made one JSON file with the 22 koi in it, each with its name, number, body image and fin colours, and copied the images into the project. It's 26 image files and about 490 KB, so it all fits in the project and the site doesn't need a database yet.
 
-- Got the koi rendering working, which was the main technical goal. Each koi is drawn onto an HTML canvas as five layers in order (back fin, tail, body, dorsal fin, side fin), where the body is the variety's own sprite and the four fins come from shared white fin images that are multiplied by that variety's colour. This is the same method the app uses, so the koi look right rather than approximated.
+- Got the koi drawing working, which was the main thing I wanted to do this week. Each koi is drawn on a canvas in five layers: back fin, tail, body, top fin, side fin. The body is that koi's own picture, and the fins are white pictures that get coloured in with that koi's colour. It's the same way the app does it, so the koi actually look right.
 
-- Built all six pages: the home page with a featured koi, the encyclopedia index with all 22 varieties plus search and filtering, an individual page for each variety (22 pages generated automatically), the breeding and care guides, and a placeholder for plants.
+- Built all six pages: the home page with a koi on it, the list page with all 22 koi plus a search box and filters, a page for each koi (22 pages that get made automatically), the breeding and care guides, and a placeholder for the plants page.
 
-- Researched the content properly instead of writing from memory. Every variety has its name meaning, its classification family, its pattern and its documented origin, each with source links. Where sources disagree, such as who first bred Sanke or where Kumonryu came from, the site says the record is disputed rather than picking one version.
+- Looked up all the information properly instead of writing it from memory. Every koi has what its name means, what family it belongs to, what its pattern is and where it came from, with links to where I got it. Some things aren't agreed on, like who first bred Sanke, so I say that instead of just picking one answer.
 
 
 2. What do I plan to work on next week?
 
-1. Improve the breeding guide. It works, but it reads as plain text, which is weak for the most visual subject on the site. I want a family tree showing how the varieties descend from one another, and the documented crossings shown with the actual koi rather than just their names.
+1. Make the breeding guide better. It works but it's just text, which is boring for something this visual. I want a family tree that shows which koi came from which, and to show the actual koi in it instead of just their names.
 
-2. Make each koi's page the hub for that variety, so its care information and its breeding lineage sit on the koi's own page instead of only in the general guides.
+2. Put each koi's care info and breeding info on its own page, instead of only having it in the guides.
 
-3. Research variety-specific care, meaning what is genuinely different about keeping each variety, rather than repeating the same general advice on all 22 pages.
+3. Look up care info for each koi, so I can say what's actually different about looking after that one instead of repeating the same general advice 22 times.
 
 
 3. Any challenges or blockers?
 
-No blockers. Two problems came up and both are solved.
+Nothing blocking me. Two things went wrong and I fixed both.
 
-The layered rendering was slower to get right than expected. Colouring a fin the naive way wiped out the layers already drawn underneath it, because the transparent parts of one layer erased what was behind them. The fix was to colour each fin separately on its own hidden canvas, and then stack the finished layers.
+Getting the koi to draw took longer than I thought. When I coloured a fin, it wiped out the layers I'd already drawn underneath, because the see-through parts of the fin erased what was behind them. I fixed it by colouring each fin on its own hidden canvas first, then stacking them.
 
-The second was performance. The shared fin images are large, and with 22 koi on one page the browser was loading them over and over. I now load each image once and reuse it across every koi on the page.
+The other one was speed. The fin images are big, and with 22 koi on one page the browser was loading them again for every single koi. Now it loads each image once and reuses it.
 
-I also started by using the flat preview pictures from the app on the index page, then replaced them with the proper layered rendering. Every koi on the site is now the real thing, and the preview images have been deleted.
+I also used the app's flat preview pictures on the list page at first, then swapped them for the proper layered koi. Every koi on the site is the real drawing now and I deleted the preview images.
 
 
 4. How do I feel about my overall progress?
 
 [X] On track     [ ] Slightly behind     [ ] Falling behind
 
-The whole site is standing and the hardest technical part is behind me. From here the work is content and polish, rather than making things work at all.
+The whole site is up and the hardest part is done. The rest is mostly adding content and making it look better, not trying to get things to work.

@@ -8,41 +8,41 @@ Date:
 
 1. What did I accomplish this week?
 
-This week was scoping and design, before writing any site code.
+This week was planning and design. I didn't write any code yet.
 
-- Settled what the project is. Koi-dex: a reference website about real koi, with four sections, being an encyclopedia of the varieties, a breeding guide covering which pairings produce which varieties, a care guide, and pond plants. It covers real koi only, with no game-style features.
+- Decided what the project actually is. It's called Koi-dex. It's a website about real koi with four parts: a list of all the koi types, a breeding guide that shows which koi came from which, a care guide, and pond plants.
 
-- Worked out which koi the site will cover. The artwork comes from my Koi app, whose catalogue holds 27 koi. Five of those are inventions of the app rather than real varieties, so the site covers the remaining 22 real varieties (Kohaku, Sanke, Showa, Asagi, Shusui, Chagoi and so on), renumbered 1 to 22.
+- Worked out which koi to include. The art comes from my Koi app, which has 27 koi in it. Five of those are made up for the app and aren't real koi, so I'm using the other 22.
 
-- Set the visual direction from the Koi brand moodboard. I carried over the existing brand rather than inventing a new one: the Pally typeface, an off-white background (#f7f6f9) with dark grey text (#313131), a sky-blue header and footer band with a 3px divider, green buttons (#66dd93 with a #49ad6d shadow) and an orange accent. Flat colour, no gradients.
+- Picked the design. I used the same look as my Koi app instead of starting from scratch: the Pally font, off-white background, dark grey text, a light blue bar at the top and bottom, and green buttons. Flat colours, no gradients.
 
-- Drew wireframes for all six screens (home, the koi index, a koi detail page, breeding, care, and plants), with desktop and mobile layouts for the main three. I revised them three times as the scope tightened, dropping the game-style rarity and tier badges, dropping the colour swatch panel, and making the detail page display-only.
+- Drew wireframes for all six pages (home, the koi list, a page for one koi, breeding, care, and plants). I did phone and desktop versions of the main three. I changed them three times as I cut things out. I took out the rarity stars, the tier labels and the colour swatches, because those are game things and this site is about real koi.
 
-- Decided the technical approach. Next.js with TypeScript and Tailwind. The koi data will be a local JSON file committed to the project instead of a live backend, so the site has nothing to pay for and nothing to break. A database (Neon Postgres) comes later for the plants table and the breeding data.
+- Decided how to build it. Next.js with TypeScript and Tailwind. The koi info will just be a JSON file inside the project instead of a database, so there's nothing to pay for and nothing that can go down. I can add a database later for the plants.
 
-- Set up the GitHub repository, and wrote the project plan and a running project log so the weekly updates have something factual behind them.
+- Set up the GitHub repo, and wrote a plan and a log so I can remember what I did each week.
 
 
 2. What do I plan to work on next week?
 
-1. Build the site itself: scaffold the Next.js project, set up the layout with the brand styling from the moodboard, and get the navigation, home page and routing working.
+1. Start building the site. Set up the Next.js project and get the layout, menu and home page working with the design.
 
-2. Build the koi encyclopedia pages: the index grid of all 22 varieties, and an individual detail page for each one, generated from the JSON data.
+2. Build the koi pages: the grid showing all 22 koi, and a page for each one.
 
-3. Get the koi rendering properly. Rather than flat images, each koi is drawn from a body sprite with its fins layered on top and coloured by that variety's own colour values, which is how the app itself draws them. This is the part I expect to take the longest.
+3. Get the koi to actually show up. They aren't normal pictures. Each koi is a body image with fins layered on top, and the fins get coloured in for each type. I have to make that work in the browser, and I think it will take the longest.
 
 
 3. Any challenges or blockers?
 
-No blockers, but two things took longer than expected to decide.
+Nothing blocking me, but two things took a while to sort out.
 
-The first was working out which koi actually count. I assumed the app held 25 original koi, but going through the catalogue properly showed several are app inventions rather than real varieties, so the honest number is 22. Better to find that now than after building 25 pages.
+The first was how many koi there actually are. I thought the app had 25 real ones, but when I went through the list properly some of them are made up for the app. So it's 22. Better to find that out now than after making 25 pages.
 
-The second was how to show the koi at all. The app draws each fish from a body sprite plus separate fin layers that get tinted a colour per variety, so there is no single ready-made picture of each koi to drop onto a page. I have to reproduce that layering in the browser. I know what needs to happen; next week will show whether it works.
+The second is how to show the koi at all. There isn't one finished picture of each koi I can just drop on the page. The app builds each fish from a body plus fins and colours the fins per type. I have to do the same thing on the website. I think I know how, and next week I'll find out if it works.
 
 
 4. How do I feel about my overall progress?
 
 [X] On track     [ ] Slightly behind     [ ] Falling behind
 
-The design work is done and the decisions that shape the build are made, so next week is implementation rather than more deciding.
+The design is done and I know what I'm building, so next week I can just build it instead of still deciding things.
