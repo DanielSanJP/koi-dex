@@ -6,7 +6,7 @@
 
 A reference website about **real koi**, built with Next.js as a school project, illustrated with the Koi app's sprites:
 
-1. **Koi-dex** (`/koi`, `/koi/[slug]`): the 22 real koi varieties, each with a composite render, colours, origin/pattern notes, and what the variety produces in breeding
+1. **Koi-dex** (`/koi`, `/koi/[slug]`): the 22 real koi varieties, each with a composite render, origin/pattern notes, and what the variety produces in breeding. Display only — no viewer controls or palette swatches; the tint hexes exist purely to draw the koi
 2. **Breeding guide** (`/breeding`): variety lineage and which pairings produce which outcomes
 3. **Care guide** (`/care`): water, feeding, seasons, health
 4. **Pond plants** (`/plants`, `/plants/[slug]`): real pond plants with care info
@@ -127,7 +127,7 @@ Repo `koi-dex`, **private** (it vendors the app's sprite art). If school submiss
 ## Milestones
 
 - **M0 (done at kickoff):** scaffold, koi snapshot + assets, brand + components from koi-web (builds green), wireframes, plan, GitHub repo
-- **M1:** data layer + koi-dex index + koi detail (canvas composite, tint swatches, breeding strip)
+- **M1:** data layer + koi-dex index + koi detail (canvas composite, breeding strip)
 - **M2:** care + breeding guides (authored MDX, outcomes table)
 - **M3:** plants section once its data exists
 - **M4:** navbar/footer + responsive pass + deploy to Vercel

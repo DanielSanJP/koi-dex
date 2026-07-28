@@ -4,7 +4,7 @@ A reference website about real koi, built with Next.js. School project.
 
 Four sections:
 
-- **Koi-dex** (`/koi`) — the 22 real koi varieties: composite renders, colours, origin and pattern notes, breeding outcomes
+- **Koi-dex** (`/koi`) — the 22 real koi varieties: composite renders, origin and pattern notes, breeding outcomes
 - **Breeding guide** (`/breeding`) — variety lineage and which pairings produce which outcomes
 - **Care guide** (`/care`) — water quality, feeding, seasonal care, health
 - **Pond plants** (`/plants`) — real pond plants with care info (own table, populated separately)
