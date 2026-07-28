@@ -36,12 +36,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "brown",
-      "dorsal": "brown",
-      "back": "brown",
-      "side": "brown"
     }
   },
   {
@@ -81,12 +75,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "white",
-      "dorsal": "white",
-      "back": "white",
-      "side": "white"
     }
   },
   {
@@ -126,12 +114,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "white",
-      "dorsal": "white",
-      "back": "white",
-      "side": "white"
     }
   },
   {
@@ -171,12 +153,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "orange",
-      "dorsal": "orange",
-      "back": "orange",
-      "side": "orange"
     }
   },
   {
@@ -216,12 +192,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "black",
-      "dorsal": "black",
-      "back": "black",
-      "side": "black"
     }
   },
   {
@@ -261,12 +231,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "black",
-      "dorsal": "black",
-      "back": "black",
-      "side": "black"
     }
   },
   {
@@ -306,12 +270,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "black",
-      "dorsal": "black",
-      "back": "black",
-      "side": "black"
     }
   },
   {
@@ -351,12 +309,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "white",
-      "dorsal": "white",
-      "back": "white",
-      "side": "white"
     }
   },
   {
@@ -396,12 +348,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "black",
-      "dorsal": "black",
-      "back": "black",
-      "side": "black"
     }
   },
   {
@@ -441,12 +387,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "ochiba",
-      "dorsal": "ochiba",
-      "back": "ochiba",
-      "side": "ochiba"
     }
   },
   {
@@ -486,12 +426,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "white",
-      "dorsal": "white",
-      "back": "white",
-      "side": "white"
     }
   },
   {
@@ -531,12 +465,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "white",
-      "dorsal": "white",
-      "back": "white",
-      "side": "white"
     }
   },
   {
@@ -576,12 +504,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "platinum",
-      "dorsal": "platinum",
-      "back": "platinum",
-      "side": "platinum"
     }
   },
   {
@@ -621,12 +543,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "asagi",
-      "dorsal": "asagi",
-      "back": "asagi",
-      "side": "asagi"
     }
   },
   {
@@ -666,12 +582,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "asagi",
-      "dorsal": "asagi",
-      "back": "asagi",
-      "side": "asagi"
     }
   },
   {
@@ -711,12 +621,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "white",
-      "dorsal": "white",
-      "back": "white",
-      "side": "white"
     }
   },
   {
@@ -756,12 +660,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "platinum",
-      "dorsal": "platinum",
-      "back": "platinum",
-      "side": "platinum"
     }
   },
   {
@@ -801,12 +699,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "gold",
-      "dorsal": "gold",
-      "back": "gold",
-      "side": "gold"
     }
   },
   {
@@ -846,12 +738,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "white",
-      "dorsal": "white",
-      "back": "white",
-      "side": "white"
     }
   },
   {
@@ -891,12 +777,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "black",
-      "dorsal": "black",
-      "back": "black",
-      "side": "black"
     }
   },
   {
@@ -936,12 +816,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "white",
-      "dorsal": "white",
-      "back": "white",
-      "side": "white"
     }
   },
   {
@@ -981,12 +855,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "white",
-      "dorsal": "white",
-      "back": "white",
-      "side": "white"
     }
   },
   {
@@ -1026,12 +894,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "gold",
-      "dorsal": "gold",
-      "back": "gold",
-      "side": "gold"
     }
   },
   {
@@ -1071,12 +933,6 @@
       "tail_fin_color_hex": null,
       "back_fin_color_hex": null,
       "side_fin_color_hex": null
-    },
-    "fins": {
-      "tail": "white",
-      "dorsal": "white",
-      "back": "white",
-      "side": "white"
     }
   }
 ]
