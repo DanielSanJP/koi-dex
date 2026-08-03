@@ -16,7 +16,7 @@ The [Koi](https://koi-calm.app) mindfulness app contributes exactly two things: 
 - Next.js (App Router) + TypeScript + Tailwind CSS v4
 - Koi brand carried over from koi-web: Pally font, design tokens, Lenis smooth scroll, and the component library (chunky button, fade-in, shadcn/Base UI primitives, koi render components)
 - Phase 1: fully static, data read from `data/koi.json` at build time
-- Phase 2 (planned): Neon Postgres + Drizzle ORM — koi, plants (hand-populated), and breeding-outcomes tables
+- Phase 2 (planned): Neon Postgres + Prisma ORM — koi, plants (hand-populated), and breeding-outcomes tables
 
 ## Getting started
 

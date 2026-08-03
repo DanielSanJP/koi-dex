@@ -19,7 +19,7 @@ weeks below are the work that is genuinely still ahead.
 | 5 | Care guide depth | Expand care sections; sanity-check every number against two sources; add a "new pond checklist" |
 | 6 | Plants research | Choose the plant species list; research each (type, light, difficulty, koi-safety) with sources; decide image approach |
 | 7 | Mid-point prep | Polish what exists; collect screenshots; write the mid-point review from PROJECT_LOG.md |
-| 8 | Neon database setup | Create the Neon project; set up Drizzle; write the koi + plants + breeding_outcomes schema; seed koi from JSON |
+| 8 | Neon database setup | Create the Neon project; set up Prisma; write the koi + plants + breeding_outcomes schema; seed koi from JSON |
 | 9 | Plants table + pages | Populate the plants table by hand; build /plants grid and detail pages against the DB |
 | 10 | Breeding outcomes data | Enter the documented crosses into breeding_outcomes; wire the detail-page breeding strips to it |
 | 11 | Polish pass | Responsive/mobile audit, accessibility pass (alt text, focus states, contrast), 404 page, loading states |

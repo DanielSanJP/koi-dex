@@ -73,7 +73,7 @@ Reference implementations copied from koi-web's admin into `src/components/admin
 
 ## Phase 2: Neon Postgres
 
-Trigger: the plants table (populated by hand, as decided), the breeding-outcomes data, or interactive features (pairing tool). Drizzle ORM; `scripts/seed.ts` seeds the koi table from the committed JSON. Sketch:
+Trigger: the plants table (populated by hand, as decided), the breeding-outcomes data, or interactive features (pairing tool). Prisma ORM; `scripts/seed.ts` seeds the koi table from the committed JSON. Sketch:
 
 ```sql
 create table koi (
@@ -130,7 +130,7 @@ Repo `koi-dex`, **private** (it vendors the app's sprite art). If school submiss
 - **M2:** care + breeding guides (authored MDX, outcomes table)
 - **M3:** plants section once its data exists
 - **M4:** navbar/footer + responsive pass + deploy to Vercel
-- **M5 (optional):** Neon + Drizzle + seed, breeding pairing tool
+- **M5 (optional):** Neon + Prisma + seed, breeding pairing tool
 
 ## Decisions log
 
