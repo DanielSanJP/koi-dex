@@ -1,6 +1,6 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useUrlSearch } from "@/hooks/use-url-search";
 import KoiCard from "@/components/koi-card";
 import type { Koi } from "@/lib/types";
 
@@ -11,56 +11,12 @@ type Props = {
   families: string[];
 };
 
-/* The URL is the single source of truth for the filters (`?q=` and
-   `?family=`), so a filtered view is shareable and the back button works.
-   It is read through useSyncExternalStore: the server snapshot is "no
-   filters", which matches the prerendered HTML, and the real query string
-   takes over after hydration. Writes go through history.replaceState, which
-   Next.js keeps in sync with its router. */
-
-const listeners = new Set<() => void>();
-
-function subscribe(cb: () => void) {
-  listeners.add(cb);
-  window.addEventListener("popstate", cb);
-  return () => {
-    listeners.delete(cb);
-    window.removeEventListener("popstate", cb);
-  };
-}
-
-const getSnapshot = () => window.location.search;
-const getServerSnapshot = () => "";
-
-function writeSearch(params: URLSearchParams) {
-  const qs = params.toString();
-  window.history.replaceState(
-    null,
-    "",
-    qs ? `?${qs}` : window.location.pathname,
-  );
-  listeners.forEach((l) => l());
-}
-
 export default function DexGrid({ koi, families }: Props) {
-  const search = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
-  const params = new URLSearchParams(search);
+  // The URL (?q=&family=) is the single source of truth for the filters.
+  const { params, update } = useUrlSearch();
   const query = params.get("q") ?? "";
   const rawFamily = params.get("family");
   const family = rawFamily && families.includes(rawFamily) ? rawFamily : null;
-
-  const update = (next: { q?: string; family?: string | null }) => {
-    const p = new URLSearchParams(window.location.search);
-    if (next.q !== undefined) {
-      if (next.q) p.set("q", next.q);
-      else p.delete("q");
-    }
-    if (next.family !== undefined) {
-      if (next.family) p.set("family", next.family);
-      else p.delete("family");
-    }
-    writeSearch(p);
-  };
 
   const visible = koi.filter((k) => {
     if (family && k.family !== family) return false;

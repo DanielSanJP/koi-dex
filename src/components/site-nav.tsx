@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SiteSearch from "@/components/site-search";
 
 const LINKS = [
   { href: "/koi", label: "Koi" },
@@ -14,7 +15,7 @@ export default function SiteNav() {
         <Link href="/" className="font-pally text-lg font-bold tracking-wide">
           KOI-DEX
         </Link>
-        <div className="flex items-center gap-4 sm:gap-6">
+        <div className="flex items-center gap-3 sm:gap-6">
           {LINKS.map((l) => (
             <Link
               key={l.href}
@@ -24,6 +25,7 @@ export default function SiteNav() {
               {l.label}
             </Link>
           ))}
+          <SiteSearch />
         </div>
       </nav>
     </header>

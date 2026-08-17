@@ -4,6 +4,36 @@ A factual running log of what happened and when. Each weekly progress update
 gets drafted from this log, so it stays honest and the mid-point review and
 final report write themselves. Add an entry whenever work happens.
 
+## 2026-08-18 — Week 9: plants from the database, full-text search, API
+
+- Full-text search in Postgres: a hand-written migration adds a stored,
+  GENERATED tsvector column to `plants` and `varieties` (name weighted A,
+  body text B–D) with GIN indexes; the schema declares them as
+  `Unsupported("tsvector")` so Prisma never writes or drops them. First
+  attempt failed (`array_to_string` on the care text[] is not IMMUTABLE), so
+  care lines are left out of the vector. `to_tsquery` with a prefix on the
+  last word gives type-ahead; user input is stripped to word characters and
+  passed as a bound parameter, so an injection attempt returns zero hits.
+- Next.js Cache Components turned on (`cacheComponents: true`): every DB
+  read in `src/lib/queries.ts` is a `"use cache"` scope with `cacheTag`
+  (plants / koi / breeding) and `cacheLife("days")`, so the plants pages
+  prerender from Neon at build and revalidate daily or on demand.
+  `POST /api/revalidate` (bearer secret) calls `revalidateTag(tag, "max")`.
+- Plants pages built from the database: `/plants` grid with URL-backed type
+  and koi-safe filters (shared `useUrlSearch` hook, also used by the dex
+  grid now) and `/plants/[slug]` (photo with Commons credit, chips, NZ
+  status callout coloured by status, koi/planting/hardiness/benefits cards,
+  sources, prev/next, others of the same type). 20 detail pages
+  prerendered.
+- Read-only JSON API: `/api/koi`, `/api/koi/:slug`, `/api/plants`,
+  `/api/plants/:slug`, `/api/search?q=`, plus `/api/revalidate`; CDN cache
+  headers, 404 JSON, CORS open for reads.
+- Site-wide search box in the header ("/" opens it): debounced fetch to
+  `/api/search`, koi hits drawn from their sprite, plants and art-free
+  varieties as text with highlighted snippets.
+- Verified end to end on the production build: search ranking, injection
+  string, 404s, revalidate 401 without secret and 200 with, page routes.
+
 ## 2026-08-18 — Week 8: Neon database, Prisma 7, schema, seed
 
 - Read the current Prisma 7 and Neon docs first: Prisma 7 needs a driver

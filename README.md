@@ -38,6 +38,21 @@ npm run db:studio     # browse the data
 
 `prisma generate` runs on install and writes the client to `src/generated/prisma` (git-ignored).
 
+## Read-only JSON API
+
+Public, cacheable, no auth. Backed by the same cached queries as the pages.
+
+| Route | Returns |
+|---|---|
+| `GET /api/koi` | the 22 varieties in dex order with family, origin and sprite/tint data |
+| `GET /api/koi/:slug` | one variety with sources and every documented breeding outcome |
+| `GET /api/plants` | plant summaries (type, difficulty, koi-safe, NZ status, image) |
+| `GET /api/plants/:slug` | one plant with its sources |
+| `GET /api/search?q=` | Postgres full-text search over varieties and plants (prefix match on the last word) |
+| `POST /api/revalidate` | `Authorization: Bearer $REVALIDATE_SECRET`, body `{"tags":["plants"]}`; refreshes cached reads after a re-seed |
+
+Pages are prerendered from Neon at build time (`"use cache"` + `cacheTag`, Cache Components) and revalidate daily or on demand, so hosting stays static and free.
+
 ## How a koi is drawn
 
 A koi is one untinted body sprite (`/assets/koi/bodies/<slug>.webp`, 688×464) plus four fin layers drawn into the same rect, in order: back fin → tail → **body** → dorsal → side fin. Fin frames come from the shared white sprite sheets in `/assets/fins/white/` (5×4 grids of 688×464 frames) and are multiplied by the variety's tint: `fins.<part> ?? fins.dominant` from `data/koi.json` (`#000000` counts as null). Static views use frame 0; animation cycles the 20 frames over 2 s. See `docs/PLAN.md` for the full recipe and `src/components/admin/koi-first-frame-image.tsx` for a working reference.
