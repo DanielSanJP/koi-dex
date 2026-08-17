@@ -4,6 +4,37 @@ A factual running log of what happened and when. Each weekly progress update
 gets drafted from this log, so it stays honest and the mid-point review and
 final report write themselves. Add an entry whenever work happens.
 
+## 2026-08-18 — Week 6: pond plants research
+
+- Chose the species list: 20 plants across the three types a koi keeper
+  shops for (6 floating, 4 submerged, 10 marginal), deliberately including
+  the classic pond plants that turn out to be banned in New Zealand.
+- Two research passes (floating + submerged, marginals), each plant with
+  two general sources (RHS, NC State Extension, Missouri Botanical Garden,
+  Texas A&M AquaPlant, Pond Informer, Kodama) and an NZ status source
+  (NZPCN, Weedbusters, DOC, an NZ nursery). Recorded per plant: type,
+  light, difficulty, koi-safe plus how to protect it, hardiness, planting
+  depth and size, benefits, a plain description, and NZ status.
+- NZ findings: water hyacinth, water lettuce, hornwort, Egeria densa and
+  Vallisneria are all on the National Pest Plant Accord (cannot be sold or
+  moved); yellow flag iris and Typha latifolia are banned lookalikes of the
+  water irises and raupō; duckweed here is the native Lemna disperma;
+  raupō is native and Not Threatened; taro, watercress, marsh marigold and
+  creeping Jenny are naturalised. Several have no NZ statement at all and
+  are marked "not listed, check first" rather than guessed.
+- Written up as `src/content/plants.ts` (the seed source for the plants
+  table; the PLAN.md schema sketch was updated to match the researched
+  fields).
+- Image approach decided: one Wikimedia Commons photograph per plant,
+  licences restricted to CC0 / public domain / CC BY / CC BY-SA and checked
+  against the Commons API, vendored as 1200×800 WebP (2.9 MB for all 20)
+  with author, licence and file page recorded for a credit line. Five first
+  picks were rejected on inspection (a microscope shot of duckweed, dark
+  frogbit and Egeria, a muddy taro pond, a meadow for water mint) and
+  replaced.
+- Plants placeholder page now lists all 20 species by type with a
+  thumbnail and NZ status chip; the full pages come with the database.
+
 ## 2026-08-18 — Week 5: care guide depth (milestone M2)
 
 - Re-checked every number in the care guide against two independent sources

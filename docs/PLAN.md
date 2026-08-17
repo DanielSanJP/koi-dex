@@ -71,6 +71,39 @@ Reference implementations copied from koi-web's admin into `src/components/admin
 - Plants section: waits for its own data (see phase 2) or launches with a small hand-written list; nothing derives from the app.
 - Deploy: Vercel hobby tier, zero cost, static output.
 
+## Pond plants (decided week 6, 2026-08-18)
+
+Twenty species, chosen to cover the three types a koi keeper actually shops
+for and to include the plants New Zealand readers will find are banned:
+
+- **Floating (6):** hardy water lily, sacred lotus, water hyacinth, water
+  lettuce, duckweed, frogbit
+- **Submerged (4):** hornwort, anacharis (Egeria densa), eelgrass
+  (Vallisneria), Anubias
+- **Marginal (10):** pickerel rush, Japanese water iris, marsh marigold,
+  sweet flag, umbrella sedge, taro, watercress, water mint, raupō, creeping
+  Jenny
+
+Per plant: type, light, difficulty, koi-safe (does it survive koi
+unprotected) plus how to protect it, hardiness, planting depth/size,
+benefits, a plain description, **NZ status** (native / naturalised / sold /
+banned under the National Pest Plant Accord / not listed) with an NZ source
+(NZPCN, Weedbusters, DOC), and two general sources. Five of the twenty are
+banned pest plants in New Zealand (water hyacinth, water lettuce, hornwort,
+Egeria, Vallisneria) and two more have a banned lookalike (yellow flag iris
+for the water irises, Typha latifolia for raupō), which the pages say
+plainly. Data lives in
+`src/content/plants.ts` and is the seed source for the `plants` table.
+
+**Images:** one photograph per plant from Wikimedia Commons, restricted to
+CC0 / public domain / CC BY / CC BY-SA licences, licence and author verified
+against the Commons API, vendored under `public/assets/plants/<slug>.webp`
+(centre-cropped 3:2, 1200×800, ~150 KB each) with the author, licence and
+Commons file page recorded on the plant and shown as a credit line. Photos
+were chosen over drawn icons because the site has no plant artwork and a
+reader needs to recognise the plant; they sit inside the same white card
+and radius as the koi so the page still reads as one design.
+
 ## Phase 2: Neon Postgres
 
 Trigger: the plants table (populated by hand, as decided), the breeding-outcomes data, or interactive features (pairing tool). Prisma ORM; `scripts/seed.ts` seeds the koi table from the committed JSON. Sketch:
@@ -93,12 +126,21 @@ create table koi (
 create table plants (            -- populated by hand, entirely koi-dex's own
   slug text primary key,
   name text not null,
+  latin_name text not null,
   plant_type text check (plant_type in ('floating','submerged','marginal')),
-  care_difficulty text,
   light text,
-  koi_safe boolean,
+  difficulty text check (difficulty in ('easy','moderate','hard')),
+  koi_safe boolean not null,
+  koi_notes text,
+  hardiness text,
+  planting text,
+  benefits text,
   description text,
-  image_path text
+  nz_status text check (nz_status in ('native','naturalised','cultivated','pest','unknown')),
+  nz_note text,
+  nz_url text,
+  image_path text,                 -- plus image_alt/author/license/url credit columns
+  sources jsonb                    -- [{name,url}]
 );
 
 create table breeding_outcomes ( -- "which types breed what outcome"
