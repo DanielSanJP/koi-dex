@@ -12,7 +12,10 @@
     "db:migrate": "prisma migrate dev",
     "db:deploy": "prisma migrate deploy",
     "db:seed": "prisma db seed",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit -p .",
+    "check": "npm run lint && npm run typecheck && npm run test && npm run db:validate"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
@@ -42,6 +45,7 @@
     "tailwindcss": "^4",
     "tsx": "^4.23.12",
     "typescript": "^5",
+    "vitest": "^4.1.10",
     "zod": "^4.4.3"
   }
 }

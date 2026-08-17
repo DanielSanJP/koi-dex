@@ -22,7 +22,7 @@ export default function KoiChip({ party, size = "md" }: Props) {
   if (!party) {
     return (
       <span
-        className={`inline-flex ${s.box} items-center justify-center rounded-xl border border-dotted border-black/25 px-2 py-3 text-center font-bold text-black/40 ${s.label}`}
+        className={`inline-flex ${s.box} items-center justify-center rounded-xl border border-dotted border-black/25 px-2 py-3 text-center font-bold text-black/55 ${s.label}`}
         title="Bred by selecting within a line rather than pairing two named varieties"
       >
         line-bred selection
@@ -33,7 +33,7 @@ export default function KoiChip({ party, size = "md" }: Props) {
   if (!party.koi) {
     return (
       <span
-        className={`inline-flex ${s.box} items-center justify-center rounded-xl border border-dashed border-black/25 px-2 py-3 text-center font-bold text-black/45 ${s.label}`}
+        className={`inline-flex ${s.box} items-center justify-center rounded-xl border border-dashed border-black/25 px-2 py-3 text-center font-bold text-black/60 ${s.label}`}
         title="A variety this site has no artwork for"
       >
         {party.name}

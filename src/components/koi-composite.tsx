@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { r2PublicUrl } from "@/lib/r2";
+import { tintFor } from "@/lib/tint";
 import type { Koi } from "@/lib/types";
 
 /* Draws a koi the way the app draws it: an untinted body sprite plus the four
@@ -34,14 +35,6 @@ function loadImage(path: string): Promise<HTMLImageElement | null> {
   });
   imageCache.set(url, pending);
   return pending;
-}
-
-/** `#000000` means "no tint" in the app's data, same as null. */
-function usableTint(hex: string | null | undefined): string | null {
-  if (!hex) return null;
-  const clean = hex.replace("#", "").toLowerCase();
-  if (clean === "000000" || clean === "00000000") return null;
-  return hex;
 }
 
 type Props = {
@@ -83,8 +76,6 @@ export default function KoiComposite({
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       ctx.clearRect(0, 0, w, h);
 
-      const dominant = usableTint(koi.fins.dominant);
-      const tintFor = (part: string | null) => usableTint(part) ?? dominant;
 
       // Each layer is tinted in its own offscreen canvas: a canvas-wide
       // destination-in would knock out the layers already drawn wherever
@@ -119,11 +110,11 @@ export default function KoiComposite({
         if (img) drawTinted(img, FRAME_W, FRAME_H, tint);
       };
 
-      drawFin(backFin, tintFor(koi.fins.back));
-      drawFin(tail, tintFor(koi.fins.tail));
+      drawFin(backFin, tintFor(koi.fins, "back"));
+      drawFin(tail, tintFor(koi.fins, "tail"));
       if (body) drawTinted(body, body.width, body.height, null);
-      drawFin(dorsal, tintFor(koi.fins.dorsal));
-      drawFin(sideFin, tintFor(koi.fins.side));
+      drawFin(dorsal, tintFor(koi.fins, "dorsal"));
+      drawFin(sideFin, tintFor(koi.fins, "side"));
     })();
 
     return () => {

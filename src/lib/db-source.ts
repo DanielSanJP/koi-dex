@@ -11,6 +11,7 @@ import type {
   VarietyKind,
 } from "@/lib/shapes";
 import { toKoi } from "@/lib/shapes";
+import { toTsQuery } from "@/lib/search-query";
 
 /* Neon Postgres via Prisma as a DataSource. Lineage is computed in the
    database with a recursive CTE (both directions), which is what the family
@@ -219,17 +220,3 @@ export const dbSource: DataSource = {
       LIMIT ${limit}`;
   },
 };
-
-/** Free text -> prefix-matching tsquery ("kohaku bre" -> kohaku & bre:*).
-    Non-word characters are stripped, so user input cannot break the query;
-    the string is still passed as a bound parameter. */
-export function toTsQuery(input: string): string | null {
-  const words = input
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}\s-]/gu, " ")
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 6);
-  if (words.length === 0) return null;
-  return words.map((w, i) => (i === words.length - 1 ? `${w}:*` : w)).join(" & ");
-}

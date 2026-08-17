@@ -78,7 +78,7 @@ export default async function PlantDetailPage({
           </Link>
           <Link
             href="/plants"
-            className="text-black/40 transition-colors hover:text-black"
+            className="text-black/55 transition-colors hover:text-black"
           >
             All plants
           </Link>
@@ -108,7 +108,7 @@ export default async function PlantDetailPage({
               <div className="aspect-[3/2] w-full rounded-xl bg-[#8ed874]/20" />
             )}
             {plant.imageAuthor && (
-              <p className="mt-2 text-center text-xs text-black/40">
+              <p className="mt-2 text-center text-xs text-black/55">
                 Photo: {plant.imageAuthor}, {plant.imageLicense}
                 {plant.imageUrl && (
                   <>
@@ -131,7 +131,7 @@ export default async function PlantDetailPage({
         <div className="flex flex-1 flex-col gap-4">
           <div>
             <h1 className="font-pally text-3xl font-bold">{plant.name}</h1>
-            <p className="text-black/50 italic">{plant.latinName}</p>
+            <p className="text-black/60 italic">{plant.latinName}</p>
           </div>
           <div className="flex flex-wrap items-center gap-2 text-sm font-bold">
             <span className={`rounded-full border px-3 py-1 ${CHIP_NEUTRAL}`}>
@@ -152,11 +152,11 @@ export default async function PlantDetailPage({
           <p className="text-black/70">{plant.description}</p>
           <dl className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <div>
-              <dt className="text-xs font-bold tracking-wide text-black/40 uppercase">Light</dt>
+              <dt className="text-xs font-bold tracking-wide text-black/55 uppercase">Light</dt>
               <dd className="text-sm text-black/70">{plant.light}</dd>
             </div>
             <div>
-              <dt className="text-xs font-bold tracking-wide text-black/40 uppercase">Where it grows</dt>
+              <dt className="text-xs font-bold tracking-wide text-black/55 uppercase">Where it grows</dt>
               <dd className="text-sm text-black/70">{TYPE_BLURB[plant.type]}</dd>
             </div>
           </dl>
@@ -181,7 +181,7 @@ export default async function PlantDetailPage({
             href={nzSource.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 inline-block text-xs text-black/50 underline hover:text-black/80"
+            className="mt-2 inline-block text-xs text-black/60 underline hover:text-black/80"
           >
             {nzSource.label ?? "Source"}: {new URL(nzSource.url).hostname}
           </a>
@@ -196,7 +196,7 @@ export default async function PlantDetailPage({
       </div>
 
       {general.length > 0 && (
-        <p className="mt-6 text-xs text-black/40">
+        <p className="mt-6 text-xs text-black/55">
           Sources:{" "}
           {general.map((s, i) => (
             <span key={s.id}>

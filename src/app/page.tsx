@@ -54,7 +54,7 @@ export default async function Home() {
         </div>
         <div className="w-full max-w-md flex-1 rounded-2xl border border-black/10 bg-white p-6 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
           <KoiComposite koi={featured} className="w-full" bufferWidth={640} />
-          <p className="mt-2 text-center text-sm text-black/50">
+          <p className="mt-2 text-center text-sm text-black/60">
             {featured.name}, the classic
           </p>
         </div>
@@ -90,7 +90,7 @@ export default async function Home() {
                 </div>
               )}
               <span className="font-pally text-lg font-bold">{s.title}</span>
-              <span className="text-center text-sm text-black/50">
+              <span className="text-center text-sm text-black/60">
                 {s.blurb}
               </span>
             </Link>

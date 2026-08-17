@@ -32,7 +32,7 @@ export default function FeedingBands({ bands }: { bands: FeedingBand[] }) {
           );
         })}
       </ol>
-      <p className="mt-2 text-xs text-black/40">
+      <p className="mt-2 text-xs text-black/55">
         Water temperature, not air. Change food type as the water crosses each
         boundary rather than by the calendar.
       </p>

@@ -9,7 +9,7 @@ export default function KoiCard({ koi }: { koi: Koi }) {
       href={`/koi/${koi.slug}`}
       className="group flex flex-col items-center gap-2 rounded-2xl border border-black/10 bg-white p-4 shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-transform hover:-translate-y-0.5"
     >
-      <span className="self-start text-xs font-bold text-black/40">
+      <span className="self-start text-xs font-bold text-black/55">
         {formatDexNumber(koi.number)}
       </span>
       <KoiComposite

@@ -107,7 +107,7 @@ export default function SiteSearch() {
             className="mx-auto mt-16 w-[min(40rem,calc(100%-2rem))] overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_12px_32px_rgba(0,0,0,0.12)]"
           >
             <div className="flex items-center gap-2 border-b border-black/10 px-4">
-              <Search size={16} className="text-black/40" />
+              <Search size={16} className="text-black/55" />
               <input
                 ref={inputRef}
                 type="search"
@@ -122,7 +122,7 @@ export default function SiteSearch() {
                 type="button"
                 onClick={close}
                 aria-label="Close search"
-                className="rounded-full p-1 text-black/40 hover:text-black"
+                className="rounded-full p-1 text-black/55 hover:text-black"
               >
                 <X size={16} />
               </button>
@@ -142,7 +142,7 @@ export default function SiteSearch() {
                         className={`inline-flex w-14 shrink-0 justify-center rounded-lg border px-1 py-1 text-[0.6rem] font-bold uppercase ${
                           h.kind === "plant"
                             ? "border-[#49ad6d] bg-[#66dd93]/20 text-[#49ad6d]"
-                            : "border-dashed border-black/25 text-black/45"
+                            : "border-dashed border-black/25 text-black/60"
                         }`}
                       >
                         {h.kind === "plant" ? "plant" : "no art"}
@@ -152,7 +152,7 @@ export default function SiteSearch() {
                       <span className="flex items-baseline gap-2">
                         <span className="font-pally font-bold">{h.name}</span>
                         {h.subtitle && (
-                          <span className="truncate text-xs text-black/45">{h.subtitle}</span>
+                          <span className="truncate text-xs text-black/60">{h.subtitle}</span>
                         )}
                       </span>
                       <span
@@ -164,12 +164,12 @@ export default function SiteSearch() {
                 </li>
               ))}
               {q.trim().length >= 2 && !busy && shown.length === 0 && (
-                <li className="px-4 py-6 text-center text-sm text-black/50">
+                <li className="px-4 py-6 text-center text-sm text-black/60">
                   Nothing matches “{q.trim()}”.
                 </li>
               )}
               {q.trim().length < 2 && (
-                <li className="px-4 py-4 text-xs text-black/40">
+                <li className="px-4 py-4 text-xs text-black/55">
                   Try a variety (“showa”), a colour (“metallic”), a plant (“iris”) or a topic (“shade”).
                 </li>
               )}

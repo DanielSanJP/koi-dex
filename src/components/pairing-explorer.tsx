@@ -70,7 +70,7 @@ export default function PairingExplorer({ koi, outcomes }: Props) {
               <span className="text-sm font-bold">{offspring.name}</span>
             </>
           ) : (
-            <div className="flex aspect-[688/464] w-full items-center justify-center rounded-xl border border-dashed border-black/20 text-center text-xs font-bold text-black/35">
+            <div className="flex aspect-[688/464] w-full items-center justify-center rounded-xl border border-dashed border-black/20 text-center text-xs font-bold text-black/55">
               {match ? match.offspring.name : "?"}
             </div>
           )}
@@ -85,7 +85,7 @@ export default function PairingExplorer({ koi, outcomes }: Props) {
             href={match.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="whitespace-nowrap text-black/40 underline hover:text-black/70"
+            className="whitespace-nowrap text-black/55 underline hover:text-black/70"
           >
             Source
           </a>

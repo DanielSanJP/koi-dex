@@ -4,6 +4,34 @@ A factual running log of what happened and when. Each weekly progress update
 gets drafted from this log, so it stays honest and the mid-point review and
 final report write themselves. Add an entry whenever work happens.
 
+## 2026-08-18 — Week 11: polish pass, accessibility, tests and CI
+
+- Accessibility audit against WCAG 2.2 AA (`docs/ACCESSIBILITY.md`):
+  secondary text alphas raised from 35–50 % to 55–60 % (2.6–4.0:1 was
+  failing; now ≥4.7:1); global focus-visible ring; skip link; nav landmark
+  with aria-current (and an underline) on the current section; aria-pressed
+  on filter chips; reduced-motion media query and Lenis skipped under it;
+  branded 404; loading skeletons for the two dynamic detail routes;
+  sitemap.xml and robots.txt; metadataBase. Two brand-colour contrast
+  failures (white on the green button, green chip text) are recorded as
+  conscious deviations rather than silently changed.
+- Responsive check at 390 px of the new pages (plants grid, koi detail with
+  lineage, 404) via the iframe screenshot trick: no overflow, header fits.
+- Tests: Vitest with 14 tests over the pure logic (tint resolution against
+  the real koi.json, the tsquery builder incl. an injection string, and the
+  content source: 22 koi with families, 15 outcomes with one line-bred row,
+  Showa's two-generation ancestry, Kohaku's descendants without loops, 20
+  plants with sources/images/5 pest, search fallback). Tint and search-query
+  logic extracted into `src/lib/tint.ts` and `src/lib/search-query.ts` so
+  the canvas component and the DB source share tested code. Found and fixed
+  a real bug: a hyphen-only token ("--") survived into the tsquery.
+- CI: `.github/workflows/ci.yml` runs lint, typecheck, tests, content
+  validation and a full production build on every push and PR, with NO
+  database secrets so the build exercises the content-module fallback.
+  `npm run check` does the same locally.
+- `scripts/plant-images.py` makes the plant photo pipeline reproducible
+  (Commons file page → 1600 px rendition → 3:2 crop → 1200×800 WebP).
+
 ## 2026-08-18 — Week 10: breeding and koi pages from the database, lineage (milestone M3)
 
 - One typed data shape for everything the pages read (`src/lib/shapes.ts`:

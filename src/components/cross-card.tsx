@@ -23,7 +23,7 @@ export default function CrossCard({ outcome, size = "md" }: Props) {
           href={outcome.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="whitespace-nowrap text-black/40 underline hover:text-black/70"
+          className="whitespace-nowrap text-black/55 underline hover:text-black/70"
         >
           Source
         </a>

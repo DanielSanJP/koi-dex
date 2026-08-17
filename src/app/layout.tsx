@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import LenisProvider from "@/components/lenis-provider";
 import SiteNav from "@/components/site-nav";
 import SiteFooter from "@/components/site-footer";
+import { siteUrl } from "@/lib/site";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 
@@ -29,6 +30,7 @@ const pally = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl()),
   title: {
     default: "Koi-dex",
     template: "%s · Koi-dex",
@@ -45,10 +47,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${pally.variable} h-full antialiased`}>
       <body className="min-h-full">
+        <a href="#content" className="skip-link">
+          Skip to content
+        </a>
         <LenisProvider>
           <div className="flex min-h-screen flex-col">
             <SiteNav />
-            <main className="flex-1">{children}</main>
+            <main id="content" tabIndex={-1} className="flex-1 outline-none">
+              {children}
+            </main>
             <SiteFooter />
           </div>
         </LenisProvider>

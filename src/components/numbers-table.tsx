@@ -40,7 +40,7 @@ export default function NumbersTable({ rows }: { rows: NumberCheck[] }) {
     <div className="overflow-x-auto rounded-2xl border border-black/10 bg-white shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
       <table className="w-full min-w-[44rem] border-collapse text-left text-sm">
         <thead>
-          <tr className="border-b border-black/10 text-xs tracking-wide text-black/40 uppercase">
+          <tr className="border-b border-black/10 text-xs tracking-wide text-black/55 uppercase">
             <th className="px-4 py-3 font-bold">Figure</th>
             <th className="px-4 py-3 font-bold">In the guide</th>
             <th className="px-4 py-3 font-bold">Source A</th>
@@ -73,7 +73,7 @@ export default function NumbersTable({ rows }: { rows: NumberCheck[] }) {
                     {v.label}
                   </span>
                   {r.note && (
-                    <p className="mt-1 max-w-[16rem] text-xs text-black/50">
+                    <p className="mt-1 max-w-[16rem] text-xs text-black/60">
                       {r.note}
                     </p>
                   )}

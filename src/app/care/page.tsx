@@ -58,7 +58,7 @@ export default function CarePage() {
           <a
             key={l.href}
             href={l.href}
-            className="rounded-full border border-black/10 bg-white px-3 py-1 text-black/50 transition-colors hover:border-[#49ad6d] hover:text-[#49ad6d]"
+            className="rounded-full border border-black/10 bg-white px-3 py-1 text-black/60 transition-colors hover:border-[#49ad6d] hover:text-[#49ad6d]"
           >
             {l.label}
           </a>
@@ -75,7 +75,7 @@ export default function CarePage() {
             <p key={i}>{p}</p>
           ))}
         </div>
-        <p className="mt-3 text-xs text-black/50">
+        <p className="mt-3 text-xs text-black/60">
           Sources:{" "}
           {NZ_NOTE.sources.map((s, i) => (
             <span key={s.url}>
@@ -130,7 +130,7 @@ export default function CarePage() {
             <dl className="mt-3 flex flex-col gap-2">
               {QUICK_FACTS.map((f) => (
                 <div key={f.label} className="flex flex-col">
-                  <dt className="text-xs font-bold tracking-wide text-black/40 uppercase">
+                  <dt className="text-xs font-bold tracking-wide text-black/55 uppercase">
                     {f.label}
                   </dt>
                   <dd className="text-sm font-bold text-black/70">{f.value}</dd>
@@ -151,7 +151,7 @@ export default function CarePage() {
         <h2 className="font-pally text-xl font-bold">
           Building a first pond: the checklist
         </h2>
-        <p className="mt-2 mb-5 max-w-prose text-sm text-black/50">
+        <p className="mt-2 mb-5 max-w-prose text-sm text-black/60">
           In the order it happens. The single most common mistake is buying
           fish before the filter has cycled, so the cycling group is the one
           not to skip.
@@ -189,7 +189,7 @@ export default function CarePage() {
         <h2 className="font-pally text-xl font-bold">
           Every number, checked twice
         </h2>
-        <p className="mt-2 mb-5 max-w-prose text-sm text-black/50">
+        <p className="mt-2 mb-5 max-w-prose text-sm text-black/60">
           Each figure in this guide was checked against two independent
           sources. Where they disagreed with the guide, the guide changed, and
           the row says so.
@@ -198,7 +198,7 @@ export default function CarePage() {
       </section>
 
       <section className="mt-12 border-t border-black/10 pt-6 pb-8">
-        <h2 className="text-xs font-bold tracking-wide text-black/40 uppercase">
+        <h2 className="text-xs font-bold tracking-wide text-black/55 uppercase">
           Sources
         </h2>
         <ul className="mt-2 flex flex-col gap-1">
@@ -208,7 +208,7 @@ export default function CarePage() {
                 href={s}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm break-all text-black/40 underline hover:text-black/70"
+                className="text-sm break-all text-black/55 underline hover:text-black/70"
               >
                 {s}
               </a>

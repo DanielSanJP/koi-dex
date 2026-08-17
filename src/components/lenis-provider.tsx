@@ -9,6 +9,8 @@ type LenisProviderProps = {
 
 export default function LenisProvider({ children }: LenisProviderProps) {
   useEffect(() => {
+    // Respect the OS reduced-motion setting: native scrolling, no smoothing.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const lenis = new Lenis({
       autoRaf: true,
       anchors: true,

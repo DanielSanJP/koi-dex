@@ -150,4 +150,39 @@ body {
   html {
     @apply font-sans;
   }
+
+  /* Keyboard focus: one visible ring everywhere, in the brand green. */
+  :focus-visible {
+    outline: 3px solid #49ad6d;
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  /* Skip link: visually hidden until focused. */
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100%;
+    z-index: 100;
+    padding: 0.5rem 0.9rem;
+    border-radius: 0.75rem;
+    background: #313131;
+    color: #fff;
+    font-weight: 700;
+  }
+  .skip-link:focus {
+    top: 0.75rem;
+  }
+
+  /* Reduced motion: no hover lifts, scale-ups or animated widths. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }

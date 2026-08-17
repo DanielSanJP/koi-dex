@@ -28,7 +28,7 @@ export default function FamilyTree({ koi, relatives }: Props) {
       />
       <span className="text-center text-xs font-bold">{k.name}</span>
       {k.originLabel && k.originYear != null && (
-        <span className="text-center text-[0.6rem] text-black/40">
+        <span className="text-center text-[0.6rem] text-black/55">
           {k.originLabel}
         </span>
       )}
@@ -38,16 +38,16 @@ export default function FamilyTree({ koi, relatives }: Props) {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-wrap items-center gap-3">
-        <span className="w-24 shrink-0 text-xs font-bold tracking-wide text-black/40 uppercase">
+        <span className="w-24 shrink-0 text-xs font-bold tracking-wide text-black/55 uppercase">
           wild stock
         </span>
         <span
-          className="rounded-xl border border-dashed border-black/25 px-3 py-2 text-sm font-bold text-black/45"
+          className="rounded-xl border border-dashed border-black/25 px-3 py-2 text-sm font-bold text-black/60"
           title={magoi?.definition ?? undefined}
         >
           {magoi?.name ?? "Magoi"}
         </span>
-        <span className="text-sm text-black/40">
+        <span className="text-sm text-black/55">
           the wild carp everything descends from
         </span>
       </div>
@@ -59,7 +59,7 @@ export default function FamilyTree({ koi, relatives }: Props) {
         if (inEra.length === 0) return null;
         return (
           <div key={era.label} className="flex flex-wrap items-start gap-3">
-            <span className="w-24 shrink-0 pt-6 text-xs font-bold tracking-wide text-black/40 uppercase">
+            <span className="w-24 shrink-0 pt-6 text-xs font-bold tracking-wide text-black/55 uppercase">
               {era.label}
             </span>
             <div className="flex flex-1 flex-wrap gap-3">{inEra.map(tile)}</div>
@@ -69,13 +69,13 @@ export default function FamilyTree({ koi, relatives }: Props) {
 
       {undated.length > 0 && (
         <div className="flex flex-wrap items-start gap-3 border-t border-black/10 pt-4">
-          <span className="w-24 shrink-0 pt-6 text-xs font-bold tracking-wide text-black/40 uppercase">
+          <span className="w-24 shrink-0 pt-6 text-xs font-bold tracking-wide text-black/55 uppercase">
             undated
           </span>
           <div className="flex flex-1 flex-wrap gap-3">{undated.map(tile)}</div>
         </div>
       )}
-      <p className="text-sm text-black/40">
+      <p className="text-sm text-black/55">
         Old lines whose exact date nobody recorded sit apart rather than being
         given a year they do not have.
       </p>

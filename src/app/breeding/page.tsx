@@ -39,7 +39,7 @@ export default async function BreedingPage() {
 
       <section className="mt-12">
         <h2 className="font-pally text-xl font-bold">The family tree</h2>
-        <p className="mt-2 mb-5 max-w-prose text-sm text-black/50">
+        <p className="mt-2 mb-5 max-w-prose text-sm text-black/60">
           Two centuries of selective breeding, from a wild black carp in a
           Niigata rice paddy to the varieties in the dex. Pick any fish to read
           its story.
@@ -49,7 +49,7 @@ export default async function BreedingPage() {
 
       <section className="mt-14">
         <h2 className="font-pally text-xl font-bold">What do these two make?</h2>
-        <p className="mt-2 mb-5 max-w-prose text-sm text-black/50">
+        <p className="mt-2 mb-5 max-w-prose text-sm text-black/60">
           Choose two parents. If the pairing is part of the recorded history of
           the varieties, you get the fish it produced and who bred it.
         </p>
@@ -58,7 +58,7 @@ export default async function BreedingPage() {
 
       <section className="mt-14">
         <h2 className="font-pally text-xl font-bold">Documented pairings</h2>
-        <p className="mt-2 mb-5 max-w-prose text-sm text-black/50">
+        <p className="mt-2 mb-5 max-w-prose text-sm text-black/60">
           The crossings the varieties actually came from. Spawns are variable: a
           pairing produces a range of fry, of which only some show the target
           variety, and the named variety is what breeders then selected for over
@@ -92,7 +92,7 @@ export default async function BreedingPage() {
             {dated.map((k) => {
               return (
                 <div key={k.slug} className="flex w-20 flex-col items-center gap-1">
-                  <span className="text-center text-[0.6rem] leading-tight text-black/50">
+                  <span className="text-center text-[0.6rem] leading-tight text-black/60">
                     {k.name}
                   </span>
                   <span className="text-xs font-bold tabular-nums">
@@ -104,7 +104,7 @@ export default async function BreedingPage() {
             })}
           </div>
         </div>
-        <p className="mt-3 text-sm text-black/40">
+        <p className="mt-3 text-sm text-black/55">
           Dates marked as approximate or disputed on a variety&apos;s own page
           are placed at the best-supported year.
         </p>
@@ -123,7 +123,7 @@ export default async function BreedingPage() {
         <h2 className="font-pally text-xl font-bold">
           Varieties this site does not cover
         </h2>
-        <p className="mt-2 mb-5 max-w-prose text-sm text-black/50">
+        <p className="mt-2 mb-5 max-w-prose text-sm text-black/60">
           Koi classification runs much wider than the 22 varieties in the dex.
           These appear in the lineage above or alongside it, and have no
           artwork here.
@@ -136,14 +136,14 @@ export default async function BreedingPage() {
             >
               <h3 className="font-pally font-bold">{r.name}</h3>
               <p className="mt-1 text-sm text-black/60">{r.definition}</p>
-              <p className="mt-2 text-sm text-black/50">{r.role}</p>
+              <p className="mt-2 text-sm text-black/60">{r.role}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section className="mt-12 border-t border-black/10 pt-6 pb-8">
-        <h2 className="text-xs font-bold tracking-wide text-black/40 uppercase">
+        <h2 className="text-xs font-bold tracking-wide text-black/55 uppercase">
           Sources
         </h2>
         <ul className="mt-2 flex flex-col gap-1">
@@ -153,7 +153,7 @@ export default async function BreedingPage() {
                 href={s}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm break-all text-black/40 underline hover:text-black/70"
+                className="text-sm break-all text-black/55 underline hover:text-black/70"
               >
                 {s}
               </a>

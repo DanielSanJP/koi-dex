@@ -29,7 +29,7 @@ export default function PlantsGrid({ plants }: Props) {
       className={`rounded-full border px-3 py-1 text-sm font-bold transition-colors ${
         active
           ? "border-[#49ad6d] bg-[#66dd93]/20 text-[#49ad6d]"
-          : "border-black/10 bg-white text-black/50 hover:text-black"
+          : "border-black/10 bg-white text-black/60 hover:text-black"
       }`}
     >
       {label}
@@ -49,7 +49,7 @@ export default function PlantsGrid({ plants }: Props) {
         {chip("koi leave it alone", koiSafeOnly, () =>
           update({ koi: koiSafeOnly ? null : "safe" }),
         )}
-        <span className="ml-auto text-xs text-black/40">
+        <span className="ml-auto text-xs text-black/55">
           {visible.length} of {plants.length}
         </span>
       </div>
@@ -59,7 +59,7 @@ export default function PlantsGrid({ plants }: Props) {
         ))}
       </div>
       {visible.length === 0 && (
-        <p className="py-12 text-center text-black/50">
+        <p className="py-12 text-center text-black/60">
           No plants match those filters.
         </p>
       )}

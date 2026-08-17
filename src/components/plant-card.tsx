@@ -32,7 +32,7 @@ export default function PlantCard({ plant }: { plant: PlantSummary }) {
       )}
       <div className="flex flex-col gap-0.5">
         <span className="font-pally font-bold">{plant.name}</span>
-        <span className="text-xs text-black/45 italic">{plant.latinName}</span>
+        <span className="text-xs text-black/60 italic">{plant.latinName}</span>
       </div>
       <div className="flex flex-wrap gap-1.5 text-[0.65rem] font-bold">
         <span className={`rounded-full border px-2 py-0.5 ${CHIP_NEUTRAL}`}>

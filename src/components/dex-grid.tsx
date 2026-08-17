@@ -33,7 +33,7 @@ export default function DexGrid({ koi, families }: Props) {
       className={`rounded-full border px-3 py-1 text-sm font-bold transition-colors ${
         active
           ? "border-[#49ad6d] bg-[#66dd93]/20 text-[#49ad6d]"
-          : "border-black/10 bg-white text-black/50 hover:text-black"
+          : "border-black/10 bg-white text-black/60 hover:text-black"
       }`}
     >
       {label}
@@ -64,7 +64,7 @@ export default function DexGrid({ koi, families }: Props) {
         ))}
       </div>
       {visible.length === 0 && (
-        <p className="py-12 text-center text-black/50">
+        <p className="py-12 text-center text-black/60">
           No varieties match. Try a different search.
         </p>
       )}

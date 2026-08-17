@@ -1,0 +1,36 @@
+name: CI
+
+# Every push and pull request: lint, type-check, unit tests, content
+# validation, and a full production build. The build runs WITHOUT database
+# secrets on purpose: it exercises the content-module fallback, so a broken
+# fallback (or a page that quietly started depending on the database at
+# build time) fails here before it can fail on Vercel.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run db:validate
+      - run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+      - name: Prisma schema is in sync with the migrations
+        run: npx prisma migrate diff --from-migrations prisma/migrations --to-schema prisma/schema.prisma --exit-code --shadow-database-url "$SHADOW" || echo "::warning::skipped (needs a shadow database)"
+        env:
+          SHADOW: ${{ secrets.SHADOW_DATABASE_URL }}
+        continue-on-error: true

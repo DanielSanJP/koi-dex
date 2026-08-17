@@ -118,7 +118,7 @@ export default function PondChecklist({ groups }: Props) {
                   </span>
                   {g.title}
                 </h3>
-                <span className="text-xs font-bold text-black/40 tabular-nums">
+                <span className="text-xs font-bold text-black/55 tabular-nums">
                   {groupDone}/{g.items.length}
                 </span>
               </div>
@@ -138,7 +138,7 @@ export default function PondChecklist({ groups }: Props) {
                         <span
                           className={
                             checked
-                              ? "text-black/40 line-through"
+                              ? "text-black/55 line-through"
                               : "text-black/70"
                           }
                         >

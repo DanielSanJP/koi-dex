@@ -43,13 +43,13 @@ function CrossLine({ outcome }: { outcome: Outcome }) {
         <span className="font-bold text-black/30">→</span>
         <KoiChip party={outcome.offspring} size="sm" />
       </div>
-      <p className="text-xs text-black/50">
+      <p className="text-xs text-black/60">
         {outcome.note}{" "}
         <a
           href={outcome.sourceUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="whitespace-nowrap text-black/35 underline hover:text-black/60"
+          className="whitespace-nowrap text-black/55 underline hover:text-black/60"
         >
           Source
         </a>
@@ -64,11 +64,11 @@ function LineageRow({ label, nodes }: { label: string; nodes: LineageNode[] }) {
   const depths = [...new Set(nodes.map((n) => n.depth))].sort((a, b) => a - b);
   return (
     <div className="flex flex-col gap-2">
-      <h3 className="text-xs font-bold tracking-wide text-black/40 uppercase">{label}</h3>
+      <h3 className="text-xs font-bold tracking-wide text-black/55 uppercase">{label}</h3>
       <div className="flex flex-col gap-2">
         {depths.map((d) => (
           <div key={d} className="flex flex-wrap items-center gap-2">
-            <span className="w-24 shrink-0 text-[0.65rem] font-bold text-black/35">
+            <span className="w-24 shrink-0 text-[0.65rem] font-bold text-black/55">
               {d === 1 ? "one step" : `${d} steps`}
             </span>
             {nodes
@@ -86,7 +86,7 @@ function LineageRow({ label, nodes }: { label: string; nodes: LineageNode[] }) {
 function SourceLinks({ sources }: { sources: { url: string }[] }) {
   if (sources.length === 0) return null;
   return (
-    <p className="text-xs text-black/40">
+    <p className="text-xs text-black/55">
       Sources:{" "}
       {sources.map((s, i) => (
         <a
@@ -150,7 +150,7 @@ export default async function KoiDetailPage({
         <div className="flex flex-1 flex-col gap-4">
           <h1 className="font-pally text-3xl font-bold">{koi.name}</h1>
           <div className="flex flex-wrap items-center gap-2 text-sm font-bold">
-            <span className="rounded-full border border-black/10 bg-white px-3 py-1 text-black/50">
+            <span className="rounded-full border border-black/10 bg-white px-3 py-1 text-black/60">
               {formatDexNumber(koi.dexNumber)}
             </span>
             {koi.family && (
@@ -163,7 +163,7 @@ export default async function KoiDetailPage({
             )}
             {koi.originLabel && (
               <span
-                className="rounded-full border border-black/10 bg-white px-3 py-1 text-black/50"
+                className="rounded-full border border-black/10 bg-white px-3 py-1 text-black/60"
                 title={koi.originConfidence ? CONFIDENCE_TITLE[koi.originConfidence] : undefined}
               >
                 {koi.originLabel}
@@ -172,7 +172,7 @@ export default async function KoiDetailPage({
             )}
           </div>
           {koi.nameMeaning && (
-            <p className="text-sm text-black/50">The name means {koi.nameMeaning}.</p>
+            <p className="text-sm text-black/60">The name means {koi.nameMeaning}.</p>
           )}
           {koi.pattern && <p className="text-black/70">{koi.pattern}</p>}
           {koi.origin && <p className="text-black/70">{koi.origin}</p>}
@@ -191,7 +191,7 @@ export default async function KoiDetailPage({
               ))}
             </ul>
           ) : (
-            <p className="text-sm text-black/50">
+            <p className="text-sm text-black/60">
               Nothing about this variety needs different care from koi in
               general: clean water, room to grow, and feeding by temperature.
             </p>
@@ -210,7 +210,7 @@ export default async function KoiDetailPage({
 
           {koi.producedBy.length > 0 && (
             <div className="flex flex-col gap-3">
-              <h3 className="text-xs font-bold tracking-wide text-black/40 uppercase">Came from</h3>
+              <h3 className="text-xs font-bold tracking-wide text-black/55 uppercase">Came from</h3>
               {koi.producedBy.map((o) => (
                 <CrossLine key={o.id} outcome={o} />
               ))}
@@ -219,7 +219,7 @@ export default async function KoiDetailPage({
 
           {koi.refinements.length > 0 && (
             <div className="flex flex-col gap-3">
-              <h3 className="text-xs font-bold tracking-wide text-black/40 uppercase">Later refined by</h3>
+              <h3 className="text-xs font-bold tracking-wide text-black/55 uppercase">Later refined by</h3>
               {koi.refinements.map((o) => (
                 <CrossLine key={o.id} outcome={o} />
               ))}
@@ -228,7 +228,7 @@ export default async function KoiDetailPage({
 
           {koi.parentOf.length > 0 && (
             <div className="flex flex-col gap-3">
-              <h3 className="text-xs font-bold tracking-wide text-black/40 uppercase">Parent of</h3>
+              <h3 className="text-xs font-bold tracking-wide text-black/55 uppercase">Parent of</h3>
               {koi.parentOf.map((o) => (
                 <CrossLine key={o.id} outcome={o} />
               ))}
@@ -236,7 +236,7 @@ export default async function KoiDetailPage({
           )}
 
           {koi.producedBy.length === 0 && koi.parentOf.length === 0 && koi.refinements.length === 0 && (
-            <p className="text-sm text-black/50">
+            <p className="text-sm text-black/60">
               No documented crossing records this variety as a parent or an
               outcome. Older lines were fixed by selecting colour mutations
               rather than by a recorded pairing.
@@ -256,7 +256,7 @@ export default async function KoiDetailPage({
         <section className="mt-6 flex flex-col gap-4 rounded-2xl border border-black/10 bg-white p-5 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
           <div>
             <h2 className="font-pally text-lg font-bold">Whole lineage</h2>
-            <p className="mt-1 text-xs text-black/45">
+            <p className="mt-1 text-xs text-black/60">
               Every recorded ancestor and descendant, however many steps away,
               followed through the documented crosses.
             </p>

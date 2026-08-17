@@ -30,7 +30,7 @@ function TabsTrigger({ className, ...props }: TabsPrimitive.Tab.Props) {
         // base-ui marks the active tab with `data-active` (not data-selected).
         // Active = white pill + bold green text + subtle lift, clearly distinct
         // from the muted inactive tabs on the gray TabsList bar.
-        "inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-lg px-3 py-1.5 text-sm font-medium text-black/50 transition-colors hover:text-black/70 data-[active]:bg-white data-[active]:font-semibold data-[active]:text-[#49AD6D] data-[active]:shadow-[0_1px_2px_rgba(0,0,0,0.10)]",
+        "inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-lg px-3 py-1.5 text-sm font-medium text-black/60 transition-colors hover:text-black/70 data-[active]:bg-white data-[active]:font-semibold data-[active]:text-[#49AD6D] data-[active]:shadow-[0_1px_2px_rgba(0,0,0,0.10)]",
         className
       )}
       {...props}
