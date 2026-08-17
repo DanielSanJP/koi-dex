@@ -1,0 +1,179 @@
+// Koi-dex phase 2 schema (week 8). Prisma 7: the connection URL lives in
+// prisma.config.ts, and the client is generated into src/generated/prisma.
+//
+// Design notes
+// - One `Variety` table holds every named fish the site talks about: the 22
+//   drawn koi (kind KOI, with a dex number and body sprite), the art-free
+//   ancestors the lineage needs (kind ANCESTOR: Magoi, Kigoi, Soragoi, Nezu
+//   Ogon, German mirror carp, Ki Bekko) and the well-known varieties the site
+//   has no artwork for (kind RELATIVE). Breeding outcomes can then carry real
+//   foreign keys on both parents and the offspring.
+// - `BreedingOutcome.parentBSlug` is nullable: null means "selection within
+//   a line" (Aoki's line-bred Magoi descendants for Gold Ogon) rather than a
+//   documented pairing of two named varieties.
+// - Sources are rows, not text arrays, so every claim on the site is
+//   traceable and a URL is stored once per subject.
+// - Plants are entirely koi-dex's own content; the app contributes nothing.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum VarietyKind {
+  KOI
+  ANCESTOR
+  RELATIVE
+}
+
+enum Confidence {
+  DOCUMENTED
+  APPROXIMATE
+  DISPUTED
+}
+
+enum SourceKind {
+  VARIETY
+  CARE
+  BREEDING
+  PLANT
+  PLANT_NZ
+}
+
+enum PlantType {
+  FLOATING
+  SUBMERGED
+  MARGINAL
+}
+
+enum Difficulty {
+  EASY
+  MODERATE
+  HARD
+}
+
+enum NzStatus {
+  NATIVE
+  NATURALISED
+  CULTIVATED
+  PEST
+  UNKNOWN
+}
+
+model Family {
+  slug        String    @id
+  name        String    @unique
+  description String
+  varieties   Variety[]
+
+  @@map("families")
+}
+
+model Variety {
+  slug String      @id
+  name String      @unique
+  kind VarietyKind
+
+  // KOI only: catalogue and rendering data (from the app snapshot)
+  dexNumber   Int?    @unique @map("dex_number")
+  bodyPath    String? @map("body_path")
+  finDominant String? @map("fin_dominant")
+  finTail     String? @map("fin_tail")
+  finDorsal   String? @map("fin_dorsal")
+  finBack     String? @map("fin_back")
+  finSide     String? @map("fin_side")
+
+  // Authored reference content
+  familySlug  String?  @map("family_slug")
+  family      Family?  @relation(fields: [familySlug], references: [slug])
+  nameMeaning String?  @map("name_meaning")
+  pattern     String?
+  origin      String?
+  notes       String?
+  care        String[] @default([])
+
+  // ANCESTOR / RELATIVE only
+  definition String?
+  role       String?
+
+  // Timeline
+  originYear       Int?        @map("origin_year")
+  originLabel      String?     @map("origin_label")
+  originConfidence Confidence? @map("origin_confidence")
+  originSource     String?     @map("origin_source")
+
+  sources    Source[]
+  parentAOf  BreedingOutcome[] @relation("parentA")
+  parentBOf  BreedingOutcome[] @relation("parentB")
+  producedBy BreedingOutcome[] @relation("offspring")
+
+  @@index([kind])
+  @@map("varieties")
+}
+
+model BreedingOutcome {
+  id            Int      @id @default(autoincrement())
+  parentASlug   String   @map("parent_a_slug")
+  parentA       Variety  @relation("parentA", fields: [parentASlug], references: [slug])
+  parentBSlug   String?  @map("parent_b_slug")
+  parentB       Variety? @relation("parentB", fields: [parentBSlug], references: [slug])
+  offspringSlug String   @map("offspring_slug")
+  offspring     Variety  @relation("offspring", fields: [offspringSlug], references: [slug])
+  note          String
+  sourceUrl     String   @map("source_url")
+  sortOrder     Int      @map("sort_order")
+
+  @@unique([parentASlug, parentBSlug, offspringSlug])
+  @@index([offspringSlug])
+  @@map("breeding_outcomes")
+}
+
+model Plant {
+  slug        String     @id
+  name        String     @unique
+  latinName   String     @map("latin_name")
+  type        PlantType
+  light       String
+  difficulty  Difficulty
+  koiSafe     Boolean    @map("koi_safe")
+  koiNotes    String     @map("koi_notes")
+  hardiness   String
+  planting    String
+  benefits    String
+  description String
+  nzStatus    NzStatus   @map("nz_status")
+  nzNote      String     @map("nz_note")
+  nzUrl       String?    @map("nz_url")
+
+  imagePath    String? @map("image_path")
+  imageAlt     String? @map("image_alt")
+  imageAuthor  String? @map("image_author")
+  imageLicense String? @map("image_license")
+  imageUrl     String? @map("image_url")
+
+  sources Source[]
+
+  @@index([type])
+  @@map("plants")
+}
+
+model Source {
+  id    Int        @id @default(autoincrement())
+  kind  SourceKind
+  url   String
+  label String?
+  order Int        @default(0)
+
+  varietySlug String?  @map("variety_slug")
+  variety     Variety? @relation(fields: [varietySlug], references: [slug], onDelete: Cascade)
+  plantSlug   String?  @map("plant_slug")
+  plant       Plant?   @relation(fields: [plantSlug], references: [slug], onDelete: Cascade)
+
+  @@index([varietySlug])
+  @@index([plantSlug])
+  @@map("sources")
+}

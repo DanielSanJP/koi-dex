@@ -25,6 +25,19 @@ npm install
 npm run dev
 ```
 
+## Database (phase 2)
+
+Neon Postgres with Prisma 7 (Neon driver adapter). Schema in `prisma/schema.prisma`; connection URLs in `.env` (see `.env.example`: pooled `DATABASE_URL` for the app, direct `DIRECT_URL` for the CLI).
+
+```bash
+npm run db:validate   # check the content modules, no database needed
+npm run db:migrate    # prisma migrate dev (needs DIRECT_URL)
+npm run db:seed       # load koi, families, ancestors, crosses, plants + sources
+npm run db:studio     # browse the data
+```
+
+`prisma generate` runs on install and writes the client to `src/generated/prisma` (git-ignored).
+
 ## How a koi is drawn
 
 A koi is one untinted body sprite (`/assets/koi/bodies/<slug>.webp`, 688×464) plus four fin layers drawn into the same rect, in order: back fin → tail → **body** → dorsal → side fin. Fin frames come from the shared white sprite sheets in `/assets/fins/white/` (5×4 grids of 688×464 frames) and are multiplied by the variety's tint: `fins.<part> ?? fins.dominant` from `data/koi.json` (`#000000` counts as null). Static views use frame 0; animation cycles the 20 frames over 2 s. See `docs/PLAN.md` for the full recipe and `src/components/admin/koi-first-frame-image.tsx` for a working reference.
