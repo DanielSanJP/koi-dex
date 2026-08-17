@@ -4,6 +4,43 @@ A factual running log of what happened and when. Each weekly progress update
 gets drafted from this log, so it stays honest and the mid-point review and
 final report write themselves. Add an entry whenever work happens.
 
+## 2026-08-18 — Week 8: Neon database, Prisma 7, schema, seed
+
+- Read the current Prisma 7 and Neon docs first: Prisma 7 needs a driver
+  adapter (`@prisma/adapter-neon`), keeps the connection URL in
+  `prisma.config.ts` rather than the schema, generates the client into the
+  project (`src/generated/prisma`, git-ignored, regenerated on install), and
+  configures seeding in the config file. Neon wants the pooled URL for the
+  app and the direct URL for the CLI.
+- Schema (`prisma/schema.prisma`): `families`, `varieties` (one table for
+  the 22 drawn koi, the 6 art-free ancestors and the 7 relatives, with a
+  `kind`), `breeding_outcomes` with foreign keys on both parents and the
+  offspring (parent B nullable = selection within a line, used once, for
+  Gold Ogon), `plants`, and `sources` as rows linked to a variety or plant.
+  Enums for kind, confidence, plant type, difficulty and NZ status.
+- `prisma.config.ts` reads `process.env` directly instead of the `env()`
+  helper, because `env()` throws at load and would break `prisma generate`
+  wherever no database URL is set (CI, a static build).
+- Seed (`prisma/seed.ts`): validates every content module with Zod plus
+  cross-module checks (every koi has info and an origin, every family
+  exists, every cross party resolves to a variety, every plant has two
+  sources and a licensed image) before writing; upserts so it is
+  re-runnable. `npm run db:validate` runs only the checks (no DB) for CI.
+- Neon project created by Daniel (ap-southeast-2). Credentials moved from
+  `.env.example` (never committed: `.env*` was ignored) into `.env`;
+  `.env.example` restored to placeholders and un-ignored.
+  `npm run db:migrate -- --name init` created `prisma/migrations/
+  20260817221154_init`; `npm run db:seed` loaded 10 families, 35 varieties
+  (22 koi), 15 breeding outcomes, 20 plants, 177 sources.
+- `scripts/db-check.ts` smoke-tests the pooled client and previews the
+  recursive lineage query for week 10 (`WITH RECURSIVE` over both parents via
+  LATERAL VALUES, with a self-cross guard for the Showa refinement row):
+  ancestors of Showa = Kohaku, Ki Utsuri (depth 1), Bekko, Magoi (depth 2).
+  First attempt failed with Postgres error 42P19 (recursive reference in the
+  non-recursive term); restructured to a single recursive term.
+- Tutor's technical-weight feedback: proceeding with the reshaped weeks
+  8–14 in WEEKLY_PLAN.md as the working plan.
+
 ## 2026-08-18 — Week 7: mid-point polish, screenshots, review
 
 - Polish: home page Plants tile now shows a real plant photo instead of

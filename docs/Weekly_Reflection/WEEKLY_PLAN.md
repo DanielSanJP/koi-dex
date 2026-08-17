@@ -28,7 +28,7 @@ weeks below are the work that is genuinely still ahead.
 | 14 | Buffer + stretch | Catch up on anything slipped, or a stretch feature (animated koi frames on hover, breeding pairing explorer) |
 | 15 | Final report | Write the final report from PROJECT_LOG.md; record a demo; submit |
 
-## Proposed reshaping of weeks 8–14 (drafted week 7, pending approval)
+## Reshaping of weeks 8–14 (drafted week 7; working plan from week 8)
 
 Tutor feedback on the proposal: a static reference site is a modest
 challenge at Level 7; the database phase and other features must carry
