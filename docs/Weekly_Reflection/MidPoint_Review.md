@@ -12,7 +12,7 @@
 
 ### What the project is and who it is for
 
-Koi-dex is a beginner-friendly reference website about real koi. Information about koi online is scattered across forums and dealer sites, is often written to sell fish, and mixes Japanese terms without explaining them. Koi-dex puts the essentials in one clean, ad-free place: a koi-dex of 22 real varieties, each drawn as a layered illustration; a breeding guide showing which varieties came from which; a care guide; and a pond plants section. It is aimed at someone new to koi, and it is written from New Zealand, which turned out to matter (see Findings). It is a solo project for GENR.7100 with Toi Ohomai as the client, built with Next.js 16, TypeScript and Tailwind CSS v4, reusing my own koi artwork and design system from an earlier app.
+Koi-dex is a beginner-friendly reference website about real koi. Information about koi online is scattered across forums and dealer sites, is often written to sell fish, and mixes Japanese terms without explaining them. Koi-dex puts the essentials in one clean, ad-free place: a koi-dex of 22 real varieties, each drawn as a layered illustration; a breeding guide showing which varieties came from which; a care guide; and a pond plants section. It is aimed at someone new to koi, and it is written from New Zealand, which turned out to matter (see Findings). It is a solo project for GENR.7100 with Toi Ohomai as the client, built with Next.js 16, TypeScript and Tailwind CSS v4, reusing my own hand-drawn layered koi artwork and my own design system from earlier personal projects.
 
 ### Where I am on the timeline
 
@@ -32,16 +32,16 @@ The site builds green with 30 prerendered routes (home, dex, 22 variety pages, b
 
 ### What is completed and not completed, and why
 
-**Completed:** all six routes with the full Koi design language; the canvas koi renderer that reproduces the app's layered drawing (one body sprite plus four shared white fin sheets, each tinted by multiplying with the variety's colour); sourced variety notes for all 22 koi; the breeding guide rebuilt as a family tree, pairing explorer, sprite cross cards, spawn funnel and timeline; each koi's page acting as the hub for its own care and breeding information; the care guide expanded to twelve sections with every figure checked against two sources and a new-pond checklist; and the pond plants research (20 species, sources, licensed photos, New Zealand legal status) written up as a data module ready to seed the database.
+**Completed:** all six routes with the full Koi design language; the canvas koi renderer that draws each fish from its layers (one body sprite plus four shared white fin sheets, each tinted by multiplying with the variety's colour); sourced variety notes for all 22 koi; the breeding guide rebuilt as a family tree, pairing explorer, sprite cross cards, spawn funnel and timeline; each koi's page acting as the hub for its own care and breeding information; the care guide expanded to twelve sections with every figure checked against two sources and a new-pond checklist; and the pond plants research (20 species, sources, licensed photos, New Zealand legal status) written up as a data module ready to seed the database.
 
 **Not completed, by design:** the database phase, the plants pages, deployment, the accessibility pass and user testing. The plan deliberately put content research (weeks 3–6) before the database (weeks 8–10) so that the schema is designed from real, finished data rather than guessed at. Everything not yet started is scheduled, and nothing planned for weeks 2–7 has slipped.
 
 ### Problems encountered and solutions
 
-- **Drawing the koi.** There is no finished picture of each koi; the app builds every fish from a body plus fins tinted per variety. My first canvas version wiped out lower layers when tinting a fin, because the transparent parts of the fin erased what was underneath. Fix: tint each fin on its own offscreen canvas, then stack. The shared fin sheets are large (3440×1856), so I cache decoded images at module level and a page of 22 koi decodes each sheet once.
+- **Drawing the koi.** There is no finished picture of each koi; my artwork is layered, a body plus fins that are tinted per variety, so every fish has to be assembled in the browser. My first canvas version wiped out lower layers when tinting a fin, because the transparent parts of the fin erased what was underneath. Fix: tint each fin on its own offscreen canvas, then stack. The shared fin sheets are large (3440×1856), so I cache decoded images at module level and a page of 22 koi decodes each sheet once.
 - **How many koi.** I started at 25 and found three were app-original colourways, not real varieties. Cutting to 22 early avoided building pages for fish that do not exist.
 - **The breeding guide was boring.** The first version was accurate but text-only. I redesigned it before touching code (new wireframes) and rebuilt it around the fish themselves.
-- **Ancestors with no artwork.** Many varieties descend from fish the app has no sprites for (Magoi, Kigoi, Soragoi, Nezu Ogon, German mirror carp). They now appear as named, dashed nodes in the tree, and a section on the breeding page names the real varieties the site has no art for.
+- **Ancestors with no artwork.** Many varieties descend from fish I have no artwork for (Magoi, Kigoi, Soragoi, Nezu Ogon, German mirror carp). They now appear as named, dashed nodes in the tree, and a section on the breeding page names the real varieties the site has no art for.
 - **My own numbers were wrong.** The two-source check in week 5 found the ulcer-disease temperature band inverted (I had warm water; the sources say cool transitional water) and a quarantine figure no source supported. Both were fixed, and the check is now published as a table on the page.
 - **Legal reality in New Zealand.** Koi carp are an Unwanted Organism and a noxious fish here, and five of the twenty pond plants I researched are banned pest plants. The site now says so plainly rather than recommending things a New Zealand reader cannot legally do.
 - **Tooling.** Headless Chrome will not render narrower than 500 px, which made phone screenshots look broken; I render pages inside a 390 px frame instead. The React Compiler's lint rule rejected setting state inside effects for the checklist and the dex filters; both were rewritten with `useSyncExternalStore`, treating browser storage and the URL as external stores, which is the idiomatic pattern and also removes a load flicker.
@@ -76,7 +76,7 @@ Polishing what exists (copy, lint, layout on phones), capturing screenshots of e
 
 ### Research undertaken and what it feeds
 
-- **Technical research** into how the Koi app stores and draws koi (Supabase schema, the Flutter composite painter). Result: the site draws every koi exactly as the app does, from a 22-row JSON snapshot and 26 sprite files (about 490 KB), with no runtime dependency on the app.
+- **Technical research** into how my existing layered artwork is structured and how the original renderer composited it, so the site could reproduce it. Result: the site draws every koi from a 22-row JSON file and 26 sprite files (about 490 KB), with no runtime dependency on anything else.
 - **Content research** for the 22 varieties (name meanings, families, patterns, origins), 15 documented historical crosses, origin years, ancestor varieties, and per-variety care notes, all with sources.
 - **Care research** across veterinary and koi-organisation sources (Merck Veterinary Manual, VIN, WOAH, Koi Organisation International, koi farms). Result: 30 figures each checked against two sources.
 - **Plants research** for 20 species with two general sources each (RHS, university extension pages, botanical gardens, koi farms) plus a New Zealand status source (NZPCN, Weedbusters, DOC).
@@ -87,8 +87,8 @@ All of it is on the site or ready to seed the database, and every page links its
 
 ### Important results and findings
 
-1. **The rendering recipe is exact.** A koi is one untinted body plus four fin layers drawn into the same rectangle in the order back fin, tail, body, dorsal, side fin, with each fin sheet multiplied by a hex tint. Only Asagi and Shusui use a per-fin override. Reproducing this on canvas gives fish that match the app pixel for pixel.
-2. **The variety list is 22, not 25.** Three of the app's first 25 catalogue entries are app-original colourways.
+1. **The rendering recipe is exact.** A koi is one untinted body plus four fin layers drawn into the same rectangle in the order back fin, tail, body, dorsal, side fin, with each fin sheet multiplied by a hex tint. Only Asagi and Shusui use a per-fin override. Reproducing this on canvas gives fish that match the original artwork pixel for pixel.
+2. **The variety list is 22, not 25.** Three of the 25 koi in my artwork set are colourways I invented, not real varieties, so they were cut.
 3. **Breeding facts are messier than dealer sites suggest.** Founding fish for Sanke and Kumonryu are disputed, Tancho cannot be bred to order, and no cross reliably produces a variety. The guide says so.
 4. **Two of my care numbers were wrong and six more were tightened.** Of 30 figures, 16 agreed outright, 6 were close with a differing range, and 8 changed after checking (ulcer band, quarantine minimum, KH, nitrate, filter turnover, herpesvirus temperature, comfortable temperature, and the feeding-frequency table). The old feeding table contradicted the text and was rebuilt.
 5. **Koi are a controlled pest in New Zealand.** Possessing noxious fish without approval is an offence, and koi need DOC (and possibly MPI) approval. This is now the first thing on the care guide.
@@ -97,7 +97,7 @@ All of it is on the site or ready to seed the database, and every page links its
 
 ### Problems, things that did not work, and changes
 
-- **Tried and dropped:** the app's flat preview images on the dex grid (swapped for the real layered koi, and the previews deleted); a text-only breeding guide (redesigned); a fixed feeding table copied from one source (rebuilt from two); first-choice plant photos for five species (rejected on inspection and replaced); state-in-effect patterns for the checklist and filters (rewritten as external stores).
+- **Tried and dropped:** flat pre-rendered preview images on the dex grid (swapped for the real layered koi, and the previews deleted); a text-only breeding guide (redesigned); a fixed feeding table copied from one source (rebuilt from two); first-choice plant photos for five species (rejected on inspection and replaced); state-in-effect patterns for the checklist and filters (rewritten as external stores).
 - **Changed outcomes:** the koi detail page became the per-variety hub for care and breeding, which was not in the original wireframes; New Zealand legal status was added to both the care guide and the plants data; the numbers audit became a visible feature rather than a private check.
 - **Changed plan for phase 2:** feedback on the proposal was that a static reference site is a modest technical challenge at Level 7 and that the database phase must carry real weight. I agree, and I have reshaped weeks 8–14 accordingly (below).
 
