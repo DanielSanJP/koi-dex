@@ -1,7 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/button";
 import KoiComposite from "@/components/koi-composite";
 import { getAllKoi, getKoi } from "@/lib/data";
+import { getPlant } from "@/content/plants";
 
 const SECTIONS = [
   {
@@ -32,6 +34,7 @@ const SECTIONS = [
 
 export default function Home() {
   const featured = getKoi("kohaku") ?? getAllKoi()[0];
+  const plantArt = getPlant("water-lily");
   return (
     <div className="mx-auto w-full max-w-7xl px-6 sm:px-8">
       <section className="flex flex-col items-center gap-10 pb-16 pt-14 md:flex-row md:gap-16">
@@ -40,9 +43,10 @@ export default function Home() {
             Every koi in the pond, in one encyclopedia.
           </h1>
           <p className="max-w-prose text-black/60">
-            The {getAllKoi().length} real koi varieties: what they look like,
-            where they came from, how to care for them, and what their pairings
-            produce.
+            {getAllKoi().length} real koi varieties: what they look like, where
+            they came from, how to care for them, and what their pairings
+            produce. Plus a care guide checked against two sources, and the
+            pond plants that go with them.
           </p>
           <Button text="Browse the koi-dex" href="/koi" />
         </div>
@@ -68,6 +72,15 @@ export default function Home() {
                   koi={art}
                   className="w-full transition-transform group-hover:scale-105"
                   bufferWidth={344}
+                />
+              ) : plantArt?.image ? (
+                <Image
+                  src={`/assets/${plantArt.image.path}`}
+                  alt={plantArt.image.alt}
+                  width={688}
+                  height={464}
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                  className="aspect-[688/464] w-full rounded-xl object-cover transition-transform group-hover:scale-105"
                 />
               ) : (
                 <div className="flex aspect-[688/464] w-full items-center justify-center rounded-xl bg-[#8ed874]/20 text-sm font-bold text-[#49ad6d]">

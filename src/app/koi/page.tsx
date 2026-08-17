@@ -20,9 +20,10 @@ export default function KoiIndexPage() {
     <div className="mx-auto w-full max-w-7xl px-6 py-12 sm:px-8">
       <h1 className="font-pally text-3xl font-bold">Koi-dex</h1>
       <p className="mt-2 mb-8 max-w-prose text-black/60">
-        The {koi.length} real koi varieties, rendered the way the Koi app draws
-        them. Pick one to see its pattern, its history, and what it produces in
-        breeding.
+        {koi.length} koi varieties, drawn the way the Koi app draws them. Pick
+        one to see its pattern, its history, how to care for it, and what it
+        produces in breeding. Real koi classification runs wider than this;
+        the breeding guide names the varieties there is no artwork for.
       </p>
       <DexGrid koi={koi} families={families} />
     </div>

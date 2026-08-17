@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import KoiCard from "@/components/koi-card";
 import type { Koi } from "@/lib/types";
 
@@ -11,31 +11,56 @@ type Props = {
   families: string[];
 };
 
+/* The URL is the single source of truth for the filters (`?q=` and
+   `?family=`), so a filtered view is shareable and the back button works.
+   It is read through useSyncExternalStore: the server snapshot is "no
+   filters", which matches the prerendered HTML, and the real query string
+   takes over after hydration. Writes go through history.replaceState, which
+   Next.js keeps in sync with its router. */
+
+const listeners = new Set<() => void>();
+
+function subscribe(cb: () => void) {
+  listeners.add(cb);
+  window.addEventListener("popstate", cb);
+  return () => {
+    listeners.delete(cb);
+    window.removeEventListener("popstate", cb);
+  };
+}
+
+const getSnapshot = () => window.location.search;
+const getServerSnapshot = () => "";
+
+function writeSearch(params: URLSearchParams) {
+  const qs = params.toString();
+  window.history.replaceState(
+    null,
+    "",
+    qs ? `?${qs}` : window.location.pathname,
+  );
+  listeners.forEach((l) => l());
+}
+
 export default function DexGrid({ koi, families }: Props) {
-  const [query, setQuery] = useState("");
-  const [family, setFamily] = useState<string | null>(null);
+  const search = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const params = new URLSearchParams(search);
+  const query = params.get("q") ?? "";
+  const rawFamily = params.get("family");
+  const family = rawFamily && families.includes(rawFamily) ? rawFamily : null;
 
-  // Shareable filters: read once from the URL, write back as it changes.
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const f = params.get("family");
-    if (f && families.includes(f)) setFamily(f);
-    const q = params.get("q");
-    if (q) setQuery(q);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    const params = new URLSearchParams();
-    if (query) params.set("q", query);
-    if (family) params.set("family", family);
-    const qs = params.toString();
-    window.history.replaceState(
-      null,
-      "",
-      qs ? `?${qs}` : window.location.pathname,
-    );
-  }, [query, family]);
+  const update = (next: { q?: string; family?: string | null }) => {
+    const p = new URLSearchParams(window.location.search);
+    if (next.q !== undefined) {
+      if (next.q) p.set("q", next.q);
+      else p.delete("q");
+    }
+    if (next.family !== undefined) {
+      if (next.family) p.set("family", next.family);
+      else p.delete("family");
+    }
+    writeSearch(p);
+  };
 
   const visible = koi.filter((k) => {
     if (family && k.family !== family) return false;
@@ -48,6 +73,7 @@ export default function DexGrid({ koi, families }: Props) {
     <button
       key={label}
       onClick={onClick}
+      aria-pressed={active}
       className={`rounded-full border px-3 py-1 text-sm font-bold transition-colors ${
         active
           ? "border-[#49ad6d] bg-[#66dd93]/20 text-[#49ad6d]"
@@ -64,13 +90,16 @@ export default function DexGrid({ koi, families }: Props) {
         <input
           type="search"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => update({ q: e.target.value })}
           placeholder="Search varieties…"
+          aria-label="Search varieties"
           className="h-10 min-w-48 flex-1 rounded-xl border border-black/10 bg-white px-4 text-sm outline-none focus:border-[#49ad6d]"
         />
-        {chip("all", family === null, () => setFamily(null))}
+        {chip("all", family === null, () => update({ family: null }))}
         {families.map((f) =>
-          chip(f, family === f, () => setFamily(family === f ? null : f)),
+          chip(f, family === f, () =>
+            update({ family: family === f ? null : f }),
+          ),
         )}
       </div>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
@@ -80,7 +109,7 @@ export default function DexGrid({ koi, families }: Props) {
       </div>
       {visible.length === 0 && (
         <p className="py-12 text-center text-black/50">
-          No varieties match — try a different search.
+          No varieties match. Try a different search.
         </p>
       )}
     </div>

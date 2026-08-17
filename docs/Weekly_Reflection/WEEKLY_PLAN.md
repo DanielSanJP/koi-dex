@@ -27,3 +27,21 @@ weeks below are the work that is genuinely still ahead.
 | 13 | Testing + feedback | Show the site to a few people; log their feedback; fix the top issues |
 | 14 | Buffer + stretch | Catch up on anything slipped, or a stretch feature (animated koi frames on hover, breeding pairing explorer) |
 | 15 | Final report | Write the final report from PROJECT_LOG.md; record a demo; submit |
+
+## Proposed reshaping of weeks 8–14 (drafted week 7, pending approval)
+
+Tutor feedback on the proposal: a static reference site is a modest
+challenge at Level 7; the database phase and other features must carry
+enough technical weight. The rows above stay as the spine; each database
+week gets a real engineering deliverable, all inside the written scope
+(no accounts, no e-commerce, no CMS, no game concepts).
+
+| Week | Focus (unchanged) | Technical-weight deliverable |
+|---|---|---|
+| 8 | Neon database setup | Prisma 7 with the Neon driver adapter; relational schema with foreign keys (koi, families, plants, breeding_outcomes, sources); migrations; seed script that validates the content modules (Zod) before inserting; `prisma.config.ts` seed hook |
+| 9 | Plants table + pages | Plants grid + detail from the DB; Postgres full-text search across koi and plants (`tsvector`); a small read-only JSON API (`/api/search`, `/api/koi`, `/api/plants`) and a site-wide search box; static generation with on-demand revalidation (secret-protected route) so hosting stays free |
+| 10 | Breeding outcomes data | `breeding_outcomes` with FKs; lineage computed in the database with a recursive CTE (all ancestors and descendants of a variety); family tree, pairing explorer and koi pages read it; parity check against the old in-code list |
+| 11 | Polish pass | Responsive + accessibility audit against WCAG 2.2 AA (Lighthouse + manual keyboard/screen-reader pass), 404 and loading states, image pipeline for plant photos |
+| 12 | Deployment | Vercel with Neon env vars (pooled + direct URLs), GitHub Actions: lint, type-check, test, build on every push; preview deployments per branch |
+| 13 | Testing + feedback | Automated tests (Vitest): tint resolution, lineage functions, data validation, API routes; plus the user-testing session |
+| 14 | Buffer + stretch | Care-guide calculators (pond volume, stocking, feeding by temperature); animated fin frames on hover if time allows |

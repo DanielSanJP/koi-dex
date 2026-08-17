@@ -4,6 +4,37 @@ A factual running log of what happened and when. Each weekly progress update
 gets drafted from this log, so it stays honest and the mid-point review and
 final report write themselves. Add an entry whenever work happens.
 
+## 2026-08-18 — Week 7: mid-point polish, screenshots, review
+
+- Polish: home page Plants tile now shows a real plant photo instead of
+  "Coming soon"; hero and dex copy no longer say "the 22 real koi
+  varieties" (overclaim flagged in REDESIGN.md); the dex grid's filters now
+  use the URL as their single source of truth via useSyncExternalStore
+  (shareable, back-button friendly, no setState-in-effect); the shadcn
+  use-mobile hook rewritten the same way. ESLint is now clean apart from
+  one <img> warning in an unused admin reference component.
+- Screenshots: `scripts/screenshots.sh` captures every route at 1280 px and
+  at 390 px (the phone width is rendered inside an iframe because headless
+  Chrome will not open narrower than 500 px). Output in `docs/screenshots/`.
+- Two supplementary diagrams drawn for the review: progress against the
+  week plan, and the system architecture (phase 1 and phase 2).
+- Mid-point review written from this log against the Part B template and
+  marking criteria: `docs/Weekly_Reflection/MidPoint_Review.md`, and a
+  Word version built from the official template with the figures embedded:
+  `SchoolAssignments/PartBMidPoint/GENR.7100 Part B - Midpoint Review -
+  Daniel Medcalf.docx`.
+- Tutor feedback on the proposal (static site is modest at Level 7; the
+  database phase must carry technical weight) folded into the review's
+  conclusions as a reshaped phase 2: relational schema with FKs and
+  migrations, lineage via recursive SQL, Postgres full-text search behind a
+  read-only JSON API and a site-wide search box, static generation with
+  on-demand revalidation, automated tests plus a GitHub Actions pipeline,
+  and calculators in the care guide. Recorded in WEEKLY_PLAN.md as the
+  proposed shape of weeks 8–14.
+- Note on dates: the week 5, 6 and 7 work was all delivered on 2026-08-18
+  (calendar week 5), so weeks 6 and 7 are ahead of the plan; the weekly
+  updates are filed by plan week, this log by real date.
+
 ## 2026-08-18 — Week 6: pond plants research
 
 - Chose the species list: 20 plants across the three types a koi keeper
