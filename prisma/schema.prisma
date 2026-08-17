@@ -68,6 +68,8 @@ model Family {
   slug        String    @id
   name        String    @unique
   description String
+  /// Display order: the conventional show-class order (Gosanke first).
+  sortOrder   Int       @default(0) @map("sort_order")
   varieties   Variety[]
 
   @@map("families")
@@ -106,9 +108,12 @@ model Variety {
   originConfidence Confidence? @map("origin_confidence")
   originSource     String?     @map("origin_source")
 
-  /// Full-text search vector, GENERATED ALWAYS in migration 2_search_vectors
-  /// (Prisma cannot express generated columns; never written by the client).
-  search Unsupported("tsvector")?
+  /// Full-text search vector: a GENERATED ALWAYS column created by hand in
+  /// migration 20260817221516_search_vectors. Prisma cannot express generated
+  /// columns, so it is Unsupported with a dbgenerated default; never written
+  /// by the client. Any new migration made with --create-only must be checked
+  /// for stray "ALTER COLUMN search DROP DEFAULT" lines before applying.
+  search Unsupported("tsvector")? @default(dbgenerated())
 
   sources    Source[]
   parentAOf  BreedingOutcome[] @relation("parentA")
@@ -116,6 +121,7 @@ model Variety {
   producedBy BreedingOutcome[] @relation("offspring")
 
   @@index([kind])
+  @@index([search], type: Gin)
   @@map("varieties")
 }
 
@@ -159,12 +165,13 @@ model Plant {
   imageLicense String? @map("image_license")
   imageUrl     String? @map("image_url")
 
-  /// Full-text search vector, GENERATED ALWAYS in migration 2_search_vectors.
-  search Unsupported("tsvector")?
+  /// Full-text search vector (generated column, see Variety.search).
+  search Unsupported("tsvector")? @default(dbgenerated())
 
   sources Source[]
 
   @@index([type])
+  @@index([search], type: Gin)
   @@map("plants")
 }
 

@@ -3,15 +3,12 @@ import CrossCard from "@/components/cross-card";
 import FamilyTree from "@/components/family-tree";
 import PairingExplorer from "@/components/pairing-explorer";
 import SpawnFunnel from "@/components/spawn-funnel";
-import { RELATIVES } from "@/content/ancestors";
 import {
   BREEDING_SOURCES,
-  DOCUMENTED_CROSSES,
   FUNDAMENTALS,
   SPAWN_NOTES,
 } from "@/content/breeding";
-import { ORIGINS } from "@/content/timeline";
-import { getAllKoi, getKoi } from "@/lib/data";
+import { getKoiSummaries, getOutcomes, getRelatives } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "Breeding guide",
@@ -19,11 +16,17 @@ export const metadata: Metadata = {
     "How real koi breeding works: the family tree of varieties, documented pairings, and what a spawn actually produces.",
 };
 
-export default function BreedingPage() {
-  const koi = getAllKoi();
-  const dated = Object.entries(ORIGINS)
-    .filter(([, o]) => o.year != null)
-    .sort((a, b) => a[1].year! - b[1].year!);
+export default async function BreedingPage() {
+  const [summaries, outcomes, relatives] = await Promise.all([
+    getKoiSummaries(),
+    getOutcomes(),
+    getRelatives(),
+  ]);
+  const koi = summaries.map((s) => s.koi);
+  const dated = summaries
+    .filter((s) => s.originYear != null)
+    .sort((a, b) => a.originYear! - b.originYear!);
+  const notCovered = relatives.filter((r) => r.kind === "RELATIVE");
 
   return (
     <div className="mx-auto w-full max-w-5xl px-6 py-12 sm:px-8">
@@ -41,7 +44,7 @@ export default function BreedingPage() {
           Niigata rice paddy to the varieties in the dex. Pick any fish to read
           its story.
         </p>
-        <FamilyTree />
+        <FamilyTree koi={summaries} relatives={relatives} />
       </section>
 
       <section className="mt-14">
@@ -50,7 +53,7 @@ export default function BreedingPage() {
           Choose two parents. If the pairing is part of the recorded history of
           the varieties, you get the fish it produced and who bred it.
         </p>
-        <PairingExplorer koi={koi} crosses={DOCUMENTED_CROSSES} />
+        <PairingExplorer koi={koi} outcomes={outcomes} />
       </section>
 
       <section className="mt-14">
@@ -62,8 +65,8 @@ export default function BreedingPage() {
           generations.
         </p>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          {DOCUMENTED_CROSSES.map((c, i) => (
-            <CrossCard key={i} cross={c} size="sm" />
+          {outcomes.map((o) => (
+            <CrossCard key={o.id} outcome={o} size="sm" />
           ))}
         </div>
       </section>
@@ -86,15 +89,14 @@ export default function BreedingPage() {
         <h2 className="font-pally text-xl font-bold">Two centuries, in order</h2>
         <div className="mt-5 overflow-x-auto">
           <div className="flex min-w-max items-end gap-1 border-b-2 border-black/10 pb-2">
-            {dated.map(([slug, o]) => {
-              const k = getKoi(slug);
+            {dated.map((k) => {
               return (
-                <div key={slug} className="flex w-20 flex-col items-center gap-1">
+                <div key={k.slug} className="flex w-20 flex-col items-center gap-1">
                   <span className="text-center text-[0.6rem] leading-tight text-black/50">
-                    {k?.name}
+                    {k.name}
                   </span>
                   <span className="text-xs font-bold tabular-nums">
-                    {o.year}
+                    {k.originYear}
                   </span>
                   <span className="h-2.5 w-2.5 rounded-full bg-[#49ad6d]" />
                 </div>
@@ -117,7 +119,7 @@ export default function BreedingPage() {
         </ul>
       </section>
 
-      <section className="mt-14">
+      <section id="not-covered" className="mt-14 scroll-mt-24">
         <h2 className="font-pally text-xl font-bold">
           Varieties this site does not cover
         </h2>
@@ -127,9 +129,9 @@ export default function BreedingPage() {
           artwork here.
         </p>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          {RELATIVES.map((r) => (
+          {notCovered.map((r) => (
             <div
-              key={r.name}
+              key={r.slug}
               className="rounded-2xl border border-dashed border-black/20 bg-white/60 p-4"
             >
               <h3 className="font-pally font-bold">{r.name}</h3>

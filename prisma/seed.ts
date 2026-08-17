@@ -176,11 +176,11 @@ async function main() {
 
   try {
     // Families
-    for (const [name, description] of Object.entries(FAMILIES)) {
+    for (const [sortOrder, [name, description]] of Object.entries(FAMILIES).entries()) {
       await prisma.family.upsert({
         where: { slug: slugify(name) },
-        create: { slug: slugify(name), name, description },
-        update: { name, description },
+        create: { slug: slugify(name), name, description, sortOrder },
+        update: { name, description, sortOrder },
       });
     }
 

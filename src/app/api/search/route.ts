@@ -1,7 +1,6 @@
 import type { NextRequest } from "next/server";
 import { json } from "@/lib/api";
-import { getKoi } from "@/lib/data";
-import { searchAll } from "@/lib/queries";
+import { getKoiSummaries, searchAll } from "@/lib/queries";
 
 /* GET /api/search?q=kohaku  ->  { query, hits: [{kind, slug, name, subtitle,
    snippet, rank, koi?}] }. Postgres full-text search over varieties and
@@ -14,8 +13,11 @@ export async function GET(req: NextRequest) {
     ? Math.min(Math.max(limitParam, 1), 30)
     : 12;
   if (q.trim().length < 2) return json({ query: q, hits: [] }, { maxAge: 60 });
-  const hits = (await searchAll(q, limit)).map((h) =>
-    h.kind === "koi" ? { ...h, koi: getKoi(h.slug) ?? null } : h,
+  const [raw, summaries] = await Promise.all([searchAll(q, limit), getKoiSummaries()]);
+  const hits = raw.map((h) =>
+    h.kind === "koi"
+      ? { ...h, koi: summaries.find((k) => k.slug === h.slug)?.koi ?? null }
+      : h,
   );
   return json({ query: q, hits }, { maxAge: 60 });
 }

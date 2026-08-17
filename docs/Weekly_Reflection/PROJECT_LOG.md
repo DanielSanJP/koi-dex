@@ -4,6 +4,42 @@ A factual running log of what happened and when. Each weekly progress update
 gets drafted from this log, so it stays honest and the mid-point review and
 final report write themselves. Add an entry whenever work happens.
 
+## 2026-08-18 — Week 10: breeding and koi pages from the database, lineage (milestone M3)
+
+- One typed data shape for everything the pages read (`src/lib/shapes.ts`:
+  Party, Outcome with nullable parent B, KoiSummary/KoiDetail with lineage,
+  Relative, PlantSummary/PlantRecord, SearchHit) behind a `DataSource`
+  interface with two implementations: `db-source.ts` (Neon via Prisma) and
+  `content-source.ts` (the in-repo modules). `queries.ts` picks the
+  database when DATABASE_URL is set and the content modules otherwise, so a
+  fresh clone builds the whole site with no secrets, which is the fallback
+  the proposal promised. Verified: `npm run build` passes with `.env`
+  hidden.
+- Lineage computed in Postgres: `WITH RECURSIVE` in both directions (all
+  ancestors, all descendants, shortest depth), one recursive term walking
+  both parents via LATERAL VALUES, self-cross guard so the Showa refinement
+  row cannot loop. The content source walks the same graph in JS.
+- `scripts/parity-check.ts` diffs every read (22 koi details incl. lineage,
+  outcomes, relatives, plants, families) between the two sources: PARITY OK.
+  Needed one schema addition, `families.sort_order`, so the database keeps
+  the conventional show-class order (Gosanke first) the dex filter uses.
+- Koi index, koi detail, breeding page, family tree, pairing explorer, cross
+  cards and koi chips all moved to the database shapes (slug-keyed, no more
+  name matching); `src/lib/breeding.ts` deleted. New "Whole lineage" panel
+  on each koi page groups ancestors and descendants by generation. A null
+  parent B renders as a dotted "line-bred selection" chip.
+- Migration incident, recorded honestly: Prisma's diff cannot represent the
+  generated tsvector columns or GIN indexes, so the `family_sort_order`
+  migration it generated also tried to DROP the search defaults and indexes,
+  failed part-way, and left the indexes dropped. Fixed by hand-writing an
+  idempotent migration (ADD COLUMN IF NOT EXISTS + CREATE INDEX IF NOT
+  EXISTS), `migrate resolve --rolled-back`, `migrate deploy`; then the
+  schema was taught about the columns (`@default(dbgenerated())`,
+  `@@index([search], type: Gin)`) and `migrate diff` against the live
+  database is now empty, so future migrations are clean.
+- Milestone M3 (database and plants) complete: three migrations, seeded,
+  plants pages, koi pages, breeding page and API all served from Neon.
+
 ## 2026-08-18 — Week 9: plants from the database, full-text search, API
 
 - Full-text search in Postgres: a hand-written migration adds a stored,

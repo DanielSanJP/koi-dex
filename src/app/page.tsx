@@ -2,8 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/button";
 import KoiComposite from "@/components/koi-composite";
-import { getAllKoi, getKoi } from "@/lib/data";
 import { getPlant } from "@/content/plants";
+import { getKoiSummaries } from "@/lib/queries";
 
 const SECTIONS = [
   {
@@ -32,8 +32,10 @@ const SECTIONS = [
   },
 ];
 
-export default function Home() {
-  const featured = getKoi("kohaku") ?? getAllKoi()[0];
+export default async function Home() {
+  const summaries = await getKoiSummaries();
+  const bySlug = (slug: string) => summaries.find((s) => s.slug === slug)?.koi;
+  const featured = bySlug("kohaku") ?? summaries[0].koi;
   const plantArt = getPlant("water-lily");
   return (
     <div className="mx-auto w-full max-w-7xl px-6 sm:px-8">
@@ -43,7 +45,7 @@ export default function Home() {
             Every koi in the pond, in one encyclopedia.
           </h1>
           <p className="max-w-prose text-black/60">
-            {getAllKoi().length} real koi varieties: what they look like, where
+            {summaries.length} real koi varieties: what they look like, where
             they came from, how to care for them, and what their pairings
             produce. Plus a care guide checked against two sources, and the
             pond plants that go with them.
@@ -60,7 +62,7 @@ export default function Home() {
 
       <section className="grid grid-cols-1 gap-6 pb-24 sm:grid-cols-2 lg:grid-cols-4">
         {SECTIONS.map((s) => {
-          const art = s.art ? getKoi(s.art) : undefined;
+          const art = s.art ? bySlug(s.art) : undefined;
           return (
             <Link
               key={s.href}

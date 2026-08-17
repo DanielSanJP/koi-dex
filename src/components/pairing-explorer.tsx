@@ -2,32 +2,30 @@
 
 import { useState } from "react";
 import KoiComposite from "@/components/koi-composite";
-import type { BreedingCross, Koi } from "@/lib/types";
+import type { Outcome } from "@/lib/shapes";
+import type { Koi } from "@/lib/types";
 
 type Props = {
   koi: Koi[];
-  crosses: BreedingCross[];
+  outcomes: Outcome[];
 };
 
-const sameName = (a: string, b: string) =>
-  a.trim().toLowerCase() === b.trim().toLowerCase();
-
-/** Pick two parents, see whether the pairing is documented. Never invents one. */
-export default function PairingExplorer({ koi, crosses }: Props) {
+/** Pick two parents, see whether the pairing is documented. Never invents one.
+    Outcomes come from the database (breeding_outcomes, keyed by slug). */
+export default function PairingExplorer({ koi, outcomes }: Props) {
   const [aSlug, setASlug] = useState("kohaku");
   const [bSlug, setBSlug] = useState("ki_utsuri");
 
   const a = koi.find((k) => k.slug === aSlug) ?? koi[0];
   const b = koi.find((k) => k.slug === bSlug) ?? koi[1];
 
-  const match = crosses.find(
-    (c) =>
-      (sameName(c.parents[0], a.name) && sameName(c.parents[1], b.name)) ||
-      (sameName(c.parents[0], b.name) && sameName(c.parents[1], a.name)),
+  const match = outcomes.find(
+    (o) =>
+      o.parentB &&
+      ((o.parentA.slug === a.slug && o.parentB.slug === b.slug) ||
+        (o.parentA.slug === b.slug && o.parentB.slug === a.slug)),
   );
-  const offspring = match
-    ? koi.find((k) => sameName(k.name, match.produces))
-    : undefined;
+  const offspring = match?.offspring.koi ?? undefined;
 
   const picker = (
     value: string,
@@ -73,7 +71,7 @@ export default function PairingExplorer({ koi, crosses }: Props) {
             </>
           ) : (
             <div className="flex aspect-[688/464] w-full items-center justify-center rounded-xl border border-dashed border-black/20 text-center text-xs font-bold text-black/35">
-              {match ? match.produces : "?"}
+              {match ? match.offspring.name : "?"}
             </div>
           )}
         </div>
@@ -84,7 +82,7 @@ export default function PairingExplorer({ koi, crosses }: Props) {
           <span className="font-bold text-[#49ad6d]">Documented.</span>{" "}
           {match.note}{" "}
           <a
-            href={match.source}
+            href={match.sourceUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="whitespace-nowrap text-black/40 underline hover:text-black/70"

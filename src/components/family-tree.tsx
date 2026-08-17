@@ -1,13 +1,39 @@
 import Link from "next/link";
 import KoiComposite from "@/components/koi-composite";
-import { ANCESTORS } from "@/content/ancestors";
-import { ERAS, getOrigin, koiInEra, undatedKoi } from "@/content/timeline";
-import { getAllKoi, getKoi } from "@/lib/data";
+import { ERAS } from "@/content/timeline";
+import type { KoiSummary, Relative } from "@/lib/shapes";
 
-/** Varieties in era tiers, from the wild carp down to the 1990s. */
-export default function FamilyTree() {
-  const slugs = getAllKoi().map((k) => k.slug);
-  const undated = undatedKoi(slugs);
+type Props = {
+  koi: KoiSummary[];
+  /** The ANCESTOR / RELATIVE rows, for the Magoi root node's definition. */
+  relatives: Relative[];
+};
+
+/** Varieties in era tiers, from the wild carp down to the 1990s. Years come
+    from the database (varieties.origin_year); the era bands are fixed. */
+export default function FamilyTree({ koi, relatives }: Props) {
+  const magoi = relatives.find((r) => r.slug === "magoi");
+  const undated = koi.filter((k) => k.originYear == null);
+
+  const tile = (k: KoiSummary) => (
+    <Link
+      key={k.slug}
+      href={`/koi/${k.slug}`}
+      className="group flex w-24 flex-col items-center gap-1 rounded-xl border border-black/10 bg-white p-2 shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-transform hover:-translate-y-0.5"
+    >
+      <KoiComposite
+        koi={k.koi}
+        bufferWidth={172}
+        className="w-full transition-transform group-hover:scale-105"
+      />
+      <span className="text-center text-xs font-bold">{k.name}</span>
+      {k.originLabel && k.originYear != null && (
+        <span className="text-center text-[0.6rem] text-black/40">
+          {k.originLabel}
+        </span>
+      )}
+    </Link>
+  );
 
   return (
     <div className="flex flex-col gap-4">
@@ -17,9 +43,9 @@ export default function FamilyTree() {
         </span>
         <span
           className="rounded-xl border border-dashed border-black/25 px-3 py-2 text-sm font-bold text-black/45"
-          title={ANCESTORS[0]?.definition}
+          title={magoi?.definition ?? undefined}
         >
-          Magoi
+          {magoi?.name ?? "Magoi"}
         </span>
         <span className="text-sm text-black/40">
           the wild carp everything descends from
@@ -27,40 +53,16 @@ export default function FamilyTree() {
       </div>
 
       {ERAS.map((era) => {
-        const inEra = koiInEra(slugs, era);
+        const inEra = koi.filter(
+          (k) => k.originYear != null && k.originYear >= era.from && k.originYear <= era.to,
+        );
         if (inEra.length === 0) return null;
         return (
           <div key={era.label} className="flex flex-wrap items-start gap-3">
             <span className="w-24 shrink-0 pt-6 text-xs font-bold tracking-wide text-black/40 uppercase">
               {era.label}
             </span>
-            <div className="flex flex-1 flex-wrap gap-3">
-              {inEra.map((slug) => {
-                const koi = getKoi(slug)!;
-                const origin = getOrigin(slug);
-                return (
-                  <Link
-                    key={slug}
-                    href={`/koi/${slug}`}
-                    className="group flex w-24 flex-col items-center gap-1 rounded-xl border border-black/10 bg-white p-2 shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-transform hover:-translate-y-0.5"
-                  >
-                    <KoiComposite
-                      koi={koi}
-                      bufferWidth={172}
-                      className="w-full transition-transform group-hover:scale-105"
-                    />
-                    <span className="text-center text-xs font-bold">
-                      {koi.name}
-                    </span>
-                    {origin && (
-                      <span className="text-center text-[0.6rem] text-black/40">
-                        {origin.label}
-                      </span>
-                    )}
-                  </Link>
-                );
-              })}
-            </div>
+            <div className="flex flex-1 flex-wrap gap-3">{inEra.map(tile)}</div>
           </div>
         );
       })}
@@ -70,27 +72,7 @@ export default function FamilyTree() {
           <span className="w-24 shrink-0 pt-6 text-xs font-bold tracking-wide text-black/40 uppercase">
             undated
           </span>
-          <div className="flex flex-1 flex-wrap gap-3">
-            {undated.map((slug) => {
-              const koi = getKoi(slug)!;
-              return (
-                <Link
-                  key={slug}
-                  href={`/koi/${slug}`}
-                  className="group flex w-24 flex-col items-center gap-1 rounded-xl border border-black/10 bg-white p-2 shadow-[0_4px_12px_rgba(0,0,0,0.06)] transition-transform hover:-translate-y-0.5"
-                >
-                  <KoiComposite
-                    koi={koi}
-                    bufferWidth={172}
-                    className="w-full transition-transform group-hover:scale-105"
-                  />
-                  <span className="text-center text-xs font-bold">
-                    {koi.name}
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
+          <div className="flex flex-1 flex-wrap gap-3">{undated.map(tile)}</div>
         </div>
       )}
       <p className="text-sm text-black/40">

@@ -1,110 +1,41 @@
 import { cacheLife, cacheTag } from "next/cache";
-import { prisma } from "@/lib/db";
-import type { PlantType } from "@/generated/prisma/enums";
+import { contentSource } from "@/lib/content-source";
+import type { DataSource } from "@/lib/shapes";
 
-/* Database reads for the site. Every function is a "use cache" scope tagged
-   by subject, so pages prerender at build time from Neon and stay static and
-   free to host; POST /api/revalidate with the shared secret refreshes a tag
-   on demand (after a re-seed, for example). Search is deliberately NOT
-   cached: it is per-query and served by the route handler. */
+/* Site-facing reads. Every function is a "use cache" scope tagged by
+   subject, so pages prerender at build time and stay static and free to
+   host; POST /api/revalidate with the shared secret refreshes a tag on
+   demand (after a re-seed, for example). Search is NOT cached: it is per
+   query and served by its route handler.
 
-export const TAGS = {
-  plants: "plants",
-  koi: "koi",
-  breeding: "breeding",
-} as const;
+   Source selection: Neon via Prisma when DATABASE_URL is set (the normal
+   path, including on Vercel), otherwise the in-repo content modules, so a
+   clone with no secrets still builds the whole site. */
 
-// ---- Plants ---------------------------------------------------------------
+export const TAGS = { plants: "plants", koi: "koi", breeding: "breeding" } as const;
 
-export type PlantSummary = {
-  slug: string;
-  name: string;
-  latinName: string;
-  type: PlantType;
-  difficulty: "EASY" | "MODERATE" | "HARD";
-  koiSafe: boolean;
-  nzStatus: "NATIVE" | "NATURALISED" | "CULTIVATED" | "PEST" | "UNKNOWN";
-  imagePath: string | null;
-  imageAlt: string | null;
-};
+export const usingDatabase = () => Boolean(process.env.DATABASE_URL);
 
-export async function getPlantSummaries(): Promise<PlantSummary[]> {
-  "use cache";
-  cacheTag(TAGS.plants);
-  cacheLife("days");
-  return prisma.plant.findMany({
-    orderBy: [{ type: "asc" }, { name: "asc" }],
-    select: {
-      slug: true,
-      name: true,
-      latinName: true,
-      type: true,
-      difficulty: true,
-      koiSafe: true,
-      nzStatus: true,
-      imagePath: true,
-      imageAlt: true,
-    },
-  });
+async function source(): Promise<DataSource> {
+  if (!usingDatabase()) return contentSource;
+  const { dbSource } = await import("@/lib/db-source");
+  return dbSource;
 }
 
-export async function getPlantSlugs(): Promise<string[]> {
-  "use cache";
-  cacheTag(TAGS.plants);
-  cacheLife("days");
-  const rows = await prisma.plant.findMany({ select: { slug: true } });
-  return rows.map((r) => r.slug);
-}
+// ---- Koi -----------------------------------------------------------------
 
-export async function getPlantBySlug(slug: string) {
+export async function getFamilies() {
   "use cache";
-  cacheTag(TAGS.plants);
+  cacheTag(TAGS.koi);
   cacheLife("days");
-  return prisma.plant.findUnique({
-    where: { slug },
-    include: { sources: { orderBy: [{ kind: "asc" }, { order: "asc" }] } },
-  });
+  return (await source()).families();
 }
-
-/** Prev/next in the same order as the grid (type, then name), wrapping. */
-export async function getPlantNeighbours(slug: string) {
-  "use cache";
-  cacheTag(TAGS.plants);
-  cacheLife("days");
-  const all = await prisma.plant.findMany({
-    orderBy: [{ type: "asc" }, { name: "asc" }],
-    select: { slug: true, name: true },
-  });
-  const i = all.findIndex((p) => p.slug === slug);
-  const n = all.length;
-  if (i < 0 || n === 0) return null;
-  return { prev: all[(i - 1 + n) % n], next: all[(i + 1) % n] };
-}
-
-// ---- Koi (varieties of kind KOI) -------------------------------------------
 
 export async function getKoiSummaries() {
   "use cache";
   cacheTag(TAGS.koi);
   cacheLife("days");
-  return prisma.variety.findMany({
-    where: { kind: "KOI" },
-    orderBy: { dexNumber: "asc" },
-    select: {
-      slug: true,
-      name: true,
-      dexNumber: true,
-      bodyPath: true,
-      finDominant: true,
-      finTail: true,
-      finDorsal: true,
-      finBack: true,
-      finSide: true,
-      family: { select: { slug: true, name: true } },
-      originYear: true,
-      originLabel: true,
-    },
-  });
+  return (await source()).koiSummaries();
 }
 
 export async function getKoiDetail(slug: string) {
@@ -112,78 +43,64 @@ export async function getKoiDetail(slug: string) {
   cacheTag(TAGS.koi);
   cacheTag(TAGS.breeding);
   cacheLife("days");
-  return prisma.variety.findFirst({
-    where: { slug, kind: "KOI" },
-    include: {
-      family: true,
-      sources: { orderBy: [{ kind: "asc" }, { order: "asc" }] },
-      producedBy: {
-        orderBy: { sortOrder: "asc" },
-        include: { parentA: true, parentB: true, offspring: true },
-      },
-      parentAOf: {
-        orderBy: { sortOrder: "asc" },
-        include: { parentA: true, parentB: true, offspring: true },
-      },
-      parentBOf: {
-        orderBy: { sortOrder: "asc" },
-        include: { parentA: true, parentB: true, offspring: true },
-      },
-    },
-  });
+  return (await source()).koiDetail(slug);
 }
 
-// ---- Search (uncached, per query) ------------------------------------------
+// ---- Breeding ------------------------------------------------------------
 
-export type SearchHit = {
-  kind: "koi" | "variety" | "plant";
-  slug: string;
-  name: string;
-  subtitle: string | null;
-  snippet: string;
-  rank: number;
-};
-
-/** Turn free text into a prefix-matching tsquery: "kohaku bre" ->
-    'kohaku' & 'bre':*  Non-word characters are stripped so user input can
-    never break the query. */
-export function toTsQuery(input: string): string | null {
-  const words = input
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}\s-]/gu, " ")
-    .split(/\s+/)
-    .filter(Boolean)
-    .slice(0, 6);
-  if (words.length === 0) return null;
-  return words.map((w, i) => (i === words.length - 1 ? `${w}:*` : w)).join(" & ");
+export async function getOutcomes() {
+  "use cache";
+  cacheTag(TAGS.breeding);
+  cacheLife("days");
+  return (await source()).outcomes();
 }
 
-export async function searchAll(input: string, limit = 12): Promise<SearchHit[]> {
-  const q = toTsQuery(input);
-  if (!q) return [];
-  const rows = await prisma.$queryRaw<SearchHit[]>`
-    WITH q AS (SELECT to_tsquery('english', ${q}) AS query)
-    SELECT * FROM (
-      SELECT
-        CASE WHEN v.kind = 'KOI' THEN 'koi' ELSE 'variety' END AS kind,
-        v.slug, v.name,
-        CASE WHEN v.kind = 'KOI' THEN f.name ELSE 'not in the dex' END AS subtitle,
-        ts_headline('english', coalesce(v.pattern, v.definition, ''), q.query,
-          'MaxFragments=1, MaxWords=18, MinWords=8, StartSel=<b>, StopSel=</b>') AS snippet,
-        ts_rank(v.search, q.query)::float AS rank
-      FROM varieties v
-      LEFT JOIN families f ON f.slug = v.family_slug, q
-      WHERE v.search @@ q.query
-      UNION ALL
-      SELECT
-        'plant' AS kind, p.slug, p.name, p.latin_name AS subtitle,
-        ts_headline('english', p.description, q.query,
-          'MaxFragments=1, MaxWords=18, MinWords=8, StartSel=<b>, StopSel=</b>') AS snippet,
-        ts_rank(p.search, q.query)::float AS rank
-      FROM plants p, q
-      WHERE p.search @@ q.query
-    ) hits
-    ORDER BY rank DESC, name ASC
-    LIMIT ${limit}`;
-  return rows;
+export async function getRelatives() {
+  "use cache";
+  cacheTag(TAGS.breeding);
+  cacheLife("days");
+  return (await source()).relatives();
 }
+
+// ---- Plants --------------------------------------------------------------
+
+export async function getPlantSummaries() {
+  "use cache";
+  cacheTag(TAGS.plants);
+  cacheLife("days");
+  return (await source()).plantSummaries();
+}
+
+export async function getPlantSlugs(): Promise<string[]> {
+  "use cache";
+  cacheTag(TAGS.plants);
+  cacheLife("days");
+  return (await getPlantSummaries()).map((p) => p.slug);
+}
+
+export async function getPlantBySlug(slug: string) {
+  "use cache";
+  cacheTag(TAGS.plants);
+  cacheLife("days");
+  return (await source()).plant(slug);
+}
+
+/** Prev/next in grid order (type, then name), wrapping. */
+export async function getPlantNeighbours(slug: string) {
+  "use cache";
+  cacheTag(TAGS.plants);
+  cacheLife("days");
+  const all = await getPlantSummaries();
+  const i = all.findIndex((p) => p.slug === slug);
+  const n = all.length;
+  if (i < 0 || n === 0) return null;
+  return { prev: all[(i - 1 + n) % n], next: all[(i + 1) % n] };
+}
+
+// ---- Search (uncached) -----------------------------------------------------
+
+export async function searchAll(input: string, limit = 12) {
+  return (await source()).search(input, limit);
+}
+
+export type { PlantSummary, SearchHit } from "@/lib/shapes";

@@ -1,21 +1,18 @@
 import type { Metadata } from "next";
 import DexGrid from "@/components/dex-grid";
-import { VARIETY_INFO, FAMILIES } from "@/content/varieties";
-import { getAllKoi } from "@/lib/data";
+import { getFamilies, getKoiSummaries } from "@/lib/queries";
 
 export const metadata: Metadata = {
   title: "All varieties",
   description: "All the real koi varieties in one browsable encyclopedia.",
 };
 
-export default function KoiIndexPage() {
-  const koi = getAllKoi().map((k) => ({
-    ...k,
-    family: VARIETY_INFO[k.slug]?.family ?? null,
-  }));
-  const families = Object.keys(FAMILIES).filter((f) =>
-    koi.some((k) => k.family === f),
-  );
+export default async function KoiIndexPage() {
+  const [summaries, families] = await Promise.all([getKoiSummaries(), getFamilies()]);
+  const koi = summaries.map((s) => ({ ...s.koi, family: s.family?.name ?? null }));
+  const familyNames = families
+    .map((f) => f.name)
+    .filter((name) => koi.some((k) => k.family === name));
   return (
     <div className="mx-auto w-full max-w-7xl px-6 py-12 sm:px-8">
       <h1 className="font-pally text-3xl font-bold">Koi-dex</h1>
@@ -25,7 +22,7 @@ export default function KoiIndexPage() {
         produces in breeding. Real koi classification runs wider than this;
         the breeding guide names the varieties there is no artwork for.
       </p>
-      <DexGrid koi={koi} families={families} />
+      <DexGrid koi={koi} families={familyNames} />
     </div>
   );
 }

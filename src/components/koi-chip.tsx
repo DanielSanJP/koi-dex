@@ -1,6 +1,6 @@
 import Link from "next/link";
 import KoiComposite from "@/components/koi-composite";
-import type { CrossParty } from "@/lib/breeding";
+import type { Party } from "@/lib/shapes";
 
 const SIZES = {
   sm: { box: "w-16", buffer: 172, label: "text-[0.65rem]" },
@@ -9,19 +9,32 @@ const SIZES = {
 } as const;
 
 type Props = {
-  party: CrossParty;
+  /** A koi (drawn), an art-free variety (named), or null = line-bred selection. */
+  party: Party | null;
   size?: keyof typeof SIZES;
 };
 
-/** One party in a cross: a real koi is drawn, an art-free ancestor is named. */
+/** One party in a cross: a real koi is drawn, an art-free ancestor is named,
+    and a null parent (selection within a line) says so. */
 export default function KoiChip({ party, size = "md" }: Props) {
   const s = SIZES[size];
 
-  if (party.kind === "ancestor") {
+  if (!party) {
+    return (
+      <span
+        className={`inline-flex ${s.box} items-center justify-center rounded-xl border border-dotted border-black/25 px-2 py-3 text-center font-bold text-black/40 ${s.label}`}
+        title="Bred by selecting within a line rather than pairing two named varieties"
+      >
+        line-bred selection
+      </span>
+    );
+  }
+
+  if (!party.koi) {
     return (
       <span
         className={`inline-flex ${s.box} items-center justify-center rounded-xl border border-dashed border-black/25 px-2 py-3 text-center font-bold text-black/45 ${s.label}`}
-        title="An ancestral variety this site has no artwork for"
+        title="A variety this site has no artwork for"
       >
         {party.name}
       </span>
@@ -30,7 +43,7 @@ export default function KoiChip({ party, size = "md" }: Props) {
 
   return (
     <Link
-      href={`/koi/${party.koi.slug}`}
+      href={`/koi/${party.slug}`}
       className={`group flex ${s.box} flex-col items-center gap-1`}
     >
       <KoiComposite
@@ -38,9 +51,7 @@ export default function KoiChip({ party, size = "md" }: Props) {
         bufferWidth={s.buffer}
         className="w-full transition-transform group-hover:scale-105"
       />
-      <span className={`text-center font-bold ${s.label}`}>
-        {party.koi.name}
-      </span>
+      <span className={`text-center font-bold ${s.label}`}>{party.name}</span>
     </Link>
   );
 }
