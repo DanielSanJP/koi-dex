@@ -5,8 +5,8 @@ import type { BreedingCross } from "@/lib/types";
    winner. Crosses are documented lineages, never guaranteed outcomes. */
 
 export const FUNDAMENTALS: string[] = [
-  "Koi spawn once a year, in late spring or early summer, triggered by warming water and longer days. Spawning generally starts between 18 and 24 °C, and breeders put spawning ropes in at around 24 °C.",
-  "A single spawn is enormous. A small breedable female of 20 to 25 cm lays roughly 5,000 to 10,000 eggs; a large female can release close to half a million. Eggs hatch in about four to seven days depending on temperature.",
+  "Koi spawn once a year, in late spring or early summer, triggered by warming water and longer days. Spawning generally starts between 18 and 25 °C, and breeders put spawning ropes in at around 24 °C.",
+  "A single spawn is enormous. A small breedable female of 20 to 25 cm lays roughly 5,000 to 10,000 eggs; a large female can release close to half a million. Eggs hatch in about three to seven days depending on temperature.",
   "Fry are culled in several rounds, not one. The first pass at four to six weeks removes deformities and stunted fish. Colour and pattern are not readable for six to eight weeks, so later rounds, roughly every eight weeks up to about six months, select on pattern, colour and body shape.",
   "Survival is low by design. Ninety per cent or more of a spawn is culled or lost, and a professional breeder may keep only 100 to 200 fry out of many thousands. Hobby breeders typically retain 5 to 10 per cent.",
   "Siblings from one spawn look strikingly different. Colour in koi is polygenic: research on Cyprinus carpio found at least three genes involved in controlling red, with interactions between and within loci, so patterns do not segregate in tidy ratios.",

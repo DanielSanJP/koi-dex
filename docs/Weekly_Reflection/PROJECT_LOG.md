@@ -4,6 +4,48 @@ A factual running log of what happened and when. Each weekly progress update
 gets drafted from this log, so it stays honest and the mid-point review and
 final report write themselves. Add an entry whenever work happens.
 
+## 2026-08-18 — Week 5: care guide depth (milestone M2)
+
+- Re-checked every number in the care guide against two independent sources
+  each (30 figures: temperature bands, pH/KH, ammonia/nitrite/nitrate,
+  oxygen, volume, depth, turnover, feeding thresholds and frequencies, size,
+  lifespan, KHV, quarantine, spawning, shade). Recorded all of it in a
+  `NUMBERS_CHECK` table that renders on the page with both sources and an
+  honest verdict per row.
+- Corrections that came out of the check: the Aeromonas ulcer band was wrong
+  (guide said 18–29 °C; sources put the danger in cool transitional water,
+  ~5–17 °C); "hobby quarantine 2–4 weeks" had no support (now at least four
+  weeks); KH tightened to 100–200 mg/L, nitrate to under 20, filter turnover
+  to at least once an hour; KHV temperature widened to 16–28 °C with a peak
+  at 22–26; comfortable temperature widened to 15–25 °C with 18–25 ideal;
+  the old feeding table listed feeds at 5–10 °C while the text said stop
+  below 10 °C, so the table was rebuilt as six temperature bands; the
+  unsourced "light drops off past 1 m" and "under 3 °C daily swing" claims
+  were removed or softened; breeding guide spawning figures widened to
+  18–25 °C and 3–7 days to hatch.
+- Added four new care sections with sources: filtration and the nitrogen
+  cycle (cycling 4–8 weeks, fishless cycling, mechanical vs biological, UV,
+  bottom drain and skimmer, rinsing media in pond water); water changes and
+  topping up (10–20 % weekly, chlorine vs chloramine, temperature matching,
+  salt as a treatment); handling, netting and transport (pan and sock nets,
+  bagging, acclimatising, never tipping bag water in); predators and
+  jumping (herons, depth and steep sides, netting, why koi jump).
+- New-pond checklist: 37 items in six groups (before you dig, building,
+  equipment, cycling, first fish, first season), with tick boxes that
+  persist in the browser and a progress bar.
+- Feeding-by-temperature strip: six flat colour bands, coldest to hottest,
+  matching the corrected numbers.
+- Found while researching: in New Zealand koi carp are an Unwanted Organism
+  (Biosecurity Act 1993) and a noxious fish (Freshwater Fisheries
+  Regulations 1983); possessing them without DOC approval is an offence.
+  Verified on two DOC pages and added as a callout at the top of the care
+  guide and as the first item of the checklist.
+- Care page now has an "on this page" jump-link row and anchors on every
+  section. Build green; lint back to its two pre-existing errors (dex-grid,
+  use-mobile) which are logged for the week 11 polish pass.
+- Started the pond-plants research early (it is slow): species list of 20
+  chosen and two research passes run, ready to write up in week 6.
+
 ## 2026-07-28 — Project kickoff
 
 - Decided scope: a real-koi reference site (22 genuine varieties, care guide,
