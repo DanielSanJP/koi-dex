@@ -4,6 +4,25 @@ A factual running log of what happened and when. Each weekly progress update
 gets drafted from this log, so it stays honest and the mid-point review and
 final report write themselves. Add an entry whenever work happens.
 
+## 2026-08-18 — Week 15 (drafted early): final report and presentation
+
+- Live screenshots recaptured from koi-dex.vercel.app; final progress and
+  architecture diagrams drawn (`docs/screenshots/*-final.png`).
+- Part C report drafted from this log against the template and rubric
+  (`docs/Weekly_Reflection/Final_Report.md`; Word version built from the
+  official template with 9 figures in `SchoolAssignments/PartCReport/`):
+  executive summary, introduction, methodology, results and findings (key
+  achievements with numbers, industry context, what did not work), a
+  financial summary with a cost-benefit analysis (≈150 h at a nominal
+  $30/h = $4,500 time cost, $0 cash; conservative portfolio value $6,000;
+  BCR 1.33 with sensitivity), recommendations and conclusions. Week 13
+  user-testing results are marked [TODO] until the sessions run.
+- Part D presentation drafted (`SchoolAssignments/PartDPresentation/*.pptx`,
+  16 slides, speaker notes, brand colours, live screenshots): purpose,
+  research questions, scope, method, timeline, architecture, results per
+  research question, engineering numbers, user testing [TODO], discussion,
+  conclusion, demo route.
+
 ## 2026-08-18 — Week 12: deployed to Vercel (milestone M4)
 
 - Daniel re-ran `vercel login` and linked the repo to a `koi-dex` project
