@@ -4,6 +4,32 @@ A factual running log of what happened and when. Each weekly progress update
 gets drafted from this log, so it stays honest and the mid-point review and
 final report write themselves. Add an entry whenever work happens.
 
+## 2026-08-18 — Week 12: deployed to Vercel (milestone M4)
+
+- Daniel re-ran `vercel login` and linked the repo to a `koi-dex` project
+  (team daniels-projects, GitHub-connected: two production deployments had
+  already built from pushes, running on the content-module fallback because
+  no env vars were set yet). Added DATABASE_URL, DIRECT_URL and
+  REVALIDATE_SECRET for production and preview, NEXT_PUBLIC_SITE_URL for
+  production, then `vercel --prod`: 39 s build, prisma generate on install,
+  58 routes prerendered from Neon.
+- Live at https://koi-dex.vercel.app. Smoke test from outside: every route
+  200 (home 2.5 s cold, koi pages ~0.9 s, plant page 0.6 s), /nope 404,
+  /api/koi count 22, /api/search?q=metallic ranked from Postgres,
+  /api/plants/lotus, "Whole lineage" present in the Showa HTML, plants grid
+  shows the 5 banned chips, sitemap.xml lists 47 URLs with the production
+  origin, robots.txt served, /api/revalidate 401 without the secret and 200
+  with it (plants tag refreshed).
+- Lighthouse (mobile profile) on the live site: home 80/96/100/100, /koi
+  97/96/100/100, /koi/showa 96/96/100/100, /care 98/97/100/100, /plants
+  82/96/100/100 (performance / accessibility / best practices / SEO). The
+  only accessibility failure is colour contrast on the brand-green button
+  and chips, already recorded in docs/ACCESSIBILITY.md as a kept trade-off.
+  Home and plants LCP are the throttled-4G simulation of a heavier first
+  paint (hero canvases + Lenis; photo grid); the content pages are fast.
+- Real-phone check on Daniel's own devices still to do (browser-only
+  checks were at 390 px). Milestone M4 reached.
+
 ## 2026-08-18 — Weeks 12–14: deploy prep, testing plan, stretch features
 
 - Week 12 (deployment): pushed `main` to GitHub; the CI workflow ran green
