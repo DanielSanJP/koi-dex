@@ -15,7 +15,9 @@
     "db:studio": "prisma studio",
     "test": "vitest run",
     "typecheck": "tsc --noEmit -p .",
-    "check": "npm run lint && npm run typecheck && npm run test && npm run db:validate"
+    "check": "npm run lint && npm run typecheck && npm run test && npm run db:validate",
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
