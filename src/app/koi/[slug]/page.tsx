@@ -143,7 +143,7 @@ export default async function KoiDetailPage({
       <div className="flex flex-col gap-10 md:flex-row md:gap-14">
         <div className="w-full max-w-xl flex-1">
           <div className="rounded-2xl border border-black/10 bg-white p-8 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
-            <KoiComposite koi={koi.koi} className="w-full" bufferWidth={688} />
+            <KoiComposite koi={koi.koi} className="w-full" bufferWidth={688} animateOnHover />
           </div>
         </div>
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import FeedingBands from "@/components/feeding-bands";
 import NumbersTable from "@/components/numbers-table";
+import PondCalculator from "@/components/pond-calculator";
 import PondChecklist from "@/components/pond-checklist";
 import {
   CARE_SECTIONS,
@@ -31,6 +32,7 @@ const JUMP_LINKS = [
     href: `#${slugify(s.title)}`,
     label: s.title,
   })),
+  { href: "#pond-calculator", label: "Pond calculator" },
   { href: "#feeding-by-temperature", label: "Feeding by temperature" },
   { href: "#new-pond-checklist", label: "New pond checklist" },
   { href: "#through-the-year", label: "Through the year" },
@@ -39,6 +41,9 @@ const JUMP_LINKS = [
 
 export default function CarePage() {
   const feedingIndex = CARE_SECTIONS.findIndex((s) => s.title === "Feeding");
+  const stockingIndex = CARE_SECTIONS.findIndex(
+    (s) => s.title === "Pond size and stocking",
+  );
 
   return (
     <div className="mx-auto w-full max-w-5xl px-6 py-12 sm:px-8">
@@ -107,6 +112,20 @@ export default function CarePage() {
                   <p key={j}>{p}</p>
                 ))}
               </div>
+              {i === stockingIndex && (
+                <div
+                  id="pond-calculator"
+                  className="mt-5 scroll-mt-24 rounded-2xl border border-black/10 bg-white p-4 shadow-[0_4px_12px_rgba(0,0,0,0.06)] sm:p-5"
+                >
+                  <h3 className="font-pally font-bold">Pond calculator</h3>
+                  <p className="mt-1 mb-4 text-xs text-black/55">
+                    Volume, how many koi it can carry, the pump you need, the
+                    weekly water change and a feed estimate, from your
+                    measurements.
+                  </p>
+                  <PondCalculator />
+                </div>
+              )}
               {i === feedingIndex && (
                 <div
                   id="feeding-by-temperature"

@@ -16,6 +16,7 @@ export default function KoiCard({ koi }: { koi: Koi }) {
         koi={koi}
         className="w-full transition-transform group-hover:scale-105"
         bufferWidth={344}
+        animateOnHover
       />
       <span className="font-pally font-bold">{koi.name}</span>
     </Link>

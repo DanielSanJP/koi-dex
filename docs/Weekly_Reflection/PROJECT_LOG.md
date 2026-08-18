@@ -4,6 +4,29 @@ A factual running log of what happened and when. Each weekly progress update
 gets drafted from this log, so it stays honest and the mid-point review and
 final report write themselves. Add an entry whenever work happens.
 
+## 2026-08-18 — Weeks 12–14: deploy prep, testing plan, stretch features
+
+- Week 12 (deployment): pushed `main` to GitHub; the CI workflow ran green
+  on GitHub in 1m21s (lint, typecheck, 14 tests, content validation, and a
+  full build with no secrets). Vercel deploy is blocked on an interactive
+  `vercel login` (the stored CLI token had expired), so the runbook was
+  written instead: `docs/DEPLOY.md` (project link, the four environment
+  variables, `npm run deploy`, the re-seed → revalidate loop, schema-change
+  cautions, a go-live checklist).
+- Week 13 (testing): automated tests and CI are in place from week 11; the
+  user-testing protocol (`docs/USER_TESTING.md`: 3–5 people, six tasks
+  covering dex, lineage, pairing explorer, a checked number, NZ plant
+  status, free browse; post-task questions; scoring; fix loop) and the
+  `docs/FEEDBACK_LOG.md` template are ready. Sessions need the live URL and
+  real people, so they wait on the deploy.
+- Week 14 (stretch, done early while the deploy waits): pond calculator on
+  the care page (volume from measurements, stocking capacity at 3,800 L +
+  950 L per koi, pump L/h, weekly change 10–20 %, daily feed estimate from
+  a length-based weight and the temperature band, all from the guide's own
+  figures) and animated koi: the 20 hand-drawn fin frames cycle over 2 s
+  while a card or hero is hovered or focused, off under reduced motion; the
+  offscreen tint canvas is reused per frame.
+
 ## 2026-08-18 — Week 11: polish pass, accessibility, tests and CI
 
 - Accessibility audit against WCAG 2.2 AA (`docs/ACCESSIBILITY.md`):

@@ -53,7 +53,7 @@ export default async function Home() {
           <Button text="Browse the koi-dex" href="/koi" />
         </div>
         <div className="w-full max-w-md flex-1 rounded-2xl border border-black/10 bg-white p-6 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
-          <KoiComposite koi={featured} className="w-full" bufferWidth={640} />
+          <KoiComposite koi={featured} className="w-full" bufferWidth={640} animateOnHover />
           <p className="mt-2 text-center text-sm text-black/60">
             {featured.name}, the classic
           </p>
