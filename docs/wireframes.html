@@ -98,6 +98,56 @@
     padding: .14rem .6rem; font-size: .66rem; font-weight: 700; color: var(--ink-50); white-space: nowrap;
   }
   .chip.on { background: color-mix(in oklab, #66dd93 18%, white); color: var(--green-dark); border-color: var(--green-dark); }
+  .chip.good { background: color-mix(in oklab, #66dd93 18%, white); color: var(--green-dark); border-color: var(--green-dark); }
+  .chip.warn { background: color-mix(in oklab, #f8a634 14%, white); color: #a86a06; border-color: #f8a634; }
+  .chip.bad { background: color-mix(in oklab, #e05252 10%, white); color: #c03530; border-color: #c03530; }
+  .links .active { text-decoration: underline; text-underline-offset: 3px; }
+  .searchbtn {
+    width: 22px; height: 22px; border-radius: 50%; background: var(--card);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-size: .7rem; color: var(--ink-50); flex: 0 0 22px; margin-left: .5rem;
+  }
+  .sectionhead { font-size: .82rem; font-weight: 700; }
+  .pad { padding: .7rem; }
+  .koi { aspect-ratio: 688/464; }
+  .dot.inline { position: static; display: inline-block; }
+
+  /* lineage tree (breeding) */
+  .tree { display: flex; flex-direction: column; gap: .45rem; padding: .3rem 0; }
+  .tier { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+  .tier .lvl { font-size: .6rem; color: var(--ink-50); width: 66px; flex: 0 0 66px; }
+  .node {
+    display: flex; align-items: center; gap: .35rem;
+    border: 1px solid var(--line); border-radius: 999px; background: var(--card);
+    padding: .18rem .6rem .18rem .22rem; font-size: .68rem; font-weight: 700;
+  }
+  .node .dotart { width: 26px; height: 18px; border-radius: 4px; background: var(--soft); border: 1px solid var(--line); }
+  .node.anc { border-style: dashed; color: var(--ink-50); background: transparent; padding: .18rem .6rem; }
+  .node.anc .dotart { display: none; }
+  .node.hi { border-color: var(--green-dark); background: color-mix(in oklab, #66dd93 12%, white); }
+  .edge { font-size: .7rem; color: var(--ink-50); }
+
+  /* cross card */
+  .cross { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+  .parent { display: flex; flex-direction: column; align-items: center; gap: .2rem; width: 82px; }
+  .op { font-size: .95rem; color: var(--ink-50); font-weight: 700; }
+
+  /* timeline */
+  .timeline { position: relative; padding: 1.4rem 0 .3rem; }
+  .timeline .axis { position: absolute; left: 0; right: 0; top: 1.1rem; height: 2px; background: var(--line); }
+  .tl { display: flex; justify-content: space-between; align-items: flex-start; }
+  .tl > div { display: flex; flex-direction: column; align-items: center; gap: .25rem; width: 74px; }
+  .tl .pin { width: 9px; height: 9px; border-radius: 50%; background: var(--green-dark); }
+  .tl .yr { font-size: .62rem; font-weight: 700; }
+  .tl .who { font-size: .6rem; color: var(--ink-50); text-align: center; }
+
+  /* spawn funnel */
+  .funnel { display: flex; flex-direction: column; gap: .3rem; align-items: center; }
+  .funnel div {
+    background: color-mix(in oklab, #66dd93 22%, white); border: 1px solid var(--green-dark);
+    border-radius: 6px; font-size: .64rem; font-weight: 700; color: var(--green-dark);
+    text-align: center; padding: .18rem 0;
+  }
 
   .row { display: flex; gap: .6rem; align-items: stretch; }
   .col { display: flex; flex-direction: column; gap: .6rem; }
@@ -138,7 +188,7 @@
 </style>
 
 <main>
-  <p class="kicker">Koi-dex · wireframes v2 · Koi brand</p>
+  <p class="kicker">Koi-dex · wireframes v4 · Koi brand</p>
   <h1>Koi-dex wireframe deck</h1>
   <p class="lede">Six screens using the real Koi design language from koi-web: Pally type, the sky-blue band with its 3px divider, white cards with the soft card shadow, and the chunky offset-shadow button. The site covers real koi only — the 22 genuine varieties, their care, breeding outcomes, and pond plants — with no game concepts (no rarity, tiers, or glow). Crossed boxes are sprites; orange dots are annotations.</p>
   <nav class="toc">
@@ -157,7 +207,7 @@
     <div class="frames">
       <div class="frame">
         <div class="body" style="padding:0;">
-          <div class="band"><span class="logo">KOI-DEX</span><span class="links"><span>Koi</span><span>Breeding</span><span>Care</span><span>Plants</span></span></div>
+          <div class="band"><span class="logo">KOI-DEX</span><span class="links"><span>Koi</span><span>Breeding</span><span>Care</span><span>Plants</span></span><span class="searchbtn">⌕</span></div>
           <div class="col" style="padding:.9rem; gap:.8rem;">
             <div class="row">
               <div class="col" style="flex:1.2; justify-content:center; gap:.7rem;">
@@ -165,16 +215,16 @@
                 <div class="txt"><i></i><i></i></div>
                 <span class="cbtn">Browse the koi-dex</span>
               </div>
-              <div class="card" style="flex:1; min-height:140px; box-shadow:0 4px 12px rgba(0,0,0,.06);"><div class="ph" style="position:absolute; inset:12px;"></div><span class="dot">1</span><span class="caption">featured koi · composite</span></div>
+              <div class="card" style="flex:1; min-height:140px; box-shadow:0 4px 12px rgba(0,0,0,.06);"><div class="ph" style="position:absolute; inset:12px;"></div><span class="dot">1</span><span class="caption">Kohaku, the classic · real composite</span></div>
             </div>
             <div class="row">
-              <div class="card tile" style="flex:1;"><div class="ph" style="height:42px; width:100%;"></div><span class="name">Koi-dex</span><span class="dot">2</span></div>
-              <div class="card tile" style="flex:1;"><div class="ph" style="height:42px; width:100%;"></div><span class="name">Breeding</span></div>
-              <div class="card tile" style="flex:1;"><div class="ph" style="height:42px; width:100%;"></div><span class="name">Care</span></div>
-              <div class="card tile" style="flex:1;"><div class="ph" style="height:42px; width:100%;"></div><span class="name">Plants</span></div>
+              <div class="card tile" style="flex:1;"><div class="ph" style="height:42px; width:100%;"></div><span class="name">Koi-dex</span><span class="meta">Every variety, drawn and explained.</span><span class="dot">2</span></div>
+              <div class="card tile" style="flex:1;"><div class="ph" style="height:42px; width:100%;"></div><span class="name">Breeding</span><span class="meta">Lineage, pairings, and outcomes.</span></div>
+              <div class="card tile" style="flex:1;"><div class="ph" style="height:42px; width:100%;"></div><span class="name">Care</span><span class="meta">Water, feeding, seasons, health.</span></div>
+              <div class="card tile" style="flex:1;"><div class="ph" style="height:42px; width:100%;"></div><span class="name">Plants</span><span class="meta">Pond plants and how to keep them.</span></div>
             </div>
           </div>
-          <div class="band foot">© Koi-dex · about · credits</div>
+          <div class="band foot">A koi encyclopedia school project · artwork from the Koi app</div>
         </div>
       </div>
       <div class="frame mobile">
@@ -203,11 +253,13 @@
     <div class="frames">
       <div class="frame">
         <div class="body" style="padding:0;">
-          <div class="band"><span class="logo">KOI-DEX</span><span class="links"><span>Koi</span><span>Breeding</span><span>Care</span><span>Plants</span></span></div>
+          <div class="band"><span class="logo">KOI-DEX</span><span class="links"><span class="active">Koi</span><span>Breeding</span><span>Care</span><span>Plants</span></span><span class="searchbtn">⌕</span></div>
           <div class="col" style="padding:.9rem; gap:.7rem;">
-            <div class="row" style="align-items:center;">
-              <div class="card" style="flex:1; height:30px;"><span style="position:absolute; inset:0; display:flex; align-items:center; padding-left:.6rem; font-size:.66rem; color:var(--ink-50);">Search varieties…</span></div>
-              <span class="chip on">all</span><span class="chip">gosanke</span><span class="chip">utsuri</span><span class="chip">ogon</span>
+            <div style="font-weight:700; font-size:1rem;">Koi-dex</div>
+            <div class="txt"><i></i><i></i></div>
+            <div class="row" style="align-items:center; flex-wrap:wrap;">
+              <div class="card" style="flex:1 1 150px; height:30px;"><span style="position:absolute; inset:0; display:flex; align-items:center; padding-left:.6rem; font-size:.66rem; color:var(--ink-50);">Search varieties…</span></div>
+              <span class="chip on">all</span><span class="chip">Gosanke</span><span class="chip">Utsurimono</span><span class="chip">Bekko</span><span class="chip">Asagi &amp; Shusui</span><span class="chip">Koromo</span><span class="chip">Kawarimono</span><span class="chip">Hikarimuji</span><span class="chip">Hikarimoyo</span><span class="chip">Hikari Utsuri</span><span class="chip">Tancho</span>
               <span class="dot" style="position:static; flex:0 0 20px;">1</span>
             </div>
             <div class="row">
@@ -230,7 +282,7 @@
           <div class="band"><span class="logo">KOI-DEX</span><span class="links"><span>☰</span></span></div>
           <div class="col" style="padding:.7rem; gap:.6rem;">
             <div class="card" style="height:28px;"><span style="position:absolute; inset:0; display:flex; align-items:center; padding-left:.6rem; font-size:.64rem; color:var(--ink-50);">Search…</span></div>
-            <div class="row"><span class="chip on">all</span><span class="chip">gosanke</span><span class="chip">utsuri</span></div>
+            <div class="row"><span class="chip on">all</span><span class="chip">Gosanke</span><span class="chip">Utsurimono</span></div>
             <div class="row"><div class="card tile" style="flex:1;"><span class="meta">#001</span><div class="ph" style="height:46px; width:100%;"></div><span class="name">Chagoi</span></div><div class="card tile" style="flex:1;"><span class="meta">#002</span><div class="ph" style="height:46px; width:100%;"></div><span class="name">Bekko</span></div></div>
             <div class="row"><div class="card tile" style="flex:1;"><span class="meta">#003</span><div class="ph" style="height:46px; width:100%;"></div><span class="name">Benigoi</span></div><div class="card tile" style="flex:1;"><span class="meta">#004</span><div class="ph" style="height:46px; width:100%;"></div><span class="name">Karasugoi</span></div></div>
           </div>
@@ -238,7 +290,7 @@
       </div>
     </div>
     <ul class="legend">
-      <li><b>1</b><span><strong>Filter toolbar</strong> — client-side over <code>koi.json</code>, URL-synced so filtered views are shareable. The chips are real variety families (Gosanke, Utsurimono, Ogon…), not game tiers. 4 columns desktop, 2 mobile.</span></li>
+      <li><b>1</b><span><strong>Filter toolbar</strong> — search plus the real variety-family chips (Gosanke, Utsurimono, Kawarimono, the Hikari groups…), filtering client-side over the loaded dex and synced to the URL so filtered views are shareable. 4 columns desktop, 2 mobile.</span></li>
       <li><b>2</b><span><strong>Dex card</strong> — number, preview art with the stored blurhash while loading, name. Nothing else.</span></li>
     </ul>
   </section>
@@ -246,93 +298,208 @@
   <!-- 03 DETAIL -->
   <section class="screen" id="detail">
     <div class="screen-head"><h2>03 · Koi detail</h2><span class="route">/koi/[slug]</span></div>
-    <p class="purpose">One page per variety, purely for info and showing: the composite render beside the variety's real-world notes — origin, pattern, and what it produces in breeding. No viewer controls; the koi is simply displayed.</p>
+    <p class="purpose">One page per variety, the hub where everything about it lives: the composite render beside its history and pattern notes, care specific to the variety, the documented pairings it appears in, and its whole lineage.</p>
     <div class="frames">
       <div class="frame">
         <div class="body" style="padding:0;">
-          <div class="band"><span class="logo">KOI-DEX</span><span class="links"><span>← #004</span><span>#006 →</span></span><span class="dot">1</span></div>
+          <div class="band"><span class="logo">KOI-DEX</span><span class="links"><span class="active">Koi</span><span>Breeding</span><span>Care</span><span>Plants</span></span><span class="searchbtn">⌕</span></div>
           <div class="col" style="padding:.9rem; gap:.7rem;">
+            <div class="row" style="justify-content:space-between; align-items:center;"><span class="chip">← Sanke</span><span class="chip">Gold Ogon →</span><span class="dot" style="position:static; flex:0 0 20px;">1</span></div>
             <div class="row">
               <div class="col" style="flex:1.1;">
                 <div class="card" style="min-height:150px; box-shadow:0 4px 12px rgba(0,0,0,.06);"><div class="ph" style="position:absolute; inset:12px;"></div><span class="dot">2</span><span class="caption">body + tinted white fins · frame 0, cycles on hover</span></div>
               </div>
               <div class="col" style="flex:1;">
-                <div style="font-weight:700; font-size:1rem;">Hi Utsuri</div>
-                <div class="row" style="align-items:center;"><span class="chip">#005</span><span class="chip on">Utsurimono</span></div>
+                <div style="font-weight:700; font-size:1rem;">Kohaku</div>
+                <div class="row" style="align-items:center;"><span class="chip">#021</span><span class="chip on">Gosanke</span><span class="chip">fixed 1888–89</span></div>
                 <div class="txt"><i></i><i></i><i></i><i></i></div>
                 <div class="txt"><i></i><i></i></div>
-                <div class="txt"><i></i><i></i></div>
+                <span class="meta" style="text-align:left;">Sources: [1] [2]</span>
               </div>
             </div>
-            <div class="card" style="padding:.5rem .7rem; display:flex; gap:.6rem; align-items:center;"><span class="meta" style="text-align:left;">breeding</span><div class="ph" style="width:44px; height:30px;"></div><span class="meta">×</span><div class="ph" style="width:44px; height:30px;"></div><span class="meta">→</span><div class="ph" style="width:44px; height:30px;"></div><span class="meta" style="flex:1; text-align:left;">pairings this variety comes from, and what it produces</span><span class="dot">3</span></div>
+            <div class="row">
+              <div class="card col" style="flex:1; padding:.6rem; gap:.45rem;">
+                <span class="sectionhead">Caring for a Kohaku</span>
+                <div class="txt"><i></i><i></i><i></i></div>
+                <div class="txt"><i></i><i></i></div>
+                <span class="chip" style="align-self:flex-start;">Full care guide →</span>
+                <span class="dot">3</span>
+              </div>
+              <div class="card col" style="flex:1; padding:.6rem; gap:.45rem;">
+                <span class="sectionhead">Breeding · parent of</span>
+                <div class="row" style="align-items:center;"><div class="ph koi" style="width:40px;"></div><span class="op">×</span><div class="ph koi" style="width:40px;"></div><span class="op">→</span><div class="ph koi" style="width:40px;"></div><span class="meta" style="flex:1; text-align:left;">Kohaku × Ki Utsuri → Showa · 1926–27</span></div>
+                <div class="row" style="align-items:center;"><div class="ph koi" style="width:40px;"></div><span class="op">×</span><div class="ph koi" style="width:40px;"></div><span class="op">→</span><div class="ph koi" style="width:40px;"></div><span class="meta" style="flex:1; text-align:left;">Kohaku × Koromo → Sanke · 1917</span></div>
+                <span class="chip" style="align-self:flex-start;">See the family tree →</span>
+                <span class="dot">4</span>
+              </div>
+            </div>
+            <div class="card col" style="padding:.6rem; gap:.45rem;">
+              <span class="sectionhead">Whole lineage</span>
+              <span class="meta" style="text-align:left;">every recorded ancestor and descendant, followed through the documented crosses</span>
+              <div class="row"><div class="ph koi" style="width:44px;"></div><div class="ph koi" style="width:44px;"></div><div class="ph koi" style="width:44px;"></div><div class="ph koi" style="width:44px;"></div><div class="ph koi" style="width:44px;"></div><div class="ph koi" style="width:44px;"></div></div>
+              <span class="dot">5</span>
+            </div>
           </div>
         </div>
       </div>
       <div class="frame mobile">
         <div class="body" style="padding:0;">
-          <div class="band"><span class="logo">← Hi Utsuri</span><span class="links"><span>#004</span><span>#006</span></span></div>
+          <div class="band"><span class="logo">KOI-DEX</span><span class="links"><span>☰</span></span></div>
           <div class="col" style="padding:.7rem; gap:.6rem;">
+            <div class="row" style="justify-content:space-between;"><span class="chip">← Sanke</span><span class="chip">Gold Ogon →</span></div>
             <div class="card" style="height:110px;"><div class="ph" style="position:absolute; inset:10px;"></div></div>
-            <div style="font-weight:700; font-size:.9rem;">Hi Utsuri</div>
-            <div class="row" style="align-items:center;"><span class="chip">#005</span><span class="chip on">Utsurimono</span></div>
+            <div style="font-weight:700; font-size:.9rem;">Kohaku</div>
+            <div class="row" style="align-items:center;"><span class="chip">#021</span><span class="chip on">Gosanke</span></div>
             <div class="txt"><i></i><i></i><i></i></div>
+            <div class="card col" style="padding:.5rem; gap:.4rem;"><span class="sectionhead" style="font-size:.72rem;">Caring for a Kohaku</span><div class="txt"><i></i><i></i></div></div>
+            <div class="card col" style="padding:.5rem; gap:.4rem;"><span class="sectionhead" style="font-size:.72rem;">Breeding · parent of</span><div class="row" style="align-items:center;"><div class="ph koi" style="width:34px;"></div><span class="op">×</span><div class="ph koi" style="width:34px;"></div><span class="op">→</span><div class="ph koi" style="width:34px;"></div></div></div>
           </div>
         </div>
       </div>
     </div>
     <ul class="legend">
-      <li><b>1</b><span><strong>Prev / next</strong> in the band, ordered by dex number — flip through the whole dex.</span></li>
+      <li><b>1</b><span><strong>Prev / next pills</strong> named by variety, ordered by dex number — flip through the whole dex without going back to the grid.</span></li>
       <li><b>2</b><span><strong>Composite render</strong> — the app's real recipe on a canvas: back fin → tail → body → dorsal → side fin, fins from the shared white 5×4 sheets (688×464 frames) multiplied by the variety's hex. Static frame 0; hover/tap cycles the 20 frames over 2&nbsp;s. Display only, no controls.</span></li>
-      <li><b>3</b><span><strong>Breeding strip</strong> — which pairings produce this variety and what it throws when crossed, linking to the other varieties. Feeds from the breeding guide's outcomes data.</span></li>
+      <li><b>3</b><span><strong>Caring card</strong> — variety-specific husbandry (colour-food trade-offs, water preferences) with sources, linking into the full care guide.</span></li>
+      <li><b>4</b><span><strong>Breeding card</strong> — the documented pairings this variety parents, drawn with the actual fish and dated, linking to the family tree. Feeds from the breeding guide's outcomes data.</span></li>
+      <li><b>5</b><span><strong>Whole lineage</strong> — every ancestor and descendant reachable through documented crosses, as a strip of linked composites.</span></li>
     </ul>
   </section>
 
   <!-- 04 BREEDING -->
   <section class="screen" id="breeding">
     <div class="screen-head"><h2>04 · Breeding guide</h2><span class="route">/breeding</span></div>
-    <p class="purpose">Long-form article on real variety lineage (Kohaku → Sanke → Showa, the Utsuri family, Ogon metallics), illustrated with snapshot sprites.</p>
+    <p class="purpose">Five blocks, each carrying its own weight visually: the family tree by era, a pairing explorer, the documented pairings as cards, what a spawn really produces, and the timeline. Every koi shown is the real composite, so the fish illustrate the page.</p>
     <div class="frames">
       <div class="frame">
         <div class="body" style="padding:0;">
-          <div class="band"><span class="logo">KOI-DEX</span><span class="links"><span>Koi</span><span>Breeding</span><span>Care</span><span>Plants</span></span></div>
-          <div class="row" style="padding:.9rem; gap:.8rem;">
-            <div class="card col" style="flex:0 0 130px; padding:.6rem; align-self:flex-start;">
-              <span class="meta" style="text-align:left; font-weight:700;">On this page</span>
-              <div class="txt"><i></i><i></i><i></i><i></i></div>
-              <span class="dot">1</span>
+          <div class="band"><span class="logo">KOI-DEX</span><span class="links"><span>Koi</span><span class="active">Breeding</span><span>Care</span><span>Plants</span></span><span class="searchbtn">⌕</span></div>
+          <div class="col" style="padding:.9rem; gap:.7rem;">
+            <div style="font-weight:700; font-size:1rem;">Breeding guide</div>
+            <div class="txt"><i></i><i></i></div>
+            <span class="sectionhead">The family tree</span>
+            <div class="card pad">
+              <div class="tree">
+                <div class="tier"><span class="lvl">wild</span><span class="node anc">Magoi</span><span class="edge">the wild carp everything descends from</span><span class="dot inline">1</span></div>
+                <div class="tier"><span class="lvl">1800s</span><span class="node"><span class="dotart"></span>Bekko</span><span class="node"><span class="dotart"></span>Asagi</span><span class="node hi"><span class="dotart"></span>Kohaku</span></div>
+                <div class="tier"><span class="lvl">1900s–20s</span><span class="node"><span class="dotart"></span>Chagoi</span><span class="node"><span class="dotart"></span>Hi Utsuri</span><span class="node"><span class="dotart"></span>Ki Utsuri</span><span class="node"><span class="dotart"></span>Shiro Utsuri</span><span class="node"><span class="dotart"></span>Shusui</span><span class="node"><span class="dotart"></span>Showa</span><span class="node"><span class="dotart"></span>Sanke</span></div>
+                <div class="tier"><span class="lvl">1940s–50s</span><span class="node"><span class="dotart"></span>Hariwake</span><span class="node"><span class="dotart"></span>Koromo</span><span class="node"><span class="dotart"></span>Gold Ogon</span></div>
+                <div class="tier"><span class="lvl">1960s–70s</span><span class="node"><span class="dotart"></span>Kujaku</span><span class="node"><span class="dotart"></span>Platinum</span><span class="node"><span class="dotart"></span>Kin Ki Utsuri</span></div>
+                <div class="tier"><span class="lvl">1980s on</span><span class="node"><span class="dotart"></span>Ochiba</span><span class="node"><span class="dotart"></span>Kumonryu</span><span class="node"><span class="dotart"></span>Beni Kumonryu</span></div>
+                <div class="tier"><span class="lvl">undated</span><span class="node anc">Benigoi</span><span class="node anc">Karasugoi</span><span class="node anc">Tancho</span></div>
+              </div>
             </div>
-            <div class="col" style="flex:1;">
-              <div style="font-weight:700; font-size:1rem;">How koi varieties relate</div>
-              <div class="txt"><i></i><i></i><i></i></div>
-              <div class="row"><div class="ph" style="flex:1; height:58px;"></div><div class="ph" style="flex:1; height:58px;"></div></div>
-              <div class="txt"><i></i><i></i></div>
-              <div class="card" style="height:64px;"><span class="caption" style="inset:0; display:grid; place-items:center; position:absolute;">lineage table · parent × parent → offspring traits</span></div>
-              <div class="card" style="height:44px; border-style:dashed;"><span class="caption" style="inset:0; display:grid; place-items:center; position:absolute;">phase 2 · interactive pairing tool (Neon)</span><span class="dot">2</span></div>
+            <span class="sectionhead">What do these two make?</span>
+            <div class="card pad row" style="align-items:center; gap:.8rem; flex-wrap:wrap;">
+              <div class="col" style="align-items:center; gap:.3rem;">
+                <div class="ph koi" style="width:96px;"></div>
+                <span class="chip on">Kohaku ▾</span>
+              </div>
+              <span class="op">×</span>
+              <div class="col" style="align-items:center; gap:.3rem;">
+                <div class="ph koi" style="width:96px;"></div>
+                <span class="chip on">Ki Utsuri ▾</span>
+              </div>
+              <span class="op">→</span>
+              <div class="col" style="align-items:center; gap:.3rem;">
+                <div class="ph koi" style="width:96px;"></div>
+                <span class="chip">Showa</span>
+              </div>
+              <div class="col" style="flex:1; min-width:180px;">
+                <span class="meta" style="text-align:left;"><strong>Documented, 1926–27.</strong> Jukichi Hoshino. Early fish had dull colour; decades of selection reached the modern look.</span>
+              </div>
+              <span class="dot" style="position:static; flex:0 0 20px;">2</span>
+            </div>
+            <span class="sectionhead">Documented pairings</span>
+            <div class="row" style="flex-wrap:wrap;">
+              <div class="card pad" style="flex:1 1 46%;">
+                <div class="cross">
+                  <div class="parent"><div class="ph koi"></div><span class="name">Asagi</span></div>
+                  <span class="op">×</span>
+                  <div class="parent"><span class="node anc" style="font-size:.6rem;">German carp</span></div>
+                  <span class="op">→</span>
+                  <div class="parent"><div class="ph koi"></div><span class="name">Shusui</span></div>
+                </div>
+                <p class="meta" style="margin-top:.4rem; text-align:left;">1910, Akiyama. The first doitsu koi. <span style="text-decoration:underline;">Source</span></p>
+                <span class="dot">3</span>
+              </div>
+              <div class="card pad" style="flex:1 1 46%;">
+                <div class="cross">
+                  <div class="parent"><div class="ph koi"></div><span class="name">Chagoi</span></div>
+                  <span class="op">×</span>
+                  <div class="parent"><span class="node anc" style="font-size:.6rem;">Soragoi</span></div>
+                  <span class="op">→</span>
+                  <div class="parent"><div class="ph koi"></div><span class="name">Ochiba</span></div>
+                </div>
+                <p class="meta" style="margin-top:.4rem; text-align:left;">Mid-1990s. Grey ground with brown fallen-leaf patterning. <span style="text-decoration:underline;">Source</span></p>
+              </div>
+            </div>
+            <span class="sectionhead">What a spawn really gives you</span>
+            <div class="row">
+              <div class="card pad" style="flex:1;">
+                <div class="funnel">
+                  <div style="width:100%;">up to 500,000 eggs from one large female</div>
+                  <div style="width:85%;">fry hatch in 4–7 days</div>
+                  <div style="width:70%;">first cull at 4–6 weeks: deformities and stunted fry</div>
+                  <div style="width:55%;">pattern culls in rounds until about 6 months</div>
+                  <div style="width:40%;">100–200 kept by a professional breeder</div>
+                  <div style="width:28%;">a handful reach show quality, sometimes none</div>
+                </div>
+                <span class="dot">4</span>
+              </div>
+              <div class="col" style="flex:1;">
+                <div class="txt"><i></i><i></i><i></i></div>
+                <div class="txt"><i></i><i></i><i></i></div>
+                <div class="txt"><i></i><i></i></div>
+              </div>
+            </div>
+            <span class="sectionhead">Two centuries, in order</span>
+            <div class="card pad">
+              <div class="timeline">
+                <div class="axis"></div>
+                <div class="tl">
+                  <div><span class="pin"></span><span class="yr">1810</span><span class="who">Asagi</span></div>
+                  <div><span class="pin"></span><span class="yr">1889</span><span class="who">Kohaku</span></div>
+                  <div><span class="pin"></span><span class="yr">1910</span><span class="who">Shusui</span></div>
+                  <div><span class="pin"></span><span class="yr">1927</span><span class="who">Showa</span></div>
+                  <div><span class="pin"></span><span class="yr">1946</span><span class="who">Gold Ogon</span></div>
+                  <div><span class="pin"></span><span class="yr">1990s</span><span class="who">Kumonryu</span></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <ul class="legend">
-      <li><b>1</b><span><strong>Sticky TOC</strong> from MDX headings; dropdown on mobile.</span></li>
-      <li><b>2</b><span><strong>Pairing tool slot</strong> — phase 2, Neon-backed: pick two koi, see shared traits and plausible offspring varieties. Ships as a visible "coming soon" card so phase 1 feels complete.</span></li>
+      <li><b>1</b><span><strong>Family tree</strong> by era, one wild carp at the root. Hovering a fish lights its whole ancestry path; clicking opens its page. Dashed pills are lines with no artwork or no recorded date.</span></li>
+      <li><b>2</b><span><strong>Pairing explorer</strong> — pick two parents and see whether the pairing is documented, who bred it and when. Answers honestly when it is not.</span></li>
+      <li><b>3</b><span><strong>Documented pairings</strong> as cards with the actual fish rather than a text table, each with its year, breeder, and source link.</span></li>
+      <li><b>4</b><span><strong>Spawn funnel</strong> — the honest numbers from eggs to show quality, so the scale of culling is visible at a glance.</span></li>
     </ul>
   </section>
 
   <!-- 05 CARE -->
   <section class="screen" id="care">
     <div class="screen-head"><h2>05 · Care guide</h2><span class="route">/care</span></div>
-    <p class="purpose">Practical husbandry: water, feeding, seasons, health. A quick-facts card answers the common questions before the prose does.</p>
+    <p class="purpose">Practical husbandry checked against two sources: water quality, filtration, temperature, feeding, health, and a first-pond checklist, opening with what koi keeping means in New Zealand. Jump links take you straight to any section.</p>
     <div class="frames">
       <div class="frame">
         <div class="body" style="padding:0;">
-          <div class="band"><span class="logo">KOI-DEX</span><span class="links"><span>Koi</span><span>Breeding</span><span>Care</span><span>Plants</span></span></div>
+          <div class="band"><span class="logo">KOI-DEX</span><span class="links"><span>Koi</span><span>Breeding</span><span class="active">Care</span><span>Plants</span></span><span class="searchbtn">⌕</span></div>
           <div class="col" style="padding:.9rem; gap:.7rem;">
+            <div style="font-weight:700; font-size:1rem;">Care guide</div>
+            <div class="txt"><i></i><i></i></div>
+            <div class="row" style="flex-wrap:wrap;"><span class="chip">Koi in New Zealand</span><span class="chip">Water quality</span><span class="chip">Filtration</span><span class="chip">Temperature</span><span class="chip">Feeding</span><span class="chip">Health</span><span class="chip">Pond calculator</span><span class="chip">Checklist</span><span class="dot" style="position:static; flex:0 0 20px;">1</span></div>
             <div class="row">
               <div class="col" style="flex:1;">
-                <div style="font-weight:700; font-size:1rem;">Caring for koi</div>
+                <div class="card col" style="padding:.6rem; gap:.4rem; background:color-mix(in oklab, #93d9f0 25%, white);">
+                  <span class="sectionhead">Keeping koi in New Zealand</span>
+                  <div class="txt"><i></i><i></i><i></i></div>
+                  <span class="dot">2</span>
+                </div>
+                <span class="sectionhead">Water quality comes first</span>
                 <div class="txt"><i></i><i></i><i></i></div>
-                <div class="txt"><i style="height:10px; width:40%;"></i></div>
                 <div class="txt"><i></i><i></i></div>
               </div>
               <div class="card col" style="flex:0 0 180px; padding:.6rem; align-self:flex-start;">
@@ -341,40 +508,59 @@
                 <span class="chip">pH 7.0–8.5</span>
                 <span class="chip">1000 L+ per koi</span>
                 <span class="chip">lifespan 25–35 y</span>
-                <span class="dot">1</span>
+                <span class="dot">3</span>
               </div>
             </div>
-            <div class="card" style="height:56px;"><span class="caption" style="inset:0; display:grid; place-items:center; position:absolute;">seasonal accordion · spring / summer / autumn / winter</span></div>
+            <div class="card" style="height:64px;"><span class="caption" style="inset:0; display:grid; place-items:center; position:absolute;">pond calculator · your pond → stocking, water changes, filter turnover</span><span class="dot">4</span></div>
+            <span class="sectionhead">Feeding by water temperature</span>
+            <div class="row">
+              <div class="card pad" style="flex:1; text-align:center; background:color-mix(in oklab, #93d9f0 30%, white);"><span class="meta">below 10 °C<br>don't feed</span></div>
+              <div class="card pad" style="flex:1; text-align:center; background:color-mix(in oklab, #93d9f0 15%, white);"><span class="meta">10–15 °C<br>wheatgerm, sparingly</span></div>
+              <div class="card pad" style="flex:1; text-align:center; background:color-mix(in oklab, #66dd93 18%, white);"><span class="meta">15–20 °C<br>mixed diet</span></div>
+              <div class="card pad" style="flex:1; text-align:center; background:color-mix(in oklab, #66dd93 30%, white);"><span class="meta">20–25 °C<br>growth feeding</span></div>
+              <div class="card pad" style="flex:1; text-align:center; background:color-mix(in oklab, #f8a634 20%, white);"><span class="meta">over 28 °C<br>ease off</span></div>
+            </div>
+            <span class="sectionhead">Building a first pond: the checklist</span>
+            <div class="row">
+              <div class="card col" style="flex:1; padding:.6rem; gap:.4rem;"><span class="meta" style="text-align:left; font-weight:700;">Before you dig · 0/6</span><div class="txt"><i></i><i></i><i></i></div><span class="dot">5</span></div>
+              <div class="card col" style="flex:1; padding:.6rem; gap:.4rem;"><span class="meta" style="text-align:left; font-weight:700;">Cycling the filter · 0/5</span><div class="txt"><i></i><i></i><i></i></div></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <ul class="legend">
-      <li><b>1</b><span><strong>Quick-facts card</strong> — sticky beside the article on desktop, on top on mobile.</span></li>
+      <li><b>1</b><span><strong>Jump links</strong> — chip anchors generated from the section headings, so the long article is navigable in one click.</span></li>
+      <li><b>2</b><span><strong>NZ callout</strong> — legal status and local realities of koi keeping in New Zealand, first because it changes what a local reader should buy.</span></li>
+      <li><b>3</b><span><strong>Quick-facts card</strong> — sticky beside the article on desktop, on top on mobile.</span></li>
+      <li><b>4</b><span><strong>Pond calculator</strong> — enter pond dimensions, get stocking, water-change volume, and filter turnover, with the working shown.</span></li>
+      <li><b>5</b><span><strong>Checklist cards</strong> — tickable steps for a first pond, grouped by phase, with progress counts.</span></li>
     </ul>
   </section>
 
   <!-- 06 PLANTS -->
   <section class="screen" id="plants">
     <div class="screen-head"><h2>06 · Pond plants</h2><span class="route">/plants · /plants/[slug]</span></div>
-    <p class="purpose">The dex pattern again, for real pond plants. Plant data is completely separate from the app: it lives in koi-dex's own plants table, populated by hand once the site's database exists. Grid, then a detail pairing each plant with its care info.</p>
+    <p class="purpose">The dex pattern again, for 20 real pond plants, by where they grow. Each card says whether the koi will leave it alone and its legal status in New Zealand: 5 are banned pest plants here, which matters before you buy. Grid, then a detail per plant.</p>
     <div class="frames">
       <div class="frame">
         <div class="body" style="padding:0;">
-          <div class="band"><span class="logo">KOI-DEX</span><span class="links"><span>Koi</span><span>Breeding</span><span>Care</span><span>Plants</span></span></div>
+          <div class="band"><span class="logo">KOI-DEX</span><span class="links"><span>Koi</span><span>Breeding</span><span>Care</span><span class="active">Plants</span></span><span class="searchbtn">⌕</span></div>
           <div class="col" style="padding:.9rem; gap:.7rem;">
-            <div class="row"><span class="chip on">all</span><span class="chip">floating</span><span class="chip">submerged</span><span class="chip">marginal</span><span class="dot" style="position:static; flex:0 0 20px;">1</span></div>
+            <div style="font-weight:700; font-size:1rem;">Pond plants</div>
+            <div class="txt"><i></i><i></i></div>
+            <div class="row" style="align-items:center;"><span class="chip on">all</span><span class="chip">Floating</span><span class="chip">Submerged</span><span class="chip">Marginal</span><span class="chip">koi leave it alone</span><span class="meta" style="margin-left:auto;">20 of 20</span><span class="dot" style="position:static; flex:0 0 20px;">1</span></div>
             <div class="row">
-              <div class="card tile" style="flex:1;"><div class="ph" style="height:48px; width:100%;"></div><span class="name">Anubias</span><span class="chip">submerged</span></div>
-              <div class="card tile" style="flex:1;"><div class="ph" style="height:48px; width:100%;"></div><span class="name">Water Lettuce</span><span class="chip">floating</span></div>
-              <div class="card tile" style="flex:1;"><div class="ph" style="height:48px; width:100%;"></div><span class="name">Lily Pad</span><span class="chip">floating</span></div>
-              <div class="card tile" style="flex:1;"><div class="ph" style="height:48px; width:100%;"></div><span class="name">Eelgrass</span><span class="chip">submerged</span></div>
+              <div class="card tile" style="flex:1;"><div class="ph" style="height:48px; width:100%;"></div><span class="name">Duckweed</span><span class="meta" style="font-style:italic;">Lemna minor</span><div class="row" style="gap:.3rem;"><span class="chip">Floating</span><span class="chip warn">Koi eat it</span><span class="chip good">NZ native</span></div><span class="dot">2</span></div>
+              <div class="card tile" style="flex:1;"><div class="ph" style="height:48px; width:100%;"></div><span class="name">Hardy water lily</span><span class="meta" style="font-style:italic;">Nymphaea hybrids</span><div class="row" style="gap:.3rem;"><span class="chip">Floating</span><span class="chip warn">Koi eat it</span><span class="chip">Sold in NZ</span></div></div>
+              <div class="card tile" style="flex:1;"><div class="ph" style="height:48px; width:100%;"></div><span class="name">Anubias</span><span class="meta" style="font-style:italic;">Anubias barteri</span><div class="row" style="gap:.3rem;"><span class="chip">Submerged</span><span class="chip good">Koi leave it</span><span class="chip warn">Not listed, check first</span></div></div>
+              <div class="card tile" style="flex:1;"><div class="ph" style="height:48px; width:100%;"></div><span class="name">Water hyacinth</span><span class="meta" style="font-style:italic;">Pontederia crassipes</span><div class="row" style="gap:.3rem;"><span class="chip">Floating</span><span class="chip warn">Koi eat it</span><span class="chip bad">Banned in NZ</span></div></div>
             </div>
             <div class="row" style="border-top:1px solid var(--line); padding-top:.7rem;">
               <div class="card" style="flex:0 0 140px; height:100px;"><div class="ph" style="position:absolute; inset:10px;"></div></div>
               <div class="col" style="flex:1;">
                 <div style="font-weight:700; font-size:.92rem;">Anubias</div>
-                <div class="row"><span class="chip on">care: easy</span><span class="chip">light: low</span><span class="chip">koi-safe ✓</span><span class="dot" style="position:static; flex:0 0 20px;">2</span></div>
+                <div class="row"><span class="chip">Submerged</span><span class="chip good">Koi leave it</span><span class="chip warn">Not listed, check first</span><span class="dot" style="position:static; flex:0 0 20px;">3</span></div>
                 <div class="txt"><i></i><i></i><i></i></div>
               </div>
             </div>
@@ -383,12 +569,13 @@
       </div>
     </div>
     <ul class="legend">
-      <li><b>1</b><span><strong>Type filter</strong> — floating / submerged / marginal, a column on koi-dex's own plants table.</span></li>
-      <li><b>2</b><span><strong>Care chips</strong> — difficulty, light, koi-safety; authored per plant in the same table.</span></li>
+      <li><b>1</b><span><strong>Type filter</strong> — floating / submerged / marginal plus a "koi leave it alone" toggle, with a live result count.</span></li>
+      <li><b>2</b><span><strong>Plant card</strong> — photo, common and botanical name, then three chips: where it grows, whether koi eat it, and NZ legal status. Green is safe, orange is check first, red is banned.</span></li>
+      <li><b>3</b><span><strong>Detail chips</strong> repeat the card's status trio, so the legal warning travels with the plant everywhere it appears.</span></li>
     </ul>
   </section>
 
   <footer class="pagefoot">
-    <p>Wireframes v3, set in the real brand: Pally, #f7f6f9 ground, #313131 ink, the #93d9f0 band with a 3px #c1c1c1 divider, chunky #66dd93/#49ad6d buttons, cards with the koi-web shadow. Scope: the 22 real koi varieties only — no rarity, tiers, or glow. The app contributes exactly two things: koi sprites and fin tint hexes (<code>data/koi.json</code>); the composite recipe matches the app's renderer (white fin sheets × tint, multiply). Plants and all guide content are authored separately.</p>
+    <p>Wireframes v4, matched to the shipped site (September 2026): Pally, #f7f6f9 ground, #313131 ink, the #93d9f0 band with a 3px #c1c1c1 divider, chunky #66dd93/#49ad6d buttons, cards with the koi-web shadow. Scope: the 22 real koi varieties and 20 pond plants, with no game concepts. The app contributes koi sprites and fin tint hexes (<code>data/koi.json</code>); the composite recipe matches the app's renderer (white fin sheets × tint, multiply). Plants and all guide content are authored separately.</p>
   </footer>
 </main>
