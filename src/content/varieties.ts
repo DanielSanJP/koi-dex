@@ -15,6 +15,8 @@ export const FAMILIES: Record<string, string> = {
     "The blue koi: Asagi with its fully scaled, net-patterned blue back and red flanks, and Shusui, its scaleless doitsu counterpart.",
   Koromo:
     "Robed koi: a Kohaku-style red pattern overlaid with blue or black scale edging, originally from Kohaku and Asagi crosses.",
+  Goshiki:
+    "Five-colour koi: a Kohaku red pattern laid over Asagi net-scaling. Long shown with Koromo or in Kawarimono, now a class of its own in the ZNA scheme.",
   Kawarimono:
     "The catch-all class for non-metallic varieties that fit no other group, including Chagoi, Benigoi, Karasugoi, Ochiba and Kumonryu.",
   Hikarimuji:
@@ -529,6 +531,192 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
     careSources: [
       "https://www.kloubeckoi.com/ogon-koi-for-sale/",
       "https://www.kodamakoifarm.com/variety/ogon/",
+    ],
+  },
+  aka_bekko: {
+    nameMeaning: '"red tortoise shell"; aka is red, Bekko the spotted shell pattern',
+    family: "Bekko",
+    pattern:
+      "A solid non-metallic red ground with black sumi spots stepping along the back and kept off the head. The pectoral fins and tail are often partly or wholly white, and the red should run even from nose to tail.",
+    origin:
+      "A by-product of Sanke breeding rather than a planned cross: Bekko and Sanke come from the same stock, which Kodama describes as brothers and sisters. Pond Informer places the first Bekko in the mid-1800s and ranks the red form as the second rarest of the three colours.",
+    notes:
+      "The field mark against Hi Utsuri: an Aka Bekko is a red fish with black spots, a Hi Utsuri is a black fish with wrapping red markings.",
+    sources: [
+      "https://pondinformer.com/bekko-koi-guide/",
+      "https://www.kodamakoifarm.com/variety/bekko/",
+    ],
+    care: [
+      "With no white ground there is no penalty for colour-enhancing food: carotenoid-rich feed deepens the red, the opposite of the advice for Shiro Bekko.",
+      "Pond Informer reports cooler water giving a darker red and warmer water a brighter one across the usual 10 to 26 °C range, and warns that spirulina-heavy diets can leave orange spotting on the red.",
+      "The coloured-ground Bekko show a water-quality slip in their colour quickly, so they reward stable parameters.",
+    ],
+    careSources: [
+      "https://pondinformer.com/bekko-koi-guide/",
+      "https://dainichi.com/koi-color-food/",
+    ],
+  },
+  ki_bekko: {
+    nameMeaning: '"yellow tortoise shell"; ki is yellow',
+    family: "Bekko",
+    pattern:
+      "A lemon-yellow ground carrying black sumi spots along the back with the head left clear, the fins often partly white. Even yellow under crisp, well-placed sumi is what judges look for.",
+    origin:
+      "Ray Jordan's history lists Ki Bekko as a spontaneous appearance from Magoi stock in the mid-1800s, well before the Sanke line behind the white and red Bekko. Around 1921 Hoshino crossed it back to Magoi to fix Ki Utsuri.",
+    notes:
+      "The rarest of the three Bekko colours and historically the weightiest: through Ki Utsuri it stands behind the whole black-based Utsuri and Showa branch.",
+    sources: [
+      "https://mpks.org/koi-history-by-ray-jordan/",
+      "https://pondinformer.com/bekko-koi-guide/",
+      "https://giobelkoicenter.com/ki-utsuri-koi/",
+    ],
+    care: [
+      "Pond Informer treats the yellow ground like the red one: carotenoid-rich feed intensifies it, unlike on Shiro Bekko where it stains the white. Keepers of solid-yellow koi do report heavy colour food drifting the yellow toward orange, so add it gradually.",
+      "Cooler water is reported to darken the yellow and warmer water to brighten it, and the colour shows water-quality problems early.",
+    ],
+    careSources: [
+      "https://pondinformer.com/bekko-koi-guide/",
+      "https://www.kloubeckoi.com/ogon-koi-for-sale/",
+    ],
+  },
+  orenji_ogon: {
+    nameMeaning:
+      'orenji is the Japanese rendering of "orange"; Ogon means gold and names the metallic class',
+    family: "Hikarimuji",
+    pattern:
+      "A one-colour metallic koi in deep orange from nose to tail, the lustre carried into the fins, with a clean unmarked head. Uniform colour is everything, and any scar shows against the sheen.",
+    origin:
+      "One of the colour forms that followed Sawata Aoki's original Ogon, recognised as a variety in 1947 after some 25 years of line-breeding. The ZNA lists orange-gold beside yellow-gold and platinum as the standard Hikarimuji colours; no founding cross or date for the orange form is well documented.",
+    notes:
+      "Often described as a goldfish grown large: it can pass 90 cm and is one of the most visible fish in any pond.",
+    sources: [
+      "https://www.koi-fish.com/koi-classification/orenji-ogon.html",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/hikari-mujimono/",
+    ],
+    care: [
+      "Hardy, disease resistant and quick to tame: Ogon hand-feed readily and are routinely recommended as a first koi.",
+      "A big appetite and fast growth, typically reaching 60 to 90 cm, so size the pond for the adult fish; Kloubec suggests around 3,800 litres as a floor.",
+      "The metallic orange stays visible in green or cloudy water where darker koi disappear.",
+    ],
+    careSources: [
+      "https://www.kloubeckoi.com/ogon-koi-for-sale/",
+      "https://www.kodamakoifarm.com/variety/ogon/",
+    ],
+  },
+  soragoi: {
+    nameMeaning: '"sky carp", from sora (sky), for its blue-grey colour',
+    family: "Kawarimono",
+    pattern:
+      "A single-coloured non-metallic koi in even blue-grey to silver-grey with no pattern at all. Pale scale edges give a subtle fukurin net, and the head should be as clear and even as the body.",
+    origin:
+      "Its origins are not well documented; Champ Koi treats it as one of the older plain-coloured lines close to the wild carp. Its own place in history is as the grey parent crossed with Chagoi in the mid-1990s to create Ochiba Shigure.",
+    notes:
+      "A gentle giant in the Chagoi mould: usually first up to hand-feed, and a calming influence on shy pond-mates.",
+    sources: [
+      "https://www.champkoi.com/pages/koi-variety/soragoi",
+      "https://www.kloubeckoi.com/soragoi-koi-for-sale/",
+    ],
+    care: [
+      "Among the friendliest koi: quick to hand-feed and known for coaxing timid fish up to the surface.",
+      "Grows fast and large, often past 75 cm, so plan pond volume for the adult fish.",
+      "Hardy and undemanding; the grey is stable once set and only deepens or lightens slightly with age.",
+    ],
+    careSources: [
+      "https://www.kloubeckoi.com/soragoi-koi-for-sale/",
+      "https://www.kloubeckoi.com/blog/Ochiba-Koi-The-Fallen-Leaf-Variety",
+    ],
+  },
+  goshiki: {
+    nameMeaning: '"five colours"; go is five, shiki colour',
+    family: "Goshiki",
+    pattern:
+      "A Kohaku-style red pattern laid over a white ground that carries blue and black Asagi netting in every scale, giving white, red, black, blue and grey. Judges want a bright, clean red plate and even reticulation with no large black blotches.",
+    origin:
+      "Kodama dates the first Goshiki to 1918 from Asagi crossed with Kohaku; the ZNA and Kloubec name Taisho Sanke as the second parent instead, so the founding cross is uncertain. Early fish were dark and muddy, and the bright modern type is the product of later selection.",
+    notes:
+      "Long shown with Koromo or in Kawarimono, it is now a class of its own in the ZNA scheme. Goromo is its mirror image: shaded red on plain white, where Goshiki is solid red on a shaded body.",
+    sources: [
+      "https://www.kodamakoifarm.com/variety/goshiki/",
+      "https://www.champkoi.com/pages/koi-variety/goshiki",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/goshiki/",
+    ],
+    care: [
+      "Kodama recommends water close to a breeder's mud pond and a balanced diet with adequate carotene to keep the red plate strong.",
+      "Kloubec advises shade from strong sun and particularly clean water to hold the netting crisp; a well-kept fish runs to 60 to 75 cm and 25 to 35 years.",
+    ],
+    careSources: [
+      "https://www.kodamakoifarm.com/variety/goshiki/",
+      "https://www.kloubeckoi.com/goshiki-koi-for-sale/",
+    ],
+  },
+  kikusui: {
+    nameMeaning: '"chrysanthemum water"; kiku is chrysanthemum, sui water',
+    family: "Hikarimoyo",
+    pattern:
+      "A scaleless doitsu koi with a metallic platinum-white body carrying sharp orange or yellow markings, in effect a Doitsu Hariwake or a metallic Doitsu Kohaku. Judges look at the depth of the sheen, the edge and balance of the pattern, and the smooth unscaled skin.",
+    origin:
+      "Developed from Hariwake lines on doitsu stock, so it descends from both the 1947 Ogon and the 1904 German carp import. Accounts of when it appeared conflict: Champ Koi calls its origins undocumented, while Ray Jordan's history already lists a Doitsu Kikusui as a breeding parent in 1993.",
+    notes:
+      "That 1993 pairing with Kumonryu, by Kataoka and Aoki, gave Kikokuryu, the first koi with sumi on a metallic platinum body.",
+    sources: [
+      "https://www.champkoi.com/pages/koi-variety/kikusui",
+      "https://www.kodamakoifarm.com/variety/kikusui/",
+      "https://mpks.org/koi-history-by-ray-jordan/",
+    ],
+    care: [
+      "Scaleless skin is more prone to sunburn, parasites and injury than a scaled koi, so give it shade and handle it with a soft net.",
+      "Bright doitsu colour shows water-quality slips early, and a diet heavy in colour enhancers such as spirulina will tint the platinum white yellow.",
+    ],
+    careSources: [
+      "https://pondinformer.com/doitsu-koi-guide/",
+      "https://www.kloubeckoi.com/blog/doitsu-koi-guide",
+    ],
+  },
+  kigoi: {
+    nameMeaning: '"yellow carp", from ki (yellow); sometimes sold as the lemon koi',
+    family: "Kawarimono",
+    pattern:
+      "A single-coloured non-metallic koi in even, buttery lemon yellow from nose to tail, with no pattern and no sheen. It comes scaled or doitsu, and the red-eyed Akame Kigoi is the form collectors prize.",
+    origin:
+      "One of the old plain-coloured lines with no documented founding date; Kloubec describes it as selected out of Benigoi stock. It is the yellow parent behind Platinum Ogon, from Yoshioka's 1963 cross with Nezu Ogon, and behind the Yamabuki form of the Ogon.",
+    notes:
+      "As calm and friendly as Chagoi and easy to hand-feed. Uncommon on dealers' lists, since even yellow without a blemish is hard to raise.",
+    sources: [
+      "https://www.kloubeckoi.com/kigoi-koi-for-sale/",
+      "https://www.koi-fish.com/koi-classification/kigoi.html",
+      "https://www.pondtrademag.com/basic-beauty-the-striking-simplicity-of-hikari-muji/",
+    ],
+    care: [
+      "Sociable and quick to tame, often the first to greet a keeper, and a fast grower that can pass 75 cm.",
+      "Colour food is a judgement call on solid yellow: Kloubec suggests a balanced diet with colour enhancers plus shade from strong UV, while keepers of yellow Ogon report heavy carotenoids drifting the yellow toward orange.",
+    ],
+    careSources: [
+      "https://www.kloubeckoi.com/kigoi-koi-for-sale/",
+      "https://www.kloubeckoi.com/ogon-koi-for-sale/",
+    ],
+  },
+  nezu_ogon: {
+    nameMeaning:
+      'nezu, from nezumi ("mouse"), for its grey; Ogon means gold and names the metallic class',
+    family: "Hikarimuji",
+    pattern:
+      "A single-coloured metallic koi in dull silver-grey, the colour meant to run even from head to tail. Many carry a darker patch on the crown that keepers call the helmet head; it should be soft-edged rather than a crisp spot.",
+    origin:
+      "An old type of Ogon from the early years of Aoki's metallic line, and the grey parent that Tadao Yoshioka crossed with an Akame Kigoi in 1963 to produce Platinum Ogon.",
+    notes:
+      "Rarely bred on purpose today, since Platinum took its place, yet through Platinum it stands behind Hariwake, Kikusui and much of the metallic patterned class.",
+    sources: [
+      "https://www.koi-fish.com/koi-classification/nezu-ogon.html",
+      "https://www.pondtrademag.com/basic-beauty-the-striking-simplicity-of-hikari-muji/",
+      "https://mpks.org/koi-history-by-ray-jordan/",
+    ],
+    care: [
+      "Keeps the Ogon virtues: hardy, disease resistant, tame enough to hand-feed, and a fast grower that can reach 60 to 90 cm.",
+      "Even colour is the whole point, so scars and dropped scales cost it more than they would a patterned fish.",
+    ],
+    careSources: [
+      "https://www.kloubeckoi.com/ogon-koi-for-sale/",
+      "https://www.koi-fish.com/koi-classification/nezu-ogon.html",
     ],
   },
 };

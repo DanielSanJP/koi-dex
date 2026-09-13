@@ -175,6 +175,18 @@ async function main() {
   });
 
   try {
+    // Prune varieties the content no longer describes, so a variety that
+    // moves from the ancestor list into the dex (different slug, same unique
+    // name) cannot collide with its own stale row. Outcomes are rebuilt below
+    // anyway, so clearing them first keeps the foreign keys happy.
+    const keep = [
+      ...koi.map((k) => k.slug),
+      ...[...ancestors, ...relatives].map((a) => slugify(a.name)),
+    ];
+    await prisma.breedingOutcome.deleteMany();
+    const pruned = await prisma.variety.deleteMany({ where: { slug: { notIn: keep } } });
+    if (pruned.count) console.log(`Pruned ${pruned.count} stale variet${pruned.count === 1 ? "y" : "ies"}`);
+
     // Families
     for (const [sortOrder, [name, description]] of Object.entries(FAMILIES).entries()) {
       await prisma.family.upsert({
@@ -209,6 +221,9 @@ async function main() {
         originLabel: o.label,
         originConfidence: confidence[o.confidence],
         originSource: o.source ?? null,
+        // Cleared in case this slug was seeded as an ancestor before it had art.
+        definition: null,
+        role: null,
       };
       await prisma.variety.upsert({
         where: { slug: k.slug },

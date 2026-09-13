@@ -6,7 +6,7 @@
 
 A reference website about **real koi**, built with Next.js as a school project, illustrated with the Koi app's sprites:
 
-1. **Koi-dex** (`/koi`, `/koi/[slug]`): the 22 real koi varieties, each with a composite render, origin/pattern notes, and what the variety produces in breeding. Display only — no viewer controls or palette swatches; the tint hexes exist purely to draw the koi
+1. **Koi-dex** (`/koi`, `/koi/[slug]`): the 30 real koi varieties, each with a composite render, origin/pattern notes, and what the variety produces in breeding. Display only — no viewer controls or palette swatches; the tint hexes exist purely to draw the koi
 2. **Breeding guide** (`/breeding`): variety lineage and which pairings produce which outcomes
 3. **Care guide** (`/care`): water, feeding, seasons, health
 4. **Pond plants** (`/plants`, `/plants/[slug]`): real pond plants with care info
@@ -17,15 +17,17 @@ Scope rules (fixed 2026-07-28):
 - **The app contributes exactly two things: koi sprites and fin tint colours.** Everything else on the site (variety notes, breeding outcomes, care content, plants) is authored for koi-dex.
 - **Plants are completely separate from the app.** They get their own table in the koi-dex database, populated by hand when the DB phase starts. No plant data ships from the app snapshot.
 
-## The 22 varieties
+## The 30 varieties
 
 In dex order (renumbered 1–22 for the site; the app's catalogue numbers had gaps): Chagoi, Bekko, Benigoi, Karasugoi, Hi Utsuri, Ki Utsuri, Hariwake, Shiro Utsuri, Ochiba, Kumonryu, Beni Kumonryu, Kujaku, Asagi, Shusui, Koromo, Platinum, Kin Ki Utsuri, Tancho, Showa, Sanke, Kohaku, Gold Ogon.
+
+Appended 2026-09-14 as 23–30, in the order their artwork arrived: Aka Bekko, Ki Bekko, Orange Ogon, Soragoi, Goshiki, Kikusui, Kigoi, Nezu Ogon. Site numbers are independent of the app's catalogue and are never renumbered. Kigoi, Soragoi, Nezu Ogon and Ki Bekko had been ancestor nodes and Goshiki and Kikusui relatives; each moved into the dex proper and left those lists.
 
 These are dex 1–25 of the app's catalogue minus the three app-originals (Valentine Pink 15, Valentine White 16, Kinship 24). Only Asagi and Shusui carry a per-fin tint override (dorsal `#56749a`); every other variety uses just its dominant hex.
 
 ## Data: one file
 
-`data/koi.json` — 22 entries, snapshot from the app's prod DB (2026-07-28):
+`data/koi.json` — 30 entries, snapshot from the app's prod DB (2026-07-28, eight added 2026-09-14):
 
 ```json
 {
@@ -37,7 +39,7 @@ These are dex 1–25 of the app's catalogue minus the three app-originals (Valen
 }
 ```
 
-Assets (`public/assets/`, 26 files, ~490 KB total): `koi/bodies/` (22 body sprites, 688×464) and `fins/white/` (the four shared white fin sheets). Paths resolve as `/assets/<path>` via `src/lib/r2.ts`. Re-export is manual (query prod, mirror the CDN); the project holds no Supabase credentials.
+Assets (`public/assets/`, 34 files): `koi/bodies/` (30 body sprites, 688×464) and `fins/white/` (the four shared white fin sheets). Paths resolve as `/assets/<path>` via `src/lib/r2.ts`. Re-export is manual (query prod, mirror the CDN); the project holds no Supabase credentials.
 
 Koi are **always drawn from the sprite composite** — the app's flat preview images are deliberately not used anywhere, so every koi on the site is the real layered fish.
 

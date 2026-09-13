@@ -4,6 +4,23 @@ A factual running log of what happened and when. Each weekly progress update
 gets drafted from this log, so it stays honest and the mid-point review and
 final report write themselves. Add an entry whenever work happens.
 
+## 2026-09-14 — Eight more varieties (dex 23–30)
+
+- Artwork became available for eight real varieties that the site had only
+  been naming in prose or as lineage nodes, so each got a full entry:
+  Aka Bekko, Ki Bekko, Orange Ogon, Soragoi, Goshiki, Kikusui, Kigoi and
+  Nezu Ogon (site numbers 23–30, appended, nothing renumbered).
+- Kigoi, Soragoi, Nezu Ogon and Ki Bekko left the ancestor list and Goshiki
+  and Kikusui the relatives list; the breeding crosses that named them now
+  resolve to illustrated koi. The Ki Utsuri cross now names Ki Bekko as its
+  parent, which is what the history actually records.
+- Each entry researched and source-checked the same way as the first 22
+  (pattern, origin, notes, care, origin year with a confidence level).
+- Seed gained a prune step so a variety that changes slug when it moves
+  from the ancestor list into the dex cannot collide with its stale row;
+  content tests updated for 30 varieties; database reseeded and parity
+  re-checked.
+
 ## 2026-08-18 — Week 15 (drafted early): final report and presentation
 
 - Live screenshots recaptured from koi-dex.vercel.app; final progress and

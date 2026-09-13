@@ -284,5 +284,109 @@
       "back": null,
       "side": null
     }
+  },
+  {
+    "slug": "aka_bekko",
+    "name": "Aka Bekko",
+    "number": 23,
+    "body": "koi/bodies/aka_bekko.webp",
+    "fins": {
+      "dominant": "#fdfdfd",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "ki_bekko",
+    "name": "Ki Bekko",
+    "number": 24,
+    "body": "koi/bodies/ki_bekko.webp",
+    "fins": {
+      "dominant": "#fdfdfd",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "orenji_ogon",
+    "name": "Orange Ogon",
+    "number": 25,
+    "body": "koi/bodies/orenji_ogon.webp",
+    "fins": {
+      "dominant": "#FF6400",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "soragoi",
+    "name": "Soragoi",
+    "number": 26,
+    "body": "koi/bodies/soragoi.webp",
+    "fins": {
+      "dominant": "#787890",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "goshiki",
+    "name": "Goshiki",
+    "number": 27,
+    "body": "koi/bodies/goshiki.webp",
+    "fins": {
+      "dominant": "#fdfdfd",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "kikusui",
+    "name": "Kikusui",
+    "number": 28,
+    "body": "koi/bodies/kikusui.webp",
+    "fins": {
+      "dominant": "#e1e0e1",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "kigoi",
+    "name": "Kigoi",
+    "number": 29,
+    "body": "koi/bodies/kigoi.webp",
+    "fins": {
+      "dominant": "#febf00",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "nezu_ogon",
+    "name": "Nezu Ogon",
+    "number": 30,
+    "body": "koi/bodies/nezu_ogon.webp",
+    "fins": {
+      "dominant": "#818183",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
   }
 ]

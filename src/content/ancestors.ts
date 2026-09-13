@@ -1,6 +1,7 @@
 /* Varieties that appear in koi lineage but have no sprite on this site, so
    they render as named nodes rather than fish. Researched and source-checked
-   (2026-07-28). */
+   (2026-07-28). Kigoi, Soragoi, Nezu Ogon and Ki Bekko started here and moved
+   into the dex proper once they had artwork (2026-09-14). */
 
 export type Ancestor = {
   name: string;
@@ -21,36 +22,6 @@ export const ANCESTORS: Ancestor[] = [
     ],
   },
   {
-    name: "Kigoi",
-    definition:
-      "A solid, non-metallic lemon-to-pale-yellow koi, sometimes called the lemon koi.",
-    role: "One of the old single-colour lines and the yellow donor in several metallic crosses. Crossed with the grey metallic Nezu Ogon it produced Platinum Ogon; the red-eyed Akame Kigoi is the parent named in that account.",
-    sources: [
-      "https://nextdaykoi.com/koi-fish/koi/kawarimono/kigoi/",
-      "https://www.pondtrademag.com/basic-beauty-the-striking-simplicity-of-hikari-muji/",
-    ],
-  },
-  {
-    name: "Soragoi",
-    definition:
-      "A solid non-metallic grey to blue-grey koi, often with faint net-like reticulation. The name means sky carp.",
-    role: "Supplies the cool grey ground in the cross with the brown Chagoi that created Ochiba Shigure in the mid-1990s, the Chagoi brown sitting over it as the fallen leaves. Like Chagoi it carries the docile temperament and fast growth breeders value.",
-    sources: [
-      "https://www.kodamakoifarm.com/variety/ochibashigure/",
-      "https://www.kloubeckoi.com/blog/Ochiba-Koi-The-Fallen-Leaf-Variety",
-    ],
-  },
-  {
-    name: "Nezu Ogon",
-    definition:
-      "A single-coloured metallic koi in a dull grey to silver tone (nezu means mouse), one of the earliest metallics from Sawata Aoki's Ogon line.",
-    role: "Contributed the lustre and silver-grey tone that, crossed with the yellow Kigoi, produced the Platinum Ogon shown in 1963. Through Platinum it stands behind Hariwake, Kikusui, Yamato Nishiki and much of the modern metallic patterned class.",
-    sources: [
-      "https://www.koi-fish.com/koi-classification/nezu-ogon.html",
-      "https://www.kodamakoifarm.com/variety/platinum/",
-    ],
-  },
-  {
     name: "German mirror carp",
     definition:
       "European scale-reduced food carp, known in Japan as Doitsugoi: mirror carp with a row of large scales, and leather carp that are effectively bare.",
@@ -60,31 +31,12 @@ export const ANCESTORS: Ancestor[] = [
       "https://www.kloubeckoi.com/blog/doitsu-koi-guide",
     ],
   },
-  {
-    name: "Ki Bekko",
-    definition:
-      "A yellow-bodied Bekko: a lemon-yellow koi carrying black tortoiseshell markings, now the rarest of the three Bekko colours.",
-    role: "Recorded as appearing spontaneously from Magoi in the mid-1800s, and the parent Hoshino crossed back with Magoi in 1921 to fix Ki Utsuri. Because Ki Utsuri led to Hi and Shiro Utsuri and fed into Showa, Ki Bekko sits behind the whole black-based branch of modern koi.",
-    sources: [
-      "https://mpks.org/koi-history-by-ray-jordan/",
-      "https://giobelkoicenter.com/ki-utsuri-koi/",
-    ],
-  },
 ];
 
 /** Well-known real varieties this site has no artwork for, acknowledged so the
-    dex does not pretend 22 is the whole of koi. */
+    dex does not pretend its list is the whole of koi. Goshiki and Kikusui
+    graduated from here to full entries (2026-09-14). */
 export const RELATIVES: Ancestor[] = [
-  {
-    name: "Goshiki",
-    definition:
-      "A five-colour koi: a Kohaku-style red pattern over white, overlaid with blue-black Asagi netting, giving white, red, black, blue and grey.",
-    role: "The bridge between the Asagi and Kohaku lines, made by crossing the two so Asagi net-scaling sits over a Gosanke pattern. Dates conflict: several sources place its creation in 1918, others describe a 1980s debut, which likely refers to the brighter modern type rather than the original dark fish.",
-    sources: [
-      "https://www.kodamakoifarm.com/variety/goshiki/",
-      "https://koisale.com/pages/koi-varieties/goshiki.html",
-    ],
-  },
   {
     name: "Matsuba",
     definition:
@@ -93,16 +45,6 @@ export const RELATIVES: Ancestor[] = [
     sources: [
       "https://www.kloubeckoi.com/matsuba-koi-for-sale/",
       "https://koisale.com/pages/koi-varieties/matsuba.html",
-    ],
-  },
-  {
-    name: "Kikusui",
-    definition:
-      "A doitsu metallic koi with a platinum-white body carrying metallic orange or red. The name means chrysanthemum water.",
-    role: "Effectively a scaleless metallic Kohaku, downstream of both the 1946 Ogon line and the 1904 German carp import. Historically important because a female Kikusui crossed with a male Kumonryu in 1993 created Kikokuryu.",
-    sources: [
-      "https://www.champkoi.com/pages/koi-variety/kikusui",
-      "https://www.kodamakoifarm.com/variety/kikokuryu/",
     ],
   },
   {

@@ -41,13 +41,19 @@ export const DOCUMENTED_CROSSES: BreedingCross[] = [
     source: "https://pondinformer.com/goromo-koi-guide/",
   },
   {
+    parents: ["Kohaku", "Asagi"],
+    produces: "Goshiki",
+    note: "Kodama dates the first Goshiki to 1918 from Asagi crossed with Kohaku; the ZNA and Kloubec name Taisho Sanke as the second parent instead, so the founding cross is uncertain. The bright modern type came from later selection.",
+    source: "https://www.kodamakoifarm.com/variety/goshiki/",
+  },
+  {
     parents: ["Asagi", "German mirror carp"],
     produces: "Shusui",
     note: "German carp reached Japan in 1904 and Akiyama crossed them with Asagi from about 1910. The ZNA notes good specimens only appeared around 1928. Shusui was the first doitsu-scaled koi.",
     source: "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/shusui/",
   },
   {
-    parents: ["Bekko", "Magoi"],
+    parents: ["Ki Bekko", "Magoi"],
     produces: "Ki Utsuri",
     note: "Eizaburo Hoshino crossed Ki Bekko with the wild black Magoi around 1921 to establish Ki Utsuri, the first fixed Utsuri variety and an ancestor of Showa.",
     source: "https://mpks.org/koi-history-by-ray-jordan/",
@@ -92,6 +98,18 @@ export const DOCUMENTED_CROSSES: BreedingCross[] = [
     parents: ["Kigoi", "Nezu Ogon"],
     produces: "Platinum",
     note: "Tadao Yoshioka of Uozu obtained the silvery Platinum Ogon in 1963 by crossing the yellow Kigoi with the grey metallic Nezu Ogon.",
+    source: "https://mpks.org/koi-history-by-ray-jordan/",
+  },
+  {
+    parents: ["Kigoi", "Gold Ogon"],
+    produces: "Gold Ogon",
+    note: "The lemon-gold Yamabuki form of the Ogon followed in the mid-1950s by crossing Aoki's Ogon lines with the yellow Kigoi. Breeders treat it as a refinement within the Ogon rather than a separate variety.",
+    source: "https://www.kloubeckoi.com/yamabuki-koi-for-sale/",
+  },
+  {
+    parents: ["Kumonryu", "Kikusui"],
+    produces: "Kikokuryu",
+    note: "Ray Jordan's history records Kataoka and Aoki crossing a Kumonryu with a Doitsu Kikusui in 1993, giving the first koi with sumi on a metallic platinum body. Kodama's account names Platinum as the second parent instead.",
     source: "https://mpks.org/koi-history-by-ray-jordan/",
   },
   {

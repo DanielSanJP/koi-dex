@@ -146,6 +146,54 @@ export const ORIGINS: Record<string, Origin> = {
     confidence: "documented",
     source: "https://pondinformer.com/tancho-koi-guide/",
   },
+  aka_bekko: {
+    year: 1850,
+    label: "mid-1800s, with the other Bekko",
+    confidence: "approximate",
+    source: "https://pondinformer.com/bekko-koi-guide/",
+  },
+  ki_bekko: {
+    year: 1850,
+    label: "mid-1800s",
+    confidence: "approximate",
+    source: "https://mpks.org/koi-history-by-ray-jordan/",
+  },
+  orenji_ogon: {
+    year: null,
+    label: "Ogon colour form, undated",
+    confidence: "approximate",
+    source: "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/hikari-mujimono/",
+  },
+  soragoi: {
+    year: null,
+    label: "old solid-grey line, undated",
+    confidence: "approximate",
+    source: "https://www.champkoi.com/pages/koi-variety/soragoi",
+  },
+  goshiki: {
+    year: 1918,
+    label: "1918, undated or later in other accounts",
+    confidence: "disputed",
+    source: "https://www.kodamakoifarm.com/variety/goshiki/",
+  },
+  kikusui: {
+    year: null,
+    label: "undated; a breeding parent by 1993",
+    confidence: "disputed",
+    source: "https://mpks.org/koi-history-by-ray-jordan/",
+  },
+  kigoi: {
+    year: null,
+    label: "old solid-yellow line, undated",
+    confidence: "approximate",
+    source: "https://www.kloubeckoi.com/kigoi-koi-for-sale/",
+  },
+  nezu_ogon: {
+    year: null,
+    label: "early Ogon line, a parent by 1963",
+    confidence: "approximate",
+    source: "https://www.pondtrademag.com/basic-beauty-the-striking-simplicity-of-hikari-muji/",
+  },
 };
 
 /** Era bands for the family tree, oldest first. */
