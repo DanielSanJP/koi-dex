@@ -191,3 +191,86 @@ model Source {
   @@index([plantSlug])
   @@map("sources")
 }
+
+// ---------------------------------------------------------------------------
+// Week 13 user testing. The only visitor-written tables on the site: a tester
+// opens /feedback, works through the six tasks unsupervised and submits once.
+// Deliberately anonymous - no email, no IP, no account - because the sessions
+// are coursework with volunteers, and a nickname is enough to tell two
+// responses apart. `token` is generated in the tester's browser and kept
+// there, so a retry or a double tap updates their row instead of opening a
+// second one. scripts/feedback-report.ts reads these back as the markdown
+// that goes into docs/FEEDBACK_LOG.md.
+
+enum TesterBackground {
+  FISH_KEEPER
+  GARDENER
+  NEITHER
+  OTHER
+}
+
+enum TesterDevice {
+  PHONE
+  TABLET
+  LAPTOP
+  DESKTOP
+}
+
+/// Per task: finished it unaided, finished it the hard way, gave up, or
+/// skipped it. The protocol counts STRUGGLED and FAILED as problems.
+enum TaskResult {
+  ALONE
+  STRUGGLED
+  FAILED
+  SKIPPED
+}
+
+model FeedbackSession {
+  id          Int      @id @default(autoincrement())
+  token       String   @unique
+  submittedAt DateTime @default(now()) @map("submitted_at")
+
+  nickname      String?
+  background    TesterBackground?
+  device        TesterDevice?
+  browser       String?
+  viewportWidth Int?              @map("viewport_width")
+
+  // The closing questions, in the order the form asks them.
+  purpose       String?
+  confusing     String?
+  useful        String?
+  deviceTrouble String? @map("device_trouble")
+  oneChange     String? @map("one_change")
+
+  // The three 1-5 scores.
+  easeScore     Int? @map("ease_score")
+  trustScore    Int? @map("trust_score")
+  finishedScore Int? @map("finished_score")
+
+  answers FeedbackAnswer[]
+
+  @@index([submittedAt])
+  @@map("feedback_sessions")
+}
+
+model FeedbackAnswer {
+  id        Int             @id @default(autoincrement())
+  sessionId Int             @map("session_id")
+  session   FeedbackSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  /// Matches a task id in src/content/feedback.ts; the route handler rejects
+  /// anything else, so an old draft cannot write a task that no longer exists.
+  taskId  String     @map("task_id")
+  result  TaskResult
+  /// Time on the task, measured by the form itself. Null if the tester came
+  /// back to it later, where the clock would be meaningless.
+  seconds Int?
+  /// What they said the answer was: the only way to tell a real completion
+  /// from a confident wrong one when nobody is watching.
+  answer  String?
+  comment String?
+
+  @@unique([sessionId, taskId])
+  @@map("feedback_answers")
+}

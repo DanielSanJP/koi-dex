@@ -50,6 +50,23 @@ before applying it: Prisma cannot describe the generated `search` columns and
 GIN indexes, so a diff it writes may try to drop them (see
 `prisma/migrations/20260817224039_family_sort_order/migration.sql`).
 
+## User testing (week 13)
+
+The form at `/feedback` writes to Neon, so unlike the rest of the site it
+needs the database at request time, not only at build time. Nothing new to
+configure: it uses the same pooled `DATABASE_URL`. Before sending the link
+out, check `POST /api/feedback` answers on the live site (a 400 for a bad
+body proves the route is live and validating):
+
+```bash
+curl -s -X POST "$SITE/api/feedback" -H "Content-Type: application/json" \
+  -d '{"answers":[]}'            # expect {"error":"token is required"}
+```
+
+Read the sessions back with `npm run feedback:report`, which talks to Neon
+directly. There is no read endpoint on the site on purpose: the responses are
+participants' words, and nothing on the public site should serve them.
+
 ## Checks before calling it live
 
 - `npm run check` locally (lint, typecheck, tests, content validation).
@@ -57,3 +74,5 @@ GIN indexes, so a diff it writes may try to drop them (see
   the care checklist (ticks persist), plants grid and a plant page, search.
 - `GET /api/koi`, `GET /api/search?q=iris`, `GET /sitemap.xml`,
   `GET /robots.txt`, and a bad URL for the 404.
+- During testing weeks: `/feedback` on a phone, all the way to the thank-you
+  screen, then `npm run feedback:report` to confirm the row arrived.

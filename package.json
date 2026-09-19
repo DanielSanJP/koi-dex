@@ -13,6 +13,7 @@
     "db:deploy": "prisma migrate deploy",
     "db:seed": "prisma db seed",
     "db:studio": "prisma studio",
+    "feedback:report": "tsx scripts/feedback-report.ts",
     "test": "vitest run",
     "typecheck": "tsc --noEmit -p .",
     "check": "npm run lint && npm run typecheck && npm run test && npm run db:validate",
