@@ -113,6 +113,12 @@ export const DOCUMENTED_CROSSES: BreedingCross[] = [
     source: "https://mpks.org/koi-history-by-ray-jordan/",
   },
   {
+    parents: ["Sanke", "Gold Ogon"],
+    produces: "Yamato Nishiki",
+    note: "Ray Jordan's history lists Seikichi Hoshino's Yamato Nishiki of 1965 with Sanke and Ogon as its parents, laying the metallic lustre over the Sanke pattern. Other accounts call its development poorly documented.",
+    source: "https://mpks.org/koi-history-by-ray-jordan/",
+  },
+  {
     parents: ["Ki Utsuri", "Gold Ogon"],
     produces: "Kin Ki Utsuri",
     note: "The ZNA defines the Hikari Utsuri class as the Utsuri family with a metallic body, the sheen tracing back to Aoki's Ogon lines. Unlike Kujaku or Platinum, no specific founding cross, breeder or date is documented.",

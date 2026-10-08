@@ -1,7 +1,8 @@
 /* Varieties that appear in koi lineage but have no sprite on this site, so
    they render as named nodes rather than fish. Researched and source-checked
    (2026-07-28). Kigoi, Soragoi, Nezu Ogon and Ki Bekko started here and moved
-   into the dex proper once they had artwork (2026-09-14). */
+   into the dex proper once they had artwork (2026-09-14), and Magoi followed
+   (2026-10-09). */
 
 export type Ancestor = {
   name: string;
@@ -11,16 +12,6 @@ export type Ancestor = {
 };
 
 export const ANCESTORS: Ancestor[] = [
-  {
-    name: "Magoi",
-    definition:
-      "The wild black or dark-bronze common carp raised as a food fish in Niigata's rice-paddy ponds, from which every ornamental koi descends.",
-    role: "The root stock. Colour mutations spotted among food-carp fry between 1804 and 1830 were set aside and bred on, producing Asagi and the first red-and-white lines. Magoi was also brought back deliberately as a parent, crossed with Ki Bekko to found the Utsuri family, and it remains the source of koi body size and vigour.",
-    sources: [
-      "https://mpks.org/koi-history-by-ray-jordan/",
-      "https://www.kodamakoifarm.com/what-is-nishikigoi-history-meaning/",
-    ],
-  },
   {
     name: "German mirror carp",
     definition:
@@ -35,7 +26,8 @@ export const ANCESTORS: Ancestor[] = [
 
 /** Well-known real varieties this site has no artwork for, acknowledged so the
     dex does not pretend its list is the whole of koi. Goshiki and Kikusui
-    graduated from here to full entries (2026-09-14). */
+    graduated from here to full entries (2026-09-14), then Kikokuryu and
+    Yamato Nishiki (2026-10-09). */
 export const RELATIVES: Ancestor[] = [
   {
     name: "Matsuba",
@@ -45,26 +37,6 @@ export const RELATIVES: Ancestor[] = [
     sources: [
       "https://www.kloubeckoi.com/matsuba-koi-for-sale/",
       "https://koisale.com/pages/koi-varieties/matsuba.html",
-    ],
-  },
-  {
-    name: "Kikokuryu",
-    definition:
-      "A metallic doitsu koi with platinum skin and shifting black. Beni Kikokuryu is the same fish with red or orange added.",
-    role: "Created by Haruo Aoki in 1993 from a male Kumonryu and a female Kikusui, the first koi to show sumi on a metallic platinum body. Offspring without red became Kikokuryu, those inheriting the Kikusui red became Beni Kikokuryu.",
-    sources: [
-      "https://www.kodamakoifarm.com/variety/kikokuryu/",
-      "https://mpks.org/koi-history-by-ray-jordan/",
-    ],
-  },
-  {
-    name: "Yamato Nishiki",
-    definition:
-      "The metallic version of Taisho Sanke: a lustrous white body carrying red and black Sanke markings.",
-    role: "Made by crossing Sanke stock with Platinum Ogon, showing how the metallic line was layered back over the established Gosanke patterns. Ray Jordan credits Seikichi Hoshino with it in 1965.",
-    sources: [
-      "https://mpks.org/koi-history-by-ray-jordan/",
-      "https://nextdaykoi.com/koi-fish/koi/hikarimoyo/yamato-nishiki/",
     ],
   },
   {

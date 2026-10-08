@@ -7,11 +7,11 @@ import { walkLineage } from "@/lib/shapes";
    database is checked against the same expectations by scripts/parity-check.ts. */
 
 describe("content: koi", () => {
-  it("has 30 varieties, all with a family and drawable sprites", async () => {
+  it("has 33 varieties, all with a family and drawable sprites", async () => {
     const koi = await contentSource.koiSummaries();
-    expect(koi).toHaveLength(30);
+    expect(koi).toHaveLength(33);
     expect(koi.every((k) => k.family && k.koi.body.startsWith("koi/bodies/"))).toBe(true);
-    expect(new Set(koi.map((k) => k.dexNumber)).size).toBe(30);
+    expect(new Set(koi.map((k) => k.dexNumber)).size).toBe(33);
   });
   it("classifies breeding rows without overlap", async () => {
     for (const k of await contentSource.koiSummaries()) {
@@ -27,7 +27,7 @@ describe("content: koi", () => {
 describe("content: breeding outcomes", () => {
   it("resolve every party, with exactly one line-bred selection", async () => {
     const outcomes = await contentSource.outcomes();
-    expect(outcomes).toHaveLength(18);
+    expect(outcomes).toHaveLength(19);
     expect(outcomes.filter((o) => o.parentB === null)).toHaveLength(1);
     expect(outcomes.find((o) => o.parentB === null)?.offspring.slug).toBe("gold_ogon");
   });

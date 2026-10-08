@@ -388,5 +388,44 @@
       "back": null,
       "side": null
     }
+  },
+  {
+    "slug": "kikokuryu",
+    "name": "Kikokuryu",
+    "number": 31,
+    "body": "koi/bodies/kikokuryu.webp",
+    "fins": {
+      "dominant": "#e1e0e1",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "yamato_nishiki",
+    "name": "Yamato Nishiki",
+    "number": 32,
+    "body": "koi/bodies/yamato_nishiki.webp",
+    "fins": {
+      "dominant": "#e1e0e1",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "magoi",
+    "name": "Magoi",
+    "number": 33,
+    "body": "koi/bodies/magoi.webp",
+    "fins": {
+      "dominant": "#4e4028",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
   }
 ]

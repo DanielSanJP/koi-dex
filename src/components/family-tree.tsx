@@ -5,15 +5,17 @@ import type { KoiSummary, Relative } from "@/lib/shapes";
 
 type Props = {
   koi: KoiSummary[];
-  /** The ANCESTOR / RELATIVE rows, for the Magoi root node's definition. */
+  /** The ANCESTOR / RELATIVE rows: the Magoi root node's definition when
+      Magoi is not a dex entry with its own sprite. */
   relatives: Relative[];
 };
 
 /** Varieties in era tiers, from the wild carp down to the 1990s. Years come
     from the database (varieties.origin_year); the era bands are fixed. */
 export default function FamilyTree({ koi, relatives }: Props) {
+  const magoiKoi = koi.find((k) => k.slug === "magoi");
   const magoi = relatives.find((r) => r.slug === "magoi");
-  const undated = koi.filter((k) => k.originYear == null);
+  const undated = koi.filter((k) => k.originYear == null && k !== magoiKoi);
 
   const tile = (k: KoiSummary) => (
     <Link
@@ -41,12 +43,16 @@ export default function FamilyTree({ koi, relatives }: Props) {
         <span className="w-24 shrink-0 text-xs font-bold tracking-wide text-black/55 uppercase">
           wild stock
         </span>
-        <span
-          className="rounded-xl border border-dashed border-black/25 px-3 py-2 text-sm font-bold text-black/60"
-          title={magoi?.definition ?? undefined}
-        >
-          {magoi?.name ?? "Magoi"}
-        </span>
+        {magoiKoi ? (
+          tile(magoiKoi)
+        ) : (
+          <span
+            className="rounded-xl border border-dashed border-black/25 px-3 py-2 text-sm font-bold text-black/60"
+            title={magoi?.definition ?? undefined}
+          >
+            {magoi?.name ?? "Magoi"}
+          </span>
+        )}
         <span className="text-sm text-black/55">
           the wild carp everything descends from
         </span>

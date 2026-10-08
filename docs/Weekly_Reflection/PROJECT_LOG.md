@@ -4,6 +4,23 @@ A factual running log of what happened and when. Each weekly progress update
 gets drafted from this log, so it stays honest and the mid-point review and
 final report write themselves. Add an entry whenever work happens.
 
+## 2026-10-09: Three more varieties (dex 31–33)
+
+- Artwork arrived for Kikokuryu, Yamato Nishiki and Magoi, which the site
+  had only named as relatives or as the root of the lineage, so each got a
+  full entry (site numbers 31–33, appended, nothing renumbered).
+- Each entry researched and source-checked as before: Kodama, Champion
+  Nishikigoi, the ZNA class pages and Ray Jordan's history. Kikokuryu is
+  shown in Kawarimono, Yamato Nishiki in Hikari Moyomono. Where accounts
+  disagree (Kikokuryu's second parent, how well Yamato Nishiki's origin is
+  recorded) the entry says so.
+- Added the Sanke × Ogon cross for Yamato Nishiki (1965, Seikichi Hoshino);
+  19 documented outcomes now.
+- Magoi left the ancestor list, so the family tree's wild-stock row now
+  shows it as a drawn koi linking to its page instead of a text label.
+- Content tests updated for 33 varieties and 19 outcomes; database reseeded
+  and parity re-checked.
+
 ## 2026-09-14 — Eight more varieties (dex 23–30)
 
 - Artwork became available for eight real varieties that the site had only

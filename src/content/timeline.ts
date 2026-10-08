@@ -194,6 +194,24 @@ export const ORIGINS: Record<string, Origin> = {
     confidence: "approximate",
     source: "https://www.pondtrademag.com/basic-beauty-the-striking-simplicity-of-hikari-muji/",
   },
+  kikokuryu: {
+    year: 1993,
+    label: "1993",
+    confidence: "documented",
+    source: "https://mpks.org/koi-history-by-ray-jordan/",
+  },
+  yamato_nishiki: {
+    year: 1965,
+    label: "1965, in one account",
+    confidence: "approximate",
+    source: "https://mpks.org/koi-history-by-ray-jordan/",
+  },
+  magoi: {
+    year: null,
+    label: "wild food carp, before the first nishikigoi",
+    confidence: "approximate",
+    source: "https://www.kodamakoifarm.com/what-is-nishikigoi-history-meaning/",
+  },
 };
 
 /** Era bands for the family tree, oldest first. */

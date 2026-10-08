@@ -719,6 +719,68 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
       "https://www.koi-fish.com/koi-classification/nezu-ogon.html",
     ],
   },
+  kikokuryu: {
+    nameMeaning: '"shining black dragon"; ki is radiance, koku black and ryu dragon',
+    family: "Kawarimono",
+    pattern:
+      "A metallic doitsu koi: in effect a Kumonryu with shining platinum skin, its deep black running through the body and fins. Like the Kumonryu it has no fixed pattern standard, because the black moves.",
+    origin:
+      "Ray Jordan's history credits Kataoka and Aoki with the first Kikokuryu in 1993, from a Kumonryu and a Doitsu Kikusui. Kodama Koi Farm names Platinum as the second parent instead.",
+    notes:
+      "The black can spread, fade and even show hints of blue with lighting and water temperature. Although it is metallic, it is shown in the Kawarimono class rather than with the other metallic koi.",
+    sources: [
+      "https://www.kodamakoifarm.com/variety/kikokuryu/",
+      "https://mpks.org/koi-history-by-ray-jordan/",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/hikari-moyomono/",
+      "https://www.champkoi.com/pages/koi-variety/kikokuryu",
+    ],
+    care: [
+      "Scaleless skin is more prone to sunburn, parasites and injury than a scaled koi, so give it shade and handle it with a soft net.",
+      "Bright doitsu colour shows water-quality slips early, and a diet heavy in colour enhancers such as spirulina will tint the platinum white yellow.",
+    ],
+    careSources: [
+      "https://pondinformer.com/doitsu-koi-guide/",
+      "https://www.kloubeckoi.com/blog/doitsu-koi-guide",
+    ],
+  },
+  yamato_nishiki: {
+    nameMeaning: '"Yamato brocade"; Yamato is an old name for Japan and nishiki a woven brocade',
+    family: "Hikarimoyo",
+    pattern:
+      "The metallic version of Taisho Sanke: a lustrous white base carrying red (hi) and black (sumi) markings. Judges look at the depth of the sheen, the clarity of the red and black, and the balance of the pattern.",
+    origin:
+      "Ray Jordan's history credits Seikichi Hoshino with Yamato Nishiki in 1965, from Sanke and Ogon parents. Other accounts call its development poorly documented.",
+    notes:
+      "The ZNA shows it in the Hikari Moyomono class, beside the other patterned metallic koi such as Kujaku and Kikusui.",
+    sources: [
+      "https://www.champkoi.com/pages/koi-variety/yamato-nishiki",
+      "https://mpks.org/koi-history-by-ray-jordan/",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/hikari-moyomono/",
+    ],
+    care: [
+      "Over-feeding colour enhancers does three unwanted things at once: yellows the white, spots the red, and can leave the black looking blue.",
+      "Like other white-ground koi it visibly reports your water quality, which makes it a useful early warning that parameters have drifted.",
+    ],
+    careSources: [
+      "https://pondinformer.com/sanke-koi-guide/",
+      "https://dainichi.com/koi-color-food/",
+    ],
+  },
+  magoi: {
+    nameMeaning: '"true carp"; ma means true or genuine and goi is carp',
+    family: "Kawarimono",
+    pattern:
+      "The wild-type common carp: one plain dark colour, black to dark bronze, with no pattern at all. Not a show variety in its own right; as a non-metallic koi that fits no other group it sits with Kawarimono.",
+    origin:
+      "Common carp have been raised for food for thousands of years. Farmers around Yamakoshi and Ojiya in Niigata kept black Magoi as food fish, and the coloured offspring they selected from them became the first nishikigoi.",
+    notes:
+      "Breeders kept returning to it as a parent: Ki Bekko crossed with Magoi produced the first Ki Utsuri, the start of the Utsuri family.",
+    sources: [
+      "https://www.kodamakoifarm.com/what-is-nishikigoi-history-meaning/",
+      "https://mpks.org/koi-history-by-ray-jordan/",
+    ],
+    care: [],
+  },
 };
 
 export function getVarietyInfo(slug: string): VarietyInfo | undefined {
