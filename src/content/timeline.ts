@@ -313,6 +313,42 @@ export const ORIGINS: Record<string, Origin> = {
     confidence: "approximate",
     source: "https://www.champkoi.com/pages/koi-variety/budo-goromo",
   },
+  kage_showa: {
+    year: null,
+    label: "undated; selected from Showa",
+    confidence: "approximate",
+    source: "https://koisale.com/pages/koi-varieties/showa.html",
+  },
+  ginsui: {
+    year: null,
+    label: "undated metallic Shusui",
+    confidence: "approximate",
+    source: "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/hikari-moyomono/",
+  },
+  kinsui: {
+    year: null,
+    label: "undated; already rare by the late 1990s",
+    confidence: "approximate",
+    source: "https://www.oocities.org/koifla/History.htm",
+  },
+  sakura_ogon: {
+    year: null,
+    label: "undated metallic Kanoko Kohaku",
+    confidence: "approximate",
+    source: "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/hikari-moyomono/",
+  },
+  beni_kikokuryu: {
+    year: 1995,
+    label: "1995",
+    confidence: "documented",
+    source: "https://mpks.org/koi-history-by-ray-jordan/",
+  },
+  doitsu_sanke: {
+    year: null,
+    label: "undated doitsu form",
+    confidence: "approximate",
+    source: "https://jnpa.info/en/nishikigoi/varieties/type/doitsugoi/",
+  },
 };
 
 /** Era bands for the family tree, oldest first. */

@@ -6,7 +6,7 @@
 
 A reference website about **real koi**, built with Next.js as a school project, illustrated with the Koi app's sprites:
 
-1. **Koi-dex** (`/koi`, `/koi/[slug]`): the 50 real koi varieties, each with a composite render, origin/pattern notes, and what the variety produces in breeding. Display only — no viewer controls or palette swatches; the tint hexes exist purely to draw the koi
+1. **Koi-dex** (`/koi`, `/koi/[slug]`): the 56 real koi varieties, each with a composite render, origin/pattern notes, and what the variety produces in breeding. Display only — no viewer controls or palette swatches; the tint hexes exist purely to draw the koi
 2. **Breeding guide** (`/breeding`): variety lineage and which pairings produce which outcomes
 3. **Care guide** (`/care`): water, feeding, seasons, health
 4. **Pond plants** (`/plants`, `/plants/[slug]`): real pond plants with care info
@@ -17,7 +17,7 @@ Scope rules (fixed 2026-07-28):
 - **The app contributes exactly two things: koi sprites and fin tint colours.** Everything else on the site (variety notes, breeding outcomes, care content, plants) is authored for koi-dex.
 - **Plants are completely separate from the app.** They get their own table in the koi-dex database, populated by hand when the DB phase starts. No plant data ships from the app snapshot.
 
-## The 50 varieties
+## The 56 varieties
 
 In dex order (renumbered 1–22 for the site; the app's catalogue numbers had gaps): Chagoi, Bekko, Benigoi, Karasugoi, Hi Utsuri, Ki Utsuri, Hariwake, Shiro Utsuri, Ochiba, Kumonryu, Beni Kumonryu, Kujaku, Asagi, Shusui, Koromo, Platinum, Kin Ki Utsuri, Tancho, Showa, Sanke, Kohaku, Gold Ogon.
 
@@ -29,11 +29,13 @@ Appended 2026-10-09 as 34–38: Kin Kikokuryu, Gin Shiro, Kin Showa, Midorigoi, 
 
 Appended 2026-10-09 as 39–50: Karashigoi, Hajiro, Hageshiro, Kage Utsuri, Ki Matsuba, Aka Matsuba, Doitsu Kohaku, Kin Matsuba, Gin Matsuba, Orenji Matsuba, Kanoko Kohaku, Budo Goromo. Kage Utsuri is drawn as Kage Shiro Utsuri, and the site name covers that form. Matsuba had been a relative and leaves that list now that five of its colour forms are drawn. Seven crosses are added: Kigoi × Chagoi for Karashigoi, Kohaku × Hi Asagi for Aka Matsuba, Shiro Utsuri × Asagi for Kage Utsuri, a class-level doitsu cross for Doitsu Kohaku, and lineage notes placing Hajiro and Hageshiro within the Karasugoi line and Budo Goromo within the Koromo family. That brings the total to 30 outcomes.
 
-These are dex 1–25 of the app's catalogue minus the three app-originals (Valentine Pink 15, Valentine White 16, Kinship 24). Only Asagi and Shusui (dorsal `#56749a`) and Midorigoi (dorsal `#42702c`) carry a per-fin tint override; every other variety uses just its dominant hex.
+Appended 2026-10-09 as 51–56: Kage Showa, Ginsui, Kinsui, Sakura Ogon, Beni Kikokuryu, Doitsu Sanke. None had been an ancestor or relative node. Five crosses are added: Beni Kumonryu × Kikusui for Beni Kikokuryu (1995), a class-level doitsu cross for Doitsu Sanke, class-level metallic crosses from Shusui for Kinsui and Ginsui, and a lineage note placing Kage Showa within Showa lines. That brings the total to 35 outcomes.
+
+These are dex 1–25 of the app's catalogue minus the three app-originals (Valentine Pink 15, Valentine White 16, Kinship 24). Only Asagi and Shusui (dorsal `#56749a`), Midorigoi (dorsal `#42702c`), Ginsui (dorsal `#adbbce`) and Kinsui (dorsal `#e9d4ad`) carry a per-fin tint override; every other variety uses just its dominant hex.
 
 ## Data: one file
 
-`data/koi.json` — 50 entries, snapshot from the app's prod DB (2026-07-28, eight added 2026-09-14, twenty 2026-10-09):
+`data/koi.json` — 56 entries, snapshot from the app's prod DB (2026-07-28, eight added 2026-09-14, twenty-six 2026-10-09):
 
 ```json
 {
@@ -45,7 +47,7 @@ These are dex 1–25 of the app's catalogue minus the three app-originals (Valen
 }
 ```
 
-Assets (`public/assets/`, 54 files): `koi/bodies/` (50 body sprites, 688×464) and `fins/white/` (the four shared white fin sheets). Paths resolve as `/assets/<path>` via `src/lib/r2.ts`. Re-export is manual (query prod, mirror the CDN); the project holds no Supabase credentials.
+Assets (`public/assets/`, 60 files): `koi/bodies/` (56 body sprites, 688×464) and `fins/white/` (the four shared white fin sheets). Paths resolve as `/assets/<path>` via `src/lib/r2.ts`. Re-export is manual (query prod, mirror the CDN); the project holds no Supabase credentials.
 
 Koi are **always drawn from the sprite composite** — the app's flat preview images are deliberately not used anywhere, so every koi on the site is the real layered fish.
 

@@ -29,6 +29,12 @@ export const DOCUMENTED_CROSSES: BreedingCross[] = [
     source: "https://mpks.org/koi-history-by-ray-jordan/",
   },
   {
+    parents: ["Showa", "Showa"],
+    produces: "Kage Showa",
+    note: "A form selected within Showa lines rather than a recorded cross: Koisale explains that emerging Showa sumi can stay a shadowy, reticulated grey into adulthood, and such fish are called Kage Showa. No breeder or date is recorded.",
+    source: "https://koisale.com/pages/koi-varieties/showa.html",
+  },
+  {
     parents: ["Kohaku", "Koromo"],
     produces: "Sanke",
     note: "Sanke was fixed in the Taisho era by putting black onto Kohaku bloodlines. Ray Jordan's history records Eizaburo Hoshino crossing a male Kohaku with a female Ai Goromo carrying a little black netting in 1917; other accounts credit an earlier 1914 exhibition fish. The founding fish is disputed.",
@@ -69,6 +75,24 @@ export const DOCUMENTED_CROSSES: BreedingCross[] = [
     produces: "Doitsu Kohaku",
     note: "The JNPA describes doitsu koi as bred by crossing Japanese koi with near-scaleless food carp from Germany and Eastern Europe, and Wikipedia says the doitsu forms came from crossing many established varieties with German carp. No specific founding cross, breeder or date is recorded for Doitsu Kohaku.",
     source: "https://jnpa.info/en/nishikigoi/varieties/type/doitsugoi/",
+  },
+  {
+    parents: ["Sanke", "German mirror carp"],
+    produces: "Doitsu Sanke",
+    note: "The JNPA describes doitsu koi as bred by crossing Japanese koi with near-scaleless food carp from Germany and Eastern Europe, and lists Doitsu Taisho Sanshoku among them. No specific founding cross, breeder or date is recorded for Doitsu Sanke.",
+    source: "https://jnpa.info/en/nishikigoi/varieties/type/doitsugoi/",
+  },
+  {
+    parents: ["Shusui", "Gold Ogon"],
+    produces: "Kinsui",
+    note: "The ZNA defines Kinsui as a metallic Shusui, and Taro Kodama describes the patterned metallic koi as made by crossing Ogon, Platinum and the metallic Matsuba with patterned varieties. Neither names Kinsui's metallic parent, and no specific founding cross, breeder or date is documented.",
+    source: "https://www.pondtrademag.com/basic-beauty-the-striking-simplicity-of-hikari-muji/",
+  },
+  {
+    parents: ["Shusui", "Platinum"],
+    produces: "Ginsui",
+    note: "The ZNA defines Ginsui as a metallic Shusui, and Taro Kodama describes the patterned metallic koi as made by crossing Ogon, Platinum and the metallic Matsuba with patterned varieties. Neither names Ginsui's metallic parent, and no specific founding cross, breeder or date is documented.",
+    source: "https://www.pondtrademag.com/basic-beauty-the-striking-simplicity-of-hikari-muji/",
   },
   {
     parents: ["Ki Bekko", "Magoi"],
@@ -165,6 +189,12 @@ export const DOCUMENTED_CROSSES: BreedingCross[] = [
     produces: "Kin Kikokuryu",
     note: "Kodama records Seiki Igarashi creating Kin Kikokuryu in 1998 by crossing Kin Showa with Kumonryu. Kodama's longer profile of his fish says he uses Kikokuryu as the male parent, which is why plain Kikokuryu still turn up in his spawns.",
     source: "https://www.kodamakoifarm.com/variety/kin-kikokuryu/",
+  },
+  {
+    parents: ["Beni Kumonryu", "Kikusui"],
+    produces: "Beni Kikokuryu",
+    note: "Ray Jordan's history records Kataoka and Aoki crossing a Beni Kumonryu with a Doitsu Kikusui in 1995, two years after their Kikokuryu. Kloubec instead gives Haruo Aoki's male Kumonryu and female Kikusui as the parents, and Champ Koi a Kikokuryu crossed with Kohaku or another red-patterned koi.",
+    source: "https://mpks.org/koi-history-by-ray-jordan/",
   },
   {
     parents: ["Sanke", "Gold Ogon"],

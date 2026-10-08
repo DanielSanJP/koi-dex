@@ -4,6 +4,27 @@ A factual running log of what happened and when. Each weekly progress update
 gets drafted from this log, so it stays honest and the mid-point review and
 final report write themselves. Add an entry whenever work happens.
 
+## 2026-10-09: Six more varieties (dex 51–56)
+
+- Artwork arrived for Kage Showa, Ginsui, Kinsui, Sakura Ogon, Beni
+  Kikokuryu and Doitsu Sanke, so each got a full entry (site numbers 51–56,
+  appended, nothing renumbered). None of them had been an ancestor or
+  relative node.
+- Each entry researched and source-checked as before, with the American Koi
+  Judges Association glossary added for the class definitions. Kinsui,
+  Ginsui and Sakura Ogon are shown in Hikarimoyo, Kage Showa and Beni
+  Kikokuryu with the Kawarimono, and Doitsu Sanke with the Gosanke as Doitsu
+  Kohaku was. Where accounts disagree (Beni Kikokuryu's parents, whether
+  Sakura Ogon is the same fish as Platinum Kohaku, Kinsui's class at the
+  JNPA) the entry says so.
+- Five crosses added: Beni Kumonryu × Kikusui for Beni Kikokuryu (1995), a
+  class-level doitsu cross for Doitsu Sanke, class-level metallic crosses
+  from Shusui for Kinsui and Ginsui, and a lineage note for Kage Showa; 35
+  documented outcomes now.
+- Content tests updated for 56 varieties and 35 outcomes, and the tint test
+  for the Ginsui and Kinsui dorsal fin overrides.
+- Database reseeded and parity re-checked.
+
 ## 2026-10-09: Twelve more varieties (dex 39–50)
 
 - Artwork arrived for Karashigoi, Hajiro, Hageshiro, Kage Utsuri, Ki Matsuba,

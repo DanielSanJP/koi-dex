@@ -1200,6 +1200,160 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
     ],
     careSources: ["https://pondinformer.com/goromo-koi-guide/"],
   },
+  kage_showa: {
+    nameMeaning: "kage means shadow, for the smoky net laid over the white of a Showa",
+    family: "Kawarimono",
+    pattern:
+      "A Showa, black-based with red and white markings, whose white areas carry a blurred, reticulated net of shadowy sumi that lets the individual scales show through. The JNPA describes the same thin mesh over the red as well.",
+    origin:
+      "Selected from within Showa lines rather than bred from a separate cross. Koisale explains that emerging Showa sumi often shows first as a shadowy, reticulated grey, and fish that keep it into adulthood are called Kage Showa; Fitz's Fish Ponds likewise describes breeders selecting Showa that naturally showed the netting. No breeder or date is recorded.",
+    notes:
+      "Shown in Kawarimono with the other kage koi at the ZNA, and among the JNPA's Kawarigoi, rather than with Showa. A young fish with shadowy sumi is not a safe Kage Showa: Koisale notes that for every true example, many more develop full lacquer-black sumi as they mature.",
+    sources: [
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/kawarimono/",
+      "https://jnpa.info/en/nishikigoi/varieties/type/kawarigoi/",
+      "https://akjajudges.com/glossary/",
+      "https://koisale.com/pages/koi-varieties/showa.html",
+      "https://fitzfishponds.com/shop-all-fish/kage-showa/",
+    ],
+    care: [
+      "Hardy and adaptable like other Showa; Fitz's Fish Ponds notes that the shadow net does not change how it is kept.",
+      "As on any Showa, the black can take several years to ripen, so judge a young fish's pattern with patience.",
+    ],
+    careSources: [
+      "https://fitzfishponds.com/shop-all-fish/kage-showa/",
+      "https://pondinformer.com/showa-koi-guide/",
+    ],
+  },
+  ginsui: {
+    nameMeaning: "gin means metallic silver; Ginsui is the silver-lustred metallic Shusui",
+    family: "Hikarimoyo",
+    pattern:
+      "A metallic Shusui with a silver lustre: the doitsu Shusui's blue back, mirror-scale rows and red along the flanks, all under a silvery sheen.",
+    origin:
+      "No breeder or date is recorded. The ZNA defines Kinsui and Ginsui together as metallic Shusui, and Taro Kodama describes the patterned metallic koi as made by crossing Ogon, Platinum and the metallic Matsuba with patterned varieties.",
+    notes:
+      "The ZNA and the American Koi Judges Association both place it in Hikari Moyomono. It is the silver counterpart of Kinsui, which carries a gold lustre and usually more red.",
+    sources: [
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/hikari-moyomono/",
+      "https://akjajudges.com/glossary/",
+      "https://koisale.com/koi-glossary/",
+      "https://russellwatergardens.com/pages/koi-glossary-of-terms",
+      "https://www.pondtrademag.com/basic-beauty-the-striking-simplicity-of-hikari-muji/",
+    ],
+    care: [
+      "Scaleless skin is more prone to sunburn and parasites than a scaled koi, so give it shaded areas of the pond.",
+      "Its few scales should line up neatly: Taro Kodama notes that on a doitsu koi one misplaced scale can spoil an otherwise perfect fish.",
+    ],
+    careSources: [
+      "https://pondinformer.com/doitsu-koi-guide/",
+      "https://www.kloubeckoi.com/blog/doitsu-koi-guide",
+      "https://www.pondtrademag.com/doitsu-koi-delivers-beauty-different-scale/",
+    ],
+  },
+  kinsui: {
+    nameMeaning: "kin means metallic gold; Kinsui is the gold-lustred metallic Shusui",
+    family: "Hikarimoyo",
+    pattern:
+      "A metallic Shusui with a gold lustre: the doitsu Shusui pattern of blue back, mirror-scale rows and red flanks under a golden sheen, usually carrying more red than Ginsui.",
+    origin:
+      "No breeder or date is recorded. The ZNA defines Kinsui and Ginsui together as metallic Shusui, and Chuck Jones's late-1990s history already described Kinsui as a shiny Shusui with lots of hi that was rarely seen.",
+    notes:
+      "Classes differ: the ZNA, the American Koi Judges Association and Kloubec put Kinsui in Hikari Moyomono, while the JNPA lists it among its Kawarigoi as a shining doitsu fish with the look of Shusui.",
+    sources: [
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/hikari-moyomono/",
+      "https://jnpa.info/en/nishikigoi/varieties/type/kawarigoi/",
+      "https://akjajudges.com/glossary/",
+      "https://www.kloubeckoi.com/hikari-moyo-koi/",
+      "https://www.oocities.org/koifla/History.htm",
+      "https://russellwatergardens.com/pages/koi-glossary-of-terms",
+    ],
+    care: [
+      "Scaleless skin is more prone to sunburn and parasites than a scaled koi, so give it shaded areas of the pond.",
+      "Its few scales should line up neatly: Taro Kodama notes that on a doitsu koi one misplaced scale can spoil an otherwise perfect fish.",
+    ],
+    careSources: [
+      "https://pondinformer.com/doitsu-koi-guide/",
+      "https://www.kloubeckoi.com/blog/doitsu-koi-guide",
+      "https://www.pondtrademag.com/doitsu-koi-delivers-beauty-different-scale/",
+    ],
+  },
+  sakura_ogon: {
+    nameMeaning:
+      "sakura is the cherry blossom, as in Gotenzakura, the cherry-blossom Kohaku; Ogon names the metallic class",
+    family: "Hikarimoyo",
+    pattern:
+      "A metallic koi with a platinum-white body and red markings. The ZNA and the American Koi Judges Association define it as a metallic Kanoko Kohaku, its red dappled scale by scale rather than laid in solid plates.",
+    origin:
+      "No breeder or date is recorded. Taro Kodama describes the patterned metallic koi as made by crossing Ogon, Platinum and the metallic Matsuba with patterned varieties.",
+    notes:
+      "Definitions differ: the ZNA and AKJA call it a metallic Kanoko Kohaku and list Platinum Kohaku, a metallic Kohaku, separately, while the JNPA describes Sakura Ogon as a shining Kohaku and says it is also called Platinum Kohaku. All three place it in the metallic patterned class.",
+    sources: [
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/hikari-moyomono/",
+      "https://jnpa.info/en/nishikigoi/varieties/type/hikari-moyo/",
+      "https://akjajudges.com/glossary/",
+      "https://www.pondtrademag.com/basic-beauty-the-striking-simplicity-of-hikari-muji/",
+    ],
+    care: [],
+  },
+  beni_kikokuryu: {
+    nameMeaning: '"red shining black dragon"; beni (deep red) added to Kikokuryu',
+    family: "Kawarimono",
+    pattern:
+      "A metallic doitsu Kikokuryu that also carries red or orange markings on its platinum-white body, with black that shifts while the red stays put.",
+    origin:
+      "Ray Jordan's history credits Kataoka and Aoki with Beni Kikokuryu in 1995, from a Beni Kumonryu crossed with a Doitsu Kikusui, two years after their Kikokuryu. Other accounts differ: Kloubec gives Haruo Aoki's male Kumonryu and female Kikusui as the parents, and Champ Koi describes it as bred from Kikokuryu and Kohaku or other red-patterned koi.",
+    notes:
+      "Like Kikokuryu it is metallic but shown in Kawarimono: the ZNA says so on its Hikari Moyomono page, and the JNPA lists it among its Kawarigoi as one of the stable, named cultivars popular at shows.",
+    sources: [
+      "https://mpks.org/koi-history-by-ray-jordan/",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/hikari-moyomono/",
+      "https://jnpa.info/en/nishikigoi/varieties/type/kawarigoi/",
+      "https://www.kloubeckoi.com/beni-kikokuryu-koi-for-sale",
+      "https://www.champkoi.com/pages/koi-variety/beni-kikokuryu",
+      "https://fitzfishponds.com/shop-all-fish/beni-kikokuryu/",
+      "https://akjajudges.com/glossary/",
+    ],
+    care: [
+      "Its black moves with water temperature and the seasons while the red stays put. Kloubec advises a stable 15 to 25 °C for a more consistent pattern and says the biggest changes come in the first two or three years.",
+      "Scaleless skin is more prone to sunburn and parasites than a scaled koi, so give it shaded areas of the pond.",
+    ],
+    careSources: [
+      "https://www.kloubeckoi.com/beni-kikokuryu-koi-for-sale",
+      "https://pondinformer.com/doitsu-koi-guide/",
+      "https://www.kloubeckoi.com/blog/doitsu-koi-guide",
+    ],
+  },
+  doitsu_sanke: {
+    nameMeaning:
+      '"German Sanke"; doitsu is the Japanese rendering of Deutsch, for the German carp behind its scalelessness',
+    family: "Gosanke",
+    pattern:
+      "A Taisho Sanke on near-scaleless skin: a white body with red and black markings, scaled only in a row along the back and sometimes the sides. Without scales the red and black stand out more sharply.",
+    origin:
+      "Doitsu koi come from crossing Japanese koi with near-scaleless German food carp, first imported in 1904, and Taro Kodama counts Doitsu Sanke among the many doitsu forms bred since. No breeder or date is recorded for the first one.",
+    notes:
+      "Judging starts with the scales, whose few rows must line up cleanly, before the fish is assessed as an ordinary Sanke. Where it is shown depends on the organisation: the JNPA's All Japan Koi Show has a separate Doitsu class, while the ZNA's class pages place doitsu forms with their own varieties. It is not a Sanke Shusui, which the AKJA describes as a doitsu Sanke with the blue Shusui back beneath the pattern.",
+    sources: [
+      "https://jnpa.info/en/nishikigoi/varieties/type/doitsugoi/",
+      "https://www.kodamakoifarm.com/variety/doitsu-sanke/",
+      "https://www.pondtrademag.com/doitsu-koi-delivers-beauty-different-scale/",
+      "https://www.pondtrademag.com/understanding-koi-shows/",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/mujimono/",
+      "https://pondinformer.com/sanke-koi-guide/",
+      "https://fitzfishponds.com/shop-all-fish/doitsu-sanke/",
+      "https://akjajudges.com/glossary/",
+    ],
+    care: [
+      "Scaleless skin is more prone to sunburn and parasites than a scaled koi, so give it shaded areas of the pond.",
+      "Too much colour-enhancing food yellows the white, spots the red and can leave the black looking blue.",
+    ],
+    careSources: [
+      "https://pondinformer.com/doitsu-koi-guide/",
+      "https://www.kloubeckoi.com/blog/doitsu-koi-guide",
+      "https://pondinformer.com/sanke-koi-guide/",
+    ],
+  },
 };
 
 export function getVarietyInfo(slug: string): VarietyInfo | undefined {

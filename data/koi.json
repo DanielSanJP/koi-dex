@@ -648,5 +648,83 @@
       "back": null,
       "side": null
     }
+  },
+  {
+    "slug": "kage_showa",
+    "name": "Kage Showa",
+    "number": 51,
+    "body": "koi/bodies/kage_showa.webp",
+    "fins": {
+      "dominant": "#292a2c",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "ginsui",
+    "name": "Ginsui",
+    "number": 52,
+    "body": "koi/bodies/ginsui.webp",
+    "fins": {
+      "dominant": "#e1e0e1",
+      "tail": null,
+      "dorsal": "#adbbce",
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "kinsui",
+    "name": "Kinsui",
+    "number": 53,
+    "body": "koi/bodies/kinsui.webp",
+    "fins": {
+      "dominant": "#ff6400",
+      "tail": null,
+      "dorsal": "#e9d4ad",
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "sakura_ogon",
+    "name": "Sakura Ogon",
+    "number": 54,
+    "body": "koi/bodies/sakura_ogon.webp",
+    "fins": {
+      "dominant": "#dee1e1",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "beni_kikokuryu",
+    "name": "Beni Kikokuryu",
+    "number": 55,
+    "body": "koi/bodies/beni_kikokuryu.webp",
+    "fins": {
+      "dominant": "#e1e0e1",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "doitsu_sanke",
+    "name": "Doitsu Sanke",
+    "number": 56,
+    "body": "koi/bodies/doitsu_sanke.webp",
+    "fins": {
+      "dominant": "#fdfdfd",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
   }
 ]
