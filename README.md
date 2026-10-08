@@ -4,7 +4,7 @@ A reference website about real koi, built with Next.js. School project.
 
 Four sections:
 
-- **Koi-dex** (`/koi`) — the 33 real koi varieties: composite renders, origin and pattern notes, breeding outcomes
+- **Koi-dex** (`/koi`) — the 38 real koi varieties: composite renders, origin and pattern notes, breeding outcomes
 - **Breeding guide** (`/breeding`) — variety lineage and which pairings produce which outcomes
 - **Care guide** (`/care`) — water quality, feeding, seasonal care, health
 - **Pond plants** (`/plants`) — real pond plants with care info (own table, populated separately)
@@ -43,7 +43,7 @@ Public, cacheable, no auth. Backed by the same cached queries as the pages.
 
 | Route | Returns |
 |---|---|
-| `GET /api/koi` | the 33 varieties in dex order with family, origin and sprite/tint data |
+| `GET /api/koi` | the 38 varieties in dex order with family, origin and sprite/tint data |
 | `GET /api/koi/:slug` | one variety with sources and every documented breeding outcome |
 | `GET /api/plants` | plant summaries (type, difficulty, koi-safe, NZ status, image) |
 | `GET /api/plants/:slug` | one plant with its sources |

@@ -102,15 +102,27 @@ export const DOCUMENTED_CROSSES: BreedingCross[] = [
   },
   {
     parents: ["Kigoi", "Gold Ogon"],
-    produces: "Gold Ogon",
-    note: "The lemon-gold Yamabuki form of the Ogon followed in the mid-1950s by crossing Aoki's Ogon lines with the yellow Kigoi. Breeders treat it as a refinement within the Ogon rather than a separate variety.",
-    source: "https://www.kloubeckoi.com/yamabuki-koi-for-sale/",
+    produces: "Yellow Ogon",
+    note: "Ray Jordan's history records Sawata Aoki crossing a Kigoi with a light-coloured Ogon in 1957 to give the bright yellow Yamabuki Ogon, and Chuck Jones's history describes the same cross. Jordan's own list of key dates puts the first Yamabuki in 1946 instead, so the date is uncertain.",
+    source: "https://mpks.org/koi-history-by-ray-jordan/",
+  },
+  {
+    parents: ["Yellow Ogon", "Shusui"],
+    produces: "Midorigoi",
+    note: "Ray Jordan's history lists Tacho Yoshioka's Midorigoi of 1963 with a male Yamabuki Ogon and a female Shusui as its parents. Chuck Jones's history gives the same year and adds that the green is recessive, so few are produced.",
+    source: "https://mpks.org/koi-history-by-ray-jordan/",
   },
   {
     parents: ["Kumonryu", "Kikusui"],
     produces: "Kikokuryu",
     note: "Ray Jordan's history records Kataoka and Aoki crossing a Kumonryu with a Doitsu Kikusui in 1993, giving the first koi with sumi on a metallic platinum body. Kodama's account names Platinum as the second parent instead.",
     source: "https://mpks.org/koi-history-by-ray-jordan/",
+  },
+  {
+    parents: ["Kin Showa", "Kumonryu"],
+    produces: "Kin Kikokuryu",
+    note: "Kodama records Seiki Igarashi creating Kin Kikokuryu in 1998 by crossing Kin Showa with Kumonryu. Kodama's longer profile of his fish says he uses Kikokuryu as the male parent, which is why plain Kikokuryu still turn up in his spawns.",
+    source: "https://www.kodamakoifarm.com/variety/kin-kikokuryu/",
   },
   {
     parents: ["Sanke", "Gold Ogon"],
@@ -124,6 +136,18 @@ export const DOCUMENTED_CROSSES: BreedingCross[] = [
     note: "The ZNA defines the Hikari Utsuri class as the Utsuri family with a metallic body, the sheen tracing back to Aoki's Ogon lines. Unlike Kujaku or Platinum, no specific founding cross, breeder or date is documented.",
     source:
       "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/hikari-utsurimono/",
+  },
+  {
+    parents: ["Showa", "Gold Ogon"],
+    produces: "Kin Showa",
+    note: "The JNPA describes the Hikari Utsuri as bred from Showa or Shiro Utsuri and the single-coloured metallic koi, and Ray Jordan's history names Kin Showa among the varieties built on the Ogon. No specific founding cross, breeder or date is documented.",
+    source: "https://jnpa.info/en/nishikigoi/varieties/type/hikari-utsuri/",
+  },
+  {
+    parents: ["Shiro Utsuri", "Gold Ogon"],
+    produces: "Gin Shiro",
+    note: "The JNPA describes the Hikari Utsuri as bred from Shiro Utsuri or Showa and the single-coloured metallic koi; it names the metallic class rather than a particular Ogon. No specific founding cross, breeder or date is documented for Gin Shiro.",
+    source: "https://jnpa.info/en/nishikigoi/varieties/type/hikari-utsuri/",
   },
   {
     parents: ["Kohaku", "Kohaku"],

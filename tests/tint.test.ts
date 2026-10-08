@@ -23,11 +23,14 @@ describe("tintFor", () => {
     expect(tintFor(fins, "tail")).toBe("#ff0000");
     expect(tintFor(fins, "dorsal")).toBe("#56749a");
   });
-  it("only Asagi and Shusui override a fin in the real data", () => {
+  it("only Asagi, Shusui and Midorigoi override a fin in the real data", () => {
     const withOverride = koi.filter((k) =>
       (["tail", "dorsal", "back", "side"] as const).some((p) => usableTint(k.fins[p])),
     );
-    expect(withOverride.map((k) => k.slug).sort()).toEqual(["asagi_koi", "shusui"]);
+    expect(withOverride.map((k) => k.slug).sort()).toEqual(["asagi_koi", "midorigoi", "shusui"]);
     expect(tintFor(withOverride[0].fins, "dorsal")).toBe("#56749a");
+    const midorigoi = withOverride.find((k) => k.slug === "midorigoi")!;
+    expect(tintFor(midorigoi.fins, "dorsal")).toBe("#42702c");
+    expect(tintFor(midorigoi.fins, "tail")).toBe("#7abc4a");
   });
 });

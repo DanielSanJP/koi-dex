@@ -510,17 +510,17 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
   },
   gold_ogon: {
     nameMeaning:
-      'Ogon means "gold"; Yamabuki is the kerria rose, a bright yellow flower',
+      'Ogon means "gold"; the name now covers the whole group of single-coloured metallic koi',
     family: "Hikarimuji",
     pattern:
-      "A one-colour metallic koi in solid lemon-gold from nose to tail, lustre carried into the fins, with a clear unblemished head. Even colour and strong sheen define quality.",
+      "A one-colour metallic koi in solid gold from nose to tail, lustre carried into the fins, with a clear unblemished head. Even colour and strong sheen define quality.",
     origin:
-      "Sawata Aoki presented the first stable metallic gold Ogon in 1946 after some 25 years of line-breeding from a wild carp with a metallic shine. The lemon-gold Yamabuki form followed in the mid-1950s by crossing Ogon lines with the yellow Kigoi.",
+      "Sawata Aoki presented the first stable metallic gold Ogon in 1946 after some 25 years of line-breeding from a wild carp with a metallic shine. Ray Jordan describes those first Ogon as dark, gold-scaled fish; the brighter Yamabuki form, the Yellow Ogon, was refined from them later.",
     notes:
       "The original metallic koi: its debut founded every later Hikari class. Ogon are hardy, fast growing and notably tame.",
     sources: [
-      "https://www.kloubeckoi.com/yamabuki-koi-for-sale/",
-      "https://nextdaykoi.com/koi-fish-facts/ogon-koi-fish/",
+      "https://mpks.org/koi-history-by-ray-jordan/",
+      "https://en.wikipedia.org/wiki/Koi",
     ],
     care: [
       "Among the hardiest and most disease-resistant koi and widely recommended as a first fish. It tames quickly and hand-feeds readily.",
@@ -678,7 +678,7 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
     pattern:
       "A single-coloured non-metallic koi in even, buttery lemon yellow from nose to tail, with no pattern and no sheen. It comes scaled or doitsu, and the red-eyed Akame Kigoi is the form collectors prize.",
     origin:
-      "One of the old plain-coloured lines with no documented founding date; Kloubec describes it as selected out of Benigoi stock. It is the yellow parent behind Platinum Ogon, from Yoshioka's 1963 cross with Nezu Ogon, and behind the Yamabuki form of the Ogon.",
+      "One of the old plain-coloured lines with no documented founding date; Kloubec describes it as selected out of Benigoi stock. It is the yellow parent behind Platinum Ogon, from Yoshioka's 1963 cross with Nezu Ogon, and behind the Yamabuki (Yellow) Ogon.",
     notes:
       "As calm and friendly as Chagoi and easy to hand-feed. Uncommon on dealers' lists, since even yellow without a blemish is hard to raise.",
     sources: [
@@ -780,6 +780,138 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
       "https://mpks.org/koi-history-by-ray-jordan/",
     ],
     care: [],
+  },
+  kin_kikokuryu: {
+    nameMeaning: '"gold shining black dragon"; kin (gold) added to Kikokuryu',
+    family: "Kawarimono",
+    pattern:
+      "A metallic doitsu koi: a Kikokuryu that also carries gold to orange markings, with black reaching over the body, head and fins. Kodama treats that all-over black as the mark that separates it from a Kujaku, which it can otherwise resemble.",
+    origin:
+      "Created by the breeder Seiki Igarashi. Kodama dates it to 1998, from Kin Showa crossed with Kumonryu, while its longer profile of Igarashi says he uses Kikokuryu as the male parent. His Kin Kikokuryu caused a sensation when it was shown at the 2000 Nogyosai.",
+    notes:
+      "Igarashi's spawns throw several distinct types, from plain Kikokuryu to fish close to Kujaku, plus a form without the shine that he named Momiji. The JNPA lists Kin Kikokuryu among its Kawarigoi; the ZNA class pages name only Kikokuryu and Beni Kikokuryu in Kawarimono and do not mention the gold form.",
+    sources: [
+      "https://www.kodamakoifarm.com/variety/kin-kikokuryu/",
+      "https://www.kodamakoifarm.com/sensational-variety-kin-kikokuryu/",
+      "https://jnpa.info/en/nishikigoi/varieties/type/kawarigoi/",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/kawarimono/",
+      "https://en.wikipedia.org/wiki/Koi",
+    ],
+    care: [
+      "Scaleless skin is more prone to sunburn and parasites than a scaled koi, so give it shaded areas of the pond.",
+      "Kodama notes that its pattern can change often, even within a season, so the fish you buy will not necessarily look the same a year later.",
+    ],
+    careSources: [
+      "https://pondinformer.com/doitsu-koi-guide/",
+      "https://www.kloubeckoi.com/blog/doitsu-koi-guide",
+      "https://www.kodamakoifarm.com/variety/kin-kikokuryu/",
+    ],
+  },
+  gin_shiro: {
+    nameMeaning:
+      'short for Gin Shiro Utsuri; gin means silver and marks the metallic sheen added to Shiro Utsuri',
+    family: "Hikari Utsuri",
+    pattern:
+      "The metallic version of Shiro Utsuri: a black koi with white markings, the whole body shining. The black wraps the body in the Utsuri way, and the white carries a platinum sheen.",
+    origin:
+      "No breeder or date is recorded. The JNPA describes the Hikari Utsuri as bred from an Utsuri-pattern koi such as Shiro Utsuri and a single-coloured metallic koi, and Ray Jordan's history traces every metallic type back to Sawata Aoki's Ogon.",
+    notes:
+      "Judged in the Hikari Utsuri class with Kin Showa and Kin Ki Utsuri. Sheen is weighed first, and since strong lustre and strong black rarely appear on the same fish, one with both is prized.",
+    sources: [
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/hikari-utsurimono/",
+      "https://jnpa.info/en/nishikigoi/varieties/type/hikari-utsuri/",
+      "https://www.pondtrademag.com/language-of-koi-hikari-utsuri/",
+      "https://mpks.org/koi-history-by-ray-jordan/",
+      "https://www.pondexperts.ca/fish-ponds/japanese-koi-terminology/",
+    ],
+    care: [
+      "As with Shiro Utsuri, colour-enhancing food does it no good: a black-and-white koi has no cells to take up the extra pigment, so the white turns pink, yellow or beige until it fades.",
+      "In the metallic Utsuri, lustre and black tend to cancel each other out, so a very shiny fish usually has softer black. That is an expectation to set, not a fault to fix.",
+    ],
+    careSources: [
+      "https://dainichi.com/koi-color-food/",
+      "https://koigarden.com/koi-varieties-hikari-utsuri/",
+    ],
+  },
+  kin_showa: {
+    nameMeaning: '"gold Showa"; kin (gold) marks the metallic sheen added to Showa',
+    family: "Hikari Utsuri",
+    pattern:
+      "The metallic version of Showa: a black-based koi with red and white markings, the whole body shining. Judges want a balanced three-colour pattern with crisp edges and an even sheen over every colour.",
+    origin:
+      "Made by bringing metallic blood into Showa lines. Champ Koi says the exact origin is hard to pin down and places it in the late 20th century; the JNPA describes the Hikari Utsuri as bred from Showa or Shiro Utsuri and single-coloured metallic koi.",
+    notes:
+      "In Hikari Utsuri the sheen is judged first, and among Kin Showa the redder fish are valued above the more orange ones. Kodama names Kin Showa as one parent of Kin Kikokuryu in 1998.",
+    sources: [
+      "https://www.champkoi.com/pages/koi-variety/kin-showa",
+      "https://jnpa.info/en/nishikigoi/varieties/type/hikari-utsuri/",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/hikari-utsurimono/",
+      "https://www.pondtrademag.com/language-of-koi-hikari-utsuri/",
+      "https://www.kodamakoifarm.com/variety/kin-kikokuryu/",
+    ],
+    care: [
+      "In the metallic Utsuri, lustre and black tend to cancel each other out, so a strongly metallic Kin Showa usually shows softer black. A fish with both brilliant sheen and firm sumi is rare: an expectation to set rather than a fault to fix.",
+      "The face and pectoral fins show a fish's true sheen most clearly, so look there when choosing one.",
+    ],
+    careSources: [
+      "https://koigarden.com/koi-varieties-hikari-utsuri/",
+      "https://www.pondtrademag.com/language-of-koi-hikari-utsuri/",
+    ],
+  },
+  midorigoi: {
+    nameMeaning: '"green carp"; midori means green and goi carp',
+    family: "Kawarimono",
+    pattern:
+      "A green koi with no pattern, the colour running from yellow-green and olive to a brighter grass green. Most are doitsu, with a line of dark mirror scales along the back; the JNPA describes the scaled form as a yellow body with an olive-green back.",
+    origin:
+      "Ray Jordan's history and an earlier one by Chuck Jones both credit Tacho Yoshioka with the first Midorigoi in 1963, which Jones says took about 20 years of effort. Jordan lists a male Yamabuki Ogon and a female Shusui as the parents.",
+    notes:
+      "Few are produced. Accounts of its colour over time disagree: Jones wrote that most turn black as adults, while Kloubec says a well-kept fish can stay green for life. The JNPA and Kloubec both list it with the Kawarigoi, outside the main classes.",
+    sources: [
+      "https://mpks.org/koi-history-by-ray-jordan/",
+      "https://www.oocities.org/koifla/History.htm",
+      "https://jnpa.info/en/nishikigoi/varieties/type/kawarigoi/",
+      "https://www.kloubeckoi.com/midorigoi-koi-for-sale/",
+      "https://www.kloubeckoi.com/kawarigoi/",
+    ],
+    care: [
+      "Kloubec ties the green to water hardness and recommends soft water, a GH of 100 to 150, to hold the colour.",
+      "Most are doitsu, so the usual scaleless cautions apply: shade against sunburn and a closer watch for parasites.",
+    ],
+    careSources: [
+      "https://www.kloubeckoi.com/midorigoi-koi-for-sale/",
+      "https://pondinformer.com/doitsu-koi-guide/",
+      "https://www.kloubeckoi.com/blog/doitsu-koi-guide",
+    ],
+  },
+  yellow_ogon: {
+    nameMeaning:
+      'Yamabuki Ogon in Japanese; yamabuki ("mountain rose") is a bright golden yellow named after a Japanese flower, and Ogon means gold',
+    family: "Hikarimuji",
+    pattern:
+      "A one-colour metallic koi in bright yellow gold from nose to tail, with no markings at all. Judges want even colour, a strong sheen across every scale, a clear head and a thick body.",
+    origin:
+      "Ray Jordan's history records Sawata Aoki fixing the Yamabuki Ogon in 1957 by crossing a Kigoi with a light-coloured Ogon, and Chuck Jones's history gives the same year and cross. Accounts differ on the date: Jordan's own list of key dates puts the first Yamabuki in 1946, and Kloubec says the 1940s.",
+    notes:
+      "The ZNA and JNPA list yellow gold as one of the standard Hikarimuji colours, beside platinum and orange. Crossed with Shusui, a Yamabuki Ogon gave the first Midorigoi in 1963.",
+    sources: [
+      "https://mpks.org/koi-history-by-ray-jordan/",
+      "https://www.oocities.org/koifla/History.htm",
+      "https://jnpa.info/en/nishikigoi/varieties/type/hikari-muji/",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/hikari-mujimono/",
+      "https://www.champkoi.com/pages/koi-variety/yamabuki-ogon",
+      "https://www.kloubeckoi.com/yamabuki-koi-for-sale/",
+    ],
+    care: [
+      "Hardy and among the friendliest koi, quick to hand-feed like the other Ogon.",
+      "A hefty appetite tends to make it grow very large, so plan the pond for the adult fish; Kloubec suggests at least three feet (about a metre) of depth.",
+      "Kloubec reports the yellow deepening as the fish matures.",
+    ],
+    careSources: [
+      "https://www.kloubeckoi.com/yamabuki-koi-for-sale/",
+      "https://www.kloubeckoi.com/ogon-koi-for-sale/",
+      "https://www.kodamakoifarm.com/variety/ogon/",
+    ],
   },
 };
 

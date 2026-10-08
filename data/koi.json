@@ -427,5 +427,70 @@
       "back": null,
       "side": null
     }
+  },
+  {
+    "slug": "kin_kikokuryu",
+    "name": "Kin Kikokuryu",
+    "number": 34,
+    "body": "koi/bodies/kin_kikokuryu.webp",
+    "fins": {
+      "dominant": "#e8c878",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "gin_shiro",
+    "name": "Gin Shiro",
+    "number": 35,
+    "body": "koi/bodies/gin_shiro.webp",
+    "fins": {
+      "dominant": "#292a2c",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "kin_showa",
+    "name": "Kin Showa",
+    "number": 36,
+    "body": "koi/bodies/kin_showa.webp",
+    "fins": {
+      "dominant": "#292a2c",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "midorigoi",
+    "name": "Midorigoi",
+    "number": 37,
+    "body": "koi/bodies/midorigoi.webp",
+    "fins": {
+      "dominant": "#7abc4a",
+      "tail": null,
+      "dorsal": "#42702c",
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "yellow_ogon",
+    "name": "Yellow Ogon",
+    "number": 38,
+    "body": "koi/bodies/yellow_ogon.webp",
+    "fins": {
+      "dominant": "#ffd014",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
   }
 ]

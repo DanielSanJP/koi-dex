@@ -4,6 +4,31 @@ A factual running log of what happened and when. Each weekly progress update
 gets drafted from this log, so it stays honest and the mid-point review and
 final report write themselves. Add an entry whenever work happens.
 
+## 2026-10-09: Five more varieties (dex 34–38)
+
+- Artwork arrived for Kin Kikokuryu, Gin Shiro, Kin Showa, Midorigoi and
+  Yellow Ogon, so each got a full entry (site numbers 34–38, appended,
+  nothing renumbered). None of them had been an ancestor or relative node.
+- Each entry researched and source-checked as before, with the JNPA
+  variety pages added to Kodama, Champion Nishikigoi, Kloubec, the ZNA class
+  pages and Ray Jordan's history. Kin Showa and Gin Shiro are shown in
+  Hikari Utsuri, Kin Kikokuryu and Midorigoi with the Kawarimono, and Yellow
+  Ogon in Hikarimuji. Where accounts disagree (Kin Kikokuryu's parents, the
+  date of the first Yamabuki Ogon, whether Midorigoi stay green as adults)
+  the entry says so.
+- Yellow Ogon is the Yamabuki Ogon, which the site had treated as a
+  refinement within Gold Ogon. The Kigoi × Gold Ogon cross now produces
+  Yellow Ogon and cites Ray Jordan's 1957 record, and Gold Ogon's entry now
+  describes the original Ogon.
+- Four crosses added: Yamabuki Ogon × Shusui for Midorigoi (1963), Kin Showa
+  × Kumonryu for Kin Kikokuryu (1998), and class-level Ogon crosses for Kin
+  Showa and Gin Shiro; 23 documented outcomes now.
+- Content tests updated for 38 varieties and 23 outcomes, and the tint test
+  for Midorigoi's dorsal fin override. The search test now finds an
+  art-free variety by its own words, since "metallic" alone had become
+  crowded with metallic koi. Gold Ogon lost a source page that no longer
+  opens. Database reseeded and parity re-checked.
+
 ## 2026-10-09: Three more varieties (dex 31–33)
 
 - Artwork arrived for Kikokuryu, Yamato Nishiki and Magoi, which the site

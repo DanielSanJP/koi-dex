@@ -212,6 +212,36 @@ export const ORIGINS: Record<string, Origin> = {
     confidence: "approximate",
     source: "https://www.kodamakoifarm.com/what-is-nishikigoi-history-meaning/",
   },
+  kin_kikokuryu: {
+    year: 1998,
+    label: "1998, first shown 2000",
+    confidence: "documented",
+    source: "https://www.kodamakoifarm.com/variety/kin-kikokuryu/",
+  },
+  gin_shiro: {
+    year: null,
+    label: "undated metallic Utsuri",
+    confidence: "approximate",
+    source: "https://jnpa.info/en/nishikigoi/varieties/type/hikari-utsuri/",
+  },
+  kin_showa: {
+    year: null,
+    label: "undated; late 20th century in one account",
+    confidence: "approximate",
+    source: "https://www.champkoi.com/pages/koi-variety/kin-showa",
+  },
+  midorigoi: {
+    year: 1963,
+    label: "1963",
+    confidence: "documented",
+    source: "https://mpks.org/koi-history-by-ray-jordan/",
+  },
+  yellow_ogon: {
+    year: 1957,
+    label: "1957, or the 1940s in other accounts",
+    confidence: "disputed",
+    source: "https://mpks.org/koi-history-by-ray-jordan/",
+  },
 };
 
 /** Era bands for the family tree, oldest first. */
