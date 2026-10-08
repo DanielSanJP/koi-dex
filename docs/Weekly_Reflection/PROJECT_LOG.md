@@ -4,6 +4,31 @@ A factual running log of what happened and when. Each weekly progress update
 gets drafted from this log, so it stays honest and the mid-point review and
 final report write themselves. Add an entry whenever work happens.
 
+## 2026-10-09: Twelve more varieties (dex 39–50)
+
+- Artwork arrived for Karashigoi, Hajiro, Hageshiro, Kage Utsuri, Ki Matsuba,
+  Aka Matsuba, Doitsu Kohaku, Kin Matsuba, Gin Matsuba, Orenji Matsuba,
+  Kanoko Kohaku and Budo Goromo, so each got a full entry (site numbers
+  39–50, appended, nothing renumbered). Kage Utsuri is drawn as the black and
+  white Kage Shiro Utsuri, and the entry says so.
+- Each entry researched and source-checked as before: the ZNA and JNPA class
+  pages, Champion Nishikigoi, Kloubec, Taro Kodama's Pond Trade articles and
+  Ray Jordan's history, with dealer pages (Fitz's Fish Ponds, Cotswold Koi,
+  Koitoday) where nothing better covered a point. Hajiro, Hageshiro,
+  Karashigoi, Kage Utsuri, Kanoko Kohaku and the plain Ki and Aka Matsuba
+  are shown with the Kawarimono, the metallic Kin, Gin and Orenji Matsuba
+  in Hikarimuji, Budo Goromo in Koromo and Doitsu Kohaku with the Gosanke.
+  Where the organisations differ (the ZNA's newer Mujimono class, the JNPA's
+  separate Doitsu class) the entry says so.
+- Matsuba left the relatives list now that five of its colour forms are
+  drawn; the search test now finds Ginrin by its own word instead.
+- Seven crosses added: Kigoi × Chagoi for Karashigoi, Kohaku × Hi Asagi for
+  Aka Matsuba (late 1950s), Shiro Utsuri × Asagi for Kage Utsuri, a
+  class-level doitsu cross for Doitsu Kohaku, and lineage notes for Hajiro,
+  Hageshiro and Budo Goromo; 30 documented outcomes now.
+- Content tests updated for 50 varieties and 30 outcomes.
+- Database reseeded and parity re-checked.
+
 ## 2026-10-09: Five more varieties (dex 34–38)
 
 - Artwork arrived for Kin Kikokuryu, Gin Shiro, Kin Showa, Midorigoi and

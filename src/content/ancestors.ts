@@ -27,18 +27,9 @@ export const ANCESTORS: Ancestor[] = [
 /** Well-known real varieties this site has no artwork for, acknowledged so the
     dex does not pretend its list is the whole of koi. Goshiki and Kikusui
     graduated from here to full entries (2026-09-14), then Kikokuryu and
-    Yamato Nishiki (2026-10-09). */
+    Yamato Nishiki (2026-10-09), and Matsuba left the same day once five of
+    its colour forms (Ki, Aka, Kin, Gin and Orenji) were drawn. */
 export const RELATIVES: Ancestor[] = [
-  {
-    name: "Matsuba",
-    definition:
-      "A single-coloured koi whose scales each carry a dark centre, making a pinecone reticulation down the back. Kin Matsuba is the metallic gold version.",
-    role: "The mechanism by which Asagi net-scaling was carried into single-colour and metallic koi. Kin Matsuba was created in the 1950s from Yamabuki Ogon and Shiro Matsuba. Matsuba scaling also underlies Kujaku, which is essentially a metallic Matsuba carrying a Kohaku pattern.",
-    sources: [
-      "https://www.kloubeckoi.com/matsuba-koi-for-sale/",
-      "https://koisale.com/pages/koi-varieties/matsuba.html",
-    ],
-  },
   {
     name: "Ginrin",
     definition:

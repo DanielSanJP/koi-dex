@@ -47,10 +47,28 @@ export const DOCUMENTED_CROSSES: BreedingCross[] = [
     source: "https://www.kodamakoifarm.com/variety/goshiki/",
   },
   {
+    parents: ["Kohaku", "Asagi"],
+    produces: "Aka Matsuba",
+    note: "Cotswold Koi records breeders crossing a high-red Kohaku with a Hi Asagi, a redder Asagi, in the late 1950s; a few solely red fry from that spawn were refined into Aka Matsuba. Kloubec names the same parents.",
+    source: "https://www.cotswoldkoi.co.uk/knowledge-centre/what-is-a-aka-matsuba-koi/",
+  },
+  {
+    parents: ["Koromo", "Koromo"],
+    produces: "Budo Goromo",
+    note: "A form selected within the Koromo family rather than a recorded cross: Champ Koi describes Budo Goromo as a later refinement of the Goromo, which came from Asagi and Kohaku crosses, and Pond Informer treats it as a sub-variety of Ai Goromo. The founding fish is not documented.",
+    source: "https://www.champkoi.com/pages/koi-variety/budo-goromo",
+  },
+  {
     parents: ["Asagi", "German mirror carp"],
     produces: "Shusui",
     note: "German carp reached Japan in 1904 and Akiyama crossed them with Asagi from about 1910. The ZNA notes good specimens only appeared around 1928. Shusui was the first doitsu-scaled koi.",
     source: "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/shusui/",
+  },
+  {
+    parents: ["Kohaku", "German mirror carp"],
+    produces: "Doitsu Kohaku",
+    note: "The JNPA describes doitsu koi as bred by crossing Japanese koi with near-scaleless food carp from Germany and Eastern Europe, and Wikipedia says the doitsu forms came from crossing many established varieties with German carp. No specific founding cross, breeder or date is recorded for Doitsu Kohaku.",
+    source: "https://jnpa.info/en/nishikigoi/varieties/type/doitsugoi/",
   },
   {
     parents: ["Ki Bekko", "Magoi"],
@@ -59,10 +77,34 @@ export const DOCUMENTED_CROSSES: BreedingCross[] = [
     source: "https://mpks.org/koi-history-by-ray-jordan/",
   },
   {
+    parents: ["Shiro Utsuri", "Asagi"],
+    produces: "Kage Utsuri",
+    note: "Fitz's Fish Ponds credits Otsuka Koi Farm with developing Kage Shiro Utsuri by blending Shiro Utsuri lines with Asagi blood, the Asagi netting giving the shadow over the white. It is a single dealer's account and gives no date.",
+    source: "https://fitzfishponds.com/shop-all-fish/kage-shiro-utsuri/",
+  },
+  {
     parents: ["Chagoi", "Soragoi"],
     produces: "Ochiba",
     note: "Established as a distinct variety in the mid-1990s by selectively breeding Chagoi with the grey Soragoi, giving a grey-blue ground with brown fallen-leaf patterning. No single originating breeder is documented.",
     source: "https://www.kloubeckoi.com/blog/Ochiba-Koi-The-Fallen-Leaf-Variety",
+  },
+  {
+    parents: ["Kigoi", "Chagoi"],
+    produces: "Karashigoi",
+    note: "Taro Kodama writes that Karashi was originally developed by crossing Kigoi with Chagoi, which is why it eats and grows like a Chagoi and may carry red-brown edges on its tail fin. No breeder or date is recorded.",
+    source: "https://www.pondtrademag.com/language-of-koi-monochrome-muji-is-pure-perfection/",
+  },
+  {
+    parents: ["Karasugoi", "Karasugoi"],
+    produces: "Hajiro",
+    note: "A variation within the Karasugoi line rather than a recorded cross: Taro Kodama describes Hajiro as Karasu with white-edged fins, and the JNPA notes that some Karasugoi show white pectoral fin tips.",
+    source: "https://www.pondtrademag.com/language-of-koi-monochrome-muji-is-pure-perfection/",
+  },
+  {
+    parents: ["Karasugoi", "Karasugoi"],
+    produces: "Hageshiro",
+    note: "A member of the Karasugoi family rather than a recorded cross: the ZNA groups it with Karasugoi, and Koitoday calls Karasugoi the progenitor of the family. No breeder or date is recorded.",
+    source: "https://vijverleven.nl/en/blogs/kennisbank/karasugoi-familie",
   },
   {
     parents: ["Karasugoi", "Shusui"],

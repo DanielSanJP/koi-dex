@@ -241,6 +241,77 @@ export const ORIGINS: Record<string, Origin> = {
     label: "1957, or the 1940s in other accounts",
     confidence: "disputed",
     source: "https://mpks.org/koi-history-by-ray-jordan/",
+  },  karashigoi: {
+    year: null,
+    label: "undated; newer than Asagi or Kohaku",
+    confidence: "approximate",
+    source: "https://www.champkoi.com/pages/koi-variety/karashigoi",
+  },
+  hajiro: {
+    year: null,
+    label: "undated variation of Karasugoi",
+    confidence: "approximate",
+    source: "https://www.pondtrademag.com/language-of-koi-monochrome-muji-is-pure-perfection/",
+  },
+  hageshiro: {
+    year: null,
+    label: "undated; Karasugoi family",
+    confidence: "approximate",
+    source: "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/kawarimono/",
+  },
+  kage_utsuri: {
+    year: null,
+    label: "undated; credited to Otsuka Koi Farm",
+    confidence: "approximate",
+    source: "https://fitzfishponds.com/shop-all-fish/kage-shiro-utsuri/",
+  },
+  ki_matsuba: {
+    year: null,
+    label: "undated; from the Asagi line",
+    confidence: "approximate",
+    source: "https://mpks.org/koi-history-by-ray-jordan/",
+  },
+  aka_matsuba: {
+    year: 1958,
+    label: "late 1950s",
+    confidence: "approximate",
+    source: "https://www.cotswoldkoi.co.uk/knowledge-centre/what-is-a-aka-matsuba-koi/",
+  },
+  doitsu_kohaku: {
+    year: null,
+    label: "undated; a breeding parent by 1980",
+    confidence: "approximate",
+    source: "https://mpks.org/koi-history-by-ray-jordan/",
+  },
+  kin_matsuba: {
+    year: null,
+    label: "undated metallic Matsuba",
+    confidence: "approximate",
+    source: "https://jnpa.info/en/nishikigoi/varieties/type/hikari-muji/",
+  },
+  gin_matsuba: {
+    year: null,
+    label: "undated metallic Matsuba",
+    confidence: "approximate",
+    source: "https://jnpa.info/en/nishikigoi/varieties/type/hikari-muji/",
+  },
+  orenji_matsuba: {
+    year: null,
+    label: "undated metallic Matsuba",
+    confidence: "approximate",
+    source: "https://vijverleven.nl/en/blogs/kennisbank/matsuba",
+  },
+  kanoko_kohaku: {
+    year: null,
+    label: "undated pattern form",
+    confidence: "approximate",
+    source: "https://jnpa.info/en/nishikigoi/varieties/type/kawarigoi/",
+  },
+  budo_goromo: {
+    year: null,
+    label: "undated; mid-20th century in one account",
+    confidence: "approximate",
+    source: "https://www.champkoi.com/pages/koi-variety/budo-goromo",
   },
 };
 

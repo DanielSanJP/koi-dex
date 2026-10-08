@@ -7,11 +7,11 @@ import { walkLineage } from "@/lib/shapes";
    database is checked against the same expectations by scripts/parity-check.ts. */
 
 describe("content: koi", () => {
-  it("has 38 varieties, all with a family and drawable sprites", async () => {
+  it("has 50 varieties, all with a family and drawable sprites", async () => {
     const koi = await contentSource.koiSummaries();
-    expect(koi).toHaveLength(38);
+    expect(koi).toHaveLength(50);
     expect(koi.every((k) => k.family && k.koi.body.startsWith("koi/bodies/"))).toBe(true);
-    expect(new Set(koi.map((k) => k.dexNumber)).size).toBe(38);
+    expect(new Set(koi.map((k) => k.dexNumber)).size).toBe(50);
   });
   it("classifies breeding rows without overlap", async () => {
     for (const k of await contentSource.koiSummaries()) {
@@ -27,7 +27,7 @@ describe("content: koi", () => {
 describe("content: breeding outcomes", () => {
   it("resolve every party, with exactly one line-bred selection", async () => {
     const outcomes = await contentSource.outcomes();
-    expect(outcomes).toHaveLength(23);
+    expect(outcomes).toHaveLength(30);
     expect(outcomes.filter((o) => o.parentB === null)).toHaveLength(1);
     expect(outcomes.find((o) => o.parentB === null)?.offspring.slug).toBe("gold_ogon");
   });
@@ -69,9 +69,10 @@ describe("content: search fallback", () => {
     const hits = await contentSource.search("metallic", 20);
     expect(hits.some((h) => h.kind === "koi")).toBe(true);
     // An art-free variety is found by its own words. "metallic" alone stopped being a
-    // good probe once the dex held enough metallic koi to fill the top results.
-    const relatives = await contentSource.search("pinecone", 5);
-    expect(relatives.some((h) => h.kind === "variety")).toBe(true);
+    // good probe once the dex held enough metallic koi to fill the top results, and
+    // "pinecone" once the Matsuba were drawn; "sparkle" is Ginrin's own word.
+    const relatives = await contentSource.search("sparkle", 5);
+    expect(relatives.some((h) => h.kind === "variety" && h.slug === "ginrin")).toBe(true);
     const iris = await contentSource.search("iris", 5);
     expect(iris[0]?.slug).toBe("water-iris");
   });

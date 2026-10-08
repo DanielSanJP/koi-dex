@@ -492,5 +492,161 @@
       "back": null,
       "side": null
     }
+  },
+  {
+    "slug": "karashigoi",
+    "name": "Karashigoi",
+    "number": 39,
+    "body": "koi/bodies/karashigoi.webp",
+    "fins": {
+      "dominant": "#d0ac34",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "hajiro",
+    "name": "Hajiro",
+    "number": 40,
+    "body": "koi/bodies/hajiro.webp",
+    "fins": {
+      "dominant": "#fdfdfd",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "hageshiro",
+    "name": "Hageshiro",
+    "number": 41,
+    "body": "koi/bodies/hageshiro.webp",
+    "fins": {
+      "dominant": "#fdfdfd",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "kage_utsuri",
+    "name": "Kage Utsuri",
+    "number": 42,
+    "body": "koi/bodies/kage_utsuri.webp",
+    "fins": {
+      "dominant": "#292a2c",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "ki_matsuba",
+    "name": "Ki Matsuba",
+    "number": 43,
+    "body": "koi/bodies/ki_matsuba.webp",
+    "fins": {
+      "dominant": "#febf00",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "aka_matsuba",
+    "name": "Aka Matsuba",
+    "number": 44,
+    "body": "koi/bodies/aka_matsuba.webp",
+    "fins": {
+      "dominant": "#fe3201",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "doitsu_kohaku",
+    "name": "Doitsu Kohaku",
+    "number": 45,
+    "body": "koi/bodies/doitsu_kohaku.webp",
+    "fins": {
+      "dominant": "#fdfdfd",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "kin_matsuba",
+    "name": "Kin Matsuba",
+    "number": 46,
+    "body": "koi/bodies/kin_matsuba.webp",
+    "fins": {
+      "dominant": "#e0b950",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "gin_matsuba",
+    "name": "Gin Matsuba",
+    "number": 47,
+    "body": "koi/bodies/gin_matsuba.webp",
+    "fins": {
+      "dominant": "#dee1e1",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "orenji_matsuba",
+    "name": "Orenji Matsuba",
+    "number": 48,
+    "body": "koi/bodies/orenji_matsuba.webp",
+    "fins": {
+      "dominant": "#FF6400",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "kanoko_kohaku",
+    "name": "Kanoko Kohaku",
+    "number": 49,
+    "body": "koi/bodies/kanoko_kohaku.webp",
+    "fins": {
+      "dominant": "#fdfdfd",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
+  },
+  {
+    "slug": "budo_goromo",
+    "name": "Budo Goromo",
+    "number": 50,
+    "body": "koi/bodies/budo_goromo.webp",
+    "fins": {
+      "dominant": "#fdfdfd",
+      "tail": null,
+      "dorsal": null,
+      "back": null,
+      "side": null
+    }
   }
 ]

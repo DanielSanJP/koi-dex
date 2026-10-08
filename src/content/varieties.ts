@@ -912,6 +912,293 @@ export const VARIETY_INFO: Record<string, VarietyInfo> = {
       "https://www.kloubeckoi.com/ogon-koi-for-sale/",
       "https://www.kodamakoifarm.com/variety/ogon/",
     ],
+  },  karashigoi: {
+    nameMeaning: '"mustard carp"; karashi is mustard, for its colour',
+    family: "Kawarimono",
+    pattern:
+      "A single-coloured non-metallic koi in mustard yellow, from a pale cream to a deep mustard, with no pattern and no sheen. A quality fish carries the yellow all the way to the tips of the pectoral fins.",
+    origin:
+      "Taro Kodama writes that Karashi was originally developed by crossing Kigoi with Chagoi, which is why it shares the Chagoi's appetite and growth. Champ Koi calls it a relatively new variety whose breeder and date are not recorded.",
+    notes:
+      "Hard to tell from Kigoi by eye: Kodama found only a few people in Niigata who could. It grows very large, the JNPA noting Karashigoi of more than a metre, and it has started winning the jumbo prizes long dominated by Chagoi. The ZNA lists it both in Kawarimono and in its Mujimono class for plain non-metallic koi.",
+    sources: [
+      "https://www.pondtrademag.com/language-of-koi-monochrome-muji-is-pure-perfection/",
+      "https://www.champkoi.com/pages/koi-variety/karashigoi",
+      "https://jnpa.info/en/nishikigoi/varieties/type/muji/",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/kawarimono/",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/mujimono/",
+    ],
+    care: [
+      "Like the Chagoi it comes from, it eats well, grows fast and is friendly, so plan the pond for a very large adult.",
+      "Red-brown edges on the tail fin are most likely inherited from the Chagoi side rather than a sign of stress.",
+    ],
+    careSources: [
+      "https://www.pondtrademag.com/language-of-koi-monochrome-muji-is-pure-perfection/",
+      "https://jnpa.info/en/nishikigoi/varieties/type/muji/",
+    ],
+  },
+  hajiro: {
+    nameMeaning: '"white wings", for the white-tipped pectoral fins',
+    family: "Kawarimono",
+    pattern:
+      "A jet-black koi whose pectoral fins are white or white-tipped; some also show white on the edge of the tail. The JNPA notes that part of the pectoral fin can turn black in some fish.",
+    origin:
+      "Taro Kodama describes Hajiro as a variation of Karasu with white edges on the pectoral and tail fins, and the JNPA notes that some Karasugoi have white pectoral fin tips. No breeder or date is recorded.",
+    notes:
+      "The ZNA groups it in the Karasugoi family of its Kawarimono class, alongside Hageshiro and Kumonryu. As with other plain koi, a single stray spot of colour costs it more than it would a patterned fish.",
+    sources: [
+      "https://www.pondtrademag.com/language-of-koi-monochrome-muji-is-pure-perfection/",
+      "https://jnpa.info/en/nishikigoi/varieties/type/kawarigoi/",
+      "https://jnpa.info/en/nishikigoi/varieties/type/muji/",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/kawarimono/",
+      "https://www.oocities.org/koifla/History.htm",
+    ],
+    care: [
+      "Hardy and easy to keep; Fitz's Fish Ponds reports the black deepening as the fish matures in clean, stable water.",
+    ],
+    careSources: ["https://fitzfishponds.com/shop-all-fish/hajiro/"],
+  },
+  hageshiro: {
+    nameMeaning: "shiro means white; the name points to the white head on an otherwise black koi",
+    family: "Kawarimono",
+    pattern:
+      "A black koi with a white head and white or white-tipped pectoral fins, the rest of the body solid black.",
+    origin:
+      "No breeder or date is recorded. The ZNA groups it in the Karasugoi family, and Joop van Tol of Koitoday calls Karasugoi the progenitor of that family; Ray Jordan's history places Hageshiro, with Karasu, among the dark koi that came down from the darker Asagi.",
+    notes:
+      "Descriptions differ in detail: Ray Jordan gives it only as black with white fins, while Koitoday and Fitz's Fish Ponds make the white head its defining mark.",
+    sources: [
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/kawarimono/",
+      "https://vijverleven.nl/en/blogs/kennisbank/karasugoi-familie",
+      "https://mpks.org/koi-history-by-ray-jordan/",
+      "https://fitzfishponds.com/shop-all-fish/hageshiro/",
+    ],
+    care: [
+      "Fitz's Fish Ponds reports adults of 26 to 32 inches (about 65 to 80 cm), so plan for a large fish.",
+    ],
+    careSources: ["https://fitzfishponds.com/shop-all-fish/hageshiro/"],
+  },
+  kage_utsuri: {
+    nameMeaning:
+      "kage means shadow; on this site the name stands for Kage Shiro Utsuri, the black-and-white form drawn here",
+    family: "Kawarimono",
+    pattern:
+      "A Shiro Utsuri, black with wrapping white markings, whose white areas carry a smoky grey net of shadow sumi. The same shadow on red gives Kage Hi Utsuri, and on Showa gives Kage Showa.",
+    origin:
+      "Fitz's Fish Ponds credits Otsuka Koi Farm with developing it by bringing Asagi blood into Shiro Utsuri lines, the Asagi netting giving the shadow over the white. No date is recorded.",
+    notes:
+      "Although it is an Utsuri in pattern, the ZNA shows the non-metallic Kage Utsuri in Kawarimono (it writes Shiro Kage Utsuri) and the JNPA lists Kage Shiro Utsuri among its Kawarigoi. Only the metallic Kage Gin Shiro Utsuri sits in the JNPA's Hikari Utsuri.",
+    sources: [
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/kawarimono/",
+      "https://jnpa.info/en/nishikigoi/varieties/type/kawarigoi/",
+      "https://jnpa.info/en/nishikigoi/varieties/type/hikari-utsuri/",
+      "https://fitzfishponds.com/shop-all-fish/kage-shiro-utsuri/",
+      "https://www.cotswoldkoi.co.uk/knowledge-centre/what-is-a-kage-hi-utsuri-koi/",
+    ],
+    care: [
+      "As with Shiro Utsuri, colour-enhancing food does a black-and-white koi no good: there are no cells in the white to take up the pigment, so the white turns pink, yellow or beige until it fades.",
+      "The ZNA notes that Utsuri sumi does not settle until four or five years old, and Fitz's Fish Ponds says the shadow keeps developing as the fish matures, so a young fish is not the finished pattern.",
+    ],
+    careSources: [
+      "https://dainichi.com/koi-color-food/",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/utsuri-mono/",
+      "https://fitzfishponds.com/shop-all-fish/kage-shiro-utsuri/",
+    ],
+  },
+  ki_matsuba: {
+    nameMeaning:
+      '"yellow pine needle"; ki is yellow, and matsuba names the pinecone look of the dark-centred scales',
+    family: "Kawarimono",
+    pattern:
+      "A non-metallic yellow koi with a dark centre in each scale across the back, the yellow showing at the scale edges for a pinecone look. Koisale says it is most often seen in doitsu form.",
+    origin:
+      "One of the Matsuba that came down from the Asagi line: Ray Jordan's history derives Aka and Ki Matsuba from the darker Asagi, and Chuck Jones's from the Asagi Magoi. No breeder or date is recorded.",
+    notes:
+      "The dark scale centres count as part of the colour rather than a pattern, so plain Matsuba are grouped with single-coloured koi: the JNPA lists Ki Matsuba under Muji, and the ZNA under Mujimono as well as on its Kawarimono page. Koisale notes that a Doitsu Ki Matsuba can be mistaken for a Midorigoi.",
+    sources: [
+      "https://jnpa.info/en/nishikigoi/varieties/type/muji/",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/mujimono/",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/kawarimono/",
+      "https://mpks.org/koi-history-by-ray-jordan/",
+      "https://www.oocities.org/koifla/History.htm",
+      "https://koisale.com/pages/koi-varieties/matsuba.html",
+      "https://vijverleven.nl/en/blogs/kennisbank/matsuba",
+    ],
+    care: [],
+  },
+  aka_matsuba: {
+    nameMeaning: '"red pinecone"; aka is red, and matsuba names the dark-centred scales',
+    family: "Kawarimono",
+    pattern:
+      "A non-metallic red koi with a black centre in each scale across the back, the pinecone pattern even from head to tail. The head should be red rather than white, and any blue patches would make it an Asagi.",
+    origin:
+      "Cotswold Koi dates it to the late 1950s, from a high-red Kohaku crossed with a Hi Asagi, with a few solely red fry refined into the variety; Kloubec names the same parents. Like Ki Matsuba it belongs to the Asagi-descended Matsuba line.",
+    notes:
+      "The JNPA lists it under Muji, and the ZNA under Mujimono as well as on its Kawarimono page, since the dark scale centres are not counted as a pattern.",
+    sources: [
+      "https://www.cotswoldkoi.co.uk/knowledge-centre/what-is-a-aka-matsuba-koi/",
+      "https://www.kloubeckoi.com/matsuba-koi-for-sale/",
+      "https://jnpa.info/en/nishikigoi/varieties/type/muji/",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/mujimono/",
+      "https://www.champkoi.com/pages/koi-variety/aka-matsuba",
+      "https://koisale.com/pages/koi-varieties/matsuba.html",
+    ],
+    care: [
+      "A large-growing variety: Koisale notes Aka Matsuba being entered in jumbo classes, so plan the pond for the adult fish.",
+    ],
+    careSources: ["https://koisale.com/pages/koi-varieties/matsuba.html"],
+  },
+  doitsu_kohaku: {
+    nameMeaning:
+      '"German Kohaku"; doitsu is the Japanese rendering of Deutsch, for the German carp behind its scalelessness',
+    family: "Gosanke",
+    pattern:
+      "A Kohaku on near-scaleless skin: a white body with red markings, scaled only along the back and sides. The JNPA notes that doitsu colours read brighter and more vivid, and a good one has a clean edge (kiwa) between red and white.",
+    origin:
+      "Doitsu koi come from crossing Japanese koi with near-scaleless German food carp, first imported in 1904. No breeder or date is recorded for the first Doitsu Kohaku, but Ray Jordan's history already lists a female Doitsu Kohaku as a parent of the first Beni Kumonryu in 1980.",
+    notes:
+      "Where it is shown depends on the organisation: the JNPA's All Japan Koi Show judges doitsu koi in a Doitsu class of their own, while the ZNA's class pages place doitsu forms with their own varieties, for example doitsu Muji in Mujimono.",
+    sources: [
+      "https://jnpa.info/en/nishikigoi/varieties/type/doitsugoi/",
+      "https://www.kodamakoifarm.com/variety/doitsu/",
+      "https://www.kodamakoifarm.com/variety/doitsu-kohaku/",
+      "https://mpks.org/koi-history-by-ray-jordan/",
+      "https://www.pondtrademag.com/understanding-koi-shows/",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/mujimono/",
+    ],
+    care: [
+      "Scaleless skin is more prone to sunburn and parasites than a scaled koi, so give it shaded areas of the pond.",
+      "It has a Kohaku's white ground, so heavy colour-enhancing food yellows the white and can spot the red.",
+    ],
+    careSources: [
+      "https://pondinformer.com/doitsu-koi-guide/",
+      "https://www.kloubeckoi.com/blog/doitsu-koi-guide",
+      "https://pondinformer.com/kohaku-koi-guide/",
+    ],
+  },
+  kin_matsuba: {
+    nameMeaning: '"golden pine needles"; kin (metallic gold) added to Matsuba',
+    family: "Hikarimuji",
+    pattern:
+      "A metallic gold koi with a dark centre in each scale across the back, so the scales stand out like a pinecone. The JNPA describes its shine as turmeric or dark gold.",
+    origin:
+      "The gold member of the metallic Matsuba: Koitoday describes metallic versions of the white, red and yellow Matsuba, with kin used for the gold-sheened ones. No breeder or date is recorded.",
+    notes:
+      "Although every scale carries a dark centre, it is judged as a single-coloured metallic koi in Hikarimuji, since the centres are not counted as a pattern. Names vary: the JNPA lists it as Ki Matsuba Ogon, and Koitoday notes that Kin Matsuba can mean either a red or a yellow metallic Matsuba.",
+    sources: [
+      "https://jnpa.info/en/nishikigoi/varieties/type/hikari-muji/",
+      "https://www.oocities.org/koifla/History.htm",
+      "https://www.pondtrademag.com/language-koi-the-shiny-hikari-muji-varieties-2/",
+      "https://vijverleven.nl/en/blogs/kennisbank/matsuba",
+      "https://www.kloubeckoi.com/matsuba-koi-for-sale/",
+    ],
+    care: [
+      "Like the Ogon, it settles quickly and soon learns to take food from the hand.",
+      "Sheen is what it is judged on, and the head and pectoral fins show it most clearly, so look there when choosing one.",
+    ],
+    careSources: [
+      "https://www.pondtrademag.com/language-koi-the-shiny-hikari-muji-varieties-2/",
+      "https://www.pondtrademag.com/basic-beauty-the-striking-simplicity-of-hikari-muji/",
+    ],
+  },
+  gin_matsuba: {
+    nameMeaning: '"silver pine needles"; gin (metallic silver) added to Matsuba',
+    family: "Hikarimuji",
+    pattern:
+      "A metallic koi in silvery platinum white with a dark centre in each scale across the back, the pinecone net standing out against the shine.",
+    origin:
+      "The silver member of the metallic Matsuba, which Koitoday describes as the metallic version of the white Shiro Matsuba. No breeder or date is recorded. Taro Kodama counts Gin Matsuba, with the Ogon and Platinum, among the metallic koi crossed with patterned varieties to make Hariwake, Yamato Nishiki, Gin Shiro Utsuri and Kin Ki Utsuri.",
+    notes:
+      "Judged with the single-coloured metallic koi in Hikarimuji, where the JNPA lists it, since the dark scale centres are not counted as a pattern.",
+    sources: [
+      "https://jnpa.info/en/nishikigoi/varieties/type/hikari-muji/",
+      "https://www.oocities.org/koifla/History.htm",
+      "https://www.pondtrademag.com/basic-beauty-the-striking-simplicity-of-hikari-muji/",
+      "https://www.pondtrademag.com/language-koi-the-shiny-hikari-muji-varieties-2/",
+      "https://vijverleven.nl/en/blogs/kennisbank/matsuba",
+      "https://www.kodamakoifarm.com/variety/gin-matsuba/",
+    ],
+    care: [
+      "Like the Ogon, it settles quickly and soon learns to take food from the hand.",
+      "Sheen is what it is judged on, and the head and pectoral fins show it most clearly, so look there when choosing one.",
+    ],
+    careSources: [
+      "https://www.pondtrademag.com/language-koi-the-shiny-hikari-muji-varieties-2/",
+      "https://www.pondtrademag.com/basic-beauty-the-striking-simplicity-of-hikari-muji/",
+    ],
+  },
+  orenji_matsuba: {
+    nameMeaning:
+      '"orange pine needles"; orenji is the Japanese rendering of "orange"',
+    family: "Hikarimuji",
+    pattern:
+      "A metallic Matsuba in orange gold: a dark centre in each scale across the back of an orange metallic body. The ZNA lists orange gold among the Hikarimuji colours.",
+    origin:
+      "One of the metallic Matsuba colour forms that Koitoday describes, where kin covers the gold-sheened orange, yellow and red fish. No breeder or date is recorded.",
+    notes:
+      "Naming is loose for the warm-coloured metallic Matsuba: the JNPA lists a red-to-vermilion form as Aka Matsuba Ogon, and Koitoday notes that red and yellow metallic Matsuba are often both just called Kin Matsuba.",
+    sources: [
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/hikari-mujimono/",
+      "https://jnpa.info/en/nishikigoi/varieties/type/hikari-muji/",
+      "https://vijverleven.nl/en/blogs/kennisbank/matsuba",
+      "https://www.cotswoldkoi.co.uk/knowledge-centre/what-is-a-matsuba-koi/",
+      "https://www.pondexperts.ca/fish-ponds/japanese-koi-terminology/",
+    ],
+    care: [
+      "Like the Ogon, it settles quickly and soon learns to take food from the hand.",
+      "Sheen is what it is judged on, and the head and pectoral fins show it most clearly, so look there when choosing one.",
+    ],
+    careSources: [
+      "https://www.pondtrademag.com/language-koi-the-shiny-hikari-muji-varieties-2/",
+      "https://www.pondtrademag.com/basic-beauty-the-striking-simplicity-of-hikari-muji/",
+    ],
+  },
+  kanoko_kohaku: {
+    nameMeaning: "kanoko means fawn, for the dappled red that recalls a fawn's spotted back",
+    family: "Kawarimono",
+    pattern:
+      "A white koi whose red appears as dapples, single scales or small groups of scales dyed red, rather than as solid plates. Some also carry ordinary solid red markings.",
+    origin:
+      "No breeder or date is recorded. It is a Kohaku in colour, but the ZNA and JNPA both class kanoko koi apart from Kohaku, with Kanoko Sanke and Kanoko Showa, in Kawarimono and Kawarigoi.",
+    notes:
+      "The dapple is not reliably permanent: Fitz's Fish Ponds warns that it can soften, fade or merge into solid patches as the fish ages.",
+    sources: [
+      "https://jnpa.info/en/nishikigoi/varieties/type/kawarigoi/",
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/kawarimono/",
+      "https://fitzfishponds.com/shop-all-fish/kohaku/kanoko-kohaku/",
+      "https://www.cotswoldkoi.co.uk/knowledge-centre/what-is-a-kanoko-kohaku-koi/",
+    ],
+    care: [
+      "Keep conditions stable, especially through winter: Fitz's Fish Ponds says stress can trigger the pigment change that loses the dapple.",
+      "Colour food is a trade-off, as with Kohaku: Fitz recommends carotenoid pellets for the red, while Pond Informer warns that too much yellows the white.",
+    ],
+    careSources: [
+      "https://fitzfishponds.com/shop-all-fish/kohaku/kanoko-kohaku/",
+      "https://pondinformer.com/kohaku-koi-guide/",
+    ],
+  },
+  budo_goromo: {
+    nameMeaning: '"grape robe"; budo means grape, for the clustered markings',
+    family: "Koromo",
+    pattern:
+      "A white koi whose red markings are overlaid with darker, purplish scale edging gathered into clusters like bunches of grapes. Where Ai Goromo has fine blue edging on each red scale, Budo Goromo's overlay is heavy enough to darken the red, and it should stay off the head.",
+    origin:
+      "Champ Koi calls its origin poorly documented and places it in the mid-20th century, developed within the Koromo family that came from Asagi and Kohaku crosses; Cotswold Koi credits the breeder Sakazume. Pond Informer treats it as a sub-variety of Ai Goromo.",
+    notes:
+      "Shown in the Koromo class at both the ZNA and the JNPA, and the less common of the Koromo forms.",
+    sources: [
+      "https://zna.jp/en/keep-nishikigoi/varieties-of-nishikigoi/koromo/",
+      "https://jnpa.info/en/nishikigoi/varieties/type/koromo/",
+      "https://www.champkoi.com/pages/koi-variety/budo-goromo",
+      "https://pondinformer.com/goromo-koi-guide/",
+      "https://en.wikipedia.org/wiki/Koi",
+      "https://www.cotswoldkoi.co.uk/knowledge-centre/what-is-a-budo-goromo-koi/",
+    ],
+    care: [
+      "The overlay darkens with age, so a young fish with lighter clusters is the safer choice; one that is already dark tends to go too dark.",
+      "Too much colour-enhancing food yellows the white and can leave orange spots in the red.",
+    ],
+    careSources: ["https://pondinformer.com/goromo-koi-guide/"],
   },
 };
 
