@@ -14,8 +14,8 @@ export default function LenisProvider({ children }: LenisProviderProps) {
     const lenis = new Lenis({
       autoRaf: true,
       anchors: true,
-      duration: 0.8,
-      lerp: 0.15,
+      // lerp only: a `duration` here takes over and lerp is ignored.
+      lerp: 0.3,
     });
 
     return () => {
