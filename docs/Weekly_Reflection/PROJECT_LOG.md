@@ -46,6 +46,26 @@ final report write themselves. Add an entry whenever work happens.
   one thing Mario asked for twice). The Part C Word file and the Part D
   slides carry the same text and numbers.
 
+- Second pass on the report and slides the same day, after the fixes went
+  live (commit bda80de). Every screenshot recaptured from the live site at
+  1280 and 390 px wide; the progress and architecture diagrams redrawn with
+  the current numbers. Lighthouse (mobile profile) run again on six live
+  pages: home 98/96/100/100, /koi 96/96/100/100, /koi/showa 98/96/100/100,
+  /care 99/97/100/100, /plants 98/96/100/100, /breeding 85/96/100/100
+  (performance / accessibility / best practices / SEO); colour contrast is
+  still the only accessibility failure.
+- The Part C file had been generated landscape, unlike the template and
+  Parts A and B, and five of its figures were taller than the page. Set it
+  back to portrait A4 with the template's margins, resized the tables to the
+  text width, added page numbers, and rebuilt the figures section: sixteen
+  figures sized to fit, kept in `docs/screenshots/report/`, including the
+  user test form and the three pages changed by testing at phone width.
+- Report gained what the rubric asks for by name: the problem and the gap,
+  the four project questions, a "User testing results" section with a task
+  table and a before-and-after table, and each question answered in the
+  conclusions. Slides: pictures replaced, a 17th slide on what testing
+  changed, Lighthouse line updated.
+
 ## 2026-10-09: Six more varieties (dex 51–56)
 
 - Artwork arrived for Kage Showa, Ginsui, Kinsui, Sakura Ogon, Beni

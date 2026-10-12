@@ -27,6 +27,17 @@ Koi-dex (https://koi-dex.vercel.app) is a beginner-friendly encyclopedia of real
 
 It is a solo student project for GENR.7100 with Toi Ohomai as client. It is built with Next.js 16, TypeScript and Tailwind CSS v4, uses Neon Postgres with Prisma 7, and reuses two things I already had from earlier personal work: hand-drawn, layered koi artwork (a body plus four fin layers per variety) and a small design system (the Pally typeface, a colour palette, reusable components).
 
+### The problem, the gap and the project questions
+
+Before building, I looked at what a beginner actually finds when they search for koi varieties. The information exists, but it is scattered across dealer catalogues, club pages and forums. Much of it is written to sell fish, Japanese terms go unexplained, the same variety is described differently from one site to the next, and almost none of it says where a claim comes from. I found nothing that puts the varieties side by side in one consistent style, links every claim to a source, and tells a New Zealand reader what the law says. That is the gap, and it needs a different approach from a dealer page: a reference that shows its sources and its doubts.
+
+The project set out to answer four questions:
+
+1. Can my layered koi artwork be drawn faithfully, and animated, in a web browser?
+2. Can a beginner's reference be made demonstrably trustworthy, and not just confident?
+3. Can a database-backed site with real engineering depth run at no cost?
+4. What does a New Zealand reader need to know that general koi sites leave out?
+
 ### Where I am on the timeline
 
 At the end of the course, with every planned milestone delivered:
@@ -88,7 +99,7 @@ Finishing this report and the presentation from the log, and a final tidy of the
 
 - **Technical:** how my layered artwork is structured and how the original renderer composited it, so the site draws every koi from a 56-row JSON file and 60 sprite files exactly as intended; current documentation for Next.js 16 (Cache Components), Prisma 7 (driver adapters, `prisma.config.ts`, seeding) and Neon (pooled vs direct connections) so the database phase used current APIs rather than remembered ones.
 - **Content:** the 56 varieties (name meanings, families, patterns, origins), 35 documented crosses with breeders and dates, origin years, ancestor varieties, per-variety care notes; 30 care figures each checked against two sources; 20 plants with two general sources and a New Zealand status source each; and the legal status of koi and pond plants in New Zealand.
-- **User research:** a six-task test run by the site itself at `/feedback` (find a fish, follow its lineage, check a pairing, find a number and say how far you trust it, check whether a plant is legal in New Zealand, a free browse), with consent, per-task timing and the tester's own typed answer for each task. Five sessions: one real (Mario, laptop) and four simulated walk-throughs (two on a phone, one tablet, one laptop), agreed with my tutor when no more real sessions came in and labelled as simulated throughout. The real session finished all six tasks, four alone and two "the hard way", and scored the site 4 for ease, 4 for trust and 5 for looking finished, out of 5. Across all five, finding a fish went cleanly every time and the banned-plant answer was right every time; following a lineage was the hard way in three sessions, and the pairing and the trusted number in two each. Measuring the live pages on a phone explained why: a koi's breeding card started 1.8 screens down, the breeding guide ran to 19 screens with its pairing explorer 4.9 screens down, and the care guide's quick facts sat 13 screens down with the audit table at 18. Five fixes shipped: jump links on every koi page, a contents row on the breeding guide, quick facts first on a phone with a "checked against two sources" link beside the numbers, a hint on the lineage panel, and a stale variety count. The full record is `docs/FEEDBACK_LOG.md`.
+- **User research:** a six-task test run by the site itself at `/feedback` (find a fish, follow its lineage, check a pairing, find a number and say how far you trust it, check whether a plant is legal in New Zealand, a free browse), with consent, per-task timing and the tester's own typed answer for each task. Five sessions: one real, and four simulated walk-throughs agreed with my tutor when no more real sessions came in and labelled as simulated throughout. The results, the measurements and the fixes are under "User testing results" below.
 
 Everything is on the site or seeded into the database, and every page links its sources.
 
@@ -101,9 +112,37 @@ Everything is on the site or seeded into the database, and every page links its 
 5. **Search and API.** Weighted `tsvector` columns with GIN indexes; prefix matching; a read-only JSON API (`/api/koi`, `/api/plants`, `/api/search`) with CDN caching; a site-wide search box. An SQL-injection string returns zero hits, and that is a unit test.
 6. **Free to run.** Pages are prerendered from Neon with tagged caches, revalidated daily or on demand through a secret-protected endpoint, so the database sees a handful of queries per build rather than per visitor. Vercel Hobby and Neon Free carry it at $0.
 7. **Trust made visible.** 30 figures, 16 agreed outright, 6 close, 8 changed after checking; every change recorded on the page. Koi legality and plant bans in New Zealand stated with DOC/NZPCN sources.
-8. **Quality measured.** Lighthouse (mobile) on the live site: best practices 100 and SEO 100 on every page tested; accessibility 96 to 97; performance 96 to 98 on the content pages, 80 to 82 on the home page and photo grid under the throttled profile. WCAG 2.2 AA pass with one documented, deliberate exception (brand-green button and chip contrast). 31 unit tests, 17 of them on the one endpoint a visitor can write to; CI on every push builds the site with no secrets to prove the fallback.
+8. **Quality measured.** Lighthouse (mobile profile) on the live site, run again on 12 October 2026 after the last changes: best practices 100 and SEO 100 on all six pages tested; accessibility 96 to 97; performance 96 to 99 on five of them and 85 on the breeding guide, which is the longest page on the site. WCAG 2.2 AA pass with one documented, deliberate exception (brand-green button and chip contrast). 31 unit tests, 17 of them on the one endpoint a visitor can write to; CI on every push builds the site with no secrets to prove the fallback.
 9. **Resilience.** A clone with no database credentials builds the entire site from the in-repo content modules; the CI pipeline exercises exactly that path.
-10. **Tested, and changed by the test.** The site carries its own user test, the only place a visitor can write to the database, validated and idempotent. Its findings were measured on the live pages and five fixes shipped from them. On a phone the care guide's quick facts moved from 13 screens down to 2, and a koi's breeding card went from 1.8 screens of scrolling to one tap.
+10. **Tested, and changed by the test.** The site carries its own user test, the only place a visitor can write to the database, validated and idempotent. Its findings were measured on the live pages and five fixes shipped from them.
+
+### User testing results
+
+The real session (Mario, on a laptop) finished all six tasks, four alone and two "the hard way", and scored the site 4 for ease, 4 for trust and 5 for looking finished, out of 5. The four simulated sessions are scripted walk-throughs of the same tasks at phone, tablet and laptop sizes. They carry no times, scores or quotes, and no fix rests on one of them alone.
+
+| Task | All five sessions | The real session |
+|---|---|---|
+| 1. Find a fish | 5 alone | Alone, 1.2 minutes |
+| 2. Follow the family | 2 alone, 3 the hard way | Alone, 2.0 minutes |
+| 3. Would these two work? | 3 alone, 2 the hard way | The hard way, 2.4 minutes |
+| 4. A number you can trust | 3 alone, 2 the hard way | Alone, 3.0 minutes |
+| 5. Allowed here? | 4 alone, 1 the hard way | The hard way, 1.9 minutes |
+| 6. Have a look around | 1 alone; not run in the simulated sessions | Alone, 1.8 minutes |
+
+On task 5 the real tester recorded "the hard way" while his comment said the answer was obvious, so the comment is the better evidence. Nobody failed a task.
+
+To check the walk-throughs against something real, I measured the live pages with a headless browser at phone size (390 by 844 pixels). The numbers matched what the real tester had written: the lineage is "simple enough if you can spot the breeding card", the breeding guide is "information overload at first", and nothing in the design of the care page made the feeding temperature more or less believable. Five fixes shipped, and the same measurements were taken again afterwards:
+
+| On a phone | Before | After |
+|---|---|---|
+| Koi page: the breeding card | 1.8 screens of scrolling, nothing pointing to it | One tap, from a row of links on the first screen |
+| Breeding guide: the pairing explorer | 4.9 screens down a 19-screen page with no contents | One tap, from a contents row under the introduction |
+| Care guide: the quick facts | 13.3 screens down, after all twelve sections | 2.0 screens down, before the sections |
+| Care guide: proof that a number was checked | One small link at the foot of the quick facts | A "checked against two sources" link under the quick-facts heading and on the feeding strip |
+| Whole lineage panel | Ancestors grouped by distance, with no hint how to see who bred whom | Says to open any fish to see its own parents |
+| Breeding guide: the variety count | Said 22 | Counted from the data: 56 |
+
+What this round cannot say is how often real people trip, because only one of the five sessions is a real person and none of them is a real person on a phone. It also showed a fault in my own test: task 3 asks about the same cross that task 2 has just had the tester read, and the pairing explorer opens on exactly that pair, so the task never tested the two pickers. Figure 16 shows the three changed pages at phone width, and the full record is `docs/FEEDBACK_LOG.md`.
 
 ### Industry context
 
@@ -149,6 +188,13 @@ Using only the priced items: benefit $6,000 against cost $4,500 gives a net bene
 
 ## Recommendations and conclusions
 
+### The project questions, answered
+
+1. **Can my layered artwork be drawn faithfully, and animated, in a browser?** Yes. All 56 varieties are drawn live from one body and four tinted fin layers, in the same order and with the same tints as the original artwork, and the 20 hand-drawn fin frames animate on hover.
+2. **Can a beginner's reference be made demonstrably trustworthy?** Yes, and the evidence is on the page: every claim links its source, 30 care figures were each checked against two independent sources (16 agreed, 6 were close, 8 changed), and disputed histories are flagged. Testing added a caution: the real tester trusted the number but said nothing in the design of the page made it more or less believable, so the proof now sits beside the numbers.
+3. **Can a database-backed site with real engineering depth run at no cost?** Yes. Neon Postgres and Prisma with foreign keys, lineage in recursive SQL, full-text search, a JSON API, 31 tests and continuous integration, on free tiers at $0, with a fallback that builds the site without the database.
+4. **What does a New Zealand reader need to know that general sites leave out?** That koi are a legally controlled pest here, and that five of the twenty common pond plants are banned. The real tester named this as the most useful thing on the site.
+
 ### Conclusions
 
 - Reusing my own artwork and design system was the right call: the time went into accuracy and engineering, and the site looks finished rather than like a prototype.
@@ -175,6 +221,7 @@ On the content, more research is optional rather than required: it is sourced an
 
 - Figure 1: progress against the week-by-week plan (`docs/screenshots/diagram-progress-final.png`).
 - Figure 2: architecture as deployed (`docs/screenshots/diagram-architecture-final.png`).
-- Figures 3–9: the live site, desktop and phone (`docs/screenshots/*`).
-- Tables: milestones (above); costs and benefits (above); the 30-figure care audit is on the live care page.
+- Figures 3–14: the live site at desktop width, captured on 12 October 2026 after the week-13 fixes (`docs/screenshots/report/`).
+- Figures 15–16: the live site at phone width (390 px), including the three pages changed by user testing.
+- Tables: milestones, user-testing results, before and after the fixes, costs and benefits (all above); the 30-figure care audit is on the live care page and in Figure 11.
 - Repository documents: `docs/PLAN.md`, `docs/REDESIGN.md`, `docs/wireframes*.html`, `docs/ACCESSIBILITY.md`, `docs/DEPLOY.md`, `docs/USER_TESTING.md`, `docs/FEEDBACK_LOG.md`, `docs/Weekly_Reflection/PROJECT_LOG.md`, the weekly updates and the mid-point review; `prisma/schema.prisma` and `prisma/migrations/`; `tests/`; `.github/workflows/ci.yml`.

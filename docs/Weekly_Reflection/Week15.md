@@ -33,10 +33,23 @@ the site as it actually is.
   benefit-cost ratio of about 1.3 on the items that can be priced, with a
   sensitivity check either side.
 
-- Built the Part D presentation: 16 slides covering the problem, the
+- Replaced every picture. The screenshots in my draft still showed the site
+  from August, so I captured all of them again from the live site, redrew the
+  progress and architecture diagrams with the current numbers, and ran
+  Lighthouse again on six pages. The draft had also been set up landscape,
+  unlike the template and my earlier parts, with figures that did not fit the
+  page. It is portrait again with the template's margins and page numbers, and
+  the figures were rebuilt to fit: sixteen of them, two to a page.
+
+- Added what the marking rubric asks for and my draft had only implied: the
+  gap the project fills, the four project questions near the start, and a
+  direct answer to each one at the end.
+
+- Built the Part D presentation: 17 slides covering the problem, the
   objectives and research questions, scope, method, timeline, architecture,
-  the four result areas, the engineering numbers, user testing, discussion and
-  conclusion, ending on a demo path through the live site.
+  the four result areas, the engineering numbers, user testing and what it
+  changed, discussion and conclusion, ending on a demo path through the live
+  site.
 
 
 2. What do I plan to work on next week?
