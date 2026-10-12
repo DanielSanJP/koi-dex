@@ -1,4 +1,4 @@
-Weekly Progress Update  [DRAFT: finish after the user-testing sessions]
+Weekly Progress Update
 
 Name: Daniel Medcalf
 Week #: 13
@@ -47,12 +47,42 @@ collects the feedback, then running it.
   bodies rejected, and the report rendering the tables the log expects. The
   test row was then deleted.
 
-- [TODO] Ran [N] sessions: [who, devices]. Task results: [summary]. Scores:
-  ease [x], trust [y], looks finished [z].
+- Ran it, and got one real session: Mario, on a laptop, who put his background
+  down as "other". He finished all six tasks, four on his own and two "the hard
+  way", and scored the site 4 for ease, 4 for trust and 5 for looking
+  finished. No more sessions came in, so with Francisco's agreement I filled
+  the set out to five with four simulated ones: scripted walk-throughs of the
+  same tasks on the live site at phone, tablet and laptop sizes, for the kinds
+  of visitor the real session did not cover. They are marked as simulated
+  everywhere they appear. They carry no times, no scores and no quotes, and I
+  did not let any fix rest on one of them alone.
 
-- [TODO] Top problems found and what I changed: [list, with commits].
+- To keep the simulated sessions tied to something real, I measured the live
+  pages instead of guessing. On a phone, Showa's breeding card starts 1.8
+  screens down and the whole-lineage panel 2.8. The breeding guide is 19
+  screens long, with the pairing explorer 4.9 screens down under the family
+  tree. On the care guide the quick-facts card landed after all twelve
+  sections, 13 screens down, and the table that proves the numbers 18 screens
+  down. Those figures line up with what Mario wrote: the lineage is "simple
+  enough if you can spot the breeding card", the breeding guide is
+  "information overload at first", and nothing on the care page made the
+  feeding temperature feel more or less believable.
 
-- [TODO] Redeployed and re-checked the affected tasks.
+- Fixed the top problems. Every koi page now has a row of jump links under the
+  name (Care, Breeding, Whole lineage, Others in the family). The breeding
+  guide has the same "on this page" row the care guide has had since week 5.
+  On a phone the care guide's quick facts now come first, 2 screens down
+  instead of 13, with a "checked against two sources" link under the heading
+  and another on the feeding strip. The lineage panel now says to open a fish
+  to see its own parents, because it groups ancestors by distance and not by
+  parent. And the breeding guide stopped saying "the 22 varieties in the dex":
+  there are 56 now, and the page counts them from the data.
+
+- Redeployed and re-checked the affected pages at phone and laptop sizes:
+  every jump link lands on a real section, nothing scrolls sideways at 390
+  pixels, and the lint, the type check, the 31 tests and the 94-page
+  production build all pass. The sessions, the measurements, the ranked
+  problems and the fixes are written up in the feedback log.
 
 
 2. What do I plan to work on next week?
@@ -74,11 +104,27 @@ The typed answer per task and the form's own clock are what replace them, and
 the free-text box after every task is where the commentary has to come from
 instead.
 
-[TODO] Recruiting testers / anything surprising in the sessions.
+Recruiting was the part that did not work. One real person in the time
+available is thin, and I would rather say so than hide it. The simulated
+sessions cover the screen sizes and backgrounds that one person could not, but
+they show where a page makes a task long, not how often real people trip, and
+there is still no real session on a phone.
+
+Two surprises. Mario marked the banned-plant task as "the hard way" while his
+comment said the answer was obvious, so without the typed answer I would have
+logged a problem that was not there. And his one real struggle was with my
+question, not the site: task 3 asks about the same cross that task 2 has just
+had him read, and the pairing explorer happens to open on exactly that pair,
+so the task never tested the two pickers at all. I left the task alone so the
+sessions stay comparable, and wrote down what a second round should use
+instead.
 
 
 4. How do I feel about my overall progress?
 
 [X] On track     [ ] Slightly behind     [ ] Falling behind
 
-[TODO]
+The build is finished and the fixes from testing are live. The honest weak
+spot is the size of the test: one real session. The test itself found faults
+in my own instrument as well as in the site, which is what it was for, and the
+feedback log says plainly which evidence is real and which is simulated.

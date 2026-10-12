@@ -122,6 +122,12 @@ export default async function KoiDetailPage({
   const varietySources = koi.sources.filter((s) => s.kind === "VARIETY");
   const careSources = koi.sources.filter((s) => s.kind === "CARE");
   const hasLineage = koi.lineage.ancestors.length > 0 || koi.lineage.descendants.length > 0;
+  const jumpLinks = [
+    { href: "#care", label: "Care" },
+    { href: "#breeding", label: "Breeding" },
+    ...(hasLineage ? [{ href: "#lineage", label: "Whole lineage" }] : []),
+    ...(family.length > 0 ? [{ href: "#family", label: `Others in ${koi.family?.name}` }] : []),
+  ];
 
   return (
     <div className="mx-auto w-full max-w-6xl px-6 py-10 sm:px-8">
@@ -171,6 +177,20 @@ export default async function KoiDetailPage({
               </span>
             )}
           </div>
+          <nav
+            aria-label="On this page"
+            className="flex flex-wrap gap-2 text-sm font-bold"
+          >
+            {jumpLinks.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="rounded-full border border-black/10 bg-white px-3 py-1 text-black/60 transition-colors hover:border-[#49ad6d] hover:text-[#49ad6d]"
+              >
+                {l.label}
+              </a>
+            ))}
+          </nav>
           {koi.nameMeaning && (
             <p className="text-sm text-black/60">The name means {koi.nameMeaning}.</p>
           )}
@@ -182,7 +202,7 @@ export default async function KoiDetailPage({
       </div>
 
       <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <section className="flex flex-col gap-3 rounded-2xl border border-black/10 bg-white p-5 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
+        <section id="care" className="flex scroll-mt-24 flex-col gap-3 rounded-2xl border border-black/10 bg-white p-5 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
           <h2 className="font-pally text-lg font-bold">Caring for a {koi.name}</h2>
           {koi.care.length > 0 ? (
             <ul className="flex list-disc flex-col gap-2 pl-5 text-sm text-black/70">
@@ -205,7 +225,7 @@ export default async function KoiDetailPage({
           </Link>
         </section>
 
-        <section className="flex flex-col gap-4 rounded-2xl border border-black/10 bg-white p-5 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
+        <section id="breeding" className="flex scroll-mt-24 flex-col gap-4 rounded-2xl border border-black/10 bg-white p-5 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
           <h2 className="font-pally text-lg font-bold">Breeding</h2>
 
           {koi.producedBy.length > 0 && (
@@ -253,12 +273,13 @@ export default async function KoiDetailPage({
       </div>
 
       {hasLineage && (
-        <section className="mt-6 flex flex-col gap-4 rounded-2xl border border-black/10 bg-white p-5 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
+        <section id="lineage" className="mt-6 flex scroll-mt-24 flex-col gap-4 rounded-2xl border border-black/10 bg-white p-5 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
           <div>
             <h2 className="font-pally text-lg font-bold">Whole lineage</h2>
             <p className="mt-1 text-xs text-black/60">
               Every recorded ancestor and descendant, however many steps away,
-              followed through the documented crosses.
+              followed through the documented crosses. Open any fish to see
+              its own parents.
             </p>
           </div>
           <LineageRow label="Ancestors" nodes={koi.lineage.ancestors} />
@@ -267,7 +288,7 @@ export default async function KoiDetailPage({
       )}
 
       {family.length > 0 && (
-        <section className="mt-6 rounded-2xl border border-black/10 bg-white p-5 pb-6 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
+        <section id="family" className="mt-6 scroll-mt-24 rounded-2xl border border-black/10 bg-white p-5 pb-6 shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
           <h2 className="font-pally text-lg font-bold">Others in {koi.family?.name}</h2>
           <div className="mt-4 flex flex-wrap gap-4">
             {family.map((k) => (

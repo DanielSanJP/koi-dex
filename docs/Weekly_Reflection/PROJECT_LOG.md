@@ -4,6 +4,48 @@ A factual running log of what happened and when. Each weekly progress update
 gets drafted from this log, so it stays honest and the mid-point review and
 final report write themselves. Add an entry whenever work happens.
 
+## 2026-10-12: User test results, the fixes, and the final documents
+
+- Read the week-13 sessions out of Neon with `npm run feedback:report`. One
+  real session: Mario, laptop, 21 September, all six tasks finished (four
+  alone, two the hard way), scores 4 / 4 / 5 for ease, trust and looking
+  finished.
+- One session cannot rank problems by how many people hit them, and Francisco
+  agreed the set could be filled out with simulated sessions. Wrote four
+  scripted walk-throughs of the same tasks (two phone, one tablet, one
+  laptop; someone who keeps fish, a gardener, two who do neither). They are
+  marked as simulated everywhere, are not in the database, and carry no
+  times, scores or quotes.
+- Measured the live pages with headless Chrome at 390 x 844, 820 x 1180 and
+  1280 x 800 so the findings rest on something real. On a phone: Showa's
+  Breeding card 1.8 screens down and its Whole lineage panel 2.8; the
+  breeding guide 19.1 screens long with the pairing explorer 4.9 screens
+  down; the care guide 24 screens long with the quick facts 13.3 screens
+  down and the audit table 17.8.
+- Five fixes, each standing on Mario's answers or a measurement: jump links
+  on every koi page; an "on this page" row and section anchors on the
+  breeding guide; quick facts first on a phone, with a "checked against two
+  sources" link under the heading and on the feeding strip; a sentence on the
+  lineage panel saying to open a fish for its own parents; and the breeding
+  guide's "22 varieties" line now counts from the data (56).
+- Re-measured after the fixes: koi page jump row 555 px down on a phone,
+  quick facts 2.0 screens down instead of 13.3, every jump link resolves, no
+  sideways scroll at 390 px. Lint, types, 31 tests and the 94-page production
+  build pass.
+- Found a flaw in the test itself: task 3 asks about the cross task 2 has
+  just shown, and the pairing explorer opens on exactly that pair. Left as it
+  is so the sessions stay comparable; logged with a replacement pair for a
+  second round.
+- `docs/FEEDBACK_LOG.md` filled in (sessions, measurements, ranked problems,
+  changes, limits). Week 13 update finished.
+- Final report brought up to the site as it stands and checked against the
+  database, the test run and the build: 56 varieties, 35 crosses, 379 source
+  rows, 59 variety rows, four migrations, 31 tests, 94 prerendered routes,
+  five per-fin tints. User-testing blocks written; recommendations now lead
+  with a second, real test round on phones and photographs of real koi (the
+  one thing Mario asked for twice). The Part C Word file and the Part D
+  slides carry the same text and numbers.
+
 ## 2026-10-09: Six more varieties (dex 51–56)
 
 - Artwork arrived for Kage Showa, Ginsui, Kinsui, Sakura Ogon, Beni

@@ -134,6 +134,12 @@ export default function CarePage() {
                   <h3 className="font-pally font-bold">
                     Feeding by water temperature
                   </h3>
+                  <a
+                    href="#numbers"
+                    className="mt-1 inline-block text-xs font-bold text-[#49ad6d] underline-offset-2 hover:underline"
+                  >
+                    Each figure checked against two sources →
+                  </a>
                   <div className="mt-3">
                     <FeedingBands bands={FEEDING_BANDS} />
                   </div>
@@ -144,8 +150,14 @@ export default function CarePage() {
         </div>
 
         {QUICK_FACTS.length > 0 && (
-          <aside className="h-fit w-full shrink-0 rounded-2xl border border-black/10 bg-white p-5 shadow-[0_4px_12px_rgba(0,0,0,0.06)] md:sticky md:top-20 md:w-64">
+          <aside className="order-first h-fit w-full shrink-0 rounded-2xl border border-black/10 bg-white p-5 shadow-[0_4px_12px_rgba(0,0,0,0.06)] md:sticky md:top-20 md:order-none md:w-64">
             <h2 className="font-pally font-bold">Quick facts</h2>
+            <a
+              href="#numbers"
+              className="mt-1 inline-block text-xs font-bold text-[#49ad6d] underline-offset-2 hover:underline"
+            >
+              Each checked against two sources →
+            </a>
             <dl className="mt-3 flex flex-col gap-2">
               {QUICK_FACTS.map((f) => (
                 <div key={f.label} className="flex flex-col">
@@ -156,12 +168,6 @@ export default function CarePage() {
                 </div>
               ))}
             </dl>
-            <a
-              href="#numbers"
-              className="mt-4 inline-block text-xs font-bold text-[#49ad6d] underline-offset-2 hover:underline"
-            >
-              How these were checked →
-            </a>
           </aside>
         )}
       </div>

@@ -16,6 +16,16 @@ export const metadata: Metadata = {
     "How real koi breeding works: the family tree of varieties, documented pairings, and what a spawn actually produces.",
 };
 
+const JUMP_LINKS = [
+  { href: "#family-tree", label: "The family tree" },
+  { href: "#pairing-explorer", label: "What do these two make?" },
+  { href: "#documented-pairings", label: "Documented pairings" },
+  { href: "#spawn", label: "What a spawn gives you" },
+  { href: "#timeline", label: "Two centuries, in order" },
+  { href: "#how-breeding-works", label: "How breeding works" },
+  { href: "#not-covered", label: "Not covered here" },
+];
+
 export default async function BreedingPage() {
   const [summaries, outcomes, relatives] = await Promise.all([
     getKoiSummaries(),
@@ -37,7 +47,22 @@ export default async function BreedingPage() {
         what a spawn really produces.
       </p>
 
-      <section className="mt-12">
+      <nav
+        aria-label="On this page"
+        className="mt-6 flex flex-wrap gap-2 text-sm font-bold"
+      >
+        {JUMP_LINKS.map((l) => (
+          <a
+            key={l.href}
+            href={l.href}
+            className="rounded-full border border-black/10 bg-white px-3 py-1 text-black/60 transition-colors hover:border-[#49ad6d] hover:text-[#49ad6d]"
+          >
+            {l.label}
+          </a>
+        ))}
+      </nav>
+
+      <section id="family-tree" className="mt-12 scroll-mt-24">
         <h2 className="font-pally text-xl font-bold">The family tree</h2>
         <p className="mt-2 mb-5 max-w-prose text-sm text-black/60">
           Two centuries of selective breeding, from a wild black carp in a
@@ -47,7 +72,7 @@ export default async function BreedingPage() {
         <FamilyTree koi={summaries} relatives={relatives} />
       </section>
 
-      <section className="mt-14">
+      <section id="pairing-explorer" className="mt-14 scroll-mt-24">
         <h2 className="font-pally text-xl font-bold">What do these two make?</h2>
         <p className="mt-2 mb-5 max-w-prose text-sm text-black/60">
           Choose two parents. If the pairing is part of the recorded history of
@@ -56,7 +81,7 @@ export default async function BreedingPage() {
         <PairingExplorer koi={koi} outcomes={outcomes} />
       </section>
 
-      <section className="mt-14">
+      <section id="documented-pairings" className="mt-14 scroll-mt-24">
         <h2 className="font-pally text-xl font-bold">Documented pairings</h2>
         <p className="mt-2 mb-5 max-w-prose text-sm text-black/60">
           The crossings the varieties actually came from. Spawns are variable: a
@@ -71,7 +96,7 @@ export default async function BreedingPage() {
         </div>
       </section>
 
-      <section className="mt-14">
+      <section id="spawn" className="mt-14 scroll-mt-24">
         <h2 className="font-pally text-xl font-bold">
           What a spawn really gives you
         </h2>
@@ -85,7 +110,7 @@ export default async function BreedingPage() {
         </div>
       </section>
 
-      <section className="mt-14">
+      <section id="timeline" className="mt-14 scroll-mt-24">
         <h2 className="font-pally text-xl font-bold">Two centuries, in order</h2>
         <div className="mt-5 overflow-x-auto">
           <div className="flex min-w-max items-end gap-1 border-b-2 border-black/10 pb-2">
@@ -110,7 +135,7 @@ export default async function BreedingPage() {
         </p>
       </section>
 
-      <section className="mt-14">
+      <section id="how-breeding-works" className="mt-14 scroll-mt-24">
         <h2 className="font-pally text-xl font-bold">How breeding works</h2>
         <ul className="mt-4 flex list-disc flex-col gap-2 pl-5 text-black/70">
           {FUNDAMENTALS.map((f, i) => (
@@ -124,7 +149,8 @@ export default async function BreedingPage() {
           Varieties this site does not cover
         </h2>
         <p className="mt-2 mb-5 max-w-prose text-sm text-black/60">
-          Koi classification runs much wider than the 22 varieties in the dex.
+          Koi classification runs much wider than the {koi.length} varieties in
+          the dex.
           These appear in the lineage above or alongside it, and have no
           artwork here.
         </p>
