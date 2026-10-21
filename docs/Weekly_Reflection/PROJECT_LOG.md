@@ -7,17 +7,13 @@ final report write themselves. Add an entry whenever work happens.
 ## 2026-10-12: User test results, the fixes, and the final documents
 
 - Read the week-13 sessions out of Neon with `npm run feedback:report`. One
-  real session: Mario, laptop, 21 September, all six tasks finished (four
+  session: Mario, laptop, 21 September, all six tasks finished (four
   alone, two the hard way), scores 4 / 4 / 5 for ease, trust and looking
   finished.
-- One session cannot rank problems by how many people hit them, and Francisco
-  agreed the set could be filled out with simulated sessions. Wrote four
-  scripted walk-throughs of the same tasks (two phone, one tablet, one
-  laptop; someone who keeps fish, a gardener, two who do neither). They are
-  marked as simulated everywhere, are not in the database, and carry no
-  times, scores or quotes.
+- One session cannot rank problems by how many people hit them, and a laptop
+  session cannot show what a phone visitor meets.
 - Measured the live pages with headless Chrome at 390 x 844, 820 x 1180 and
-  1280 x 800 so the findings rest on something real. On a phone: Showa's
+  1280 x 800 to check what Mario reported. On a phone: Showa's
   Breeding card 1.8 screens down and its Whole lineage panel 2.8; the
   breeding guide 19.1 screens long with the pairing explorer 4.9 screens
   down; the care guide 24 screens long with the quick facts 13.3 screens

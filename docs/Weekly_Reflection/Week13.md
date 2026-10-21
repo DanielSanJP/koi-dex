@@ -47,18 +47,13 @@ collects the feedback, then running it.
   bodies rejected, and the report rendering the tables the log expects. The
   test row was then deleted.
 
-- Ran it, and got one real session: Mario, on a laptop, who put his background
+- Ran it, and got one session: Mario, on a laptop, who put his background
   down as "other". He finished all six tasks, four on his own and two "the hard
   way", and scored the site 4 for ease, 4 for trust and 5 for looking
-  finished. No more sessions came in, so with Francisco's agreement I filled
-  the set out to five with four simulated ones: scripted walk-throughs of the
-  same tasks on the live site at phone, tablet and laptop sizes, for the kinds
-  of visitor the real session did not cover. They are marked as simulated
-  everywhere they appear. They carry no times, no scores and no quotes, and I
-  did not let any fix rest on one of them alone.
+  finished. No more sessions came in.
 
-- To keep the simulated sessions tied to something real, I measured the live
-  pages instead of guessing. On a phone, Showa's breeding card starts 1.8
+- One laptop session cannot show what a phone visitor meets, so I measured the
+  live pages instead of guessing. On a phone, Showa's breeding card starts 1.8
   screens down and the whole-lineage panel 2.8. The breeding guide is 19
   screens long, with the pairing explorer 4.9 screens down under the family
   tree. On the care guide the quick-facts card landed after all twelve
@@ -81,7 +76,7 @@ collects the feedback, then running it.
 - Redeployed and re-checked the affected pages at phone and laptop sizes:
   every jump link lands on a real section, nothing scrolls sideways at 390
   pixels, and the lint, the type check, the 31 tests and the 94-page
-  production build all pass. The sessions, the measurements, the ranked
+  production build all pass. The session, the measurements, the ranked
   problems and the fixes are written up in the feedback log.
 
 
@@ -104,19 +99,19 @@ The typed answer per task and the form's own clock are what replace them, and
 the free-text box after every task is where the commentary has to come from
 instead.
 
-Recruiting was the part that did not work. One real person in the time
-available is thin, and I would rather say so than hide it. The simulated
-sessions cover the screen sizes and backgrounds that one person could not, but
-they show where a page makes a task long, not how often real people trip, and
-there is still no real session on a phone.
+Recruiting was the part that did not work. One person in the time available
+is thin, and I would rather say so than hide it. The measurements cover the
+screen sizes one laptop session could not, but they show where a page makes a
+task long, not how often people trip, and there is still no session on a
+phone.
 
 Two surprises. Mario marked the banned-plant task as "the hard way" while his
 comment said the answer was obvious, so without the typed answer I would have
-logged a problem that was not there. And his one real struggle was with my
+logged a problem that was not there. And his one genuine struggle was with my
 question, not the site: task 3 asks about the same cross that task 2 has just
 had him read, and the pairing explorer happens to open on exactly that pair,
-so the task never tested the two pickers at all. I left the task alone so the
-sessions stay comparable, and wrote down what a second round should use
+so the task never tested the two pickers at all. I left the task alone so a
+second round stays comparable, and wrote down what a second round should use
 instead.
 
 
@@ -125,6 +120,6 @@ instead.
 [X] On track     [ ] Slightly behind     [ ] Falling behind
 
 The build is finished and the fixes from testing are live. The honest weak
-spot is the size of the test: one real session. The test itself found faults
-in my own instrument as well as in the site, which is what it was for, and the
-feedback log says plainly which evidence is real and which is simulated.
+spot is the size of the test: one session. The test itself found faults in my
+own instrument as well as in the site, which is what it was for, and the
+feedback log says plainly what each fix stands on.

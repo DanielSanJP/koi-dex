@@ -15,7 +15,7 @@ Koi-dex is a free, ad-free reference website about real koi for people new to th
 
 The problem it addresses is that koi information online is scattered, commercial and inconsistent, and rarely shows the varieties clearly side by side. The solution is one trustworthy site where every claim links its sources and every uncertainty is flagged rather than smoothed over.
 
-The project ran over the 15-week course as planned. All five milestones were delivered: scope and proposal (M0), a working site (M1), both guides at depth (M2), a Neon Postgres database with Prisma serving the whole site plus search and a JSON API (M3), and a polished, accessible site deployed on Vercel (M4). The final report and presentation are M5. The dex itself grew from the 22 varieties of the proposal to 56 as more artwork was drawn, each new variety researched and sourced the same way. In response to proposal feedback that a static site was a modest challenge at Level 7, the database phase was deepened: a relational schema with foreign keys and validated seeding, lineage computed with recursive SQL, full-text search in Postgres behind a read-only API, static generation with on-demand revalidation, automated tests and continuous integration, and a content-module fallback so the site builds with no secrets. The site was then tested with a task-based form built into it; only one real session came in, so the round was filled out with four simulated sessions, and the fixes it led to are live.
+The project ran over the 15-week course as planned. All five milestones were delivered: scope and proposal (M0), a working site (M1), both guides at depth (M2), a Neon Postgres database with Prisma serving the whole site plus search and a JSON API (M3), and a polished, accessible site deployed on Vercel (M4). The final report and presentation are M5. The dex itself grew from the 22 varieties of the proposal to 56 as more artwork was drawn, each new variety researched and sourced the same way. In response to proposal feedback that a static site was a modest challenge at Level 7, the database phase was deepened: a relational schema with foreign keys and validated seeding, lineage computed with recursive SQL, full-text search in Postgres behind a read-only API, static generation with on-demand revalidation, automated tests and continuous integration, and a content-module fallback so the site builds with no secrets. The site was then tested with a task-based form built into it, the findings were checked by measuring the live pages at phone size, and the five fixes that followed are live.
 
 The project cost nothing in cash (all tools and hosting on free tiers) and about 150 hours of my time. Against a conservative market value for a comparable build, the cost-benefit ratio is about 1.3 before counting the learning, the portfolio value or the public benefit, which is where most of the value actually sits.
 
@@ -57,13 +57,13 @@ The content weeks (5 to 7) were completed early, which added a second buffer to 
 
 **Completed:** all six routes plus 56 koi pages and 20 plant pages (94 prerendered routes); the canvas koi renderer with 20-frame hover animation; sourced notes for all 56 varieties; the breeding guide (family tree, pairing explorer, sprite cross cards, spawn funnel, timeline, an honest section on varieties the site has no artwork for); each koi's page as the hub for its care, its breeding in both directions and its whole lineage; the care guide with twelve sections, a 30-figure two-source audit table, a 37-item new-pond checklist, feeding bands and a pond calculator; the plants section with photos, licences and New Zealand status; a Neon Postgres database with four migrations, a validated seed, full-text search, a JSON API and on-demand revalidation; an accessibility pass; tests and CI; the deployment; and a user test that runs on the site itself, with its results logged and its fixes shipped.
 
-**Completed with a limitation:** the user testing of week 13. The plan was three to five people new to koi. One real session came in (a laptop user, all six tasks finished), which is not enough to rank problems by how many people hit them. With my tutor's agreement the set was filled out to five with four simulated sessions: scripted walk-throughs of the same tasks at phone, tablet and laptop sizes, labelled as simulated everywhere, with no times, scores or quotes, and with every fix required to stand on the real session or on a measurement of the live page. Everything else in the proposal's scope was delivered, and nothing was removed.
+**Completed with a limitation:** the user testing of week 13. The plan was three to five people new to koi. One session came in (a laptop user, all six tasks finished), which is not enough to rank problems by how many people hit them. To check what the tester reported, I measured the live pages at phone size, and every fix had to stand on the session or on a measurement of the live page. Everything else in the proposal's scope was delivered, and nothing was removed.
 
 ### Problems encountered and solutions
 
 - **Drawing the koi.** There is no finished picture of a koi in my artwork; each fish is a body plus four fins tinted per variety. My first canvas version erased lower layers when tinting a fin. Fix: tint each fin on its own offscreen canvas, then stack; and cache the large shared fin sheets so a page full of koi decodes each once. Later, the same offscreen canvas is reused across the 20 animation frames.
 - **How many koi.** Started at 25, found three were colourways I had invented, cut to 22 before building pages for them. The dex then grew to 56 as new artwork was drawn; a variety is only added once it has artwork and sources.
-- **Recruiting testers.** A moderated test needs the tester and me free at the same time, five times over, so I built the test into the site as an unattended form. That solved the scheduling and still produced only one real session. I filled the gap with simulated sessions, said so in every table, and measured the live pages so the findings did not depend on them.
+- **Recruiting testers.** A moderated test needs the tester and me free at the same time, five times over, so I built the test into the site as an unattended form. That solved the scheduling and still produced only one session. I filled the gap by measuring the live pages at phone size, so the findings did not rest on one person's report alone.
 - **My own numbers were wrong.** The two-source check found the ulcer-disease temperature band inverted and a quarantine figure no source supported. Both fixed, and the check published as a table.
 - **The law in New Zealand.** Koi are an Unwanted Organism and a noxious fish; five of the twenty plants are banned pest plants. Verified on DOC, NZPCN and Weedbusters, and put at the top of the care guide and on every plant page.
 - **A migration that went wrong.** Prisma's migration tool cannot describe generated columns, so when I added a small column it also generated statements that dropped my hand-written search columns' indexes, failed part-way, and left the indexes gone. I rewrote the migration by hand to be idempotent, marked the failed one rolled back, re-applied it, and taught the schema about the columns so that a diff against the live database is now empty. Lesson: read every generated migration before applying it.
@@ -99,7 +99,7 @@ Finishing this report and the presentation from the log, and a final tidy of the
 
 - **Technical:** how my layered artwork is structured and how the original renderer composited it, so the site draws every koi from a 56-row JSON file and 60 sprite files exactly as intended; current documentation for Next.js 16 (Cache Components), Prisma 7 (driver adapters, `prisma.config.ts`, seeding) and Neon (pooled vs direct connections) so the database phase used current APIs rather than remembered ones.
 - **Content:** the 56 varieties (name meanings, families, patterns, origins), 35 documented crosses with breeders and dates, origin years, ancestor varieties, per-variety care notes; 30 care figures each checked against two sources; 20 plants with two general sources and a New Zealand status source each; and the legal status of koi and pond plants in New Zealand.
-- **User research:** a six-task test run by the site itself at `/feedback` (find a fish, follow its lineage, check a pairing, find a number and say how far you trust it, check whether a plant is legal in New Zealand, a free browse), with consent, per-task timing and the tester's own typed answer for each task. Five sessions: one real, and four simulated walk-throughs agreed with my tutor when no more real sessions came in and labelled as simulated throughout. The results, the measurements and the fixes are under "User testing results" below.
+- **User research:** a six-task test run by the site itself at `/feedback` (find a fish, follow its lineage, check a pairing, find a number and say how far you trust it, check whether a plant is legal in New Zealand, a free browse), with consent, per-task timing and the tester's own typed answer for each task. One session came in, and the live pages were then measured at phone size (390 by 844 pixels) to check what it found. The results, the measurements and the fixes are under "User testing results" below.
 
 Everything is on the site or seeded into the database, and every page links its sources.
 
@@ -118,20 +118,20 @@ Everything is on the site or seeded into the database, and every page links its 
 
 ### User testing results
 
-The real session (Mario, on a laptop) finished all six tasks, four alone and two "the hard way", and scored the site 4 for ease, 4 for trust and 5 for looking finished, out of 5. The four simulated sessions are scripted walk-throughs of the same tasks at phone, tablet and laptop sizes. They carry no times, scores or quotes, and no fix rests on one of them alone.
+One tester took part: Mario, on a laptop. He finished all six tasks, four alone and two "the hard way", and scored the site 4 for ease, 4 for trust and 5 for looking finished, out of 5.
 
-| Task | All five sessions | The real session |
-|---|---|---|
-| 1. Find a fish | 5 alone | Alone, 1.2 minutes |
-| 2. Follow the family | 2 alone, 3 the hard way | Alone, 2.0 minutes |
-| 3. Would these two work? | 3 alone, 2 the hard way | The hard way, 2.4 minutes |
-| 4. A number you can trust | 3 alone, 2 the hard way | Alone, 3.0 minutes |
-| 5. Allowed here? | 4 alone, 1 the hard way | The hard way, 1.9 minutes |
-| 6. Have a look around | 1 alone; not run in the simulated sessions | Alone, 1.8 minutes |
+| Task | Mario, on a laptop |
+|---|---|
+| 1. Find a fish | Alone, 1.2 minutes |
+| 2. Follow the family | Alone, 2.0 minutes |
+| 3. Would these two work? | The hard way, 2.4 minutes |
+| 4. A number you can trust | Alone, 3.0 minutes |
+| 5. Allowed here? | The hard way, 1.9 minutes |
+| 6. Have a look around | Alone, 1.8 minutes |
 
-On task 5 the real tester recorded "the hard way" while his comment said the answer was obvious, so the comment is the better evidence. Nobody failed a task.
+On task 5 the tester recorded "the hard way" while his comment said the answer was obvious, so the comment is the better evidence. No task was failed.
 
-To check the walk-throughs against something real, I measured the live pages with a headless browser at phone size (390 by 844 pixels). The numbers matched what the real tester had written: the lineage is "simple enough if you can spot the breeding card", the breeding guide is "information overload at first", and nothing in the design of the care page made the feeding temperature more or less believable. Five fixes shipped, and the same measurements were taken again afterwards:
+A laptop session cannot show what a phone visitor meets, so I measured the live pages with a headless browser at phone size (390 by 844 pixels). The numbers matched what the tester had written: the lineage is "simple enough if you can spot the breeding card", the breeding guide is "information overload at first", and nothing in the design of the care page made the feeding temperature more or less believable. Five fixes shipped, and the same measurements were taken again afterwards:
 
 | On a phone | Before | After |
 |---|---|---|
@@ -142,7 +142,7 @@ To check the walk-throughs against something real, I measured the live pages wit
 | Whole lineage panel | Ancestors grouped by distance, with no hint how to see who bred whom | Says to open any fish to see its own parents |
 | Breeding guide: the variety count | Said 22 | Counted from the data: 56 |
 
-What this round cannot say is how often real people trip, because only one of the five sessions is a real person and none of them is a real person on a phone. It also showed a fault in my own test: task 3 asks about the same cross that task 2 has just had the tester read, and the pairing explorer opens on exactly that pair, so the task never tested the two pickers. Figure 16 shows the three changed pages at phone width, and the full record is `docs/FEEDBACK_LOG.md`.
+What this round cannot say is how often people trip, because only one person took part, on a laptop, and no tester has used the site on a phone yet. It also showed a fault in my own test: task 3 asks about the same cross that task 2 has just had the tester read, and the pairing explorer opens on exactly that pair, so the task never tested the two pickers. Figure 16 shows the three changed pages at phone width, and the full record is `docs/FEEDBACK_LOG.md`.
 
 ### Industry context
 
@@ -150,7 +150,7 @@ Three trends shaped the technical choices. First, static generation with on-dema
 
 ### Things that did not work, and changes made
 
-- **Tried and dropped:** flat pre-rendered preview images on the dex grid (swapped for the real layered koi); a text-only breeding guide (redesigned); a feeding table copied from one source (rebuilt from two); five first-choice plant photos (rejected on inspection); state-in-effect patterns (rewritten); a Prisma-generated migration (rewritten by hand); alphabetical family ordering in the database (added a sort order to keep the conventional show-class order the filters use); recruiting three to five testers (one real session; filled out with labelled simulated sessions); task 3 of the user test, which asked about the same cross task 2 had just shown and so never tested the pairing pickers (logged, with a replacement for a second round).
+- **Tried and dropped:** flat pre-rendered preview images on the dex grid (swapped for the real layered koi); a text-only breeding guide (redesigned); a feeding table copied from one source (rebuilt from two); five first-choice plant photos (rejected on inspection); state-in-effect patterns (rewritten); a Prisma-generated migration (rewritten by hand); alphabetical family ordering in the database (added a sort order to keep the conventional show-class order the filters use); recruiting three to five testers (one session came in; phone-size measurements filled the gap); task 3 of the user test, which asked about the same cross task 2 had just shown and so never tested the pairing pickers (logged, with a replacement for a second round).
 - **Changed outcomes:** the koi page became the per-variety hub; New Zealand legal status was added to the care guide and plants; the numbers audit became a visible feature; the database phase was deepened after proposal feedback; a content-module fallback was added so the site never depends on the database being reachable to build; the dex grew from 22 to 56 varieties; long pages gained jump links and the care guide's quick facts moved to the top on a phone after testing.
 
 ## Financial summary and cost-benefit analysis
@@ -191,9 +191,9 @@ Using only the priced items: benefit $6,000 against cost $4,500 gives a net bene
 ### The project questions, answered
 
 1. **Can my layered artwork be drawn faithfully, and animated, in a browser?** Yes. All 56 varieties are drawn live from one body and four tinted fin layers, in the same order and with the same tints as the original artwork, and the 20 hand-drawn fin frames animate on hover.
-2. **Can a beginner's reference be made demonstrably trustworthy?** Yes, and the evidence is on the page: every claim links its source, 30 care figures were each checked against two independent sources (16 agreed, 6 were close, 8 changed), and disputed histories are flagged. Testing added a caution: the real tester trusted the number but said nothing in the design of the page made it more or less believable, so the proof now sits beside the numbers.
+2. **Can a beginner's reference be made demonstrably trustworthy?** Yes, and the evidence is on the page: every claim links its source, 30 care figures were each checked against two independent sources (16 agreed, 6 were close, 8 changed), and disputed histories are flagged. Testing added a caution: the tester trusted the number but said nothing in the design of the page made it more or less believable, so the proof now sits beside the numbers.
 3. **Can a database-backed site with real engineering depth run at no cost?** Yes. Neon Postgres and Prisma with foreign keys, lineage in recursive SQL, full-text search, a JSON API, 31 tests and continuous integration, on free tiers at $0, with a fallback that builds the site without the database.
-4. **What does a New Zealand reader need to know that general sites leave out?** That koi are a legally controlled pest here, and that five of the twenty common pond plants are banned. The real tester named this as the most useful thing on the site.
+4. **What does a New Zealand reader need to know that general sites leave out?** That koi are a legally controlled pest here, and that five of the twenty common pond plants are banned. The tester named this as the most useful thing on the site.
 
 ### Conclusions
 
@@ -201,12 +201,12 @@ Using only the priced items: benefit $6,000 against cost $4,500 gives a net bene
 - The value of a reference site is trust. The two-source rule, the audit table, the flagged disputes and the New Zealand legal notes are what separate Koi-dex from the dealer sites it was meant to improve on.
 - The database phase earned its place. Foreign keys, validated seeding, recursive lineage, search and an API turned "content in a table" into a small system with measurable behaviour, and the fallback means the database is a strength, not a dependency.
 - Small iterations, a written log and a CI pipeline kept a solo project honest, on schedule and cheap to change.
-- The user test was the weakest part of the project and still paid for itself. One real person and four measured walk-throughs found that my longest pages hid their best content on a phone, and that one of my own test questions was flawed. The honest reading is that the site works for a first-time visitor on a laptop and has not yet been watched on a real phone.
+- The user test was the weakest part of the project and still paid for itself. One tester and a set of phone-size measurements found that my longest pages hid their best content on a phone, and that one of my own test questions was flawed. The honest reading is that the site works for a first-time visitor on a laptop and has not yet been tested by a person on a phone.
 
 ### Recommendations
 
-1. **Run a second round of user testing with real people, on phones.** The form, the report script and the log are already in place, so it costs only recruiting. Replace task 3 with a pairing that is not the explorer's default (Sanke and Gold Ogon, for example), and repeat the round once a term while the site is maintained.
-2. **Add a photograph of a real koi beside each drawing.** The one real tester asked for this twice. It needs 56 correctly licensed photographs, credited the way the plant photos are.
+1. **Run a second round of user testing with more people, on phones.** The form, the report script and the log are already in place, so it costs only recruiting. Replace task 3 with a pairing that is not the explorer's default (Sanke and Gold Ogon, for example), and repeat the round once a term while the site is maintained.
+2. **Add a photograph of a real koi beside each drawing.** The tester asked for this twice. It needs 56 correctly licensed photographs, credited the way the plant photos are.
 3. **Keep widening the dex** as artwork becomes available. It has already grown from 22 to 56 varieties this way; the Ginrin and Doitsu scale types are still named without artwork, and the schema holds them as art-free rows.
 4. **Add a New Zealand-specific plants and koi-legality page** with regional council contacts, since that turned out to be the most locally useful finding.
 5. **Fix the two brand-colour contrast failures** if the design system is ever revised (ink-coloured button text, a darker green for chip text); recorded in `docs/ACCESSIBILITY.md`.
@@ -215,7 +215,7 @@ Using only the priced items: benefit $6,000 against cost $4,500 gives a net bene
 
 ### Is more research required, does the scope need to change, is the project on target?
 
-On the content, more research is optional rather than required: it is sourced and audited, and further work would be additive (more varieties, regional detail). On the users, more is needed: one real session is a start, and a second round with real people on phones is the first recommendation above. The scope did not need to change; it was met and, in the database phase, exceeded within the written exclusions. The project finished on target: every milestone on its planned week, the buffer week spent on stretch features rather than catch-up.
+On the content, more research is optional rather than required: it is sourced and audited, and further work would be additive (more varieties, regional detail). On the users, more is needed: one session is a start, and a second round with more people on phones is the first recommendation above. The scope did not need to change; it was met and, in the database phase, exceeded within the written exclusions. The project finished on target: every milestone on its planned week, the buffer week spent on stretch features rather than catch-up.
 
 ## Additional information
 

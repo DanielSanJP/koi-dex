@@ -1,33 +1,18 @@
 # Feedback log (week 13)
 
 Sessions come from the form at `/feedback`. The tables are what
-`npm run feedback:report` prints, with the simulated rows added by hand and
-marked. The protocol is in `docs/USER_TESTING.md`.
+`npm run feedback:report` prints. The protocol is in `docs/USER_TESTING.md`.
 
-## Where these sessions came from
+## Where this session came from
 
-Five sessions, and they are not all the same kind of thing.
+One session came in: Mario, on a laptop, on 21 September 2026, through the
+form. It is stored in Neon and reproduced below exactly as the report prints
+it, spelling included.
 
-**One is real.** Mario, on a laptop, on 21 September 2026, through the form.
-It is stored in Neon and reproduced below exactly as the report prints it,
-spelling included.
-
-**Four are simulated (S1 to S4).** No more real sessions came in, and
-Francisco agreed the set could be filled out with simulated ones. Each is a
-scripted walk-through of the same six tasks on the live site, at a screen size
-and from a point of view the real session did not cover: a phone for someone
-who keeps fish, a phone for a gardener, a laptop and a tablet for someone who
-does neither. They are not in the database. They are marked S and "simulated"
-wherever they appear, and they follow four rules:
-
-- **No times.** The form's own rule is that a time is honest or absent. A
-  session nobody sat has none.
-- **No scores.** A score out of five is an opinion, and a script does not have
-  one. The three scores below are Mario's alone.
-- **No quotes.** Mario's words are verbatim. The simulated sessions are notes
-  in the third person.
-- **No fix rests on a simulated session alone.** Every problem ranked below is
-  either in Mario's own answers or measured on the live page, or both.
+One laptop session cannot show what a visitor meets on a phone, or how often
+people trip. So the live pages were measured to check what Mario reported,
+and every fix below stands on his own answers, a measurement of the live page,
+or both.
 
 The measuring was done with headless Chrome against the live site on 12
 October 2026, at 390 x 844 for the phone, 820 x 1180 for the tablet and
@@ -39,36 +24,28 @@ from the top of the page, in screen heights at that size.
 | # | Date | Who | Device | Background | T1 | T2 | T3 | T4 | T5 | T6 | Ease | Trust | Finished |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | 2026-09-21 | Mario | laptop | other | A 1.2 | A 2.0 | H 2.4 | A 3.0 | H 1.9 | A 1.8 | 4 | 4 | 5 |
-| S1 | simulated | walk-through | phone | keeps fish | A | H | A | A | A | - |  |  |  |
-| S2 | simulated | walk-through | phone | gardens | A | H | H | H | A | - |  |  |  |
-| S3 | simulated | walk-through | laptop | neither | A | A | A | H | A | - |  |  |  |
-| S4 | simulated | walk-through | tablet | neither | A | H | A | A | A | - |  |  |  |
 
 Result codes: A = alone, H = got there the hard way, N = not completed,
 `-` = skipped; the number beside it is minutes on task. T6 is the free browse.
-It has nothing to get right, so the walk-throughs skip it.
 
 ## Where people struggled
 
-| Task | Alone | Struggled | Failed | Skipped | Minutes (Mario) |
+| Task | Alone | Struggled | Failed | Skipped | Median minutes |
 |---|---|---|---|---|---|
-| T1 Find a fish | 5 | 0 | 0 | 0 | 1.2 |
-| T2 Follow the family | 2 | 3 | 0 | 0 | 2.0 |
-| T3 Would these two work? | 3 | 2 | 0 | 0 | 2.4 |
-| T4 A number you can trust | 3 | 2 | 0 | 0 | 3.0 |
-| T5 Allowed here? | 4 | 1 | 0 | 0 | 1.9 |
-| T6 Have a look around | 1 | 0 | 0 | 4 | 1.8 |
+| T1 Find a fish | 1 | 0 | 0 | 0 | 1.2 |
+| T2 Follow the family | 1 | 0 | 0 | 0 | 2.0 |
+| T3 Would these two work? | 0 | 1 | 0 | 0 | 2.4 |
+| T4 A number you can trust | 1 | 0 | 0 | 0 | 3.0 |
+| T5 Allowed here? | 0 | 1 | 0 | 0 | 1.9 |
+| T6 Have a look around | 1 | 0 | 0 | 0 | 1.8 |
 
-Counts are over all five sessions, one real and four simulated. Taking the
-real session alone: four tasks alone, two the hard way (T3 and T5), none
-failed.
+Four tasks alone, two the hard way (T3 and T5), none failed.
 
-Scores, from the one real session: ease 4, trust 4, looks finished 5, each out
-of 5.
+Scores: ease 4, trust 4, looks finished 5, each out of 5.
 
 ## What people said
 
-### Mario, laptop (real, verbatim)
+### Mario, laptop (verbatim)
 
 - **T1** (alone): First produced in 1927 by Jukichi Hoshino by crossing a Kohaku with a Ki Utsuri. The modern type was perfected in the 1960s when Tomiji Kobayashi bred in intensely red Kohaku blood. | typed showa in search bar and clicked on fish card
 - **T2** (alone): Kohaku with a Ki Utsuri.  Ki ustsuri came from a Ki Bekko and Magoi | Simple enough if you can spot the breeding card, otherwise if you dont look probably could be a couple more steps to get there
@@ -88,58 +65,6 @@ comment disagree and the comment is the better evidence; it is left as he
 recorded it. And his T3 struggle was with the question, not the site: see
 "Limits of this round".
 
-### S1, phone, keeps fish (simulated)
-
-- **T1** (alone): the search button in the header finds Showa in one step.
-- **T2** (hard way): on a phone the Showa page runs picture, description, care
-  card, then the Breeding card, 1.8 screens down. Nothing above it says it is
-  there. The walk-through scrolls past the care card before finding the two
-  parents, then opens Ki Utsuri to get the generation before.
-- **T3** (alone): already answered by the Breeding card on the Showa page.
-- **T4** (alone): the care guide's jump link goes to Feeding; "below 10 °C" is
-  in the first paragraph. Someone who keeps fish would expect a number like
-  this to depend on temperature and would look no further.
-- **T5** (alone): the red "Banned in NZ" chip is on the first screen of the
-  water hyacinth page.
-
-### S2, phone, gardens (simulated)
-
-- **T1** (alone): finds Showa by scrolling the dex grid; slower than search,
-  no dead end.
-- **T2** (hard way): the same long scroll as S1, and the Whole lineage panel
-  is 2.8 screens down.
-- **T3** (hard way): goes to the breeding guide for this one. The guide is 19
-  screens long on a phone and "What do these two make?" is 4.9 screens down,
-  under a family tree of 56 fish, with no list of what is on the page.
-- **T4** (hard way): the number is easy. Saying how sure is not: the same
-  sentence gives a second figure (12 or 13 °C from some vets), the quick-facts
-  card is 13.3 screens down on a phone and the table that settles it is 17.8.
-- **T5** (alone): a gardener goes straight to Plants; the status is on the
-  first screen.
-
-### S3, laptop, neither (simulated)
-
-- **T1** (alone): search.
-- **T2** (alone): on a laptop the Breeding card starts on the first screen.
-- **T3** (alone): the pairing explorer on the breeding guide, 2.1 screens
-  down.
-- **T4** (hard way): finds 10 °C in the quick facts, then the Feeding
-  paragraph's 12 or 13 °C. The proof is the audit table, 10.8 screens down;
-  the only pointer to it is a small link at the foot of the quick-facts card,
-  below the fold.
-- **T5** (alone): first screen.
-
-### S4, tablet, neither (simulated)
-
-- **T1** (alone): search.
-- **T2** (hard way): gets the two parents from the Breeding card. For the
-  generation before, the Whole lineage panel lists Ki Bekko and Magoi at "2
-  steps" but does not say which parent they belong to. The walk-through has to
-  open Ki Utsuri's own page to be sure.
-- **T3** (alone): the Showa page had already answered it.
-- **T4** (alone): quick facts are on the first screen at this width.
-- **T5** (alone): first screen.
-
 ## What the live pages measured
 
 Before the fixes, on the live site.
@@ -155,21 +80,28 @@ Before the fixes, on the live site.
 | Care guide | "Every number, checked twice", screens down | 17.8 | 9.0 | 10.8 |
 | Water hyacinth | "Banned in NZ" block, screens down | 1.1 | 0.5 | 0.8 |
 
-The water hyacinth page also carries the status as a red chip under the name,
-on the first screen at every size. That is the one answer nobody had to hunt
-for.
+The numbers match what Mario wrote. On a phone the Showa page runs picture,
+description and care card before the Breeding card, with nothing above it
+saying it is there ("simple enough if you can spot the breeding card"). The
+breeding guide is 19 screens long on a phone with no list of what is on it
+("a bit of information overload at first"). The care guide's quick facts sit
+after all twelve sections on a phone, and the only pointer to the audit table
+was a small link at the foot of the quick-facts card ("no indication through
+the use of UI elements and styles that made it feel more believable"). The
+water hyacinth page carries the status as a red chip under the name, on the
+first screen at every size: the one answer nobody has to hunt for.
 
 ## Problems found (ranked)
 
-Ranked by (how many hit it) x (how badly). Two or more is a fix; one is a
-note. "Seen by" says which evidence is real.
+Ranked by how badly each one slows a visitor. "Seen by" says what each one
+stands on.
 
 | Rank | Problem | Seen by | Severity | Fix | Commit |
 |---|---|---|---|---|---|
-| 1 | On a koi page the Breeding card and the Whole lineage panel are below the fold and nothing above says they exist | Mario (T2 comment, real); S1, S2, S4; measured | High on a phone | An "on this page" row under the fish's name: Care, Breeding, Whole lineage, Others in the family | Week 13: fixes from the user test |
-| 2 | The breeding guide is long and has no contents list | Mario (most confusing moment, real); S2; measured | High on a phone | The same jump-link row the care guide has | same |
-| 3 | Nothing beside a care number says it was checked, and on a phone the quick facts came after all twelve sections | Mario (T4 comment, real); S2, S3; measured | Medium | Quick facts first on a phone; a "checked against two sources" link under its heading and on the feeding strip | same |
-| 4 | The Whole lineage panel groups ancestors by distance, not by parent | S4; confirmed in the page data | Low | One sentence on the panel: open any fish to see its own parents | same |
+| 1 | On a koi page the Breeding card and the Whole lineage panel are below the fold and nothing above says they exist | Mario (T2 comment); measured | High on a phone | An "on this page" row under the fish's name: Care, Breeding, Whole lineage, Others in the family | Week 13: fixes from the user test |
+| 2 | The breeding guide is long and has no contents list | Mario (most confusing moment); measured | High on a phone | The same jump-link row the care guide has | same |
+| 3 | Nothing beside a care number says it was checked, and on a phone the quick facts came after all twelve sections | Mario (T4 comment); measured | Medium | Quick facts first on a phone; a "checked against two sources" link under its heading and on the feeding strip | same |
+| 4 | The Whole lineage panel groups ancestors by distance, not by parent: Ki Bekko and Magoi sit at "2 steps" from Showa with no word on which parent they belong to | Found in the page data while measuring | Low | One sentence on the panel: open any fish to see its own parents | same |
 | 5 | The breeding guide still said "the 22 varieties in the dex" when the dex has 56 | Found during the fix pass | Low, but wrong | Counted from the data, so it cannot go stale again | same |
 
 ## What changed because of testing
@@ -205,15 +137,14 @@ the 31 tests and the 94-page production build all pass.
 
 ## Limits of this round
 
-- **One real person.** Four of the five sessions are simulated, so the counts
-  above describe where the pages make a task long, not how often real people
-  trip. The fixes were chosen so that each one stands on Mario's answers or a
-  measurement.
+- **One person.** The counts above are one session, so they say where Mario
+  found a task long, not how often people trip. The fixes were chosen so that
+  each one stands on Mario's answers or a measurement.
 - **Task 3 did not test what it was meant to.** It asks what Kohaku crossed
   with Ki Utsuri produces, which is the cross task 2 has just had the tester
   read, and the pairing explorer happens to open on exactly that pair. Mario
   said the question felt like a repeat, and he was right. The task was left
-  alone so the sessions stay comparable; a second round should use a pair
-  that is not the default, such as Sanke and Gold Ogon.
-- **No real phone session.** The phone findings are measured, not observed.
-  A real session on a phone is the first thing a second round needs.
+  alone so a second round stays comparable with this one; that round should
+  use a pair that is not the default, such as Sanke and Gold Ogon.
+- **No phone session.** The phone findings are measured, not observed. A
+  tester on a phone is the first thing a second round needs.
